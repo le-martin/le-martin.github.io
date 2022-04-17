@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://le-martin.github.io/sitemap.xml
