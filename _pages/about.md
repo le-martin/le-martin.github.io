@@ -39,7 +39,7 @@ redirect_from:
 - S. P. - Support in Signals and Systems Tutorial (April 2022 - Sep 2022)
 - J. B. - Development of Tools for Monitoring Resources of Simulation PCs (Feb 2022 - Jan 2023)
 - V. L. - Support in Signals and Systems Tutorial (Jan 2022 - June 2022)
-- T. R. - Implementation of Python3 Jupyter Notebooks for Lectures (Jan 2021 - Aug 2021)
+- T. R. - Implementation of Python Jupyter Notebooks for Lectures (Jan 2021 - Aug 2021)
 
 ### Student Seminar
 - W. W. - How AI plays Games with Imperfect Information (Summer term 2023)
