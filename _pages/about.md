@@ -52,6 +52,9 @@ redirect_from:
 ### University Projects
 - F. P. - Climate Crisis Clock (2023 - discontinued)
 
+### Google Summer of Code (GSoC) Projects
+- R. S. - Deep Q-Network-based Rate Adaptation for IEEE 802.11ac Networks (GSoC 2025)
+
 ## Institute Tasks
 ### Responsibilies
 - TUBS IfN Website Admin
