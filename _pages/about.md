@@ -8,7 +8,7 @@ redirect_from:
 ---
 
 ## Publications
-<!--- M. Le, B. Peng, E. Jorswieck, "WiFi-CUTS: Rate Adaptation with Cascaded Unimodal Multi-Armed Bandits in IEEE 802.11ac Testbed Experiments", in IEEE Transaction on Communications, submitted. 
+- M. Le, B. Peng, E. Jorswieck, "WiFi-CUTS: Rate Adaptation with Cascaded Unimodal Multi-Armed Bandits in IEEE 802.11ac Testbed Experiments", in IEEE Transaction on Communications, accepted, now in galley proofing. 
 - M. Le, E. Jorswieck, "Rate Adaptation in IEEE 802.11ac: Testbed Experiments with Minstrel-Thompson Sampling", in IEEE Globecom 2025, submitted.-->
 - M. Le et al., “Multi-Armed Bandits in IEEE 802.11ac: Efficient Algorithms and Testbed Experiments,” in CQR 2024 - IEEE International Workshop Technical Committee on Communications Quality and Reliability: Proceedings, Sep. 2024, pp. 7–12. [doi: 10.1109/cqr62340.2024.10705888](https://doi.org/10.1109/cqr62340.2024.10705888).
 - S. P. Pawar et al., “Open-source Resource Control API for real IEEE 802.11 Networks,” in Proceedings of the 30th Annual International Conference on Mobile Computing and Networking, ACM MobiCom ’24, Dec. 2024, pp. 1866–1873. [doi: 10.1145/3636534.3697314](https://doi.org/10.1145/3636534.3697314).
