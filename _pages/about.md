@@ -32,8 +32,8 @@ redirect_from:
 - Machinelles Lernen für Wi-Fi (in German), VDE ProfDate, Oct. 2021.
 
 <a id="section_reviews"></a>
-## Reviews (17)
-### Conference Paper Reviews (13)
+## Reviewer Activities (17)
+### Reviewer for the following Conferences/Workshops (13)
 - IEEE Wireless Communications and Networking Conference (WCNC 2025)
 - European Conference on Networks and Communications (EuCNC) & 6G Summit 2025
 - IEEE International Conference on Communications (ICC 2025)
@@ -49,7 +49,7 @@ redirect_from:
 - IEEE Global Communications Conference Workshop (Globecom 2020 Workshop)
 - IEEE International Conference on Communications (ICC 2019)
 
-### Journal Paper Reviews (3)
+### Reviewer for the following Jounrals (3)
 - Springer Scientific Report 2024
 - EURASIP Journal on Wireless Communications and Networking 2023
 - IEEE Transactions on Signal Processing 2021
@@ -115,3 +115,4 @@ redirect_from:
 ## Fun Stats
 - occupied **7 different offices** (one at a time)
 - shared **office with 13 colleagues** (EJ, AH, JL, FW, SR, SM, RR, LK, MM, ZG, BP, MP, FC)
+- collected **21 recups** (personal record) from IfN milkshake walks before returning them
