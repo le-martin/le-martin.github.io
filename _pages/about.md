@@ -92,5 +92,5 @@ redirect_from:
 - Project Management Software (openproject) - discontinued
 
 ## Fun stats
-- occupied 7 different offices
-- shared office with 13 colleagues (EJ, AH, JL, FW, SR, SM, RR, LK, MM, ZG, MP, FC)
+- occupied **7 different offices** (one at a time)
+- shared **office with 13 colleagues** (EJ, AH, JL, FW, SR, SM, RR, LK, MM, ZG, MP, FC)
