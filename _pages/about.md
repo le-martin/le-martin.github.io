@@ -68,3 +68,12 @@ redirect_from:
   - Institute for Materials Science
 - Literature library - discontinued
 - Project Management Software (openproject) - discontinued
+
+## Fun stats
+### Offices occupied
+- 2 offices at TU Dresden
+- 7 offices at TU Braunschweig
+
+### Office roommates
+- 3 at TU Dresden (AT, KB, JH)
+- 13 at TU Braunschweig (EJ, AH, JL, FW, SR, SM, RR, LK, MM, ZG, MP, FC)
