@@ -108,4 +108,4 @@ redirect_from:
 <a id="section_fun-stats"></a>
 ## Fun Stats
 - occupied **7 different offices** (one at a time)
-- shared **office with 13 colleagues** (EJ, AH, JL, FW, SR, SM, RR, LK, MM, ZG, MP, FC)
+- shared **office with 13 colleagues** (EJ, AH, JL, FW, SR, SM, RR, LK, MM, ZG, BP, MP, FC)
