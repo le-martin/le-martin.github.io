@@ -49,7 +49,7 @@ redirect_from:
 - IEEE Global Communications Conference Workshop (Globecom 2020 Workshop)
 - IEEE International Conference on Communications (ICC 2019)
 
-### Reviewer for the following Jounrals (3)
+### Reviewer for the following Journals (3)
 - Springer Scientific Report 2024
 - EURASIP Journal on Wireless Communications and Networking 2023
 - IEEE Transactions on Signal Processing 2021
@@ -119,6 +119,6 @@ redirect_from:
 
 <a id="section_fun-stats"></a>
 ## Fun Stats
-- occupied **7 different offices** (one at a time)
-- shared **office with 13 colleagues** (EJ, AH, JL, FW, SR, SM, RR, LK, MM, ZG, BP, MP, FC)
-- collected **21 recups** (personal record) from IfN milkshake walks before returning them
+- Occupied **7 different offices** (one at a time)
+- Shared **office with 13 colleagues** (EJ, AH, JL, FW, SR, SM, RR, LK, MM, ZG, BP, MP, FC)
+- Collected **21 recups** (personal record) from IfN milkshake walks before returning them
