@@ -96,7 +96,7 @@ redirect_from:
 - R. S. - Deep Q-Network-based Rate Adaptation for IEEE 802.11ac Networks (GSoC 2025)
 
 <a id="section_institute-tasks"></a>
-## Institute Tasks (7)
+## University/Institute Projects and Courses (7)
 ### Responsibilies (4)
 - TUBS IfN Website Admin
 - Beverage manager and fridge checker
@@ -110,6 +110,12 @@ redirect_from:
   - Institute for Materials Science
 - Literature library - discontinued
 - Project Management Software (openproject) - discontinued
+
+### Graduate Academy ([GradTUBS](https://www.tu-braunschweig.de/en/gradtubs)) Courses (4 attended)
+- Persuasive arguing for scientists (Summer term 2021)
+- Scientific Integrity (Summer term 2020)
+- Planning and Structuring of my Ph.D. time (Winter term 2020)
+- Time Management (Winter term 2020)
 
 <a id="section_fun-stats"></a>
 ## Fun Stats
