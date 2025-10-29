@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "PhD activities"
+title: "Ph.D. Student Activities"
 author_profile: true
 redirect_from: 
   - /about/
@@ -92,10 +92,5 @@ redirect_from:
 - Project Management Software (openproject) - discontinued
 
 ## Fun stats
-### Offices occupied (9)
-- 7 offices at TU Braunschweig
-- 2 offices at TU Dresden
-
-### Office roommates (16)
-- 13 at TU Braunschweig (EJ, AH, JL, FW, SR, SM, RR, LK, MM, ZG, MP, FC)
-- 3 at TU Dresden (AT, KB, JH)
+- occupied 7 different offices
+- shared office with 13 colleagues (EJ, AH, JL, FW, SR, SM, RR, LK, MM, ZG, MP, FC)
