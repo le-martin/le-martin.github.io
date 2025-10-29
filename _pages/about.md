@@ -7,12 +7,22 @@ redirect_from:
   - /about.html
 ---
 
+1. [Publications](#section_publication)
+2. [Talks](#section_talks)
+3. [Reviews](#section_reviews)
+4. [Courses](#section_courses)
+5. [Supervised Students](#section_supervised-students)
+6. [Institute Tasks](#section_institute-tasks)
+7. [Fun Stats](#section_fun-stats)
+
+<a id="section_publication"></a>
 ## Publications (4)
 - M. Le, B. Peng, E. Jorswieck, "WiFi-CUTS: Rate Adaptation with Cascaded Unimodal Multi-Armed Bandits in IEEE 802.11ac Testbed Experiments", in IEEE Transaction on Communications, accepted, now in galley proofing. 
 - M. Le et al., “Multi-Armed Bandits in IEEE 802.11ac: Efficient Algorithms and Testbed Experiments,” in CQR 2024 - IEEE International Workshop Technical Committee on Communications Quality and Reliability: Proceedings, Sep. 2024, pp. 7–12. [doi: 10.1109/cqr62340.2024.10705888](https://doi.org/10.1109/cqr62340.2024.10705888).
 - S. P. Pawar et al., “Open-source Resource Control API for real IEEE 802.11 Networks,” in Proceedings of the 30th Annual International Conference on Mobile Computing and Networking, ACM MobiCom ’24, Dec. 2024, pp. 1866–1873. [doi: 10.1145/3636534.3697314](https://doi.org/10.1145/3636534.3697314).
 - S. Rezvani, P.-H. Lin, M. Le, and E. Jorswieck, “Legitimate against Illegitimate IRSs on MISO Wiretap Channels,” in 12th IEEE Sensor Array and Multichannel Signal Processing Workshop (SAM 2022), Jun. 2022, pp. 445–449. [doi: 10.1109/sam53842.2022.9827890](https://doi.org/10.1109/sam53842.2022.9827890).
 
+<a id="section_talks"></a>
 ## Talks (5)
 - Multi-Armed Bandits für WLAN-Optimierung (in German), Interdisziplinäres Seminar des Masterstudiengangs Digitale Kommunikation und Medientechnologie, Nov. 2024.
 - Multi-Armed Bandits in IEEE 802.11ac: Efficient Algorithms and Testbed Experiments, AssiEx 2024 @ Telenor, 23th Aug. 2024.
@@ -20,6 +30,7 @@ redirect_from:
 - Introduction to Multi-Armed Bandits, Advanced Topics in Communications Theory, Dec. 2022.
 - Machinelles Lernen für Wi-Fi (in German), VDE ProfDate, Oct. 2021.
 
+<a id="section_reviews"></a>
 ## Reviews (17)
 ### Conference Paper Reviews (13)
 - IEEE Wireless Communications and Networking Conference (WCNC 2025)
@@ -42,6 +53,7 @@ redirect_from:
 - EURASIP Journal on Wireless Communications and Networking 2023
 - IEEE Transactions on Signal Processing 2021
 
+<a id="section_courses"></a>
 ## Courses (6)
 - Technology and Innovation Management (previous: Management of Research and Development Processes) (Winter term 2020/21 - Winter term 2024/25)
 - Introduction to Programming for Non-Computer Scientists (Winter term 2022/23 - Winter term 2024/25)
@@ -50,6 +62,7 @@ redirect_from:
 - Information Theory (Winter term 2020/21 - Winter term 2022/23)
 - Optimization and Game Theory (Summer term 2020 - Summer term 2022)
 
+<a id="section_supervised-students"></a>
 ## Supervised Students (13)
 ### Master Thesis (2)
 - T. R. - Efficient Resource Allocation in IEEE 802.11 networks using Multi-Armed Bandits (Dec 2022 - June 2023)
@@ -76,6 +89,7 @@ redirect_from:
 ### Google Summer of Code (GSoC) Projects (1)
 - R. S. - Deep Q-Network-based Rate Adaptation for IEEE 802.11ac Networks (GSoC 2025)
 
+<a id="section_institute-tasks"></a>
 ## Institute Tasks (7)
 ### Responsibilies (4)
 - TUBS IfN Website Admin
@@ -91,6 +105,7 @@ redirect_from:
 - Literature library - discontinued
 - Project Management Software (openproject) - discontinued
 
-## Fun stats
+<a id="section_fun-stats"></a>
+## Fun Stats
 - occupied **7 different offices** (one at a time)
 - shared **office with 13 colleagues** (EJ, AH, JL, FW, SR, SM, RR, LK, MM, ZG, MP, FC)
