@@ -11,9 +11,10 @@ redirect_from:
 2. [Talks](#section_talks)
 3. [Reviews](#section_reviews)
 4. [Courses](#section_courses)
-5. [Supervised Students](#section_supervised-students)
-6. [Institute Tasks](#section_institute-tasks)
-7. [Fun Stats](#section_fun-stats)
+5. [Projects and Competitions](#section_projects-and-competitions)
+6. [Supervised Students](#section_supervised-students)
+7. [Institute Tasks](#section_institute-tasks)
+8. [Fun Stats](#section_fun-stats)
 
 <a id="section_publication"></a>
 ## Publications (4)
@@ -52,6 +53,11 @@ redirect_from:
 - Springer Scientific Report 2024
 - EURASIP Journal on Wireless Communications and Networking 2023
 - IEEE Transactions on Signal Processing 2021
+
+<a id="section_projects-and-competitions"></a>
+## Projects and Competitions (2)
+- [Wireless Wanderlust Competition hosted by IEEE ISIT 2025](https://2025.ieee-isit.org/wireless-wanderlust-competition) (won Junior prize)
+- [BMBF SupraCoNeX](https://www.forschung-it-sicherheit-kommunikationssysteme.de/projekte/supraconex) (2020-2024)
 
 <a id="section_courses"></a>
 ## Courses (6)
@@ -97,7 +103,7 @@ redirect_from:
 - Poster print manager
 - Table tennis comitee member and founder
 
-### Projects (3)
+### Institute-internal Projects (3)
 - Introduction of Jupyter Notebooks for Teaching with automated grading, introduced to:
   - TU Braunschweig through TU Insights: Digitales in der Lehre (23th Nov. 2021 - [StudIP Link](https://studip.tu-braunschweig.de/plugins.php/ocvv/ocvv/ocframe?vid=2477b1f8-0cf3-46d2-9a29-60c39b6fcf53))
   - Leichtweiß-Institute for Hydraulic Engineering and Water Resources
