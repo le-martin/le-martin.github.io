@@ -20,6 +20,29 @@ redirect_from:
 - Introduction to Multi-Armed Bandits, Advanced Topics in Communications Theory, Dec. 2022.
 - Machinelles Lernen für Wi-Fi (in German), VDE ProfDate, Oct. 2021.
 
+## Reviews
+
+### Conference Paper Reviews
+- IEEE International Conference on Communications (ICC 2019)
+- IEEE International Conference on Communications Workshop (ICC 2020 Workshop)
+- IEEE Global Communications Conference Workshop (Globecom 2020 Workshop)
+- IEEE Wireless Communications and Networking Conference (WCNC 2021)
+- IEEE International Conference on Communications (ICC 2022)
+- IEEE International Symposium on Information Theory (ISIT 2022)
+- IEEE International Symposium on Wireless Communication Systems (ISWCS 2022)
+- IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP 2022)
+- IEEE Global Communications Conference Workshop (GLOBECOM 2022 Workshop)
+- IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP 2024)
+- IEEE Wireless Communications and Networking Conference (WCNC 2024)
+- IEEE Wireless Communications and Networking Conference (WCNC 2025)
+- European Conference on Networks and Communications (EuCNC) & 6G Summit 2025
+- IEEE International Conference on Communications (ICC 2025)
+
+### Journal Paper Reviews
+- IEEE Transactions on Signal Processing 2021
+- EURASIP Journal on Wireless Communications and Networking 2023
+- Springer Scientific Report 2024
+
 ## Courses
 - Technology and Innovation Management (previous: Management of Research and Development Processes) (Winter term 2020/21 - Winter term 2024/25)
 - Introduction to Programming for Non-Computer Scientists (Winter term 2022/23 - Winter term 2024/25)
