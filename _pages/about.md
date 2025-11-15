@@ -71,6 +71,7 @@ redirect_from:
 <a id="section_supervised-students"></a>
 ## Supervised Students (13)
 ### Master Thesis (2)
+- R. S. - Wi-Fi rate adaptation with Deep Reinforcement Learning and Implementation on actual hardware (Dec 2025 - ?)
 - T. R. - Efficient Resource Allocation in IEEE 802.11 networks using Multi-Armed Bandits (Dec 2022 - June 2023)
 - Z. C. - Proactive Resource Allocation for Vehicular Communication with Deep Reinforcement Learning (Feb 2021 - Aug 2021)
 
