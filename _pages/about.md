@@ -56,7 +56,7 @@ redirect_from:
 
 <a id="section_projects-and-competitions"></a>
 ## Projects and Competitions (2)
-- [Wireless Wanderlust Competition hosted by IEEE ISIT 2025](https://2025.ieee-isit.org/wireless-wanderlust-competition) (won Junior prize)
+- [Wireless Wanderlust Competition hosted by IEEE ISIT 2025](https://2025.ieee-isit.org/wireless-wanderlust-competition) (2025, won Junior prize)
 - [BMBF SupraCoNeX](https://www.forschung-it-sicherheit-kommunikationssysteme.de/projekte/supraconex) (2020-2024)
 
 <a id="section_courses"></a>
@@ -102,7 +102,7 @@ redirect_from:
 - TUBS IfN Website Admin
 - Beverage manager and fridge checker
 - Poster print manager
-- Table tennis comitee member and founder
+- Table tennis committee member and founder
 
 ### Institute-internal Projects (3)
 - Introduction of Jupyter Notebooks for Teaching with automated grading, introduced to:
@@ -110,7 +110,7 @@ redirect_from:
   - Leichtweiß-Institute for Hydraulic Engineering and Water Resources
   - Institute for Materials Science
 - Literature library - discontinued
-- Project Management Software (openproject) - discontinued
+- Project Management Software (using [OpenProject](https://www.openproject.org/)) - discontinued
 
 ### Graduate Academy ([GradTUBS](https://www.tu-braunschweig.de/en/gradtubs)) Courses (4 attended)
 - Persuasive arguing for scientists (Summer term 2021)
@@ -118,8 +118,23 @@ redirect_from:
 - Planning and Structuring of my Ph.D. time (Winter term 2020)
 - Time Management (Winter term 2020)
 
+### [Career Service](https://www.tu-braunschweig.de/en/career) Workshops (1 attended)
+- <span style="color:lightgrey">Teamwork Essentials (20.11.2025)</span>
+- The Perfect Written Application for the German Job Market (11.11.2025)
+
 <a id="section_fun-stats"></a>
 ## Fun Stats
 - Occupied **7 different offices** (one at a time)
 - Shared **office with 13 colleagues** (EJ, AH, JL, FW, SR, SM, RR, LK, MM, ZG, BP, MP, FC)
 - Collected **21 recups** (personal record) from IfN milkshake walks before returning them
+- Member of several groups in Braunschweig:
+    - Founder, IfN Animal/Pet Picture Chat Group
+    - Co-Founder, IfN Food Discovery Group
+    - Founder, Korean-German Language Tandem Group in Braunschweig 
+    - Member, Board Game Group
+    - Founder, Tennis Group (discontinued)
+    - Member, IfN Soccer Group (discontinued)
+
+***
+
+Last updated on Nov 15, 2025.
