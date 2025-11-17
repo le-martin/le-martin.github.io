@@ -61,12 +61,12 @@ redirect_from:
 
 <a id="section_courses"></a>
 ## Courses (6)
-- Technology and Innovation Management (previous: Management of Research and Development Processes) (Winter term 2020/21 - Winter term 2024/25)
-- Introduction to Programming for Non-Computer Scientists (Winter term 2022/23 - Winter term 2024/25)
-- Advanced Topics in Communications Theory (Winter term 2022/23)
-- Signals and Systems (Summer term 2021 - Winter term 2023/24)
-- Information Theory (Winter term 2020/21 - Winter term 2022/23)
-- Optimization and Game Theory (Summer term 2020 - Summer term 2022)
+- Technology and Innovation Management (previous: Management of Research and Development Processes) (Winter term 2020/21 - Winter term 2024/25) as organizer
+- Introduction to Programming for Non-Computer Scientists (Winter term 2022/23 - Winter term 2024/25) as course content creator, organizer and supervisor
+- Advanced Topics in Communications Theory (Winter term 2022/23) as lecturer
+- Signals and Systems (Summer term 2021 - Winter term 2023/24) as teaching assistent
+- Information Theory (Winter term 2020/21 - Winter term 2022/23) as teaching assistent
+- Optimization and Game Theory (Summer term 2020 - Summer term 2022) as teaching assistent
 
 <a id="section_supervised-students"></a>
 ## Supervised Students (13)
@@ -137,4 +137,4 @@ redirect_from:
 
 ***
 
-Last updated on Nov 15, 2025.
+Last updated on Nov 17, 2025.
