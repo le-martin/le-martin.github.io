@@ -97,7 +97,7 @@ redirect_from:
 - R. S. - Deep Q-Network-based Rate Adaptation for IEEE 802.11ac Networks (GSoC 2025)
 
 <a id="section_institute-tasks"></a>
-## University/Institute Projects and Courses (7)
+## University/Institute Projects and Courses (12)
 ### Responsibilies (4)
 - TUBS IfN Website Admin
 - Beverage manager and fridge checker
