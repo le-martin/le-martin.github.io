@@ -123,7 +123,7 @@ redirect_from:
 - The Perfect Written Application for the German Job Market (11.11.2025)
 
 <a id="section_fun-stats"></a>
-## Fun Stats
+## Fun Stats and Activities
 - Occupied **7 different offices** (one at a time)
 - Shared **office with 13 colleagues** (EJ, AH, JL, FW, SR, SM, RR, LK, MM, ZG, BP, MP, FC)
 - Collected **21 recups** (personal record) from IfN milkshake walks before returning them
@@ -131,10 +131,18 @@ redirect_from:
     - Founder, IfN Animal/Pet Picture Chat Group
     - Co-Founder, IfN Food Discovery Group
     - Founder, Korean-German Language Tandem Group in Braunschweig 
+    - Founder, IfN Duolingo Family
     - Member, Board Game Group
     - Founder, Tennis Group (discontinued)
     - Member, IfN Soccer Group (discontinued)
+- Loves to learn languages:
+    - German (native)
+    - English (fluent)
+    - Korean (upper intermediate)
+    - Vietnamese (upper intermediate)
+    - Chinese (beginner)
+    - French (beginner)
 
 ***
 
-Last updated on Nov 17, 2025.
+Last updated on Nov 18, 2025.
