@@ -118,8 +118,8 @@ redirect_from:
 - Planning and Structuring of my Ph.D. time (Winter term 2020)
 - Time Management (Winter term 2020)
 
-### [Career Service](https://www.tu-braunschweig.de/en/career) Workshops (1 attended)
-- <span style="color:lightgrey">Teamwork Essentials (20.11.2025)</span>
+### [Career Service](https://www.tu-braunschweig.de/en/career) Workshops (2 attended)
+- Teamwork Essentials (20.11.2025)
 - The Perfect Written Application for the German Job Market (11.11.2025)
 
 <a id="section_fun-stats"></a>
