@@ -11,10 +11,11 @@ redirect_from:
 2. [Talks](#section_talks)
 3. [Reviews](#section_reviews)
 4. [Courses](#section_courses)
-5. [Projects and Competitions](#section_projects-and-competitions)
-6. [Supervised Students](#section_supervised-students)
-7. [Institute Tasks](#section_institute-tasks)
-8. [Fun Stats](#section_fun-stats)
+5. [Proposals](#proposals)
+6. [Projects and Competitions](#section_projects-and-competitions)
+7. [Supervised Students](#section_supervised-students)
+8. [Institute Tasks](#section_institute-tasks)
+9. [Fun Stats](#section_fun-stats)
 
 <a id="section_publication"></a>
 ## Publications (4)
@@ -67,6 +68,12 @@ redirect_from:
 - Signals and Systems (Summer term 2021 - Winter term 2023/24) as teaching assistent
 - Information Theory (Winter term 2020/21 - Winter term 2022/23) as teaching assistent
 - Optimization and Game Theory (Summer term 2020 - Summer term 2022) as teaching assistent
+
+<a id="proposals"></a>
+## Proposals (3)
+- Applied for fundings for Modernization of the module "Signals and Systems" under the Project Promoting Digital education through Global Interconnection (ProDiGI) (Jan 2022 - approved)
+- Applied for decentralized study quality funding (in German: SQM) to employ a student assistant for support in Signals and Systems course (Dec 2021 - approved)
+- Applied for decentralized study quality funding (in German: SQM) for a server for fundamental courses (Dec 2021 - approved)
 
 <a id="section_supervised-students"></a>
 ## Supervised Students (13)
