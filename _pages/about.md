@@ -69,6 +69,7 @@ redirect_from:
 - Optimization and Game Theory (Summer term 2020 - Summer term 2022) as teaching assistent
 
 ![Teaching Activities](/images/teaching_timeline.png)
+(A darker bar indicates a greater level of contribution and responsibility.)
 
 <a id="proposals"></a>
 ## Proposals (3)
