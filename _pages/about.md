@@ -68,6 +68,8 @@ redirect_from:
 - Information Theory (Winter term 2020/21 - Winter term 2022/23) as teaching assistent
 - Optimization and Game Theory (Summer term 2020 - Summer term 2022) as teaching assistent
 
+![Teaching Activities](/images/teaching_timeline.png)
+
 <a id="proposals"></a>
 ## Proposals (3)
 - Applied for fundings for Modernization of the module "Signals and Systems" under the Project Promoting Digital education through Global Interconnection (ProDiGI) (Jan 2022 - approved)
