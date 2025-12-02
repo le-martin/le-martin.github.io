@@ -131,7 +131,7 @@ redirect_from:
 <a id="section_fun-stats"></a>
 ## Fun Stats and Activities
 - Occupied **6 different offices** (one at a time)
-- Shared **office with 12 colleagues** (EJ, AH, JL, FW, SR, SM, RR, LK, MM, ZG, BP, MP, FC)
+- Shared **office with 12 colleagues** (AH, JL, FW, SR, SM, RR, LK, MM, ZG, BP, MP, FC)
 - Collected **21 recups** (personal record) from IfN milkshake walks before returning them
 - Member of several groups in Braunschweig:
     - Founder, IfN Animal/Pet Picture Chat Group
