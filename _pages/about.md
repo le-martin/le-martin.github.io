@@ -50,8 +50,7 @@ redirect_from:
 - IEEE Global Communications Conference Workshop (Globecom 2020 Workshop)
 - IEEE International Conference on Communications (ICC 2019)
 
-### Reviewer for the following Journals (3)
-- Springer Scientific Report 2024
+### Reviewer for the following Journals (2)
 - EURASIP Journal on Wireless Communications and Networking 2023
 - IEEE Transactions on Signal Processing 2021
 
@@ -78,7 +77,7 @@ redirect_from:
 <a id="section_supervised-students"></a>
 ## Supervised Students (13)
 ### Master Thesis (2)
-- R. S. - Wi-Fi rate adaptation with Deep Reinforcement Learning and Implementation on actual hardware (Dec 2025 - ?)
+- R. S. - Wi-Fi rate adaptation with Deep Reinforcement Learning and Implementation on actual hardware (?)
 - T. R. - Efficient Resource Allocation in IEEE 802.11 networks using Multi-Armed Bandits (Dec 2022 - June 2023)
 - Z. C. - Proactive Resource Allocation for Vehicular Communication with Deep Reinforcement Learning (Feb 2021 - Aug 2021)
 
@@ -131,8 +130,8 @@ redirect_from:
 
 <a id="section_fun-stats"></a>
 ## Fun Stats and Activities
-- Occupied **7 different offices** (one at a time)
-- Shared **office with 13 colleagues** (EJ, AH, JL, FW, SR, SM, RR, LK, MM, ZG, BP, MP, FC)
+- Occupied **6 different offices** (one at a time)
+- Shared **office with 12 colleagues** (EJ, AH, JL, FW, SR, SM, RR, LK, MM, ZG, BP, MP, FC)
 - Collected **21 recups** (personal record) from IfN milkshake walks before returning them
 - Member of several groups in Braunschweig:
     - Founder, IfN Animal/Pet Picture Chat Group
@@ -152,4 +151,4 @@ redirect_from:
 
 ***
 
-Last updated on Nov 18, 2025.
+Last updated on Dec 2, 2025.
