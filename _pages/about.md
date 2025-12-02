@@ -68,7 +68,7 @@ redirect_from:
 - Information Theory (Winter term 2020/21 - Winter term 2022/23) as teaching assistent
 - Optimization and Game Theory (Summer term 2020 - Summer term 2022) as teaching assistent
 
-![Teaching Activities](/images/teaching_timeline.png)
+![Teaching Activities](/images/teaching_timeline_grey.png)
 (A darker bar indicates a greater level of contribution and responsibility.)
 
 <a id="proposals"></a>
