@@ -155,4 +155,4 @@ redirect_from:
 
 ***
 
-Last updated on Dec 2, 2025.
+Last updated on Dec 12, 2025.
