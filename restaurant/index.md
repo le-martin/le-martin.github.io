@@ -8,7 +8,7 @@ permalink: /restaurant/
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Surasang | Fine Korean Dining</title>
+    <title>Sura | Koreanisches Restaurant in Dresden</title>
     <meta name="description"
         content="Experience the authentic taste of Korea at Surasang. Premium Korean BBQ, Bibimbap, and traditional dishes served in an elegant modern atmosphere.">
     <link rel="stylesheet" href="styles.css">

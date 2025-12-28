@@ -1,5 +1,6 @@
 const translations = {
     en: {
+        page_title: "Sura | Korean Restaurant in Dresden",
         nav_home: "Home",
         nav_menu: "Menu",
         nav_experience: "Experience",
@@ -33,6 +34,7 @@ const translations = {
         footer_rights: "© 2025 Sura Korean Restaurant Dresden. All rights reserved."
     },
     de: {
+        page_title: "Sura | Koreanisches Restaurant in Dresden",
         nav_home: "Startseite",
         nav_menu: "Menü",
         nav_experience: "Erlebnis",
@@ -66,6 +68,7 @@ const translations = {
         footer_rights: "© 2025 Sura Koreanisches Restaurant Dresden. Alle Rechte vorbehalten."
     },
     ko: {
+        page_title: "수라 | 드레스덴 한국 레스토랑",
         nav_home: "홈",
         nav_menu: "메뉴",
         nav_experience: "경험",
@@ -128,6 +131,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         });
+
+        // Update page title
+        document.title = translations[lang]['page_title'];
 
         // Update active button state
         langSelectors.forEach(btn => {
