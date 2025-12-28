@@ -1,10 +1,10 @@
 ---
-permalink: /
+permalink: /phd/
 title: "Ph.D. Student Activities"
 author_profile: true
 redirect_from: 
-  - /about/
-  - /about.html
+  - /phd/about/
+  - /phd/about.html
 ---
 
 1. [Publications](#section_publication)
