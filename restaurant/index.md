@@ -1,5 +1,6 @@
 ---
 layout: null
+permalink: /restaurant/
 ---
 <!DOCTYPE html>
 <html lang="de">

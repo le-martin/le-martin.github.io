@@ -292,7 +292,7 @@ sass:
 
 
 # Outputting
-permalink: /:categories/:title/
+permalink: /phd/:categories/:title/
 # paginate: 5 # amount of posts to show
 # paginate_path: /page:num/
 timezone: Etc/UTC # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
@@ -329,10 +329,10 @@ whitelist:
 #  - <base_path/my-awesome-category/index.html ~> path: /
 category_archive:
   type: liquid
-  path: /categories/
+  path: /phd/categories/
 tag_archive:
   type: liquid
-  path: /tags/
+  path: /phd/tags/
 # https://github.com/jekyll/jekyll-archives
 # jekyll-archives:
 #   enabled:

@@ -1,7 +1,7 @@
 ---
 layout: archive
 title: "Sitemap"
-permalink: /sitemap/
+permalink: /phd/sitemap/
 author_profile: true
 ---
 
