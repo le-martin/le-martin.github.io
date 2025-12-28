@@ -117,9 +117,8 @@ nav.scrolled {
     flex-shrink: 0;
 }
 
-.nav-links .lang-switcher {
+.lang-switcher-mobile {
     display: none;
-    /* Hide mobile-version switcher on desktop */
 }
 
 .lang-switcher {
@@ -392,17 +391,25 @@ footer {
         right: 0;
     }
 
-    .nav-links .lang-switcher {
-        display: flex;
+    .lang-switcher-mobile {
+        display: flex !important;
+        gap: 1rem;
         margin-bottom: 3rem;
         background: rgba(255, 255, 255, 0.05);
-        padding: 0.5rem;
+        padding: 0.8rem;
         border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    .nav-links .lang-btn {
-        font-size: 1rem;
+    .lang-switcher-mobile .lang-btn {
+        font-size: 1.1rem;
         padding: 0.5rem 1rem;
+        color: #fff;
+    }
+
+    .lang-switcher-mobile .lang-btn.active {
+        background: var(--primary-color);
+        color: var(--bg-dark);
     }
 
     .mobile-nav-toggle {
