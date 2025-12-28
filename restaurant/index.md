@@ -19,20 +19,25 @@ permalink: /restaurant/
 
     <nav id="navbar">
         <a href="#" class="brand">SURASANG</a>
-        <div class="nav-links">
+        <div class="nav-links" id="navLinks">
             <a href="#home" data-i18n="nav_home">Home</a>
             <a href="#menu" data-i18n="nav_menu">Menu</a>
             <a href="#experience" data-i18n="nav_experience">Experience</a>
             <a href="#location" data-i18n="nav_location">Location</a>
         </div>
-        <div class="lang-switcher">
-            <button class="lang-btn" data-lang="en">EN</button>
-            <button class="lang-btn active" data-lang="de">DE</button>
-            <button class="lang-btn" data-lang="ko">KR</button>
+        <div class="nav-actions">
+            <div class="lang-switcher">
+                <button class="lang-btn" data-lang="en">EN</button>
+                <button class="lang-btn active" data-lang="de">DE</button>
+                <button class="lang-btn" data-lang="ko">KR</button>
+            </div>
+            <a href="#reservation" class="btn nav-btn" data-i18n="nav_book">Book a Table</a>
+            <button class="mobile-nav-toggle" id="mobileNavToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-        <a href="#reservation" class="btn" data-i18n="nav_book"
-            style="padding: 0.6rem 1.5rem; animation: none; opacity: 1; transform: none; font-size: 0.7rem;">Book a
-            Table</a>
     </nav>
 
     <section id="home" class="hero">
