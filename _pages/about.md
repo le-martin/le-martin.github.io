@@ -74,6 +74,7 @@ redirect_from:
 
 <a id="proposals"></a>
 ## Proposals (3)
+- Contributed to writing a DFG proposal (Nov 2024)
 - Applied for fundings for Modernization of the module "Signals and Systems" under the Project Promoting Digital education through Global Interconnection (ProDiGI) (Jan 2022 - approved)
 - Applied for decentralized study quality funding (in German: SQM) to employ a student assistant for support in Signals and Systems course (Dec 2021 - approved)
 - Applied for decentralized study quality funding (in German: SQM) for a server for fundamental courses (Dec 2021 - approved)
@@ -155,4 +156,4 @@ redirect_from:
 
 ***
 
-Last updated on Dec 12, 2025.
+Last updated on Dec 18, 2025.
