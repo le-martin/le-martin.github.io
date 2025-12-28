@@ -18,7 +18,7 @@ permalink: /restaurant/
 <body>
 
     <nav id="navbar">
-        <a href="#" class="brand">SURASANG</a>
+        <a href="#" class="brand">SURA</a>
         <div class="nav-links" id="navLinks">
             <div class="lang-switcher-mobile">
                 <button class="lang-btn" data-lang="en">EN</button>
@@ -36,7 +36,6 @@ permalink: /restaurant/
                 <button class="lang-btn active" data-lang="de">DE</button>
                 <button class="lang-btn" data-lang="ko">KR</button>
             </div>
-            <a href="#reservation" class="btn nav-btn" data-i18n="nav_book">Book a Table</a>
             <button class="mobile-nav-toggle" id="mobileNavToggle">
                 <span></span>
                 <span></span>
@@ -49,7 +48,7 @@ permalink: /restaurant/
         <h1 data-i18n="hero_title">The King's Table</h1>
         <p data-i18n="hero_desc">A modern interpretation of royal Korean cuisine. Elevating traditional flavors through
             contemporary techniques and seasonal ingredients.</p>
-        <a href="#menu" class="btn" data-i18n="hero_btn">Explore Menu</a>
+        <button class="btn" data-i18n="hero_btn">Speisekarte</button>
     </section>
 
     <section id="menu">
@@ -59,55 +58,53 @@ permalink: /restaurant/
         </div>
         <div class="menu-grid">
             <div class="menu-item">
-                <img src="assets/images/bbq.png" alt="Prime Galbi">
+                <img src="assets/images/bbq.png" alt="Bulgogi">
                 <div class="item-info">
-                    <h3 data-i18n="item_galbi_title">Prime Galbi</h3>
-                    <span class="price">$48</span>
-                    <p data-i18n="item_galbi_desc">Hand-carved premium beef short ribs marinated in our house-made
-                        soy-pear sauce, grilled to perfection.</p>
+                    <h3 data-i18n="item_galbi_title">Bulgogi</h3>
+                    <span class="price">17.90€</span>
+                    <p data-i18n="item_galbi_desc">Thinly sliced beef marinated in our house-made
+                        soy sauce, grilled to perfection.</p>
                 </div>
             </div>
             <div class="menu-item">
-                <img src="assets/images/bibimbap.png" alt="Heritage Bibimbap">
+                <img src="assets/images/bibimbap.png" alt="Dolsot Bibimbap">
                 <div class="item-info">
-                    <h3 data-i18n="item_bibimbap_title">Heritage Bibimbap</h3>
-                    <span class="price">$28</span>
+                    <h3 data-i18n="item_bibimbap_title">Dolsot Bibimbap</h3>
+                    <span class="price">14.90€</span>
                     <p data-i18n="item_bibimbap_desc">Sizzling stone bowl rice with seasonal mountain vegetables,
                         heritage grains, and aged gochujang.</p>
                 </div>
             </div>
             <div class="menu-item">
-                <img src="assets/images/hero.png" alt="Chef's Hanjeongsik">
+                <img src="assets/images/ddokbboki.png" alt="Ddokbboki">
                 <div class="item-info">
-                    <h3 data-i18n="item_hanjeongsik_title">Chef's Hanjeongsik</h3>
-                    <span class="price">$85</span>
-                    <p data-i18n="item_hanjeongsik_desc">A curated course of 12 traditional Korean dishes, highlighting
-                        the diversity of regional flavors.</p>
+                    <h3 data-i18n="item_hanjeongsik_title">Ddokbboki</h3>
+                    <span class="price">10.90€</span>
+                    <p data-i18n="item_hanjeongsik_desc">Spicy stir-fried rice cakes with fish cakes and vegetables in a sweet and spicy sauce.</p>
                 </div>
             </div>
             <div class="menu-item">
-                <img src="assets/images/bbq.png" alt="Spicy Pork Bulgogi">
+                <img src="assets/images/japchae.png" alt="Japchae">
                 <div class="item-info">
-                    <h3 data-i18n="item_bulgogi_title">Spicy Pork Bulgogi</h3>
-                    <span class="price">$32</span>
-                    <p data-i18n="item_bulgogi_desc">Thinly sliced pork marinated in a spicy gochujang sauce,
-                        char-grilled with scallions and onions.</p>
+                    <h3 data-i18n="item_bulgogi_title">Japchae</h3>
+                    <span class="price">13.50€</span>
+                    <p data-i18n="item_bulgogi_desc">Stir-fried sweet potato glass noodles with colorful vegetables and savory sauce.</p>
                 </div>
             </div>
             <div class="menu-item">
-                <img src="assets/images/bibimbap.png" alt="Seafood Pajeon">
+                <img src="assets/images/pajeon.png" alt="Haemul Pajeon">
                 <div class="item-info">
-                    <h3 data-i18n="item_pajeon_title">Seafood Pajeon</h3>
-                    <span class="price">$24</span>
+                    <h3 data-i18n="item_pajeon_title">Haemul Pajeon</h3>
+                    <span class="price">13.50€</span>
                     <p data-i18n="item_pajeon_desc">Traditional Korean pancake made with plenty of scallions and a
                         variety of fresh seafood.</p>
                 </div>
             </div>
             <div class="menu-item">
-                <img src="assets/images/hero.png" alt="Kimchi Jjigae">
+                <img src="assets/images/kimchi_jjigae.png" alt="Kimchi Jjigae">
                 <div class="item-info">
-                    <h3 data-i18n="item_stew_title">Aged Kimchi Jjigae</h3>
-                    <span class="price">$22</span>
+                    <h3 data-i18n="item_stew_title">Kimchi Jjigae</h3>
+                    <span class="price">14.90€</span>
                     <p data-i18n="item_stew_desc">Rich and savory stew made with our 2-year aged kimchi, pork belly, and
                         silky tofu.</p>
                 </div>
@@ -122,7 +119,7 @@ permalink: /restaurant/
             <p style="margin-bottom: 2rem; color: #aaa;" data-i18n="exp_desc">At Surasang, we believe dining is more
                 than just a meal. It's a journey through history, culture, and craftsmanship. Our space combines minimal
                 Korean aesthetics with modern luxury to create an íntimate environment for unforgettable moments.</p>
-            <a href="#" class="btn" data-i18n="exp_btn">Gallery</a>
+            <button class="btn" data-i18n="exp_btn">Gallery</button>
         </div>
         <div class="info-image">
             <img src="assets/images/hero.png" alt="Restaurant Interior" style="filter: brightness(0.8);">
@@ -137,48 +134,23 @@ permalink: /restaurant/
         <div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 2rem; text-align: center;">
             <div>
                 <h3 style="color: var(--primary-color); margin-bottom: 1rem;" data-i18n="loc_address">Address</h3>
-                <p>123 Seoul Avenue<br>New York, NY 10001</p>
+                <p>Königsbrücker Straße 50<br>01099 Dresden</p>
             </div>
             <div>
-                <h3 style="color: var(--primary-color); margin-bottom: 1rem;" data-i18n="loc_hours">Hours</h3>
-                <p>Tue - Thu: 5pm - 10pm<br>Fri - Sat: 5pm - 11pm<br>Sun: 4pm - 9pm</p>
+                <h3 style="color: var(--primary-color); margin-bottom: 1rem;" data-i18n="loc_hours">Opening Hours</h3>
+                <p data-i18n="loc_hours_details">Dienstag - Sonntag: 17:00 - 22:00<br>Montag: Ruhetag</p>
             </div>
             <div>
                 <h3 style="color: var(--primary-color); margin-bottom: 1rem;" data-i18n="loc_contact">Contact</h3>
-                <p>+1 (212) 555-0199<br>hello@surasang.com</p>
+                <p>0351 810 747 89<br>suradresden@gmail.com</p>
             </div>
         </div>
     </section>
 
-    <section id="reservation"
-        style="padding: 10rem 10%; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('assets/images/bbq.png'); background-size: cover; background-position: center;">
-        <div class="section-header">
-            <span class="subtitle" data-i18n="res_subtitle" style="color: #fff;">Reserve a Table</span>
-            <h2 data-i18n="res_title" style="color: var(--primary-color);">Join Us Tonight</h2>
-        </div>
-        <form style="max-width: 800px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
-            <input type="text" data-i18n="res_name" placeholder="Full Name"
-                style="padding: 1rem; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #fff; font-family: inherit;">
-            <input type="email" data-i18n="res_email" placeholder="Email Address"
-                style="padding: 1rem; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #fff; font-family: inherit;">
-            <input type="date"
-                style="padding: 1rem; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #fff; font-family: inherit;">
-            <select
-                style="padding: 1rem; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #888; font-family: inherit;">
-                <option data-i18n="res_guests">Number of Guests</option>
-                <option data-i18n="res_guests_2">2 People</option>
-                <option data-i18n="res_guests_4">4 People</option>
-                <option data-i18n="res_guests_6">6+ People</option>
-            </select>
-            <button type="button" class="btn" data-i18n="res_confirm"
-                style="grid-column: span 2; cursor: pointer; background: transparent;">Confirm Reservation</button>
-        </form>
-    </section>
-
     <footer>
-        <div class="brand" style="font-size: 1.2rem;">SURASANG</div>
+        <div class="brand" style="font-size: 1.2rem;">SURA</div>
         <div class="footer-info">
-            <p data-i18n="footer_rights">&copy; 2024 Surasang Korean Dining. All rights reserved.</p>
+            <p data-i18n="footer_rights">&copy; 2024 Sura Korean Restaurant Dresden. All rights reserved.</p>
         </div>
         <div class="nav-links" style="gap: 1.5rem;">
             <a href="#" style="font-size: 0.7rem;">Instagram</a>
