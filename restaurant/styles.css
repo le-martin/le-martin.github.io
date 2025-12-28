@@ -422,8 +422,15 @@ footer {
         border-width: 1px;
     }
 
+    /* Move language switcher to mobile menu or keep it visible */
     .lang-switcher {
-        display: none;
+        display: flex;
+        padding: 0.1rem;
+    }
+
+    .lang-btn {
+        padding: 0.2rem 0.4rem;
+        font-size: 0.6rem;
     }
 
     .mobile-nav-toggle {
