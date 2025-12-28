@@ -182,12 +182,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedLang = localStorage.getItem('preferredLang') || 'de';
     setLanguage(savedLang);
 
+    // Mobile Menu Toggle
+    const mobileNavToggle = document.getElementById('mobileNavToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    if (mobileNavToggle) {
+        mobileNavToggle.addEventListener('click', () => {
+            mobileNavToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+    }
+
     // Smooth scroll for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             if (targetId === '#') return;
+
+            // Close mobile menu if open
+            if (navLinks && navLinks.classList.contains('active')) {
+                mobileNavToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
 
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
