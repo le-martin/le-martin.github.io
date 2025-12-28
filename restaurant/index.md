@@ -20,7 +20,7 @@ permalink: /restaurant/
     <nav id="navbar">
         <a href="#" class="brand">SURASANG</a>
         <div class="nav-links" id="navLinks">
-            <div class="lang-switcher">
+            <div class="lang-switcher-mobile">
                 <button class="lang-btn" data-lang="en">EN</button>
                 <button class="lang-btn active" data-lang="de">DE</button>
                 <button class="lang-btn" data-lang="ko">KR</button>
