@@ -1,0 +1,188 @@
+{
+    "markets": [
+        {
+            "id": "market-neumarkt",
+            "title": "Advent auf dem Neumarkt",
+            "description": "descNeumarkt",
+            "mapLink": "https://maps.app.goo.gl/YzVjwR9b2xPa35jn6"
+        },
+        {
+            "id": "market-stallhof",
+            "title": "Rauhnächte im Stallhof",
+            "description": "descStallhof",
+            "mapLink": "https://maps.app.goo.gl/xdQAYCwW2ujAk4p5A"
+        },
+        {
+            "id": "market-augustus",
+            "title": "Augustusmarkt",
+            "description": "descAugustus",
+            "mapLink": "https://maps.app.goo.gl/3FGJru3tPnZR4Jfk9"
+        }
+    ],
+    "sights": [
+        {
+            "id": "sight-zwinger",
+            "title": "Zwinger",
+            "tag": "mustSee",
+            "description": "descZwinger",
+            "mapLink": "https://maps.app.goo.gl/4jH7vcYrXMmDDNcU6"
+        },
+        {
+            "id": "sight-frauenkirche",
+            "title": "Frauenkirche & Neumarkt",
+            "tag": "mustSee",
+            "description": "descFrauenkirche",
+            "mapLink": "https://maps.app.goo.gl/ne4Az4LCJWgGr6Sd9"
+        },
+        {
+            "id": "sight-semperoper",
+            "title": "Semperoper",
+            "tag": "mustSee",
+            "description": "descSemperoper",
+            "mapLink": "https://maps.app.goo.gl/cDRx865Huzc8fdcf8"
+        },
+        {
+            "id": "sight-fuerstenzug",
+            "title": "Fürstenzug",
+            "description": "descFuerstenzug",
+            "mapLink": "https://maps.app.goo.gl/1n7LEm35yuGz1WRi6"
+        },
+        {
+            "id": "sight-bruehl",
+            "title": "Brühlsche Terasse",
+            "description": "descBruehl",
+            "mapLink": "https://maps.app.goo.gl/rFVn6hbGL1mwnyUw9"
+        },
+        {
+            "id": "sight-reiter",
+            "title": "Goldener Reiter",
+            "description": "descReiter",
+            "mapLink": "https://maps.app.goo.gl/eU2VAQuWGzHwcY3XA"
+        },
+        {
+            "id": "sight-hofkirche",
+            "title": "Hofkirche",
+            "description": "descHofkirche",
+            "mapLink": "https://maps.app.goo.gl/rrPg4WzTTLT8tqDJ8"
+        }
+    ],
+    "museums": [
+        {
+            "id": "museum-gemaelde",
+            "title": "Gemäldegalerie Alte Meister",
+            "description": "descGemaelde",
+            "mapLink": "https://maps.app.goo.gl/FQsDrRRFEtebKCvM7"
+        },
+        {
+            "id": "museum-gewoelbe",
+            "title": "Grünes Gewölbe",
+            "description": "descGewoelbe",
+            "mapLink": "https://maps.app.goo.gl/Q4MmApSeasG8rAyf9"
+        },
+        {
+            "id": "museum-albertinum",
+            "title": "Albertinum",
+            "description": "descAlbertinum",
+            "mapLink": "https://maps.app.goo.gl/gWWpn84dgtJC89YJ9"
+        }
+    ],
+    "restaurants": [
+        {
+            "id": "restaurant-sura",
+            "title": "Sura",
+            "tag": "tagKorean",
+            "description": "descSura",
+            "mapLink": "https://maps.app.goo.gl/nG5vCs3W7tJoHiQN9"
+        },
+        {
+            "id": "restaurant-china",
+            "title": "China Zeit",
+            "tag": "tagChinese",
+            "description": "descChinaZeit",
+            "mapLink": "https://maps.app.goo.gl/vBsQGQPcYrcXtb1Z8"
+        },
+        {
+            "id": "restaurant-tapas",
+            "title": "Las Tapas",
+            "tag": "tagSpanish",
+            "description": "descLasTapas",
+            "mapLink": "https://maps.app.goo.gl/KerdQiUxhsZkHAJc9"
+        },
+        {
+            "id": "restaurant-anamit",
+            "title": "Anamit",
+            "tag": "tagVietnamese",
+            "description": "descAnamit",
+            "mapLink": "https://maps.app.goo.gl/qyuoRNrX5TYuVthC7"
+        },
+        {
+            "id": "restaurant-augustiner",
+            "title": "Augustiner",
+            "tag": "tagGerman",
+            "description": "descAugustiner",
+            "mapLink": "https://maps.app.goo.gl/QZDQTHv3WguBxyrXA"
+        },
+        {
+            "id": "restaurant-ararat",
+            "title": "Ararat",
+            "tag": "tagDoener",
+            "description": "descArarat",
+            "mapLink": "https://maps.app.goo.gl/9hZ7JU1XcFqkrHTn6"
+        },
+        {
+            "id": "restaurant-kinh-do",
+            "title": "Kinh-Do",
+            "tag": "tagVietnamese",
+            "description": "descKinhDo",
+            "mapLink": "https://maps.app.goo.gl/56mcJcJaNYy7CPDi9"
+        },
+        {
+            "id": "restaurant-baba-doener",
+            "title": "Baba Döner",
+            "tag": "tagDoener",
+            "description": "descBabaDoener",
+            "mapLink": "https://maps.app.goo.gl/q9H2nKb5rBUZzEjz8"
+        }
+    ],
+    "snacks": [
+        {
+            "id": "snack-kexerei",
+            "title": "KeXerei & Russisch Brot",
+            "tag": "tagCookies",
+            "description": "descKexereiNew"
+        },
+        {
+            "id": "snack-curry24",
+            "title": "Curry24",
+            "tag": "empfehlung",
+            "description": "descCurry24",
+            "mapLink": "https://maps.app.goo.gl/au9VE2CXg1twPNmx6"
+        },
+        {
+            "id": "snack-camondas",
+            "title": "Camondas",
+            "tag": "tagIcecream",
+            "description": "descCamondasNew"
+        }
+    ],
+    "cafes": [
+        {
+            "id": "cafe-antik",
+            "title": "Kunst Cafe Antik",
+            "description": "descAntik",
+            "mapLink": "https://maps.app.goo.gl/b1Fjmb6k662tixit8"
+        },
+        {
+            "id": "cafe-kreutzkamm",
+            "title": "Kreutzkamm",
+            "description": "descKreutzkamm",
+            "mapLink": "https://maps.app.goo.gl/3i8nhnZ1YTTj6PYH9"
+        },
+        {
+            "id": "cafe-cosel",
+            "title": "Coselpalais",
+            "description": "descCosel",
+            "mapLink": "https://maps.app.goo.gl/kysQSMrh2hkqF1jd7"
+        }
+    ]
+}
