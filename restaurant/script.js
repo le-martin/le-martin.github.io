@@ -421,4 +421,20 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // Lazy load Google Maps iframe
+    const mapIframe = document.querySelector('.location-map iframe[data-src]');
+    if (mapIframe) {
+        const mapObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const iframe = entry.target;
+                    iframe.src = iframe.dataset.src;
+                    mapObserver.unobserve(iframe);
+                }
+            });
+        }, { rootMargin: '200px' }); // Load slightly before it comes into view
+
+        mapObserver.observe(mapIframe);
+    }
 });
