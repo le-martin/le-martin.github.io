@@ -4,7 +4,7 @@ permalink: /dresden/
 author_profile: false
 ---
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -834,9 +834,9 @@ author_profile: false
             });
         }
 
-        // Initialize from storage or default to Korean
+        // Initialize from storage or default to English
         window.addEventListener('DOMContentLoaded', () => {
-            const savedLang = localStorage.getItem('dresden_lang') || 'ko';
+            const savedLang = localStorage.getItem('dresden_lang') || 'en';
             setLang(savedLang);
             loadProgress();
         });
