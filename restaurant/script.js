@@ -192,18 +192,31 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Modal Logic
+    // Modal Logic with focus management
     const reservationModal = document.getElementById('reservationModal');
     const reservationTriggers = document.querySelectorAll('#navReservation, #heroReservation');
     const closeModalBtn = document.getElementById('closeModal');
     const modalOverlay = document.getElementById('modalOverlay');
+    let lastFocusedElement = null;
 
     if (reservationModal && reservationTriggers.length > 0) {
+        // Get all focusable elements in modal
+        const getFocusableElements = () => {
+            return reservationModal.querySelectorAll(
+                'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+            );
+        };
+
         reservationTriggers.forEach(trigger => {
             trigger.addEventListener('click', (e) => {
                 e.preventDefault();
+                lastFocusedElement = document.activeElement;
                 reservationModal.classList.add('active');
-                document.body.style.overflow = 'hidden'; // Prevent scrolling
+                reservationModal.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+
+                // Focus the close button when modal opens
+                setTimeout(() => closeModalBtn.focus(), 100);
 
                 // Close mobile menu if open
                 if (navLinks && navLinks.classList.contains('active')) {
@@ -215,16 +228,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const closeModal = () => {
             reservationModal.classList.remove('active');
-            document.body.style.overflow = ''; // Restore scrolling
+            reservationModal.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+
+            // Return focus to the element that opened the modal
+            if (lastFocusedElement) {
+                lastFocusedElement.focus();
+            }
         };
 
         closeModalBtn.addEventListener('click', closeModal);
         modalOverlay.addEventListener('click', closeModal);
 
-        // Close on Esc key
+        // Keyboard handling: Escape to close, Tab to trap focus
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && reservationModal.classList.contains('active')) {
+            if (!reservationModal.classList.contains('active')) return;
+
+            if (e.key === 'Escape') {
                 closeModal();
+                return;
+            }
+
+            // Trap focus inside modal
+            if (e.key === 'Tab') {
+                const focusableElements = getFocusableElements();
+                const firstElement = focusableElements[0];
+                const lastElement = focusableElements[focusableElements.length - 1];
+
+                if (e.shiftKey && document.activeElement === firstElement) {
+                    e.preventDefault();
+                    lastElement.focus();
+                } else if (!e.shiftKey && document.activeElement === lastElement) {
+                    e.preventDefault();
+                    firstElement.focus();
+                }
             }
         });
     }
