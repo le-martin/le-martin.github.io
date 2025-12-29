@@ -189,7 +189,6 @@ document.addEventListener('DOMContentLoaded', () => {
             navLinks.classList.toggle('active');
             mobileNavToggle.setAttribute('aria-expanded', isExpanded);
             mobileNavToggle.setAttribute('aria-label', isExpanded ? 'Menü schließen' : 'Menü öffnen');
-            console.log('Menu toggled, isExpanded:', isExpanded);
         });
     }
 
