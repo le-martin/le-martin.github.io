@@ -266,7 +266,7 @@ permalink: /restaurant/
                         <span class="star-half">&#9733;</span>
                     </div>
                     <span class="rating-text" data-i18n="rating_google">4.5 von 5 Sternen (1.037 Bewertungen)</span>
-                    <a href="https://g.page/r/sura-dresden/review" target="_blank" rel="noopener noreferrer" class="btn" data-i18n="testimonials_btn_google" aria-label="Bewertung auf Google schreiben (öffnet in neuem Tab)">Google Bewertung</a>
+                    <a href="https://maps.app.goo.gl/NY1SnsnVozmhaia19" target="_blank" rel="noopener noreferrer" class="btn" data-i18n="testimonials_btn_google" aria-label="Bewertung auf Google schreiben (öffnet in neuem Tab)">Google Bewertung</a>
                 </div>
                 <div class="rating-item">
                     <div class="rating-stars">
@@ -277,7 +277,7 @@ permalink: /restaurant/
                         <span class="star-empty">&#9733;</span>
                     </div>
                     <span class="rating-text" data-i18n="rating_tripadvisor">4.2 von 5 Sternen (73 Bewertungen)</span>
-                    <a href="https://www.tripadvisor.de/UserReviewEdit-g187399-d5975431-Reviews-SURA_Dresden-Dresden_Saxony.html" target="_blank" rel="noopener noreferrer" class="btn" data-i18n="testimonials_btn_tripadvisor" aria-label="Bewertung auf TripAdvisor schreiben (öffnet in neuem Tab)">TripAdvisor Bewertung</a>
+                    <a href="https://www.tripadvisor.de/Restaurant_Review-g187399-d5975431-Reviews-SURA_Dresden-Dresden_Saxony.html" target="_blank" rel="noopener noreferrer" class="btn" data-i18n="testimonials_btn_tripadvisor" aria-label="Bewertung auf TripAdvisor schreiben (öffnet in neuem Tab)">TripAdvisor Bewertung</a>
                 </div>
             </div>
         </div>
@@ -305,17 +305,7 @@ permalink: /restaurant/
                 </div>
             </div>
             <div class="location-map">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2507.5!2d13.7502!3d51.0657!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4709cf67a1d4d5e5%3A0x6f2b2a3c4d5e6f7a!2sK%C3%B6nigsbr%C3%BCcker%20Str.%2050%2C%2001099%20Dresden!5e0!3m2!1sde!2sde!4v1703000000000!5m2!1sde!2sde"
-                    width="100%"
-                    height="300"
-                    style="border:0; border-radius: 8px;"
-                    allowfullscreen=""
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"
-                    title="Sura Restaurant auf Google Maps - Königsbrücker Straße 50, Dresden"
-                    aria-label="Interaktive Karte zeigt den Standort des Sura Restaurants">
-                </iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2507.1308701221797!2d13.746738177751032!3d51.069134171716925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4709cf3d87677705%3A0xa89993fea0eaa95f!2sSura%20Restaurant!5e0!3m2!1sen!2sde!4v1767011093448!5m2!1sen!2sde" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
 </section>
@@ -325,13 +315,13 @@ permalink: /restaurant/
     <footer role="contentinfo">
         <div class="brand">SURA</div>
         <div class="social-links">
-            <a href="#" class="social-icon" aria-label="Facebook">
+            <a class="social-icon" aria-label="Facebook" style="opacity: 0.5; cursor: not-allowed;" role="link" aria-disabled="true">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
             </a>
-            <a href="#" class="social-icon" aria-label="Instagram">
+            <a class="social-icon" aria-label="Instagram" style="opacity: 0.5; cursor: not-allowed;" role="link" aria-disabled="true">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
             </a>
-            <a href="#" class="social-icon" aria-label="TripAdvisor">
+            <a href="https://www.tripadvisor.de/Restaurant_Review-g187399-d5975431-Reviews-SURA_Dresden-Dresden_Saxony.html" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="TripAdvisor">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="12" r="4"/><circle cx="17" cy="12" r="4"/><path d="M12 17a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5z"/></svg>
             </a>
         </div>
