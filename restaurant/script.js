@@ -38,6 +38,9 @@ const translations = {
         testimonials_btn_tripadvisor: "Review on TripAdvisor",
         rating_google: "4.5 out of 5 stars (1,037 reviews)",
         rating_tripadvisor: "4.2 out of 5 stars (73 reviews)",
+        widget_reviews_count: "1,037 reviews",
+        widget_reviews_count_ta: "73 reviews",
+        widget_see_reviews: "See all reviews",
         footer_rights: "© 2025 Sura Korean Restaurant Dresden. All rights reserved."
     },
     de: {
@@ -79,6 +82,9 @@ const translations = {
         testimonials_btn_tripadvisor: "TripAdvisor Bewertung",
         rating_google: "4.5 von 5 Sternen (1.037 Bewertungen)",
         rating_tripadvisor: "4.2 von 5 Sternen (73 Bewertungen)",
+        widget_reviews_count: "1.037 Bewertungen",
+        widget_reviews_count_ta: "73 Bewertungen",
+        widget_see_reviews: "Alle Bewertungen ansehen",
         footer_rights: "© 2025 Sura Koreanisches Restaurant Dresden. Alle Rechte vorbehalten."
     },
     ko: {
@@ -120,6 +126,9 @@ const translations = {
         testimonials_btn_tripadvisor: "트립어드바이저 리뷰 작성",
         rating_google: "별 5개 중 4.5개 (리뷰 1,037개)",
         rating_tripadvisor: "별 5개 중 4.2개 (리뷰 73개)",
+        widget_reviews_count: "1,037개 리뷰",
+        widget_reviews_count_ta: "73개 리뷰",
+        widget_see_reviews: "모든 리뷰 보기",
         footer_rights: "© 2025 수라 드레스덴 코리안 레스토랑. All rights reserved."
     }
 };
