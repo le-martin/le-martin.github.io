@@ -72,7 +72,34 @@ permalink: /restaurant/
     }
     </script>
 
-    <link rel="stylesheet" href="styles.css">
+    <!-- Critical CSS inlined for fast first paint -->
+    <style>
+        :root{--primary-color:#c9a050;--secondary-color:#1a1a1a;--text-color:#f5f5f5;--bg-dark:#0a0a0a;--glass:rgba(255,255,255,0.05);--transition:all 0.4s cubic-bezier(0.165,0.84,0.44,1)}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Outfit',sans-serif;background-color:var(--secondary-color);color:var(--text-color);line-height:1.6;overflow-x:hidden}
+        h1,h2,h3,.brand{font-family:'Playfair Display',serif}
+        nav{position:fixed;top:0;width:100%;padding:2rem 5%;display:flex;justify-content:space-between;align-items:center;z-index:1000;transition:var(--transition);background:linear-gradient(to bottom,rgba(0,0,0,0.8),transparent)}
+        .brand{font-size:2rem;font-weight:700;color:var(--primary-color);text-decoration:none;letter-spacing:2px}
+        .nav-links{display:flex;gap:3rem}
+        .nav-links a{text-decoration:none;color:var(--text-color);font-weight:400;text-transform:uppercase;letter-spacing:1px;font-size:0.9rem;position:relative;transition:var(--transition)}
+        .nav-actions{display:flex;align-items:center;gap:1.5rem}
+        .lang-switcher{display:flex;gap:0.5rem;background:rgba(255,255,255,0.05);padding:0.2rem;border-radius:5px;border:1px solid rgba(255,255,255,0.1)}
+        .lang-btn{background:none;border:none;color:#666;font-family:inherit;font-size:0.7rem;font-weight:600;cursor:pointer;padding:0.3rem 0.6rem;border-radius:3px;transition:var(--transition)}
+        .lang-btn.active{background:var(--primary-color);color:var(--bg-dark)}
+        .mobile-nav-toggle{display:none}
+        .hero{height:100vh;width:100%;background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('assets/images/hero.webp');background-size:cover;background-position:center;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:0 10%}
+        .hero h1{font-size:5rem;margin-bottom:1rem;opacity:0;transform:translateY(30px);animation:fadeInUp 1s forwards 0.5s}
+        .hero p{font-size:1.2rem;margin-bottom:2rem;max-width:600px;font-weight:300;letter-spacing:1px;opacity:0;transform:translateY(30px);animation:fadeInUp 1s forwards 0.8s}
+        .hero-cta{display:flex;gap:1.5rem;opacity:0;transform:translateY(30px);animation:fadeInUp 1s forwards 1.1s}
+        .btn{display:inline-block;padding:1rem 2.5rem;border:1px solid var(--primary-color);color:var(--primary-color);text-decoration:none;text-transform:uppercase;letter-spacing:2px;font-size:0.8rem;transition:var(--transition);background:transparent;cursor:pointer}
+        .btn.disabled{opacity:0.5;cursor:not-allowed;pointer-events:none;border-color:#666;color:#666}
+        @keyframes fadeInUp{to{opacity:1;transform:translateY(0)}}
+    </style>
+
+    <!-- Full stylesheet loaded asynchronously -->
+    <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="styles.css"></noscript>
+
     <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
 </head>
 
@@ -362,6 +389,11 @@ permalink: /restaurant/
             </div>
         </div>
     </div>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Nach oben scrollen">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+    </button>
 
     <script src="script.js"></script>
 </body>
