@@ -243,6 +243,7 @@ permalink: /restaurant/
             </div>
             <button class="slider-btn next" aria-label="Next testimonial">&#10095;</button>
         </div>
+        <div class="review-widgets-wrapper">
         <div class="review-widgets">
             <a href="https://maps.app.goo.gl/NY1SnsnVozmhaia19" target="_blank" rel="noopener noreferrer" class="review-widget google-widget" aria-label="Sura Restaurant auf Google Reviews ansehen">
                 <div class="widget-header">
@@ -298,7 +299,8 @@ permalink: /restaurant/
                 </div>
             </a>
         </div>
-        <p class="ratings-disclaimer" data-i18n="ratings_disclaimer">Stand: Dezember 2024</p>
+        <p class="ratings-disclaimer" data-i18n="ratings_disclaimer">Stand: Dezember 2025</p>
+        </div>
 </section>
 
 <section id="location" style="background-color: var(--bg-dark);" aria-labelledby="location-title">

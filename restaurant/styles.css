@@ -468,6 +468,13 @@ section {
 }
 
 /* Review Widgets */
+.review-widgets-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
 .review-widgets {
     display: flex;
     justify-content: center;
@@ -599,6 +606,7 @@ section {
 }
 
 .ratings-disclaimer {
+    width: 100%;
     text-align: center;
     font-size: 0.75rem;
     color: #666;
