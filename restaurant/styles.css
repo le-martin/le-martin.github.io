@@ -883,13 +883,7 @@ footer {
     }
 
     .lang-switcher-mobile {
-        display: flex !important;
-        gap: 1rem;
-        margin-bottom: 3rem;
-        background: rgba(255, 255, 255, 0.05);
-        padding: 0.8rem;
-        border-radius: 8px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        display: none !important;
     }
 
     .lang-switcher-mobile .lang-btn {
@@ -915,8 +909,8 @@ footer {
     }
 
     .lang-switcher {
-        display: none !important;
-        /* Force hide header switcher on mobile */
+        display: flex !important;
+        /* Show header switcher on mobile */
     }
 
     .hero h1 {
