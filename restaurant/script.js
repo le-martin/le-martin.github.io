@@ -41,6 +41,7 @@ const translations = {
         widget_reviews_count: "1,037 reviews",
         widget_reviews_count_ta: "73 reviews",
         widget_see_reviews: "See all reviews",
+        ratings_disclaimer: "As of December 2024",
         footer_rights: "© 2025 Sura Korean Restaurant Dresden. All rights reserved."
     },
     de: {
@@ -85,6 +86,7 @@ const translations = {
         widget_reviews_count: "1.037 Bewertungen",
         widget_reviews_count_ta: "73 Bewertungen",
         widget_see_reviews: "Alle Bewertungen ansehen",
+        ratings_disclaimer: "Stand: Dezember 2024",
         footer_rights: "© 2025 Sura Koreanisches Restaurant Dresden. Alle Rechte vorbehalten."
     },
     ko: {
@@ -129,6 +131,7 @@ const translations = {
         widget_reviews_count: "1,037개 리뷰",
         widget_reviews_count_ta: "73개 리뷰",
         widget_see_reviews: "모든 리뷰 보기",
+        ratings_disclaimer: "2024년 12월 기준",
         footer_rights: "© 2025 수라 드레스덴 코리안 레스토랑. All rights reserved."
     }
 };
