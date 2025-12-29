@@ -8,69 +8,12 @@ permalink: /restaurant/
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
     <title>Sura | Koreanisches Restaurant in Dresden</title>
-    <meta name="description"
-        content="Sura - Koreanisches Restaurant & Korean BBQ in Dresden Neustadt. Authentische Küche: Bulgogi, Bibimbap, Kimchi Jjigae. Königsbrücker Str. 50. Di-So 17-22 Uhr.">
-
-    <!-- Hreflang for multilingual SEO -->
-    <link rel="alternate" hreflang="de" href="https://le-martin.github.io/restaurant/">
-    <link rel="alternate" hreflang="en" href="https://le-martin.github.io/restaurant/">
-    <link rel="alternate" hreflang="ko" href="https://le-martin.github.io/restaurant/">
-    <link rel="alternate" hreflang="x-default" href="https://le-martin.github.io/restaurant/">
 
     <!-- Preload critical assets -->
     <link rel="preload" href="assets/images/hero.webp" as="image" type="image/webp">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Outfit:wght@300;400;600&display=swap" as="style">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="restaurant">
-    <meta property="og:url" content="https://le-martin.github.io/restaurant/">
-    <meta property="og:title" content="Sura | Koreanisches Restaurant in Dresden">
-    <meta property="og:description" content="Authentische koreanische Küche im Herzen der Dresdner Neustadt. Bulgogi, Bibimbap, Kimchi Jjigae und mehr.">
-    <meta property="og:image" content="https://le-martin.github.io/restaurant/assets/images/hero.png">
-    <meta property="og:locale" content="de_DE">
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Sura | Koreanisches Restaurant in Dresden">
-    <meta name="twitter:description" content="Authentische koreanische Küche im Herzen der Dresdner Neustadt.">
-    <meta name="twitter:image" content="https://le-martin.github.io/restaurant/assets/images/hero.png">
-
-    <!-- Schema.org structured data for Restaurant -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Restaurant",
-        "name": "Sura Korean Restaurant",
-        "image": "https://le-martin.github.io/restaurant/assets/images/hero.png",
-        "url": "https://le-martin.github.io/restaurant/",
-        "telephone": "+49-351-810-747-89",
-        "email": "suradresden@gmail.com",
-        "servesCuisine": "Korean",
-        "priceRange": "€€",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Königsbrücker Straße 50",
-            "addressLocality": "Dresden",
-            "postalCode": "01099",
-            "addressCountry": "DE"
-        },
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": 51.0657,
-            "longitude": 13.7502
-        },
-        "openingHoursSpecification": [
-            {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-                "opens": "17:00",
-                "closes": "22:00"
-            }
-        ],
-        "menu": "https://le-martin.github.io/restaurant/#experience"
-    }
-    </script>
 
     <!-- Critical CSS inlined for fast first paint -->
     <style>
