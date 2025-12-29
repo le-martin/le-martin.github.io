@@ -34,6 +34,17 @@ author_profile: false
 
     <main class="container" id="main-content">
 
+        <!-- Progress Indicator -->
+        <div class="progress-bar">
+            <span class="progress-text" id="progress-text">0 / 0 <span data-i18n="visited">visited</span></span>
+            <div class="progress-track">
+                <div class="progress-fill" id="progress-fill" style="width: 0%"></div>
+            </div>
+            <button class="share-btn" onclick="shareProgress()" aria-label="Share progress">
+                📤 <span data-i18n="share">Share</span>
+            </button>
+        </div>
+
         <nav class="toc" aria-label="Table of contents">
             <div class="toc-title" data-i18n="tocTitle">Jump to Section</div>
             <div class="toc-links">
@@ -45,6 +56,17 @@ author_profile: false
                 <a href="#cafes" data-i18n="secCafe">Cafes</a>
             </div>
         </nav>
+
+        <!-- Filter Buttons -->
+        <div class="filter-buttons" role="group" aria-label="Filter by category">
+            <button class="filter-btn active" data-filter="all" data-i18n="filterAll">All</button>
+            <button class="filter-btn" data-filter="markets" data-i18n="secMarkets">Markets</button>
+            <button class="filter-btn" data-filter="sights" data-i18n="secSights">Sights</button>
+            <button class="filter-btn" data-filter="museums" data-i18n="secMuseum">Museums</button>
+            <button class="filter-btn" data-filter="restaurants" data-i18n="secRestaurants">Restaurants</button>
+            <button class="filter-btn" data-filter="snacks" data-i18n="secSnacks">Snacks</button>
+            <button class="filter-btn" data-filter="cafes" data-i18n="secCafe">Cafes</button>
+        </div>
 
         <div class="search-wrapper">
             <input type="text" id="search-bar" placeholder="Search for a place..." oninput="filterCards()"
@@ -102,7 +124,17 @@ author_profile: false
     <footer>
         <p data-i18n="footer">Let me know if you have any questions or suggestions!</p>
         <button class="clear-progress-btn" onclick="clearProgress()" data-i18n="clearProgress">Clear all progress</button>
+        <div class="export-import-btns">
+            <button class="export-btn" onclick="exportProgress()" data-i18n="exportProgress">Export</button>
+            <label class="import-btn">
+                <span data-i18n="importProgress">Import</span>
+                <input type="file" id="import-file" accept=".json" onchange="importProgress(event)">
+            </label>
+        </div>
     </footer>
+
+    <!-- Dark Mode Toggle -->
+    <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle dark mode">🌙</button>
 
     <!-- Back to Top Button -->
     <button id="backToTop" class="back-to-top" aria-label="Back to top">
