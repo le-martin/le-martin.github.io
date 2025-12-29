@@ -314,7 +314,7 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
-    // Testimonials Slider Logic
+    // Testimonials Slider Logic with Auto-play
     const slider = document.querySelector('.testimonials-slider');
     const sliderContainer = document.querySelector('.testimonials-slider-container');
     const prevBtn = document.querySelector('.slider-btn.prev');
@@ -323,6 +323,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (slider && sliderContainer && prevBtn && nextBtn) {
         let currentIndex = 0;
         const cards = document.querySelectorAll('.testimonial-card');
+        let autoplayInterval = null;
+        const AUTOPLAY_DELAY = 5000; // 5 seconds
 
         function updateSlider() {
             const cardWidth = cards[0].offsetWidth;
@@ -339,6 +341,44 @@ document.addEventListener('DOMContentLoaded', () => {
             nextBtn.disabled = moveAmount + visibleWidth >= totalWidth;
         }
 
+        function nextSlide() {
+            const cardsVisible = Math.floor(sliderContainer.offsetWidth / cards[0].offsetWidth);
+            const visibleWidth = sliderContainer.offsetWidth - (parseInt(window.getComputedStyle(sliderContainer).paddingLeft) * 2);
+            const cardWidth = cards[0].offsetWidth;
+            const gap = parseInt(window.getComputedStyle(slider).gap);
+            const moveAmount = currentIndex * (cardWidth + gap);
+
+            // If at end, loop back to start
+            if (moveAmount + visibleWidth >= slider.scrollWidth) {
+                currentIndex = 0;
+            } else {
+                currentIndex += 1;
+                if (currentIndex >= cards.length) currentIndex = 0;
+            }
+            updateSlider();
+        }
+
+        function startAutoplay() {
+            if (!autoplayInterval) {
+                autoplayInterval = setInterval(nextSlide, AUTOPLAY_DELAY);
+            }
+        }
+
+        function stopAutoplay() {
+            if (autoplayInterval) {
+                clearInterval(autoplayInterval);
+                autoplayInterval = null;
+            }
+        }
+
+        // Pause on hover
+        sliderContainer.addEventListener('mouseenter', stopAutoplay);
+        sliderContainer.addEventListener('mouseleave', startAutoplay);
+
+        // Pause on focus (accessibility)
+        sliderContainer.addEventListener('focusin', stopAutoplay);
+        sliderContainer.addEventListener('focusout', startAutoplay);
+
         nextBtn.addEventListener('click', () => {
             const cardsVisible = Math.floor(sliderContainer.offsetWidth / cards[0].offsetWidth);
             currentIndex += cardsVisible;
@@ -354,11 +394,31 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         window.addEventListener('resize', () => {
-            currentIndex = 0; // Reset on resize for simplicity
+            currentIndex = 0;
             updateSlider();
         });
 
-        // Initial check
+        // Initial setup
         updateSlider();
+        startAutoplay();
+    }
+
+    // Back to Top Button
+    const backToTopBtn = document.getElementById('backToTop');
+    if (backToTopBtn) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
     }
 });
