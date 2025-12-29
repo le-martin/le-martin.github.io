@@ -10,33 +10,85 @@ permalink: /restaurant/
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sura | Koreanisches Restaurant in Dresden</title>
     <meta name="description"
-        content="Experience the authentic taste of Korea at Surasang. Premium Korean BBQ, Bibimbap, and traditional dishes served in an elegant modern atmosphere.">
+        content="Sura - Authentisches koreanisches Restaurant in Dresden Neustadt. Genießen Sie Bulgogi, Bibimbap, Kimchi Jjigae und weitere traditionelle Gerichte.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="restaurant">
+    <meta property="og:url" content="https://le-martin.github.io/restaurant/">
+    <meta property="og:title" content="Sura | Koreanisches Restaurant in Dresden">
+    <meta property="og:description" content="Authentische koreanische Küche im Herzen der Dresdner Neustadt. Bulgogi, Bibimbap, Kimchi Jjigae und mehr.">
+    <meta property="og:image" content="https://le-martin.github.io/restaurant/assets/images/hero.png">
+    <meta property="og:locale" content="de_DE">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sura | Koreanisches Restaurant in Dresden">
+    <meta name="twitter:description" content="Authentische koreanische Küche im Herzen der Dresdner Neustadt.">
+    <meta name="twitter:image" content="https://le-martin.github.io/restaurant/assets/images/hero.png">
+
+    <!-- Schema.org structured data for Restaurant -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Sura Korean Restaurant",
+        "image": "https://le-martin.github.io/restaurant/assets/images/hero.png",
+        "url": "https://le-martin.github.io/restaurant/",
+        "telephone": "+49-351-810-747-89",
+        "email": "suradresden@gmail.com",
+        "servesCuisine": "Korean",
+        "priceRange": "€€",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Königsbrücker Straße 50",
+            "addressLocality": "Dresden",
+            "postalCode": "01099",
+            "addressCountry": "DE"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 51.0657,
+            "longitude": 13.7502
+        },
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+                "opens": "17:00",
+                "closes": "22:00"
+            }
+        ],
+        "menu": "https://le-martin.github.io/restaurant/#experience"
+    }
+    </script>
+
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
 
-    <nav id="navbar">
-        <a href="#" class="brand">SURA</a>
+    <nav id="navbar" role="navigation" aria-label="Hauptnavigation">
+        <a href="#" class="brand" aria-label="Sura - Zur Startseite">SURA</a>
         <div class="nav-links" id="navLinks">
-            <div class="lang-switcher-mobile">
-                <button class="lang-btn" data-lang="en">EN</button>
-                <button class="lang-btn active" data-lang="de">DE</button>
-                <button class="lang-btn" data-lang="ko">KR</button>
+            <div class="lang-switcher-mobile" role="group" aria-label="Sprachauswahl">
+                <button class="lang-btn" data-lang="en" aria-label="Switch to English">EN</button>
+                <button class="lang-btn active" data-lang="de" aria-label="Deutsch ausgewählt" aria-pressed="true">DE</button>
+                <button class="lang-btn" data-lang="ko" aria-label="한국어로 전환">KR</button>
             </div>
             <a href="#home" data-i18n="nav_home">Home</a>
-            <a href="#menu" data-i18n="nav_menu">Menu</a>
-            <a href="#experience" data-i18n="nav_experience">Experience</a>
+            <a href="#about" data-i18n="nav_about">Über Uns</a>
+            <a href="#experience" data-i18n="nav_menu">Menu</a>
             <a href="#location" data-i18n="nav_location">Location</a>
+            <a href="#reservation" id="navReservation" data-i18n="nav_reservation">Reservierung</a>
         </div>
         <div class="nav-actions">
-            <div class="lang-switcher">
-                <button class="lang-btn" data-lang="en">EN</button>
-                <button class="lang-btn active" data-lang="de">DE</button>
-                <button class="lang-btn" data-lang="ko">KR</button>
+            <div class="lang-switcher" role="group" aria-label="Sprachauswahl">
+                <button class="lang-btn" data-lang="en" aria-label="Switch to English">EN</button>
+                <button class="lang-btn active" data-lang="de" aria-label="Deutsch ausgewählt" aria-pressed="true">DE</button>
+                <button class="lang-btn" data-lang="ko" aria-label="한국어로 전환">KR</button>
             </div>
-            <button class="mobile-nav-toggle" id="mobileNavToggle">
+            <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navLinks">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -44,119 +96,264 @@ permalink: /restaurant/
         </div>
     </nav>
 
-    <section id="home" class="hero">
-        <h1 data-i18n="hero_title">The King's Table</h1>
+    <main role="main">
+    <section id="home" class="hero" aria-labelledby="hero-title">
+        <h1 id="hero-title" data-i18n="hero_title">The King's Table</h1>
         <p data-i18n="hero_desc">A modern interpretation of royal Korean cuisine. Elevating traditional flavors through
             contemporary techniques and seasonal ingredients.</p>
-        <button class="btn" data-i18n="hero_btn">Speisekarte</button>
-    </section>
-
-    <section id="menu">
-        <div class="section-header">
-            <span class="subtitle" data-i18n="menu_subtitle">Our Selection</span>
-            <h2 data-i18n="menu_title">Signature Dishes</h2>
-        </div>
-        <div class="menu-grid">
-            <div class="menu-item">
-                <img src="assets/images/bbq.png" alt="Bulgogi">
-                <div class="item-info">
-                    <h3 data-i18n="item_galbi_title">Bulgogi</h3>
-                    <span class="price">17.90€</span>
-                    <p data-i18n="item_galbi_desc">Thinly sliced beef marinated in our house-made
-                        soy sauce, grilled to perfection.</p>
-                </div>
-            </div>
-            <div class="menu-item">
-                <img src="assets/images/bibimbap.png" alt="Dolsot Bibimbap">
-                <div class="item-info">
-                    <h3 data-i18n="item_bibimbap_title">Dolsot Bibimbap</h3>
-                    <span class="price">14.90€</span>
-                    <p data-i18n="item_bibimbap_desc">Sizzling stone bowl rice with seasonal mountain vegetables,
-                        heritage grains, and aged gochujang.</p>
-                </div>
-            </div>
-            <div class="menu-item">
-                <img src="assets/images/ddokbboki.png" alt="Ddokbboki">
-                <div class="item-info">
-                    <h3 data-i18n="item_hanjeongsik_title">Ddokbboki</h3>
-                    <span class="price">10.90€</span>
-                    <p data-i18n="item_hanjeongsik_desc">Spicy stir-fried rice cakes with fish cakes and vegetables in a sweet and spicy sauce.</p>
-                </div>
-            </div>
-            <div class="menu-item">
-                <img src="assets/images/japchae.png" alt="Japchae">
-                <div class="item-info">
-                    <h3 data-i18n="item_bulgogi_title">Japchae</h3>
-                    <span class="price">13.50€</span>
-                    <p data-i18n="item_bulgogi_desc">Stir-fried sweet potato glass noodles with colorful vegetables and savory sauce.</p>
-                </div>
-            </div>
-            <div class="menu-item">
-                <img src="assets/images/pajeon.png" alt="Haemul Pajeon">
-                <div class="item-info">
-                    <h3 data-i18n="item_pajeon_title">Haemul Pajeon</h3>
-                    <span class="price">13.50€</span>
-                    <p data-i18n="item_pajeon_desc">Traditional Korean pancake made with plenty of scallions and a
-                        variety of fresh seafood.</p>
-                </div>
-            </div>
-            <div class="menu-item">
-                <img src="assets/images/kimchi_jjigae.png" alt="Kimchi Jjigae">
-                <div class="item-info">
-                    <h3 data-i18n="item_stew_title">Kimchi Jjigae</h3>
-                    <span class="price">14.90€</span>
-                    <p data-i18n="item_stew_desc">Rich and savory stew made with our 2-year aged kimchi, pork belly, and
-                        silky tofu.</p>
-                </div>
-            </div>
+        <div class="hero-cta">
+            <a href="assets/menu.pdf" class="btn disabled" target="_blank" data-i18n="hero_btn">Speisekarte</a>
+            <a href="#reservation" class="btn" id="heroReservation" data-i18n="hero_reservation">Tisch reservieren</a>
         </div>
     </section>
 
-    <section id="experience" class="info-section">
+    <section id="about" class="info-section" aria-labelledby="about-title">
         <div class="info-content">
-            <span class="subtitle" data-i18n="exp_subtitle">Atmosphere</span>
-            <h2 data-i18n="exp_title">An Elevated Experience</h2>
-            <p style="margin-bottom: 2rem; color: #aaa;" data-i18n="exp_desc">At Surasang, we believe dining is more
-                than just a meal. It's a journey through history, culture, and craftsmanship. Our space combines minimal
-                Korean aesthetics with modern luxury to create an íntimate environment for unforgettable moments.</p>
-            <button class="btn" data-i18n="exp_btn">Gallery</button>
+            <span class="subtitle" data-i18n="about_subtitle">Unsere Geschichte</span>
+            <h2 id="about-title" data-i18n="about_title">Über Uns</h2>
+            <p style="margin-bottom: 1.5rem; color: #aaa;" data-i18n="about_desc_1">
+                Das Sura wurde 2020 mit einer klaren Vision gegründet: Die authentische koreanische Küche nach Dresden zu bringen.
+                Unser Name "Sura" stammt vom koreanischen Wort für die königliche Tafel – ein Symbol für die höchste Qualität und Sorgfalt bei der Zubereitung.
+            </p>
+            <p style="margin-bottom: 2rem; color: #aaa;" data-i18n="about_desc_2">
+                Jedes Gericht wird mit frischen Zutaten und nach traditionellen Rezepten zubereitet, die von Generation zu Generation weitergegeben wurden.
+                Wir laden Sie ein, die Vielfalt der koreanischen Küche zu entdecken – von würzigem Kimchi bis hin zu zartem Bulgogi.
+            </p>
         </div>
         <div class="info-image">
-            <img src="assets/images/hero.png" alt="Restaurant Interior" style="filter: brightness(0.8);">
+            <img src="assets/images/bibimbap.png"
+                 alt="Buntes Bibimbap in traditioneller Steinschale - Reis mit Gemüse, Ei und Gochujang Sauce"
+                 loading="lazy"
+                 style="filter: brightness(0.9);">
         </div>
     </section>
 
-    <section id="location" style="background-color: var(--bg-dark);">
+    <section id="experience" class="info-section" aria-labelledby="experience-title">
+        <div class="info-content">
+            <span class="subtitle" data-i18n="exp_subtitle">Atmosphere</span>
+            <h2 id="experience-title" data-i18n="exp_title">An Elevated Experience</h2>
+            <p style="margin-bottom: 2rem; color: #aaa;" data-i18n="exp_desc">At Sura, we believe dining is more
+                than just a meal. It's a journey through history, culture, and craftsmanship. Our space combines minimal
+                Korean aesthetics with modern luxury to create an íntimate environment for unforgettable moments.</p>
+            <a href="assets/menu.pdf" class="btn disabled" target="_blank" data-i18n="menu_btn">Speisekarte (PDF)</a>
+        </div>
+        <div class="info-image">
+            <img src="assets/images/hero.png"
+                 alt="Elegantes Restaurant-Interieur mit warmer Beleuchtung und moderner koreanischer Einrichtung"
+                 loading="lazy"
+                 style="filter: brightness(0.8);">
+        </div>
+</section>
+
+<section id="testimonials" aria-labelledby="testimonials-title">
+        <div class="section-header">
+            <span class="subtitle" data-i18n="testimonials_subtitle">Kundenstimmen</span>
+            <h2 id="testimonials-title" data-i18n="testimonials_title">Was unsere Gäste sagen</h2>
+        </div>
+        <div class="testimonials-slider-container">
+            <button class="slider-btn prev" aria-label="Previous testimonial">&#10094;</button>
+            <div class="testimonials-slider">
+                <article class="testimonial-card">
+                    <div class="testimonial-rating" aria-label="5 von 5 Sternen">
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                    </div>
+                    <blockquote>
+                        <p data-i18n="testimonial_1_text">"Das beste koreanische Essen, das ich je außerhalb Koreas gegessen habe! Das Bulgogi war unglaublich zart und die Atmosphäre ist einfach wunderbar."</p>
+                    </blockquote>
+                    <footer class="testimonial-author">
+                        <span class="author-name">Sarah M.</span>
+                        <span class="author-source">Google Reviews</span>
+                    </footer>
+                </article>
+                <article class="testimonial-card">
+                    <div class="testimonial-rating" aria-label="5 von 5 Sternen">
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                    </div>
+                    <blockquote>
+                        <p data-i18n="testimonial_2_text">"Authentisch, lecker und mit Liebe zubereitet. Das Bibimbap im heißen Steintopf ist ein Muss! Freundlicher Service und faire Preise."</p>
+                    </blockquote>
+                    <footer class="testimonial-author">
+                        <span class="author-name">Thomas K.</span>
+                        <span class="author-source">TripAdvisor</span>
+                    </footer>
+                </article>
+                <article class="testimonial-card">
+                    <div class="testimonial-rating" aria-label="5 von 5 Sternen">
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                    </div>
+                    <blockquote>
+                        <p data-i18n="testimonial_3_text">"Endlich ein Restaurant in Dresden, das echte koreanische Küche serviert! Das Kimchi Jjigae schmeckt wie bei meiner Oma in Seoul."</p>
+                    </blockquote>
+                    <footer class="testimonial-author">
+                        <span class="author-name">Ji-Young P.</span>
+                        <span class="author-source">Google Reviews</span>
+                    </footer>
+                </article>
+
+                <article class="testimonial-card">
+                    <div class="testimonial-rating" aria-label="5 von 5 Sternen">
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                    </div>
+                    <blockquote>
+                        <p data-i18n="testimonial_4_text">"Ich war von der Eleganz der Aromen beeindruckt. Das Kimchi Jjigae hat die perfekte Balance zwischen Schärfe und Tiefe. Ein wirklich erstklassiges Restauranterlebnis."</p>
+                    </blockquote>
+                    <footer class="testimonial-author">
+                        <span class="author-name">Michael R.</span>
+                        <span class="author-source">Google Reviews</span>
+                    </footer>
+                </article>
+
+                <article class="testimonial-card">
+                    <div class="testimonial-rating" aria-label="5 von 5 Sternen">
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                    </div>
+                    <blockquote>
+                        <p data-i18n="testimonial_5_text">"Die Atmosphäre ist fantastisch, perfekt für ein romantisches Abendessen. Der Service war aufmerksam und das Japchae war voller Geschmack. Sehr zu empfehlen!"</p>
+                    </blockquote>
+                    <footer class="testimonial-author">
+                        <span class="author-name">Julia W.</span>
+                        <span class="author-source">TripAdvisor</span>
+                    </footer>
+                </article>
+
+                <article class="testimonial-card">
+                    <div class="testimonial-rating" aria-label="5 von 5 Sternen">
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                    </div>
+                    <blockquote>
+                        <p data-i18n="testimonial_6_text">"Das beste Bibimbap der Stadt, ohne Zweifel. Die Zutaten sind so frisch und der Steintopf blieb bis zum letzten Bissen heiß!"</p>
+                    </blockquote>
+                    <footer class="testimonial-author">
+                        <span class="author-name">Lukas H.</span>
+                        <span class="author-source">Google Reviews</span>
+                    </footer>
+                </article>
+            </div>
+            <button class="slider-btn next" aria-label="Next testimonial">&#10095;</button>
+        </div>
+        <div class="testimonials-cta">
+            <div class="aggregate-ratings">
+                <div class="rating-item">
+                    <div class="rating-stars">
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star-half">&#9733;</span>
+                    </div>
+                    <span class="rating-text" data-i18n="rating_google">4.5 von 5 Sternen (1.037 Bewertungen)</span>
+                    <a href="https://g.page/r/sura-dresden/review" target="_blank" rel="noopener noreferrer" class="btn" data-i18n="testimonials_btn_google" aria-label="Bewertung auf Google schreiben (öffnet in neuem Tab)">Google Bewertung</a>
+                </div>
+                <div class="rating-item">
+                    <div class="rating-stars">
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star-empty">&#9733;</span>
+                    </div>
+                    <span class="rating-text" data-i18n="rating_tripadvisor">4.2 von 5 Sternen (73 Bewertungen)</span>
+                    <a href="https://www.tripadvisor.de/UserReviewEdit-g187399-d5975431-Reviews-SURA_Dresden-Dresden_Saxony.html" target="_blank" rel="noopener noreferrer" class="btn" data-i18n="testimonials_btn_tripadvisor" aria-label="Bewertung auf TripAdvisor schreiben (öffnet in neuem Tab)">TripAdvisor Bewertung</a>
+                </div>
+            </div>
+        </div>
+</section>
+
+<section id="location" style="background-color: var(--bg-dark);" aria-labelledby="location-title">
         <div class="section-header">
             <span class="subtitle" data-i18n="loc_subtitle">Join Us</span>
-            <h2 data-i18n="loc_title">Location & Hours</h2>
+            <h2 id="location-title" data-i18n="loc_title">Location & Hours</h2>
         </div>
-        <div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 2rem; text-align: center;">
-            <div>
-                <h3 style="color: var(--primary-color); margin-bottom: 1rem;" data-i18n="loc_address">Address</h3>
-                <p>Königsbrücker Straße 50<br>01099 Dresden</p>
+        <div class="location-container">
+            <div class="location-info">
+                <div class="location-item">
+                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;" data-i18n="loc_address">Address</h3>
+                    <p>Königsbrücker Straße 50<br>01099 Dresden</p>
+                </div>
+                <div class="location-item">
+                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;" data-i18n="loc_hours">Opening Hours</h3>
+                    <p data-i18n="loc_hours_details">Dienstag - Sonntag: 17:00 - 22:00<br>Montag: Ruhetag</p>
+                </div>
+                <div class="location-item">
+                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;" data-i18n="loc_contact">Contact</h3>
+                    <p><a href="tel:+4935181074789" style="color: inherit; text-decoration: none;">0351 810 747 89</a><br>
+                       <a href="mailto:suradresden@gmail.com" style="color: inherit; text-decoration: none;">suradresden@gmail.com</a></p>
+                </div>
             </div>
-            <div>
-                <h3 style="color: var(--primary-color); margin-bottom: 1rem;" data-i18n="loc_hours">Opening Hours</h3>
-                <p data-i18n="loc_hours_details">Dienstag - Sonntag: 17:00 - 22:00<br>Montag: Ruhetag</p>
-            </div>
-            <div>
-                <h3 style="color: var(--primary-color); margin-bottom: 1rem;" data-i18n="loc_contact">Contact</h3>
-                <p>0351 810 747 89<br>suradresden@gmail.com</p>
+            <div class="location-map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2507.5!2d13.7502!3d51.0657!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4709cf67a1d4d5e5%3A0x6f2b2a3c4d5e6f7a!2sK%C3%B6nigsbr%C3%BCcker%20Str.%2050%2C%2001099%20Dresden!5e0!3m2!1sde!2sde!4v1703000000000!5m2!1sde!2sde"
+                    width="100%"
+                    height="300"
+                    style="border:0; border-radius: 8px;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Sura Restaurant auf Google Maps - Königsbrücker Straße 50, Dresden"
+                    aria-label="Interaktive Karte zeigt den Standort des Sura Restaurants">
+                </iframe>
             </div>
         </div>
-    </section>
+</section>
 
-    <footer>
-        <div class="brand" style="font-size: 1.2rem;">SURA</div>
-        <div class="footer-info">
-            <p data-i18n="footer_rights">&copy; 2024 Sura Korean Restaurant Dresden. All rights reserved.</p>
+</main>
+
+    <footer role="contentinfo">
+        <div class="brand">SURA</div>
+        <div class="social-links">
+            <a href="#" class="social-icon" aria-label="Facebook">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+            <a href="#" class="social-icon" aria-label="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="#" class="social-icon" aria-label="TripAdvisor">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="12" r="4"/><circle cx="17" cy="12" r="4"/><path d="M12 17a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5z"/></svg>
+            </a>
         </div>
-        <div class="nav-links" style="gap: 1.5rem;">
-            <a href="#" style="font-size: 0.7rem;">Instagram</a>
-            <a href="#" style="font-size: 0.7rem;">Facebook</a>
+        <div class="footer-info">
+            <p data-i18n="footer_rights">&copy; 2025 Sura Korean Restaurant Dresden. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Reservation Modal -->
+    <div id="reservationModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="closeModal" aria-label="Schließen">&times;</button>
+            <div class="modal-header">
+                <h2 id="modalTitle" data-i18n="loc_reservation">Reservierung</h2>
+            </div>
+            <div class="modal-body">
+                <p data-i18n="loc_reservation_info">Tischreservierung telefonisch unter<br><a href="tel:+4935181074789" class="phone-link">0351 810 747 89</a></p>
+                <a href="tel:+4935181074789" class="btn" style="margin-top: 1.5rem; display: block; text-align: center;" data-i18n="loc_call_now">Jetzt anrufen</a>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
