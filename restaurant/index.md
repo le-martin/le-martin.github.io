@@ -281,7 +281,7 @@ permalink: /restaurant/
                     <span class="widget-source">TripAdvisor</span>
                 </div>
                 <div class="widget-rating">
-                    <span class="rating-number">4.0</span>
+                    <span class="rating-number">4.2</span>
                     <div class="rating-stars tripadvisor-stars">
                         <span class="circle filled"></span>
                         <span class="circle filled"></span>
