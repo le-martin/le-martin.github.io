@@ -414,6 +414,302 @@ footer {
     transform: translateX(-50%) translateY(0);
 }
 
+/* Progress Indicator */
+.progress-bar {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.progress-text {
+    font-weight: 600;
+    color: var(--text-color);
+    white-space: nowrap;
+}
+
+.progress-track {
+    flex: 1;
+    min-width: 150px;
+    height: 8px;
+    background: #e9ecef;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+/* Filter Buttons */
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.filter-btn {
+    background: var(--card-bg);
+    border: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.2s;
+}
+
+.filter-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.filter-btn.active {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.filter-btn:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Dark Mode Toggle */
+.dark-mode-toggle {
+    position: fixed;
+    bottom: 5rem;
+    right: 2rem;
+    width: 48px;
+    height: 48px;
+    background: var(--card-bg);
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 998;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+}
+
+.dark-mode-toggle:hover {
+    transform: scale(1.1);
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+    --bg-color: #1a1a2e;
+    --card-bg: #16213e;
+    --text-color: #eaeaea;
+    --text-light: #a0a0a0;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+
+.dark-mode .tag {
+    background-color: #2a2a4a;
+    color: #ccc;
+}
+
+.dark-mode .tag.highlight {
+    background-color: #3d3d00;
+    color: #ffd700;
+}
+
+.dark-mode .filter-btn {
+    background: var(--card-bg);
+    border-color: #333;
+    color: var(--text-color);
+}
+
+.dark-mode #search-bar {
+    background: var(--card-bg);
+    border-color: #333;
+    color: var(--text-color);
+}
+
+.dark-mode .dark-mode-toggle {
+    background: var(--card-bg);
+    border-color: #333;
+}
+
+/* Share Button */
+.share-btn {
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s;
+}
+
+.share-btn:hover {
+    background: #c5a02e;
+    transform: translateY(-2px);
+}
+
+/* Collapsible Sections */
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+.collapse-icon {
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+.section-collapsed .collapse-icon {
+    transform: rotate(-90deg);
+}
+
+.section-collapsed .grid,
+.section-collapsed .intro-text {
+    display: none;
+}
+
+/* Card Image */
+.card-image {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+}
+
+/* Card Meta Info */
+.card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--text-light);
+}
+
+.card-meta-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+/* Export/Import */
+.export-import-btns {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.export-btn, .import-btn {
+    background: none;
+    border: 1px solid var(--text-light);
+    color: var(--text-light);
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: all 0.2s;
+}
+
+.export-btn:hover, .import-btn:hover {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+#import-file {
+    display: none;
+}
+
+/* Print Styles */
+@media print {
+    .lang-switcher,
+    .back-to-top,
+    .dark-mode-toggle,
+    .share-btn,
+    .export-import-btns,
+    .clear-progress-btn,
+    .filter-buttons,
+    .search-wrapper,
+    .toc,
+    #backToTop,
+    .collapse-icon {
+        display: none !important;
+    }
+
+    body {
+        background: white !important;
+        color: black !important;
+    }
+
+    header {
+        background: white !important;
+        color: black !important;
+        padding: 1rem !important;
+    }
+
+    .card {
+        break-inside: avoid;
+        box-shadow: none !important;
+        border: 1px solid #ccc !important;
+    }
+
+    .card.visited {
+        opacity: 1 !important;
+        background: #f5f5f5 !important;
+    }
+
+    .card.visited::after {
+        content: "✓ Visited";
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        font-size: 0.7rem;
+        color: green;
+    }
+
+    .card-checkbox {
+        display: none !important;
+    }
+
+    a {
+        color: black !important;
+        text-decoration: underline !important;
+    }
+
+    .grid {
+        display: block !important;
+    }
+
+    .card {
+        margin-bottom: 1rem !important;
+    }
+}
+
 @media (max-width: 600px) {
     header {
         padding: 4rem 1rem 2rem;
@@ -441,8 +737,23 @@ footer {
         right: 1rem;
     }
 
+    .dark-mode-toggle {
+        bottom: 4rem;
+        right: 1rem;
+    }
+
     .toc-links {
         flex-direction: column;
         gap: 0.5rem;
+    }
+
+    .progress-bar {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
+
+    .filter-buttons {
+        justify-content: center;
     }
 }

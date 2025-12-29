@@ -9,6 +9,17 @@ const i18n = {
         toastVisited: "Als besucht markiert",
         toastUnvisited: "Markierung entfernt",
         toastCleared: "Fortschritt zurückgesetzt",
+        filterAll: "Alle",
+        share: "Teilen",
+        visited: "besucht",
+        shareText: "Mein Dresden Reisefortschritt",
+        toastCopied: "Link kopiert!",
+        toastShareFailed: "Teilen fehlgeschlagen",
+        exportProgress: "Exportieren",
+        importProgress: "Importieren",
+        toastExported: "Fortschritt exportiert",
+        toastImported: "Fortschritt importiert",
+        toastImportFailed: "Import fehlgeschlagen",
         secMarkets: "Weihnachtsmärkte",
         secSights: "Sehenswürdigkeiten",
         secMuseum: "Museen",
@@ -74,6 +85,17 @@ const i18n = {
         toastVisited: "Marked as visited",
         toastUnvisited: "Unmarked",
         toastCleared: "Progress cleared",
+        filterAll: "All",
+        share: "Share",
+        visited: "visited",
+        shareText: "My Dresden Travel Progress",
+        toastCopied: "Link copied!",
+        toastShareFailed: "Sharing failed",
+        exportProgress: "Export",
+        importProgress: "Import",
+        toastExported: "Progress exported",
+        toastImported: "Progress imported",
+        toastImportFailed: "Import failed",
         secMarkets: "Christmas Markets",
         secSights: "Sights",
         secMuseum: "Museums",
@@ -139,6 +161,17 @@ const i18n = {
         toastVisited: "방문함으로 표시됨",
         toastUnvisited: "표시 해제됨",
         toastCleared: "진행 상황이 초기화됨",
+        filterAll: "전체",
+        share: "공유",
+        visited: "방문 완료",
+        shareText: "나의 드레스덴 여행 진행 상황",
+        toastCopied: "링크 복사됨!",
+        toastShareFailed: "공유 실패",
+        exportProgress: "내보내기",
+        importProgress: "가져오기",
+        toastExported: "진행 상황 내보내기 완료",
+        toastImported: "진행 상황 가져오기 완료",
+        toastImportFailed: "가져오기 실패",
         secMarkets: "크리스마스 마켓",
         secSights: "주요 명소",
         secMuseum: "박물관",
@@ -204,6 +237,17 @@ const i18n = {
         toastVisited: "Đã đánh dấu đã thăm",
         toastUnvisited: "Đã bỏ đánh dấu",
         toastCleared: "Đã xóa tiến trình",
+        filterAll: "Tất cả",
+        share: "Chia sẻ",
+        visited: "đã thăm",
+        shareText: "Tiến trình du lịch Dresden của tôi",
+        toastCopied: "Đã sao chép liên kết!",
+        toastShareFailed: "Chia sẻ thất bại",
+        exportProgress: "Xuất",
+        importProgress: "Nhập",
+        toastExported: "Đã xuất tiến trình",
+        toastImported: "Đã nhập tiến trình",
+        toastImportFailed: "Nhập thất bại",
         secMarkets: "Chợ Giáng sinh",
         secSights: "Địa điểm du lịch",
         secMuseum: "Bảo tàng",
@@ -269,6 +313,17 @@ const i18n = {
         toastVisited: "已标记为已访问",
         toastUnvisited: "已取消标记",
         toastCleared: "进度已清除",
+        filterAll: "全部",
+        share: "分享",
+        visited: "已访问",
+        shareText: "我的德累斯顿旅行进度",
+        toastCopied: "链接已复制!",
+        toastShareFailed: "分享失败",
+        exportProgress: "导出",
+        importProgress: "导入",
+        toastExported: "进度已导出",
+        toastImported: "进度已导入",
+        toastImportFailed: "导入失败",
         secMarkets: "圣诞市集",
         secSights: "景点",
         secMuseum: "博物馆",
@@ -334,6 +389,17 @@ const i18n = {
         toastVisited: "訪問済みとしてマーク",
         toastUnvisited: "マークを解除",
         toastCleared: "進捗がクリアされました",
+        filterAll: "すべて",
+        share: "共有",
+        visited: "訪問済み",
+        shareText: "私のドレスデン旅行の進捗",
+        toastCopied: "リンクをコピーしました!",
+        toastShareFailed: "共有に失敗しました",
+        exportProgress: "エクスポート",
+        importProgress: "インポート",
+        toastExported: "進捗をエクスポートしました",
+        toastImported: "進捗をインポートしました",
+        toastImportFailed: "インポートに失敗しました",
         secMarkets: "クリスマスマーケット",
         secSights: "観光地",
         secMuseum: "博物館",
@@ -610,10 +676,209 @@ async function loadAndRenderPlaces() {
 }
 
 
+// Update progress indicator
+function updateProgress() {
+    const totalCards = document.querySelectorAll('.card[data-id]').length;
+    const visitedCards = document.querySelectorAll('.card.visited').length;
+
+    const progressText = document.getElementById('progress-text');
+    const progressFill = document.getElementById('progress-fill');
+
+    if (progressText) {
+        const lang = i18n[currentLang] || i18n.en;
+        progressText.innerHTML = `${visitedCards} / ${totalCards} <span data-i18n="visited">${lang.visited}</span>`;
+    }
+
+    if (progressFill) {
+        const percentage = totalCards > 0 ? (visitedCards / totalCards) * 100 : 0;
+        progressFill.style.width = `${percentage}%`;
+    }
+}
+
+// Filter by category
+let currentFilter = 'all';
+
+function initFilterButtons() {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const filter = btn.getAttribute('data-filter');
+            currentFilter = filter;
+
+            // Update active state
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            // Show/hide sections
+            const sections = document.querySelectorAll('main section');
+            sections.forEach(section => {
+                if (filter === 'all' || section.id === filter) {
+                    section.style.display = '';
+                } else {
+                    section.style.display = 'none';
+                }
+            });
+        });
+    });
+}
+
+// Dark mode toggle
+function initDarkMode() {
+    const toggle = document.getElementById('darkModeToggle');
+    if (!toggle) return;
+
+    // Check saved preference
+    const isDark = storage.getString('dresden_darkmode', 'false') === 'true';
+    if (isDark) {
+        document.body.classList.add('dark-mode');
+        toggle.textContent = '☀️';
+    } else {
+        toggle.textContent = '🌙';
+    }
+
+    toggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        const isDarkNow = document.body.classList.contains('dark-mode');
+        storage.setString('dresden_darkmode', isDarkNow ? 'true' : 'false');
+        toggle.textContent = isDarkNow ? '☀️' : '🌙';
+    });
+}
+
+// Share progress
+function shareProgress() {
+    const lang = i18n[currentLang] || i18n.en;
+    const totalCards = document.querySelectorAll('.card[data-id]').length;
+    const visitedCards = document.querySelectorAll('.card.visited').length;
+    const percentage = totalCards > 0 ? Math.round((visitedCards / totalCards) * 100) : 0;
+
+    const shareText = `${lang.shareText}: ${visitedCards}/${totalCards} (${percentage}%) ${window.location.href}`;
+
+    if (navigator.share) {
+        navigator.share({
+            title: lang.title,
+            text: shareText,
+            url: window.location.href
+        }).catch(() => {
+            // Fallback to clipboard
+            copyToClipboard(shareText, lang);
+        });
+    } else {
+        copyToClipboard(shareText, lang);
+    }
+}
+
+function copyToClipboard(text, lang) {
+    navigator.clipboard.writeText(text).then(() => {
+        showToast(lang.toastCopied);
+    }).catch(() => {
+        showToast(lang.toastShareFailed);
+    });
+}
+
+// Collapsible sections
+function initCollapsibleSections() {
+    const sections = document.querySelectorAll('main section');
+
+    sections.forEach(section => {
+        const h2 = section.querySelector('h2');
+        if (!h2) return;
+
+        // Wrap h2 in clickable header
+        const header = document.createElement('div');
+        header.className = 'section-header';
+        header.innerHTML = `<span class="collapse-icon">▼</span>`;
+        h2.parentNode.insertBefore(header, h2);
+        header.appendChild(h2);
+
+        header.addEventListener('click', () => {
+            section.classList.toggle('section-collapsed');
+        });
+    });
+}
+
+// Export progress
+function exportProgress() {
+    const lang = i18n[currentLang] || i18n.en;
+    const progress = storage.get('dresden_progress', {});
+    const data = {
+        version: 1,
+        date: new Date().toISOString(),
+        progress: progress
+    };
+
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `dresden-progress-${new Date().toISOString().split('T')[0]}.json`;
+    a.click();
+    URL.revokeObjectURL(url);
+
+    showToast(lang.toastExported);
+}
+
+// Import progress
+function importProgress(event) {
+    const lang = i18n[currentLang] || i18n.en;
+    const file = event.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = (e) => {
+        try {
+            const data = JSON.parse(e.target.result);
+            if (data.progress) {
+                storage.set('dresden_progress', data.progress);
+                loadProgress();
+                updateProgress();
+                showToast(lang.toastImported);
+            }
+        } catch (err) {
+            showToast(lang.toastImportFailed);
+        }
+    };
+    reader.readAsText(file);
+    event.target.value = ''; // Reset file input
+}
+
+// Override toggleVisited to also update progress
+const originalToggleVisited = toggleVisited;
+toggleVisited = function(checkbox) {
+    originalToggleVisited(checkbox);
+    updateProgress();
+};
+
+// Override loadProgress to also update progress indicator
+const originalLoadProgress = loadProgress;
+loadProgress = function() {
+    originalLoadProgress();
+    updateProgress();
+};
+
+// Register service worker for offline support
+function registerServiceWorker() {
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/assets/js/dresden-sw.js')
+            .then((registration) => {
+                console.log('Service Worker registered with scope:', registration.scope);
+            })
+            .catch((error) => {
+                console.log('Service Worker registration failed:', error);
+            });
+    }
+}
+
 // Initialize from storage or default to English
 window.addEventListener('DOMContentLoaded', () => {
     const savedLang = storage.getString('dresden_lang', 'en');
     setLang(savedLang);
-    loadAndRenderPlaces();
+    loadAndRenderPlaces().then(() => {
+        updateProgress();
+    });
     initBackToTop();
+    initFilterButtons();
+    initDarkMode();
+    initCollapsibleSections();
+    registerServiceWorker();
 });
