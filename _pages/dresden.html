@@ -13,9 +13,7 @@ author_profile: false
     <style>
         :root {
             --primary-color: #8a1c1c;
-            /* Christmas/Classic Red */
             --accent-color: #d4af37;
-            /* Gold */
             --bg-color: #f8f9fa;
             --card-bg: #ffffff;
             --text-color: #2c3e50;
@@ -38,6 +36,28 @@ author_profile: false
             transition: opacity 0.3s ease;
         }
 
+        /* Skip to content link */
+        .skip-to-content {
+            position: absolute;
+            top: -100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent-color);
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 0 0 8px 8px;
+            z-index: 10000;
+            transition: top 0.3s ease;
+        }
+
+        .skip-to-content:focus {
+            top: 0;
+            outline: 3px solid var(--text-color);
+            outline-offset: 2px;
+        }
+
         /* Language Switcher */
         .lang-switcher {
             position: absolute;
@@ -46,23 +66,37 @@ author_profile: false
             display: flex;
             gap: 0.5rem;
             z-index: 100;
+            flex-wrap: wrap;
+            justify-content: flex-end;
         }
 
         .lang-btn {
             background: rgba(255, 255, 255, 0.2);
             border: 1px solid rgba(255, 255, 255, 0.3);
             color: white;
-            padding: 4px 10px;
+            min-width: 44px;
+            min-height: 44px;
+            padding: 8px 12px;
             border-radius: 4px;
             cursor: pointer;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             font-weight: 600;
             transition: all 0.2s;
-            backdrop-filter: blur(4px);
+        }
+
+        @supports (backdrop-filter: blur(4px)) {
+            .lang-btn {
+                backdrop-filter: blur(4px);
+            }
         }
 
         .lang-btn:hover {
             background: rgba(255, 255, 255, 0.3);
+        }
+
+        .lang-btn:focus-visible {
+            outline: 3px solid var(--accent-color);
+            outline-offset: 2px;
         }
 
         .lang-btn.active {
@@ -82,13 +116,13 @@ author_profile: false
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-size: clamp(1.75rem, 5vw, 2.5rem);
             margin-bottom: 0.5rem;
             font-weight: 700;
         }
 
         .subtitle {
-            font-size: 1.1rem;
+            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
             opacity: 0.9;
             margin-bottom: 1.5rem;
         }
@@ -102,12 +136,61 @@ author_profile: false
             text-decoration: none;
             font-weight: bold;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            transition: transform 0.2s ease;
+            transition: transform 0.2s ease, background-color 0.2s ease;
         }
 
         .main-map-btn:hover {
             transform: translateY(-2px);
             background-color: #c5a02e;
+        }
+
+        .main-map-btn:focus-visible {
+            outline: 3px solid white;
+            outline-offset: 2px;
+        }
+
+        /* Table of Contents */
+        .toc {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .toc-title {
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .toc-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem 1rem;
+        }
+
+        .toc-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 0.25rem 0;
+            border-bottom: 1px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .toc-links a:hover {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+
+        .toc-links a:focus-visible {
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
         }
 
         /* Container */
@@ -120,6 +203,7 @@ author_profile: false
         /* Sections */
         section {
             margin-bottom: 3rem;
+            scroll-margin-top: 1rem;
         }
 
         h2 {
@@ -203,6 +287,11 @@ author_profile: false
             text-decoration: underline;
         }
 
+        .map-link:focus-visible {
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
+        }
+
         /* Footer */
         footer {
             text-align: center;
@@ -211,6 +300,29 @@ author_profile: false
             font-size: 0.9rem;
             border-top: 1px solid #eee;
             margin-top: 3rem;
+        }
+
+        .clear-progress-btn {
+            background: none;
+            border: 1px solid var(--text-light);
+            color: var(--text-light);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            margin-top: 1rem;
+            transition: all 0.2s;
+        }
+
+        .clear-progress-btn:hover {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+        }
+
+        .clear-progress-btn:focus-visible {
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
         }
 
         .card.visited {
@@ -226,26 +338,112 @@ author_profile: false
 
         .card-checkbox {
             position: absolute;
-            top: 1.2rem;
-            right: 1.2rem;
-            width: 1.2rem;
-            height: 1.2rem;
+            top: 1rem;
+            right: 1rem;
+            width: 1.5rem;
+            height: 1.5rem;
             cursor: pointer;
             accent-color: var(--primary-color);
         }
 
+        .card-checkbox:focus-visible {
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 48px;
+            height: 48px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            z-index: 999;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            background: #6d1616;
+            transform: translateY(-3px);
+        }
+
+        .back-to-top:focus-visible {
+            outline: 3px solid var(--accent-color);
+            outline-offset: 2px;
+        }
+
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 5rem;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: var(--text-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .toast.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
         @media (max-width: 600px) {
-            h1 {
-                font-size: 2rem;
+            header {
+                padding: 4rem 1rem 2rem;
+            }
+
+            .lang-switcher {
+                top: 0.5rem;
+                right: 0.5rem;
+                gap: 0.25rem;
+            }
+
+            .lang-btn {
+                min-width: 40px;
+                min-height: 40px;
+                padding: 6px 10px;
+                font-size: 0.8rem;
             }
 
             .grid {
                 grid-template-columns: 1fr;
             }
 
-            .lang-switcher {
-                top: 0.5rem;
-                right: 0.5rem;
+            .back-to-top {
+                bottom: 1rem;
+                right: 1rem;
+            }
+
+            .toc-links {
+                flex-direction: column;
+                gap: 0.5rem;
             }
         }
     </style>
@@ -253,24 +451,38 @@ author_profile: false
 
 <body>
 
+    <a href="#main-content" class="skip-to-content">Skip to content</a>
+
     <header>
-        <div class="lang-switcher">
-            <button class="lang-btn" onclick="setLang('de')" id="btn-de">DE</button>
-            <button class="lang-btn" onclick="setLang('en')" id="btn-en">EN</button>
-            <button class="lang-btn" onclick="setLang('ko')" id="btn-ko">KO</button>
-            <button class="lang-btn" onclick="setLang('vi')" id="btn-vi">VI</button>
-            <button class="lang-btn" onclick="setLang('zh')" id="btn-zh">ZH</button>
-            <button class="lang-btn" onclick="setLang('ja')" id="btn-ja">JA</button>
+        <div class="lang-switcher" role="group" aria-label="Language selection">
+            <button class="lang-btn" onclick="setLang('de')" id="btn-de" aria-label="Deutsch">DE</button>
+            <button class="lang-btn" onclick="setLang('en')" id="btn-en" aria-label="English">EN</button>
+            <button class="lang-btn" onclick="setLang('ko')" id="btn-ko" aria-label="한국어">KO</button>
+            <button class="lang-btn" onclick="setLang('vi')" id="btn-vi" aria-label="Tiếng Việt">VI</button>
+            <button class="lang-btn" onclick="setLang('zh')" id="btn-zh" aria-label="中文">ZH</button>
+            <button class="lang-btn" onclick="setLang('ja')" id="btn-ja" aria-label="日本語">JA</button>
         </div>
         <h1 data-i18n="h1">Dresden Travel Guide</h1>
         <p class="subtitle" data-i18n="subtitle">Winter Edition • Sights • Food • Christmas Markets</p>
-        <a href="https://maps.app.goo.gl/wuQjRaTGdx4Fhzph8" target="_blank" class="main-map-btn" data-i18n="mapBtn">📍
+        <a href="https://maps.app.goo.gl/wuQjRaTGdx4Fhzph8" target="_blank" rel="noopener noreferrer" class="main-map-btn" data-i18n="mapBtn" aria-label="Open full Google Maps list in new tab">📍
             Open Full Google Maps List</a>
     </header>
 
-    <main class="container">
+    <main class="container" id="main-content">
 
-        <section>
+        <nav class="toc" aria-label="Table of contents">
+            <div class="toc-title" data-i18n="tocTitle">Jump to Section</div>
+            <div class="toc-links">
+                <a href="#markets" data-i18n="secMarkets">Christmas Markets</a>
+                <a href="#sights" data-i18n="secSights">Sights</a>
+                <a href="#museums" data-i18n="secMuseum">Museums</a>
+                <a href="#restaurants" data-i18n="secRestaurants">Restaurants</a>
+                <a href="#snacks" data-i18n="secSnacks">Snacks</a>
+                <a href="#cafes" data-i18n="secCafe">Cafes</a>
+            </div>
+        </nav>
+
+        <section id="markets">
             <h2 data-i18n="secMarkets">Weihnachtsmärkte</h2>
             <p class="intro-text" data-i18n="introMarkets">I would recommend to check out all of them.</p>
             <div class="grid">
@@ -299,7 +511,7 @@ author_profile: false
             </div>
         </section>
 
-        <section>
+        <section id="sights">
             <h2 data-i18n="secSights">Sehenswürdigkeiten</h2>
             <p class="intro-text" data-i18n="introSights">All of them are very close to each other, so we can also visit
                 them all.</p>
@@ -357,7 +569,7 @@ author_profile: false
             </div>
         </section>
 
-        <section>
+        <section id="museums">
             <h2 data-i18n="secMuseum">Museum</h2>
             <p class="intro-text" data-i18n="introMuseum">If you like museums, these are the most well-known in Dresden:
             </p>
@@ -388,7 +600,7 @@ author_profile: false
             </div>
         </section>
 
-        <section>
+        <section id="restaurants">
             <h2 data-i18n="secRestaurants">Restaurants</h2>
             <p class="intro-text" data-i18n="introRestaurants">Depending on what you want to eat and where we will be:
             </p>
@@ -438,7 +650,7 @@ author_profile: false
             </div>
         </section>
 
-        <section>
+        <section id="snacks">
             <h2 data-i18n="secSnacks">Snacks aus Dresden</h2>
             <p class="intro-text" data-i18n="introSnacks">Some snacks if we are hungry. I definitely recommend Curry24.
             </p>
@@ -466,7 +678,7 @@ author_profile: false
             </div>
         </section>
 
-        <section>
+        <section id="cafes">
             <h2 data-i18n="secCafe">Cafe und Kuchen</h2>
             <p class="intro-text" data-i18n="introCafe">Some cafes for warming up and resting:</p>
             <div class="grid">
@@ -499,7 +711,16 @@ author_profile: false
 
     <footer>
         <p data-i18n="footer">Let me know if you have any questions or suggestions!</p>
+        <button class="clear-progress-btn" onclick="clearProgress()" data-i18n="clearProgress">Clear all progress</button>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+    </button>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
     <script>
         const i18n = {
@@ -508,6 +729,11 @@ author_profile: false
                 h1: "Dresden Reiseführer",
                 subtitle: "Winter Edition • Sehenswürdigkeiten • Essen • Weihnachtsmärkte",
                 mapBtn: "📍 Komplette Google Maps Liste öffnen",
+                tocTitle: "Zur Sektion springen",
+                clearProgress: "Fortschritt zurücksetzen",
+                toastVisited: "Als besucht markiert",
+                toastUnvisited: "Markierung entfernt",
+                toastCleared: "Fortschritt zurückgesetzt",
                 secMarkets: "Weihnachtsmärkte",
                 secSights: "Sehenswürdigkeiten",
                 secMuseum: "Museen",
@@ -553,6 +779,11 @@ author_profile: false
                 h1: "Dresden Travel Guide",
                 subtitle: "Winter Edition • Sights • Food • Christmas Markets",
                 mapBtn: "📍 Open Full Google Maps List",
+                tocTitle: "Jump to Section",
+                clearProgress: "Clear all progress",
+                toastVisited: "Marked as visited",
+                toastUnvisited: "Unmarked",
+                toastCleared: "Progress cleared",
                 secMarkets: "Christmas Markets",
                 secSights: "Sights",
                 secMuseum: "Museums",
@@ -598,6 +829,11 @@ author_profile: false
                 h1: "드레스덴 여행 가이드",
                 subtitle: "겨울 에디션 • 명소 • 음식 • 크리스마스 마켓",
                 mapBtn: "📍 전체 구글 지도 리스트 열기",
+                tocTitle: "섹션으로 이동",
+                clearProgress: "진행 상황 초기화",
+                toastVisited: "방문함으로 표시됨",
+                toastUnvisited: "표시 해제됨",
+                toastCleared: "진행 상황이 초기화됨",
                 secMarkets: "크리스마스 마켓",
                 secSights: "주요 명소",
                 secMuseum: "박물관",
@@ -643,6 +879,11 @@ author_profile: false
                 h1: "Hướng dẫn du lịch Dresden",
                 subtitle: "Phiên bản mùa đông • Địa điểm • Ẩm thực • Chợ Giáng sinh",
                 mapBtn: "📍 Mở danh sách Google Maps đầy đủ",
+                tocTitle: "Chuyển đến phần",
+                clearProgress: "Xóa tiến trình",
+                toastVisited: "Đã đánh dấu đã thăm",
+                toastUnvisited: "Đã bỏ đánh dấu",
+                toastCleared: "Đã xóa tiến trình",
                 secMarkets: "Chợ Giáng sinh",
                 secSights: "Địa điểm du lịch",
                 secMuseum: "Bảo tàng",
@@ -688,6 +929,11 @@ author_profile: false
                 h1: "德累斯顿旅游指南",
                 subtitle: "冬季版 • 景点 • 美食 • 圣诞市集",
                 mapBtn: "📍 打开完整谷歌地图列表",
+                tocTitle: "跳转到章节",
+                clearProgress: "清除进度",
+                toastVisited: "已标记为已访问",
+                toastUnvisited: "已取消标记",
+                toastCleared: "进度已清除",
                 secMarkets: "圣诞市集",
                 secSights: "景点",
                 secMuseum: "博物馆",
@@ -733,6 +979,11 @@ author_profile: false
                 h1: "ドレスデン旅行ガイド",
                 subtitle: "冬版 • 観光地 • グルメ • クリスマスマーケット",
                 mapBtn: "📍 完全なGoogleマップリストを開く",
+                tocTitle: "セクションへジャンプ",
+                clearProgress: "進捗をクリア",
+                toastVisited: "訪問済みとしてマーク",
+                toastUnvisited: "マークを解除",
+                toastCleared: "進捗がクリアされました",
                 secMarkets: "クリスマスマーケット",
                 secSights: "観光地",
                 secMuseum: "博物館",
@@ -775,8 +1026,57 @@ author_profile: false
             }
         };
 
+        let currentLang = 'en';
+
+        // Safe localStorage wrapper with error handling
+        const storage = {
+            get(key, fallback = null) {
+                try {
+                    const value = localStorage.getItem(key);
+                    return value ? JSON.parse(value) : fallback;
+                } catch (e) {
+                    console.warn('localStorage read error:', e);
+                    return fallback;
+                }
+            },
+            set(key, value) {
+                try {
+                    localStorage.setItem(key, JSON.stringify(value));
+                    return true;
+                } catch (e) {
+                    console.warn('localStorage write error:', e);
+                    return false;
+                }
+            },
+            getString(key, fallback = '') {
+                try {
+                    return localStorage.getItem(key) || fallback;
+                } catch (e) {
+                    return fallback;
+                }
+            },
+            setString(key, value) {
+                try {
+                    localStorage.setItem(key, value);
+                    return true;
+                } catch (e) {
+                    return false;
+                }
+            }
+        };
+
+        // Toast notification
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            if (!toast) return;
+            toast.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 2500);
+        }
+
         function setLang(lang) {
-            localStorage.setItem('dresden_lang', lang);
+            currentLang = lang;
+            storage.setString('dresden_lang', lang);
 
             // Fade out
             document.body.style.opacity = 0;
@@ -784,7 +1084,7 @@ author_profile: false
             setTimeout(() => {
                 document.querySelectorAll('[data-i18n]').forEach(el => {
                     const key = el.getAttribute('data-i18n');
-                    if (i18n[lang][key]) {
+                    if (i18n[lang] && i18n[lang][key]) {
                         el.innerText = i18n[lang][key];
                     }
                 });
@@ -798,7 +1098,9 @@ author_profile: false
                 document.documentElement.lang = lang;
 
                 // Update title tag
-                document.title = i18n[lang].title;
+                if (i18n[lang]) {
+                    document.title = i18n[lang].title;
+                }
 
                 // Fade in
                 document.body.style.opacity = 1;
@@ -816,14 +1118,18 @@ author_profile: false
                 card.classList.remove('visited');
             }
 
-            // Save to localStorage
-            const savedProgress = JSON.parse(localStorage.getItem('dresden_progress') || '{}');
+            // Save to localStorage with error handling
+            const savedProgress = storage.get('dresden_progress', {});
             savedProgress[id] = visited;
-            localStorage.setItem('dresden_progress', JSON.stringify(savedProgress));
+            storage.set('dresden_progress', savedProgress);
+
+            // Show toast
+            const lang = i18n[currentLang] || i18n.en;
+            showToast(visited ? lang.toastVisited : lang.toastUnvisited);
         }
 
         function loadProgress() {
-            const savedProgress = JSON.parse(localStorage.getItem('dresden_progress') || '{}');
+            const savedProgress = storage.get('dresden_progress', {});
             document.querySelectorAll('.card[data-id]').forEach(card => {
                 const id = card.getAttribute('data-id');
                 const checkbox = card.querySelector('.card-checkbox');
@@ -834,11 +1140,46 @@ author_profile: false
             });
         }
 
+        function clearProgress() {
+            // Clear all checkboxes
+            document.querySelectorAll('.card[data-id]').forEach(card => {
+                const checkbox = card.querySelector('.card-checkbox');
+                checkbox.checked = false;
+                card.classList.remove('visited');
+            });
+
+            // Clear localStorage
+            storage.set('dresden_progress', {});
+
+            // Show toast
+            const lang = i18n[currentLang] || i18n.en;
+            showToast(lang.toastCleared);
+        }
+
+        // Back to top button
+        function initBackToTop() {
+            const backToTopBtn = document.getElementById('backToTop');
+            if (!backToTopBtn) return;
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 400) {
+                    backToTopBtn.classList.add('visible');
+                } else {
+                    backToTopBtn.classList.remove('visible');
+                }
+            });
+
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+
         // Initialize from storage or default to English
         window.addEventListener('DOMContentLoaded', () => {
-            const savedLang = localStorage.getItem('dresden_lang') || 'en';
+            const savedLang = storage.getString('dresden_lang', 'en');
             setLang(savedLang);
             loadProgress();
+            initBackToTop();
         });
     </script>
 </body>
