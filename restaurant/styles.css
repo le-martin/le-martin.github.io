@@ -614,17 +614,29 @@ section {
 }
 
 @media (max-width: 768px) {
-    .review-widgets {
-        gap: 1.5rem;
-        width: 100%;
+    .review-widgets-wrapper {
+        display: flex !important;
         flex-direction: column;
         align-items: center;
+        width: 100%;
+        padding: 0 1rem;
+    }
+
+    .review-widgets {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        width: 100%;
     }
 
     .review-widget {
+        display: flex !important;
+        flex-direction: column;
         min-width: unset;
         max-width: 100%;
         width: 100%;
+        box-sizing: border-box;
     }
 }
 
