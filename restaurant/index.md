@@ -143,7 +143,10 @@ permalink: /restaurant/
         </div>
 </section>
 
-<section id="testimonials">
+<section id="testimonials" aria-labelledby="testimonials-title">
+        <div class="section-header">
+            <h2 id="testimonials-title" data-i18n="reviews_title">Reviews</h2>
+        </div>
         <div class="review-widgets-wrapper">
         <div class="review-widgets">
             <a href="https://maps.app.goo.gl/NY1SnsnVozmhaia19" target="_blank" rel="noopener noreferrer" class="review-widget google-widget" aria-label="Sura Restaurant auf Google Reviews ansehen">
