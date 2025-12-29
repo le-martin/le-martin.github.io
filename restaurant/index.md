@@ -143,9 +143,36 @@ permalink: /restaurant/
         </div>
 </section>
 
-<section id="testimonials" aria-labelledby="testimonials-title">
+<section id="location" style="background-color: var(--bg-dark);" aria-labelledby="location-title">
         <div class="section-header">
-            <h2 id="testimonials-title" data-i18n="reviews_title">Reviews</h2>
+            <span class="subtitle" data-i18n="loc_subtitle">Join Us</span>
+            <h2 id="location-title" data-i18n="loc_title">Location & Hours</h2>
+        </div>
+        <div class="location-container">
+            <div class="location-info">
+                <div class="location-item">
+                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;" data-i18n="loc_address">Address</h3>
+                    <p>Königsbrücker Straße 50<br>01099 Dresden</p>
+                </div>
+                <div class="location-item">
+                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;" data-i18n="loc_hours">Opening Hours</h3>
+                    <p data-i18n="loc_hours_details">Dienstag - Sonntag: 17:00 - 22:00<br>Montag: Ruhetag</p>
+                </div>
+                <div class="location-item">
+                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;" data-i18n="loc_contact">Contact</h3>
+                    <p><a href="tel:+4935181074789" style="color: inherit; text-decoration: none;">0351 810 747 89</a><br>
+                       <a href="mailto:suradresden@gmail.com" style="color: inherit; text-decoration: none;">suradresden@gmail.com</a></p>
+                </div>
+            </div>
+            <div class="location-map">
+                <iframe data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2507.1308701221797!2d13.746738177751032!3d51.069134171716925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4709cf3d87677705%3A0xa89993fea0eaa95f!2sSura%20Restaurant!5e0!3m2!1sen!2sde!4v1767011093448!5m2!1sen!2sde" width="100%" height="300" style="border:0;" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade" title="Google Maps - Sura Restaurant Dresden"></iframe>
+            </div>
+        </div>
+</section>
+
+<section id="reviews">
+        <div class="section-header">
+            <h2 data-i18n="reviews_title">Reviews</h2>
         </div>
         <div class="review-widgets-wrapper">
         <div class="review-widgets">
@@ -204,33 +231,6 @@ permalink: /restaurant/
             </a>
         </div>
         <p class="ratings-disclaimer" data-i18n="ratings_disclaimer">Stand: Dezember 2025</p>
-        </div>
-</section>
-
-<section id="location" style="background-color: var(--bg-dark);" aria-labelledby="location-title">
-        <div class="section-header">
-            <span class="subtitle" data-i18n="loc_subtitle">Join Us</span>
-            <h2 id="location-title" data-i18n="loc_title">Location & Hours</h2>
-        </div>
-        <div class="location-container">
-            <div class="location-info">
-                <div class="location-item">
-                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;" data-i18n="loc_address">Address</h3>
-                    <p>Königsbrücker Straße 50<br>01099 Dresden</p>
-                </div>
-                <div class="location-item">
-                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;" data-i18n="loc_hours">Opening Hours</h3>
-                    <p data-i18n="loc_hours_details">Dienstag - Sonntag: 17:00 - 22:00<br>Montag: Ruhetag</p>
-                </div>
-                <div class="location-item">
-                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;" data-i18n="loc_contact">Contact</h3>
-                    <p><a href="tel:+4935181074789" style="color: inherit; text-decoration: none;">0351 810 747 89</a><br>
-                       <a href="mailto:suradresden@gmail.com" style="color: inherit; text-decoration: none;">suradresden@gmail.com</a></p>
-                </div>
-            </div>
-            <div class="location-map">
-                <iframe data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2507.1308701221797!2d13.746738177751032!3d51.069134171716925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4709cf3d87677705%3A0xa89993fea0eaa95f!2sSura%20Restaurant!5e0!3m2!1sen!2sde!4v1767011093448!5m2!1sen!2sde" width="100%" height="300" style="border:0;" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade" title="Google Maps - Sura Restaurant Dresden"></iframe>
-            </div>
         </div>
 </section>
 
