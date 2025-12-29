@@ -10,7 +10,17 @@ permalink: /restaurant/
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sura | Koreanisches Restaurant in Dresden</title>
     <meta name="description"
-        content="Sura - Authentisches koreanisches Restaurant in Dresden Neustadt. Genießen Sie Bulgogi, Bibimbap, Kimchi Jjigae und weitere traditionelle Gerichte.">
+        content="Sura - Koreanisches Restaurant & Korean BBQ in Dresden Neustadt. Authentische Küche: Bulgogi, Bibimbap, Kimchi Jjigae. Königsbrücker Str. 50. Di-So 17-22 Uhr.">
+
+    <!-- Hreflang for multilingual SEO -->
+    <link rel="alternate" hreflang="de" href="https://le-martin.github.io/restaurant/">
+    <link rel="alternate" hreflang="en" href="https://le-martin.github.io/restaurant/">
+    <link rel="alternate" hreflang="ko" href="https://le-martin.github.io/restaurant/">
+    <link rel="alternate" hreflang="x-default" href="https://le-martin.github.io/restaurant/">
+
+    <!-- Preload critical assets -->
+    <link rel="preload" href="assets/images/hero.webp" as="image" type="image/webp">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Outfit:wght@300;400;600&display=swap" as="style">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="restaurant">
@@ -68,6 +78,8 @@ permalink: /restaurant/
 
 <body>
 
+    <a href="#main-content" class="skip-to-content">Zum Hauptinhalt springen</a>
+
     <nav id="navbar" role="navigation" aria-label="Hauptnavigation">
         <a href="#" class="brand" aria-label="Sura - Zur Startseite">SURA</a>
         <div class="nav-links" id="navLinks">
@@ -96,7 +108,7 @@ permalink: /restaurant/
         </div>
     </nav>
 
-    <main role="main">
+    <main role="main" id="main-content">
     <section id="home" class="hero" aria-labelledby="hero-title">
         <h1 id="hero-title" data-i18n="hero_title">The King's Table</h1>
         <p data-i18n="hero_desc">A modern interpretation of royal Korean cuisine. Elevating traditional flavors through
@@ -121,10 +133,13 @@ permalink: /restaurant/
             </p>
         </div>
         <div class="info-image">
-            <img src="assets/images/bibimbap.png"
-                 alt="Buntes Bibimbap in traditioneller Steinschale - Reis mit Gemüse, Ei und Gochujang Sauce"
-                 loading="lazy"
-                 style="filter: brightness(0.9);">
+            <picture>
+                <source srcset="assets/images/bibimbap.webp" type="image/webp">
+                <img src="assets/images/bibimbap.png"
+                     alt="Buntes Bibimbap in traditioneller Steinschale - Reis mit Gemüse, Ei und Gochujang Sauce"
+                     loading="lazy"
+                     style="filter: brightness(0.9);">
+            </picture>
         </div>
     </section>
 
@@ -138,10 +153,13 @@ permalink: /restaurant/
             <a href="assets/menu.pdf" class="btn disabled" target="_blank" data-i18n="menu_btn">Speisekarte (PDF)</a>
         </div>
         <div class="info-image">
-            <img src="assets/images/hero.png"
-                 alt="Elegantes Restaurant-Interieur mit warmer Beleuchtung und moderner koreanischer Einrichtung"
-                 loading="lazy"
-                 style="filter: brightness(0.8);">
+            <picture>
+                <source srcset="assets/images/hero.webp" type="image/webp">
+                <img src="assets/images/hero.png"
+                     alt="Elegantes Restaurant-Interieur mit warmer Beleuchtung und moderner koreanischer Einrichtung"
+                     loading="lazy"
+                     style="filter: brightness(0.8);">
+            </picture>
         </div>
 </section>
 
