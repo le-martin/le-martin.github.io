@@ -37,11 +37,21 @@ permalink: /restaurant/
         .btn{display:inline-block;padding:1rem 2.5rem;border:1px solid var(--primary-color);color:var(--primary-color);text-decoration:none;text-transform:uppercase;letter-spacing:2px;font-size:0.8rem;transition:var(--transition);background:transparent;cursor:pointer}
         .btn.disabled{opacity:0.5;cursor:not-allowed;pointer-events:none;border-color:#666;color:#666}
         @keyframes fadeInUp{to{opacity:1;transform:translateY(0)}}
+        /* Review widgets - critical for mobile */
+        .review-widgets-wrapper{display:flex;flex-direction:column;align-items:center;width:100%}
+        .review-widgets{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;margin-top:2rem}
+        .review-widget{background:linear-gradient(135deg,rgba(255,255,255,0.08) 0%,rgba(255,255,255,0.03) 100%);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:1.5rem 2rem;min-width:280px;max-width:320px;text-decoration:none;color:var(--text-color);display:flex;flex-direction:column;gap:1rem}
+        .widget-header{display:flex;align-items:center;gap:0.75rem}
+        .widget-source{font-size:0.9rem;font-weight:600;color:#aaa;text-transform:uppercase;letter-spacing:1px}
+        .widget-rating{display:flex;align-items:center;gap:1rem}
+        .rating-number{font-size:2.5rem;font-weight:700;font-family:'Playfair Display',serif;color:var(--text-color)}
+        .widget-meta{font-size:0.85rem;color:#888}
+        .widget-cta{display:flex;align-items:center;gap:0.5rem;font-size:0.85rem;color:var(--primary-color);font-weight:500;margin-top:0.5rem}
+        @media(max-width:768px){.review-widgets{flex-direction:column;align-items:center;width:100%;padding:0 1rem}.review-widget{min-width:unset;max-width:100%;width:100%}}
     </style>
 
-    <!-- Full stylesheet loaded asynchronously -->
-    <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="styles.css"></noscript>
+    <!-- Full stylesheet -->
+    <link rel="stylesheet" href="styles.css">
 
     <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
 </head>
