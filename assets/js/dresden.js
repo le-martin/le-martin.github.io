@@ -15,11 +15,6 @@ const i18n = {
         shareText: "Mein Dresden Reisefortschritt",
         toastCopied: "Link kopiert!",
         toastShareFailed: "Teilen fehlgeschlagen",
-        exportProgress: "Exportieren",
-        importProgress: "Importieren",
-        toastExported: "Fortschritt exportiert",
-        toastImported: "Fortschritt importiert",
-        toastImportFailed: "Import fehlgeschlagen",
         secMarkets: "Weihnachtsmärkte",
         secSights: "Sehenswürdigkeiten",
         secMuseum: "Museen",
@@ -91,11 +86,6 @@ const i18n = {
         shareText: "My Dresden Travel Progress",
         toastCopied: "Link copied!",
         toastShareFailed: "Sharing failed",
-        exportProgress: "Export",
-        importProgress: "Import",
-        toastExported: "Progress exported",
-        toastImported: "Progress imported",
-        toastImportFailed: "Import failed",
         secMarkets: "Christmas Markets",
         secSights: "Sights",
         secMuseum: "Museums",
@@ -167,11 +157,6 @@ const i18n = {
         shareText: "나의 드레스덴 여행 진행 상황",
         toastCopied: "링크 복사됨!",
         toastShareFailed: "공유 실패",
-        exportProgress: "내보내기",
-        importProgress: "가져오기",
-        toastExported: "진행 상황 내보내기 완료",
-        toastImported: "진행 상황 가져오기 완료",
-        toastImportFailed: "가져오기 실패",
         secMarkets: "크리스마스 마켓",
         secSights: "주요 명소",
         secMuseum: "박물관",
@@ -243,11 +228,6 @@ const i18n = {
         shareText: "Tiến trình du lịch Dresden của tôi",
         toastCopied: "Đã sao chép liên kết!",
         toastShareFailed: "Chia sẻ thất bại",
-        exportProgress: "Xuất",
-        importProgress: "Nhập",
-        toastExported: "Đã xuất tiến trình",
-        toastImported: "Đã nhập tiến trình",
-        toastImportFailed: "Nhập thất bại",
         secMarkets: "Chợ Giáng sinh",
         secSights: "Địa điểm du lịch",
         secMuseum: "Bảo tàng",
@@ -319,11 +299,6 @@ const i18n = {
         shareText: "我的德累斯顿旅行进度",
         toastCopied: "链接已复制!",
         toastShareFailed: "分享失败",
-        exportProgress: "导出",
-        importProgress: "导入",
-        toastExported: "进度已导出",
-        toastImported: "进度已导入",
-        toastImportFailed: "导入失败",
         secMarkets: "圣诞市集",
         secSights: "景点",
         secMuseum: "博物馆",
@@ -395,11 +370,6 @@ const i18n = {
         shareText: "私のドレスデン旅行の進捗",
         toastCopied: "リンクをコピーしました!",
         toastShareFailed: "共有に失敗しました",
-        exportProgress: "エクスポート",
-        importProgress: "インポート",
-        toastExported: "進捗をエクスポートしました",
-        toastImported: "進捗をインポートしました",
-        toastImportFailed: "インポートに失敗しました",
         secMarkets: "クリスマスマーケット",
         secSights: "観光地",
         secMuseum: "博物館",
@@ -795,51 +765,6 @@ function initCollapsibleSections() {
             section.classList.toggle('section-collapsed');
         });
     });
-}
-
-// Export progress
-function exportProgress() {
-    const lang = i18n[currentLang] || i18n.en;
-    const progress = storage.get('dresden_progress', {});
-    const data = {
-        version: 1,
-        date: new Date().toISOString(),
-        progress: progress
-    };
-
-    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `dresden-progress-${new Date().toISOString().split('T')[0]}.json`;
-    a.click();
-    URL.revokeObjectURL(url);
-
-    showToast(lang.toastExported);
-}
-
-// Import progress
-function importProgress(event) {
-    const lang = i18n[currentLang] || i18n.en;
-    const file = event.target.files[0];
-    if (!file) return;
-
-    const reader = new FileReader();
-    reader.onload = (e) => {
-        try {
-            const data = JSON.parse(e.target.result);
-            if (data.progress) {
-                storage.set('dresden_progress', data.progress);
-                loadProgress();
-                updateProgress();
-                showToast(lang.toastImported);
-            }
-        } catch (err) {
-            showToast(lang.toastImportFailed);
-        }
-    };
-    reader.readAsText(file);
-    event.target.value = ''; // Reset file input
 }
 
 // Override toggleVisited to also update progress
