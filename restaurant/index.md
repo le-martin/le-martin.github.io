@@ -274,9 +274,8 @@ permalink: /restaurant/
             </a>
             <a href="https://www.tripadvisor.de/Restaurant_Review-g187399-d5975431-Reviews-SURA_Dresden-Dresden_Saxony.html" target="_blank" rel="noopener noreferrer" class="review-widget tripadvisor-widget" aria-label="Sura Restaurant auf TripAdvisor ansehen">
                 <div class="widget-header">
-                    <svg class="tripadvisor-logo" viewBox="0 0 512 512" width="24" height="24">
-                        <circle fill="#34E0A1" cx="256" cy="256" r="256"/>
-                        <path fill="#000" d="M256 144c-52.8 0-101.2 18.4-139.2 49.1l-28-28.3h56.8c67.2-45.8 155.6-45.8 222.8 0h56.8l-28 28.3C359.2 162.4 308.8 144 256 144zm-87.2 192c-35.2 0-64-28.8-64-64s28.8-64 64-64 64 28.8 64 64-28.8 64-64 64zm174.4 0c-35.2 0-64-28.8-64-64s28.8-64 64-64 64 28.8 64 64-28.8 64-64 64zm-87.2 48l-32-40c20.8 12.8 44.8 20 70.4 20s49.6-7.2 70.4-20l-32 40h-76.8z"/>
+                    <svg class="tripadvisor-logo" viewBox="0 0 24 24" width="28" height="28">
+                        <path fill="#34E0A1" d="M12.006 4.295c-2.67 0-5.338.784-7.645 2.353H0l1.963 2.135a5.997 5.997 0 0 0 4.04 10.43 5.976 5.976 0 0 0 4.075-1.6L12 19.705l1.922-2.09a5.972 5.972 0 0 0 4.072 1.598 6 6 0 0 0 6-5.998 5.982 5.982 0 0 0-1.957-4.432L24 6.648h-4.35a13.573 13.573 0 0 0-7.644-2.353zM12 6.255c1.531 0 3.063.303 4.504.903C13.943 8.138 12 10.43 12 13.1c0-2.671-1.942-4.962-4.504-5.942A11.72 11.72 0 0 1 12 6.256zM6.002 9.157a4.059 4.059 0 1 1 0 8.118 4.059 4.059 0 0 1 0-8.118zm11.992.002a4.057 4.057 0 1 1 .003 8.115 4.057 4.057 0 0 1-.003-8.115zm-11.992 1.93a2.128 2.128 0 0 0 0 4.256 2.128 2.128 0 0 0 0-4.256zm11.992 0a2.128 2.128 0 0 0 0 4.256 2.128 2.128 0 0 0 0-4.256z"/>
                     </svg>
                     <span class="widget-source">TripAdvisor</span>
                 </div>
@@ -299,6 +298,7 @@ permalink: /restaurant/
                 </div>
             </a>
         </div>
+        <p class="ratings-disclaimer" data-i18n="ratings_disclaimer">Stand: Dezember 2024</p>
 </section>
 
 <section id="location" style="background-color: var(--bg-dark);" aria-labelledby="location-title">
