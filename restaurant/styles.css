@@ -611,7 +611,6 @@ section {
     font-size: 0.75rem;
     color: #666;
     margin-top: 1.5rem;
-    font-style: italic;
 }
 
 @media (max-width: 768px) {
