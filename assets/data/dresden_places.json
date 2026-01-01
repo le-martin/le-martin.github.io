@@ -4,19 +4,28 @@
             "id": "market-neumarkt",
             "title": "Advent auf dem Neumarkt",
             "description": "descNeumarkt",
-            "mapLink": "https://maps.app.goo.gl/YzVjwR9b2xPa35jn6"
+            "mapLink": "https://maps.app.goo.gl/YzVjwR9b2xPa35jn6",
+            "image": "https://placehold.co/600x400?text=Neumarkt",
+            "lat": 51.051956,
+            "lng": 13.741568
         },
         {
             "id": "market-stallhof",
             "title": "Rauhnächte im Stallhof",
             "description": "descStallhof",
-            "mapLink": "https://maps.app.goo.gl/xdQAYCwW2ujAk4p5A"
+            "mapLink": "https://maps.app.goo.gl/xdQAYCwW2ujAk4p5A",
+            "image": "https://placehold.co/600x400?text=Stallhof",
+            "lat": 51.052996,
+            "lng": 13.733927
         },
         {
             "id": "market-augustus",
             "title": "Augustusmarkt",
             "description": "descAugustus",
-            "mapLink": "https://maps.app.goo.gl/3FGJru3tPnZR4Jfk9"
+            "mapLink": "https://maps.app.goo.gl/3FGJru3tPnZR4Jfk9",
+            "image": "https://placehold.co/600x400?text=Augustusmarkt",
+            "lat": 51.0583,
+            "lng": 13.7413
         }
     ],
     "sights": [
@@ -25,45 +34,66 @@
             "title": "Zwinger",
             "tag": "mustSee",
             "description": "descZwinger",
-            "mapLink": "https://maps.app.goo.gl/4jH7vcYrXMmDDNcU6"
+            "mapLink": "https://maps.app.goo.gl/4jH7vcYrXMmDDNcU6",
+            "image": "https://placehold.co/600x400?text=Zwinger",
+            "lat": 51.05315,
+            "lng": 13.73393
         },
         {
             "id": "sight-frauenkirche",
             "title": "Frauenkirche & Neumarkt",
             "tag": "mustSee",
             "description": "descFrauenkirche",
-            "mapLink": "https://maps.app.goo.gl/ne4Az4LCJWgGr6Sd9"
+            "mapLink": "https://maps.app.goo.gl/ne4Az4LCJWgGr6Sd9",
+            "image": "https://placehold.co/600x400?text=Frauenkirche",
+            "lat": 51.051956,
+            "lng": 13.741568
         },
         {
             "id": "sight-semperoper",
             "title": "Semperoper",
             "tag": "mustSee",
             "description": "descSemperoper",
-            "mapLink": "https://maps.app.goo.gl/cDRx865Huzc8fdcf8"
+            "mapLink": "https://maps.app.goo.gl/cDRx865Huzc8fdcf8",
+            "image": "https://placehold.co/600x400?text=Semperoper",
+            "lat": 51.05444,
+            "lng": 13.73528
         },
         {
             "id": "sight-fuerstenzug",
             "title": "Fürstenzug",
             "description": "descFuerstenzug",
-            "mapLink": "https://maps.app.goo.gl/1n7LEm35yuGz1WRi6"
+            "mapLink": "https://maps.app.goo.gl/1n7LEm35yuGz1WRi6",
+            "image": "https://placehold.co/600x400?text=Fuerstenzug",
+            "lat": 51.0528,
+            "lng": 13.7400
         },
         {
             "id": "sight-bruehl",
             "title": "Brühlsche Terasse",
             "description": "descBruehl",
-            "mapLink": "https://maps.app.goo.gl/rFVn6hbGL1mwnyUw9"
+            "mapLink": "https://maps.app.goo.gl/rFVn6hbGL1mwnyUw9",
+            "image": "https://placehold.co/600x400?text=Bruehlsche+Terasse",
+            "lat": 51.0530,
+            "lng": 13.7430
         },
         {
             "id": "sight-reiter",
             "title": "Goldener Reiter",
             "description": "descReiter",
-            "mapLink": "https://maps.app.goo.gl/eU2VAQuWGzHwcY3XA"
+            "mapLink": "https://maps.app.goo.gl/eU2VAQuWGzHwcY3XA",
+            "image": "https://placehold.co/600x400?text=Goldener+Reiter",
+            "lat": 51.0583,
+            "lng": 13.7413
         },
         {
             "id": "sight-hofkirche",
             "title": "Hofkirche",
             "description": "descHofkirche",
-            "mapLink": "https://maps.app.goo.gl/rrPg4WzTTLT8tqDJ8"
+            "mapLink": "https://maps.app.goo.gl/rrPg4WzTTLT8tqDJ8",
+            "image": "https://placehold.co/600x400?text=Hofkirche",
+            "lat": 51.0535,
+            "lng": 13.7373
         }
     ],
     "museums": [
@@ -71,19 +101,28 @@
             "id": "museum-gemaelde",
             "title": "Gemäldegalerie Alte Meister",
             "description": "descGemaelde",
-            "mapLink": "https://maps.app.goo.gl/FQsDrRRFEtebKCvM7"
+            "mapLink": "https://maps.app.goo.gl/FQsDrRRFEtebKCvM7",
+            "image": "https://placehold.co/600x400?text=Gemaelde+Galerie",
+            "lat": 51.05315,
+            "lng": 13.73393
         },
         {
             "id": "museum-gewoelbe",
             "title": "Grünes Gewölbe",
             "description": "descGewoelbe",
-            "mapLink": "https://maps.app.goo.gl/Q4MmApSeasG8rAyf9"
+            "mapLink": "https://maps.app.goo.gl/Q4MmApSeasG8rAyf9",
+            "image": "https://placehold.co/600x400?text=Gruenes+Gewoelbe",
+            "lat": 51.0525,
+            "lng": 13.7365
         },
         {
             "id": "museum-albertinum",
             "title": "Albertinum",
             "description": "descAlbertinum",
-            "mapLink": "https://maps.app.goo.gl/gWWpn84dgtJC89YJ9"
+            "mapLink": "https://maps.app.goo.gl/gWWpn84dgtJC89YJ9",
+            "image": "https://placehold.co/600x400?text=Albertinum",
+            "lat": 51.0520,
+            "lng": 13.7440
         }
     ],
     "restaurants": [
@@ -92,56 +131,80 @@
             "title": "Sura",
             "tag": "tagKorean",
             "description": "descSura",
-            "mapLink": "https://maps.app.goo.gl/nG5vCs3W7tJoHiQN9"
+            "mapLink": "https://maps.app.goo.gl/nG5vCs3W7tJoHiQN9",
+            "image": "https://placehold.co/600x400?text=Sura",
+            "lat": 51.0660,
+            "lng": 13.7530
         },
         {
             "id": "restaurant-china",
             "title": "China Zeit",
             "tag": "tagChinese",
             "description": "descChinaZeit",
-            "mapLink": "https://maps.app.goo.gl/vBsQGQPcYrcXtb1Z8"
+            "mapLink": "https://maps.app.goo.gl/vBsQGQPcYrcXtb1Z8",
+            "image": "https://placehold.co/600x400?text=China+Zeit",
+            "lat": 51.0545,
+            "lng": 13.7250
         },
         {
             "id": "restaurant-tapas",
             "title": "Las Tapas",
             "tag": "tagSpanish",
             "description": "descLasTapas",
-            "mapLink": "https://maps.app.goo.gl/KerdQiUxhsZkHAJc9"
+            "mapLink": "https://maps.app.goo.gl/KerdQiUxhsZkHAJc9",
+            "image": "https://placehold.co/600x400?text=Las+Tapas",
+            "lat": 51.0520,
+            "lng": 13.7410
         },
         {
             "id": "restaurant-anamit",
             "title": "Anamit",
             "tag": "tagVietnamese",
             "description": "descAnamit",
-            "mapLink": "https://maps.app.goo.gl/qyuoRNrX5TYuVthC7"
+            "mapLink": "https://maps.app.goo.gl/qyuoRNrX5TYuVthC7",
+            "image": "https://placehold.co/600x400?text=Anamit",
+            "lat": 51.0655,
+            "lng": 13.7505
         },
         {
             "id": "restaurant-augustiner",
             "title": "Augustiner",
             "tag": "tagGerman",
             "description": "descAugustiner",
-            "mapLink": "https://maps.app.goo.gl/QZDQTHv3WguBxyrXA"
+            "mapLink": "https://maps.app.goo.gl/QZDQTHv3WguBxyrXA",
+            "image": "https://placehold.co/600x400?text=Augustiner",
+            "lat": 51.0517,
+            "lng": 13.7423
         },
         {
             "id": "restaurant-ararat",
             "title": "Ararat",
             "tag": "tagDoener",
             "description": "descArarat",
-            "mapLink": "https://maps.app.goo.gl/9hZ7JU1XcFqkrHTn6"
+            "mapLink": "https://maps.app.goo.gl/9hZ7JU1XcFqkrHTn6",
+            "image": "https://placehold.co/600x400?text=Ararat",
+            "lat": 51.0660,
+            "lng": 13.7500
         },
         {
             "id": "restaurant-kinh-do",
             "title": "Kinh-Do",
             "tag": "tagVietnamese",
             "description": "descKinhDo",
-            "mapLink": "https://maps.app.goo.gl/56mcJcJaNYy7CPDi9"
+            "mapLink": "https://maps.app.goo.gl/56mcJcJaNYy7CPDi9",
+            "image": "https://placehold.co/600x400?text=Kinh+Do",
+            "lat": 51.0495,
+            "lng": 13.7405
         },
         {
             "id": "restaurant-baba-doener",
             "title": "Baba Döner",
             "tag": "tagDoener",
             "description": "descBabaDoener",
-            "mapLink": "https://maps.app.goo.gl/q9H2nKb5rBUZzEjz8"
+            "mapLink": "https://maps.app.goo.gl/q9H2nKb5rBUZzEjz8",
+            "image": "https://placehold.co/600x400?text=Baba+Doener",
+            "lat": 51.0410,
+            "lng": 13.7330
         }
     ],
     "snacks": [
@@ -149,20 +212,29 @@
             "id": "snack-kexerei",
             "title": "KeXerei & Russisch Brot",
             "tag": "tagCookies",
-            "description": "descKexereiNew"
+            "description": "descKexereiNew",
+            "image": "https://placehold.co/600x400?text=KeXerei",
+            "lat": 51.0515,
+            "lng": 13.7400
         },
         {
             "id": "snack-curry24",
             "title": "Curry24",
             "tag": "empfehlung",
             "description": "descCurry24",
-            "mapLink": "https://maps.app.goo.gl/au9VE2CXg1twPNmx6"
+            "mapLink": "https://maps.app.goo.gl/au9VE2CXg1twPNmx6",
+            "image": "https://placehold.co/600x400?text=Curry24",
+            "lat": 51.0504,
+            "lng": 13.7335
         },
         {
             "id": "snack-camondas",
             "title": "Camondas",
             "tag": "tagIcecream",
-            "description": "descCamondasNew"
+            "description": "descCamondasNew",
+            "image": "https://placehold.co/600x400?text=Camondas",
+            "lat": 51.0520,
+            "lng": 13.7360
         }
     ],
     "cafes": [
@@ -170,19 +242,28 @@
             "id": "cafe-antik",
             "title": "Kunst Cafe Antik",
             "description": "descAntik",
-            "mapLink": "https://maps.app.goo.gl/b1Fjmb6k662tixit8"
+            "mapLink": "https://maps.app.goo.gl/b1Fjmb6k662tixit8",
+            "image": "https://placehold.co/600x400?text=Cafe+Antik",
+            "lat": 51.0518,
+            "lng": 13.7420
         },
         {
             "id": "cafe-kreutzkamm",
             "title": "Kreutzkamm",
             "description": "descKreutzkamm",
-            "mapLink": "https://maps.app.goo.gl/3i8nhnZ1YTTj6PYH9"
+            "mapLink": "https://maps.app.goo.gl/3i8nhnZ1YTTj6PYH9",
+            "image": "https://placehold.co/600x400?text=Kreutzkamm",
+            "lat": 51.0498,
+            "lng": 13.7385
         },
         {
             "id": "cafe-cosel",
             "title": "Coselpalais",
             "description": "descCosel",
-            "mapLink": "https://maps.app.goo.gl/kysQSMrh2hkqF1jd7"
+            "mapLink": "https://maps.app.goo.gl/kysQSMrh2hkqF1jd7",
+            "image": "https://placehold.co/600x400?text=Coselpalais",
+            "lat": 51.0525,
+            "lng": 13.7430
         }
     ]
 }

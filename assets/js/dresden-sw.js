@@ -1,4 +1,4 @@
-const CACHE_NAME = 'dresden-guide-v1';
+const CACHE_NAME = 'dresden-guide-v2';
 const ASSETS_TO_CACHE = [
     '/dresden/',
     '/assets/css/dresden.css',
