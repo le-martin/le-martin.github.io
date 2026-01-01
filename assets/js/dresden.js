@@ -429,6 +429,62 @@ const i18n = {
 
 let currentLang = 'en';
 let allPlaces = {};
+let map;
+let markers = [];
+
+function initMap() {
+    if (typeof L === 'undefined') return;
+
+    const mapContainer = document.getElementById('dresden-map');
+    if (!mapContainer) return;
+
+    // Default center (Dresden)
+    map = L.map('dresden-map').setView([51.0504, 13.7373], 13);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+}
+
+function updateMapMarkers() {
+    if (!map) return;
+
+    // Clear existing markers
+    markers.forEach(marker => map.removeLayer(marker));
+    markers = [];
+
+    const bounds = L.latLngBounds();
+    let hasMarkers = false;
+
+    // Get current filter
+    const searchTerm = document.getElementById('search-bar').value.toLowerCase();
+    const activeFilterBtn = document.querySelector('.filter-btn.active');
+    const categoryFilter = activeFilterBtn ? activeFilterBtn.getAttribute('data-filter') : 'all';
+
+    for (const section in allPlaces) {
+        // Apply category filter
+        if (categoryFilter !== 'all' && section !== categoryFilter) continue;
+
+        allPlaces[section].forEach(place => {
+            // Apply search filter
+            if (!place.title.toLowerCase().includes(searchTerm)) return;
+
+            if (place.lat && place.lng) {
+                const marker = L.marker([place.lat, place.lng])
+                    .addTo(map)
+                    .bindPopup(`<b>${place.title}</b><br><a href="${place.mapLink}" target="_blank">Google Maps</a>`);
+                
+                markers.push(marker);
+                bounds.extend([place.lat, place.lng]);
+                hasMarkers = true;
+            }
+        });
+    }
+
+    if (hasMarkers) {
+        map.fitBounds(bounds, { padding: [50, 50] });
+    }
+}
 
 // Safe localStorage wrapper with error handling
 const storage = {
@@ -599,10 +655,11 @@ function renderCards(sectionId, places) {
         
         const descriptionHTML = place.description ? `<div class="card-desc" data-i18n="${place.description}">${i18n[currentLang][place.description] || ''}</div>` : '';
         const mapLinkHTML = place.mapLink ? `<a href="${place.mapLink}" target="_blank" class="map-link" data-i18n="viewOnMap">${i18n[currentLang].viewOnMap}</a>` : '';
-        
+        const imageHTML = place.image ? `<img src="${place.image}" alt="${place.title}" class="card-image" loading="lazy">` : '';
 
         card.innerHTML = `
             <input type="checkbox" class="card-checkbox" onchange="toggleVisited(this)">
+            ${imageHTML}
             ${tagHTML}
             <div class="card-title">${place.title}</div>
             ${descriptionHTML}
@@ -623,6 +680,7 @@ function filterCards() {
         renderCards(section, filteredPlaces);
     }
     loadProgress();
+    updateMapMarkers();
 }
 
 
@@ -639,6 +697,7 @@ async function loadAndRenderPlaces() {
         }
         
         loadProgress(); // Reload progress after rendering cards
+        updateMapMarkers();
 
     } catch (error) {
         console.error('Error loading places:', error);
@@ -689,6 +748,7 @@ function initFilterButtons() {
                     section.style.display = 'none';
                 }
             });
+            updateMapMarkers();
         });
     });
 }
@@ -798,6 +858,7 @@ function registerServiceWorker() {
 window.addEventListener('DOMContentLoaded', () => {
     const savedLang = storage.getString('dresden_lang', 'en');
     setLang(savedLang);
+    initMap();
     loadAndRenderPlaces().then(() => {
         updateProgress();
     });
