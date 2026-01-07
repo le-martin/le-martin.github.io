@@ -10,8 +10,10 @@ author_profile: false
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="title">Visit Dresden - Travel Guide</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <link rel="stylesheet" href="/assets/css/dresden.css">
 </head>
 
@@ -29,15 +31,17 @@ author_profile: false
             <button class="lang-btn" onclick="setLang('ja')" id="btn-ja" aria-label="日本語">JA</button>
         </div>
         <h1 data-i18n="h1">Dresden Travel Guide</h1>
-        <p class="subtitle" data-i18n="subtitle">Winter Edition • Sights • Food • Christmas Markets</p>
-        <a href="https://maps.app.goo.gl/wuQjRaTGdx4Fhzph8" target="_blank" rel="noopener noreferrer" class="main-map-btn" data-i18n="mapBtn" aria-label="Open full Google Maps list in new tab">📍
+        <p class="subtitle" data-i18n="subtitle">Sights • Food • Cafes</p>
+        <a href="https://maps.app.goo.gl/wuQjRaTGdx4Fhzph8" target="_blank" rel="noopener noreferrer"
+            class="main-map-btn" data-i18n="mapBtn" aria-label="Open full Google Maps list in new tab">📍
             Open Full Google Maps List</a>
     </header>
 
     <main class="container" id="main-content">
 
         <!-- Map Container -->
-        <div id="dresden-map" style="height: 400px; width: 100%; border-radius: 12px; margin-bottom: 2rem; z-index: 1;"></div>
+        <div id="dresden-map" style="height: 400px; width: 100%; border-radius: 12px; margin-bottom: 2rem; z-index: 1;">
+        </div>
 
         <!-- Progress Indicator -->
         <div class="progress-bar">
@@ -53,7 +57,6 @@ author_profile: false
         <nav class="toc" aria-label="Table of contents">
             <div class="toc-title" data-i18n="tocTitle">Jump to Section</div>
             <div class="toc-links">
-                <a href="#markets" data-i18n="secMarkets">Christmas Markets</a>
                 <a href="#sights" data-i18n="secSights">Sights</a>
                 <a href="#museums" data-i18n="secMuseum">Museums</a>
                 <a href="#restaurants" data-i18n="secRestaurants">Restaurants</a>
@@ -65,7 +68,6 @@ author_profile: false
         <!-- Filter Buttons -->
         <div class="filter-buttons" role="group" aria-label="Filter by category">
             <button class="filter-btn active" data-filter="all" data-i18n="filterAll">All</button>
-            <button class="filter-btn" data-filter="markets" data-i18n="secMarkets">Markets</button>
             <button class="filter-btn" data-filter="sights" data-i18n="secSights">Sights</button>
             <button class="filter-btn" data-filter="museums" data-i18n="secMuseum">Museums</button>
             <button class="filter-btn" data-filter="restaurants" data-i18n="secRestaurants">Restaurants</button>
@@ -78,19 +80,14 @@ author_profile: false
                 data-i18n="searchPlaceholder" aria-label="Search for a place">
         </div>
 
-        <section id="markets">
-            <h2 data-i18n="secMarkets">Weihnachtsmärkte</h2>
-            <p class="intro-text" data-i18n="introMarkets">I would recommend to check out all of them.</p>
-            <div class="grid">
-                </div>
-        </section>
+
 
         <section id="sights">
             <h2 data-i18n="secSights">Sehenswürdigkeiten</h2>
             <p class="intro-text" data-i18n="introSights">All of them are very close to each other, so we can also visit
                 them all.</p>
             <div class="grid">
-                </div>
+            </div>
         </section>
 
         <section id="museums">
@@ -98,7 +95,7 @@ author_profile: false
             <p class="intro-text" data-i18n="introMuseum">If you like museums, these are the most well-known in Dresden:
             </p>
             <div class="grid">
-                </div>
+            </div>
         </section>
 
         <section id="restaurants">
@@ -106,7 +103,7 @@ author_profile: false
             <p class="intro-text" data-i18n="introRestaurants">Depending on what you want to eat and where we will be:
             </p>
             <div class="grid">
-                </div>
+            </div>
         </section>
 
         <section id="snacks">
@@ -114,21 +111,24 @@ author_profile: false
             <p class="intro-text" data-i18n="introSnacks">Some snacks if we are hungry. I definitely recommend Curry24.
             </p>
             <div class="grid">
-                </div>
+            </div>
         </section>
 
         <section id="cafes">
             <h2 data-i18n="secCafe">Cafe und Kuchen</h2>
             <p class="intro-text" data-i18n="introCafe">Some cafes for warming up and resting:</p>
             <div class="grid">
-                </div>
+            </div>
         </section>
 
     </main>
 
     <footer>
         <p data-i18n="footer">Let me know if you have any questions or suggestions!</p>
-        <button class="clear-progress-btn" onclick="clearProgress()" data-i18n="clearProgress">Clear all progress</button>
+        <button class="clear-progress-btn" onclick="clearProgress()" data-i18n="clearProgress">Clear all
+            progress</button>
+        <p class="last-updated" data-i18n="lastUpdated">Last updated: January 2026</p>
+        <p class="ai-notice" data-i18n="aiNotice">Images are AI-generated and may not reflect actual locations.</p>
     </footer>
 
     <!-- Dark Mode Toggle -->
@@ -136,13 +136,16 @@ author_profile: false
 
     <!-- Back to Top Button -->
     <button id="backToTop" class="back-to-top" aria-label="Back to top">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
     </button>
 
     <!-- Toast Notification -->
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
-<script src="/assets/js/dresden.js"></script>
+    <script src="/assets/js/dresden.js"></script>
 </body>
 
 </html>

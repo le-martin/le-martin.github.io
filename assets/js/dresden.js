@@ -2,7 +2,7 @@ const i18n = {
     de: {
         title: "Reiseführer Dresden",
         h1: "Dresden Reiseführer",
-        subtitle: "Winter Edition • Sehenswürdigkeiten • Essen • Weihnachtsmärkte",
+        subtitle: "Sehenswürdigkeiten • Essen • Cafés",
         mapBtn: "📍 Komplette Google Maps Liste öffnen",
         tocTitle: "Zur Sektion springen",
         clearProgress: "Fortschritt zurücksetzen",
@@ -54,6 +54,8 @@ const i18n = {
         tagCookies: "Kekse",
         tagIcecream: "Eis & Schokolade",
         footer: "Lass es mich wissen, wenn du Fragen oder Anregungen hast!",
+        lastUpdated: "Zuletzt aktualisiert: Januar 2026",
+        aiNotice: "Bilder sind KI-generiert und entsprechen möglicherweise nicht den tatsächlichen Orten.",
         searchPlaceholder: "Suche nach einem Ort...",
         descNeumarkt: "Traditioneller Weihnachtsmarkt vor der Frauenkirche.",
         descZwinger: "Barocke Schlossanlage mit Museen.",
@@ -73,7 +75,7 @@ const i18n = {
     en: {
         title: "Visit Dresden - Travel Guide",
         h1: "Dresden Travel Guide",
-        subtitle: "Winter Edition • Sights • Food • Christmas Markets",
+        subtitle: "Sights • Food • Cafes",
         mapBtn: "📍 Open Full Google Maps List",
         tocTitle: "Jump to Section",
         clearProgress: "Clear all progress",
@@ -125,6 +127,8 @@ const i18n = {
         tagCookies: "Cookies",
         tagIcecream: "Ice & Chocolate",
         footer: "Let me know if you have any questions or suggestions!",
+        lastUpdated: "Last updated: January 2026",
+        aiNotice: "Images are AI-generated and may not reflect actual locations.",
         searchPlaceholder: "Search for a place...",
         descNeumarkt: "Traditional Christmas market in front of the Frauenkirche.",
         descZwinger: "Baroque palace complex with museums.",
@@ -144,7 +148,7 @@ const i18n = {
     ko: {
         title: "드레스덴 방문 - 여행 가이드",
         h1: "드레스덴 여행 가이드",
-        subtitle: "겨울 에디션 • 명소 • 음식 • 크리스마스 마켓",
+        subtitle: "명소 • 음식 • 카페",
         mapBtn: "📍 전체 구글 지도 리스트 열기",
         tocTitle: "섹션으로 이동",
         clearProgress: "진행 상황 초기화",
@@ -196,6 +200,8 @@ const i18n = {
         tagCookies: "쿠키",
         tagIcecream: "아이스크림",
         footer: "질문이나 제안 사항이 있으면 알려주세요!",
+        lastUpdated: "마지막 업데이트: 2026년 1월",
+        aiNotice: "이미지는 AI로 생성되었으며 실제 장소와 다를 수 있습니다.",
         searchPlaceholder: "장소를 검색하세요...",
         descNeumarkt: "프라우엔 교회 앞의 전통 크리스마스 마켓.",
         descZwinger: "박물관이 있는 바로크 양식의 궁전 단지.",
@@ -215,7 +221,7 @@ const i18n = {
     vi: {
         title: "Thăm Dresden - Hướng dẫn du lịch",
         h1: "Hướng dẫn du lịch Dresden",
-        subtitle: "Phiên bản mùa đông • Địa điểm • Ẩm thực • Chợ Giáng sinh",
+        subtitle: "Địa điểm • Ẩm thực • Quán cà phê",
         mapBtn: "📍 Mở danh sách Google Maps đầy đủ",
         tocTitle: "Chuyển đến phần",
         clearProgress: "Xóa tiến trình",
@@ -267,6 +273,8 @@ const i18n = {
         tagCookies: "Bánh quy",
         tagIcecream: "Kem & Sô cô la",
         footer: "Hãy cho tôi biết nếu bạn có bất kỳ câu hỏi hoặc gợi ý nào!",
+        lastUpdated: "Cập nhật lần cuối: Tháng 1 năm 2026",
+        aiNotice: "Hình ảnh được tạo bởi AI và có thể không phản ánh địa điểm thực tế.",
         searchPlaceholder: "Tìm kiếm một nơi...",
         descNeumarkt: "Chợ Giáng sinh truyền thống trước nhà thờ Frauenkirche.",
         descZwinger: "Phức hợp cung điện Baroque với các bảo tàng.",
@@ -286,7 +294,7 @@ const i18n = {
     zh: {
         title: "访问德累斯顿 - 旅游指南",
         h1: "德累斯顿旅游指南",
-        subtitle: "冬季版 • 景点 • 美食 • 圣诞市集",
+        subtitle: "景点 • 美食 • 咖啡厅",
         mapBtn: "📍 打开完整谷歌地图列表",
         tocTitle: "跳转到章节",
         clearProgress: "清除进度",
@@ -338,6 +346,8 @@ const i18n = {
         tagCookies: "饼干",
         tagIcecream: "冰淇淋和巧克力",
         footer: "如果您有任何问题或建议，请告诉我！",
+        lastUpdated: "最后更新：2026年1月",
+        aiNotice: "图片由AI生成，可能与实际地点不符。",
         searchPlaceholder: "搜索一个地方...",
         descNeumarkt: "圣母教堂前的传统圣诞市集。",
         descZwinger: "带博物馆的巴洛克宫殿群。",
@@ -357,7 +367,7 @@ const i18n = {
     ja: {
         title: "ドレスデンを訪問 - 旅行ガイド",
         h1: "ドレスデン旅行ガイド",
-        subtitle: "冬版 • 観光地 • グルメ • クリスマスマーケット",
+        subtitle: "観光地 • グルメ • カフェ",
         mapBtn: "📍 完全なGoogleマップリストを開く",
         tocTitle: "セクションへジャンプ",
         clearProgress: "進捗をクリア",
@@ -409,6 +419,8 @@ const i18n = {
         tagCookies: "クッキー",
         tagIcecream: "アイス&チョコレート",
         footer: "ご質問やご提案がありましたら、お知らせください！",
+        lastUpdated: "最終更新：2026年1月",
+        aiNotice: "画像はAIで生成されており、実際の場所と異なる場合があります。",
         searchPlaceholder: "場所を検索...",
         descNeumarkt: "フラウエン教会前の伝統的なクリスマスマーケット。",
         descZwinger: "美術館を併設するバロック様式の宮殿複合施設。",
@@ -473,7 +485,7 @@ function updateMapMarkers() {
                 const marker = L.marker([place.lat, place.lng])
                     .addTo(map)
                     .bindPopup(`<b>${place.title}</b><br><a href="${place.mapLink}" target="_blank">Google Maps</a>`);
-                
+
                 markers.push(marker);
                 bounds.extend([place.lat, place.lng]);
                 hasMarkers = true;
@@ -652,7 +664,7 @@ function renderCards(sectionId, places) {
             const isHighlight = place.tag === 'mustSee' || place.tag === 'empfehlung';
             tagHTML = `<div><span class="tag ${isHighlight ? 'highlight' : ''}" data-i18n="${place.tag}">${i18n[currentLang][place.tag] || ''}</span></div>`;
         }
-        
+
         const descriptionHTML = place.description ? `<div class="card-desc" data-i18n="${place.description}">${i18n[currentLang][place.description] || ''}</div>` : '';
         const mapLinkHTML = place.mapLink ? `<a href="${place.mapLink}" target="_blank" class="map-link" data-i18n="viewOnMap">${i18n[currentLang].viewOnMap}</a>` : '';
         const imageHTML = place.image ? `<img src="${place.image}" alt="${place.title}" class="card-image" loading="lazy">` : '';
@@ -665,7 +677,7 @@ function renderCards(sectionId, places) {
             ${descriptionHTML}
             ${mapLinkHTML}
         `;
-        
+
         grid.appendChild(card);
     });
 }
@@ -695,7 +707,7 @@ async function loadAndRenderPlaces() {
         for (const section in allPlaces) {
             renderCards(section, allPlaces[section]);
         }
-        
+
         loadProgress(); // Reload progress after rendering cards
         updateMapMarkers();
 
@@ -829,14 +841,14 @@ function initCollapsibleSections() {
 
 // Override toggleVisited to also update progress
 const originalToggleVisited = toggleVisited;
-toggleVisited = function(checkbox) {
+toggleVisited = function (checkbox) {
     originalToggleVisited(checkbox);
     updateProgress();
 };
 
 // Override loadProgress to also update progress indicator
 const originalLoadProgress = loadProgress;
-loadProgress = function() {
+loadProgress = function () {
     originalLoadProgress();
     updateProgress();
 };
