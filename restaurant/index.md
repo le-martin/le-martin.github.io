@@ -66,7 +66,6 @@ permalink: /restaurant/
             <div class="lang-switcher-mobile" role="group" aria-label="Sprachauswahl">
                 <button class="lang-btn" data-lang="en" aria-label="Switch to English">EN</button>
                 <button class="lang-btn active" data-lang="de" aria-label="Deutsch ausgewählt" aria-pressed="true">DE</button>
-                <button class="lang-btn" data-lang="ko" aria-label="한국어로 전환">KR</button>
             </div>
             <a href="#home" data-i18n="nav_home">Home</a>
             <a href="#about" data-i18n="nav_about">Über Uns</a>
@@ -78,7 +77,6 @@ permalink: /restaurant/
             <div class="lang-switcher" role="group" aria-label="Sprachauswahl">
                 <button class="lang-btn" data-lang="en" aria-label="Switch to English">EN</button>
                 <button class="lang-btn active" data-lang="de" aria-label="Deutsch ausgewählt" aria-pressed="true">DE</button>
-                <button class="lang-btn" data-lang="ko" aria-label="한국어로 전환">KR</button>
             </div>
             <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navLinks">
                 <span></span>
@@ -94,7 +92,7 @@ permalink: /restaurant/
         <p data-i18n="hero_desc">A modern interpretation of royal Korean cuisine. Elevating traditional flavors through
             contemporary techniques and seasonal ingredients.</p>
         <div class="hero-cta">
-            <a href="assets/menu.pdf" class="btn disabled" target="_blank" data-i18n="hero_btn">Speisekarte</a>
+            <a href="assets/menu.pdf" class="btn" target="_blank" data-i18n="hero_btn">Speisekarte</a>
             <a href="#reservation" class="btn" id="heroReservation" data-i18n="hero_reservation">Tisch reservieren</a>
         </div>
     </section>
@@ -130,7 +128,7 @@ permalink: /restaurant/
             <p style="margin-bottom: 2rem; color: #aaa;" data-i18n="exp_desc">At Sura, we believe dining is more
                 than just a meal. It's a journey through history, culture, and craftsmanship. Our space combines minimal
                 Korean aesthetics with modern luxury to create an íntimate environment for unforgettable moments.</p>
-            <a href="assets/menu.pdf" class="btn disabled" target="_blank" data-i18n="menu_btn">Speisekarte (PDF)</a>
+            <a href="assets/menu.pdf" class="btn" target="_blank" data-i18n="menu_btn">Speisekarte (PDF)</a>
         </div>
         <div class="info-image">
             <picture>
@@ -238,21 +236,28 @@ permalink: /restaurant/
 
     <footer role="contentinfo">
         <div class="brand">SURA</div>
-        <div class="social-links">
-            <a class="social-icon" aria-label="Facebook" style="opacity: 0.5; cursor: not-allowed;" role="link" aria-disabled="true">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-            </a>
-            <a class="social-icon" aria-label="Instagram" style="opacity: 0.5; cursor: not-allowed;" role="link" aria-disabled="true">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-            </a>
-            <a href="https://www.tripadvisor.de/Restaurant_Review-g187399-d5975431-Reviews-SURA_Dresden-Dresden_Saxony.html" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="TripAdvisor">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512" fill="currentColor"><path d="M175.335 281.334c0 24.483-19.853 44.336-44.336 44.336-24.484 0-44.337-19.853-44.337-44.336 0-24.484 19.853-44.337 44.337-44.337 24.483 0 44.336 19.853 44.336 44.337zm205.554-44.337c-24.48 0-44.336 19.853-44.336 44.337 0 24.483 19.855 44.336 44.336 44.336 24.481 0 44.334-19.853 44.334-44.336-.006-24.47-19.839-44.31-44.309-44.323l-.025-.01v-.004zm125.002 44.337c0 68.997-55.985 124.933-124.999 124.933a124.466 124.466 0 01-84.883-33.252l-40.006 43.527-40.025-43.576a124.45 124.45 0 01-84.908 33.3c-68.968 0-124.933-55.937-124.933-124.932A124.586 124.586 0 0146.889 189L6 144.517h90.839c96.116-65.411 222.447-65.411 318.557 0H506l-40.878 44.484a124.574 124.574 0 0140.769 92.333zm-290.31 0c0-46.695-37.858-84.55-84.55-84.55-46.691 0-84.55 37.858-84.55 84.55 0 46.691 37.859 84.55 84.55 84.55 46.692 0 84.545-37.845 84.55-84.54v-.013.003zM349.818 155.1a244.01 244.01 0 00-187.666 0C215.532 175.533 256 223.254 256 278.893c0-55.634 40.463-103.362 93.826-123.786l-.005-.006h-.003zm115.64 126.224c0-46.694-37.858-84.55-84.55-84.55-46.691 0-84.552 37.859-84.552 84.55 0 46.692 37.855 84.55 84.553 84.55 46.697 0 84.55-37.858 84.55-84.55z"/></svg>
-            </a>
-        </div>
+
         <div class="footer-info">
             <p data-i18n="footer_rights">&copy; 2025 Sura Korean Restaurant Dresden. All rights reserved.</p>
         </div>
     </footer>
+
+
+    <!-- Closure Notice Popup -->
+    <div id="closureModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="closureTitle">
+        <div class="modal-overlay" id="closureOverlay"></div>
+        <div class="modal-content" style="border-color: var(--accent-color);">
+            <button class="modal-close" id="closeClosureModal" aria-label="Schließen">&times;</button>
+            <div class="modal-header">
+                <h2 id="closureTitle" data-i18n="closure_title" style="color: var(--accent-color);">Wichtige Information</h2>
+            </div>
+            <div class="modal-body">
+                <p data-i18n="closure_message" style="font-size: 1.1rem; margin-bottom: 1rem;">Das Sura Restaurant bleibt am 1.1.2026 wegen des Feiertags geschlossen.</p>
+                <p data-i18n="closure_wish" style="color: var(--primary-color); font-weight: 600;">Wir wünschen Ihnen ein frohes neues Jahr!</p>
+                <button class="btn" id="closeClosureBtn" style="margin-top: 1.5rem; display: block; width: 100%;" data-i18n="close_btn">Schließen</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Reservation Modal -->
     <div id="reservationModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">

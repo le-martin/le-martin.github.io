@@ -688,31 +688,7 @@ footer {
     gap: 2rem;
 }
 
-.social-links {
-    display: flex;
-    gap: 1.5rem;
-    margin: 1rem 0;
-}
 
-.social-icon {
-    color: var(--text-color);
-    transition: var(--transition);
-    opacity: 0.7;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.social-icon:hover {
-    color: var(--primary-color);
-    opacity: 1;
-    transform: translateY(-3px);
-}
-
-.social-icon svg {
-    width: 24px;
-    height: 24px;
-}
 
 .footer-info p {
     font-size: 0.8rem;

@@ -43,7 +43,11 @@ const translations = {
         widget_reviews_count_ta: "73 reviews",
         widget_see_reviews: "See all reviews",
         ratings_disclaimer: "As of December 2025",
-        footer_rights: "© 2025 Sura Korean Restaurant Dresden. All rights reserved."
+        footer_rights: "© 2025 Sura Korean Restaurant Dresden. All rights reserved.",
+        closure_title: "Important Notice",
+        closure_message: "Sura Restaurant will be closed on January 1st, 2026 for the New Year's holiday.",
+        closure_wish: "We wish you a Happy New Year!",
+        close_btn: "Close"
     },
     de: {
         page_title: "Sura | Koreanisches Restaurant in Dresden",
@@ -89,53 +93,11 @@ const translations = {
         widget_reviews_count_ta: "73 Bewertungen",
         widget_see_reviews: "Alle Bewertungen ansehen",
         ratings_disclaimer: "Stand: Dezember 2025",
-        footer_rights: "© 2025 Sura Koreanisches Restaurant Dresden. Alle Rechte vorbehalten."
-    },
-    ko: {
-        page_title: "수라 | 드레스덴 한국 레스토랑",
-        nav_home: "홈",
-        nav_about: "소개",
-        nav_menu: "메뉴",
-        nav_location: "위치",
-        nav_reservation: "예약",
-        hero_reservation: "예약하기",
-        about_subtitle: "우리의 이야기",
-        about_title: "소개",
-        about_desc_1: "수라는 2020년 드레스덴에 정통 한국 요리를 소개하겠다는 분명한 비전을 가지고 설립되었습니다. '수라'라는 이름은 왕의 식탁을 의미하는 한국어에서 유래했으며, 최고의 품질과 정성을 상징합니다.",
-        about_desc_2: "모든 요리는 대대로 전해 내려온 전통 레시피와 신선한 재료로 정성껏 준비됩니다. 매콤한 김치부터 부드러운 불고기까지, 다양한 한국 요리의 세계로 여러분을 초대합니다.",
-        hero_title: "드레스덴 수라",
-        hero_desc: "드레스덴 최고의 한국 레스토랑. 노이슈타트의 중심에서 진정한 한국의 맛을 경험해 보세요.",
-        hero_btn: "메뉴 보기",
-        exp_subtitle: "분위기",
-        exp_title: "수라에 오신 것을 환영합니다",
-        exp_desc: "Königsbrücker Straße 50에 위치한 수라는 드레스덴에서 진정한 한식을 맛볼 수 있는 곳입니다. 편안한 분위기에서 전통의 맛과 정성을 다한 서비스를 즐겨보세요.",
-        menu_btn: "메뉴판 보기 (PDF)",
-        loc_subtitle: "오시는 길",
-        loc_title: "위치 및 영업시간",
-        loc_address: "주소",
-        loc_hours: "영업시간",
-        loc_contact: "연락처",
-        loc_reservation: "예약",
-        loc_reservation_info: "전화 예약<br>0351 810 747 89",
-        loc_call_now: "지금 전화하기",
-        testimonials_subtitle: "고객 후기",
-        testimonials_title: "손님들의 이야기",
-        testimonial_1_text: "\"한국 밖에서 먹어본 한식 중 최고예요! 불고기가 정말 부드럽고 분위기도 너무 좋았습니다.\"",
-        testimonial_2_text: "\"정성이 느껴지는 맛있는 음식이에요. 돌솥비빔밥은 꼭 드셔보세요! 친절한 서비스와 합리적인 가격입니다.\"",
-        testimonial_3_text: "\"드레스덴에서 진짜 한국 음식을 맛볼 수 있는 곳! 김치찌개가 서울에 계신 할머니 맛이에요.\"",
-        testimonial_4_text: "\"맛의 우아함에 감동했습니다. 김치찌개는 매운맛과 깊은 맛이 완벽한 조화를 이룹니다. 진정한 프리미엄 다이닝 경험이었습니다.\"",
-        testimonial_5_text: "\"분위기가 정말 좋아서 로맨틱한 저녁 식사에 딱이에요. 서비스도 친절하고 잡채도 정말 맛있었습니다. 강력 추천합니다!\"",
-        testimonial_6_text: "\"단연코 이 도시 최고의 비빔밥입니다. 재료가 정말 신선하고 돌솥이 마지막 한 입까지 뜨겁게 유지되었어요!\"",
-        testimonials_btn_google: "구글 리뷰 작성",
-        testimonials_btn_tripadvisor: "트립어드바이저 리뷰 작성",
-        rating_google: "별 5개 중 4.5개 (리뷰 1,037개)",
-        rating_tripadvisor: "별 5개 중 4.2개 (리뷰 73개)",
-        reviews_title: "리뷰",
-        widget_reviews_count: "1,037개 리뷰",
-        widget_reviews_count_ta: "73개 리뷰",
-        widget_see_reviews: "모든 리뷰 보기",
-        ratings_disclaimer: "2025년 12월 기준",
-        footer_rights: "© 2025 수라 드레스덴 코리안 레스토랑. All rights reserved."
+        footer_rights: "© 2025 Sura Koreanisches Restaurant Dresden. Alle Rechte vorbehalten.",
+        closure_title: "Wichtige Information",
+        closure_message: "Das Sura Restaurant bleibt am 01.01.2026 wegen des Feiertags geschlossen.",
+        closure_wish: "Wir wünschen Ihnen ein frohes neues Jahr!",
+        close_btn: "Schließen"
     }
 };
 
@@ -277,6 +239,43 @@ document.addEventListener('DOMContentLoaded', () => {
                     e.preventDefault();
                     firstElement.focus();
                 }
+            }
+        });
+    }
+
+    // Closure Modal Logic
+    const closureModal = document.getElementById('closureModal');
+    const closeClosureModalBtn = document.getElementById('closeClosureModal');
+    const closureOverlay = document.getElementById('closureOverlay');
+    const closeClosureBtn = document.getElementById('closeClosureBtn');
+
+    if (closureModal) {
+        const openClosureModal = () => {
+            closureModal.classList.add('active');
+            closureModal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+            setTimeout(() => {
+                if (closeClosureBtn) closeClosureBtn.focus();
+            }, 300);
+        };
+
+        const closeClosureModal = () => {
+            closureModal.classList.remove('active');
+            closureModal.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        };
+
+        // Show automatically on page load
+        setTimeout(openClosureModal, 1000);
+
+        if (closeClosureModalBtn) closeClosureModalBtn.addEventListener('click', closeClosureModal);
+        if (closureOverlay) closureOverlay.addEventListener('click', closeClosureModal);
+        if (closeClosureBtn) closeClosureBtn.addEventListener('click', closeClosureModal);
+
+        // Escape key to close
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && closureModal.classList.contains('active')) {
+                closeClosureModal();
             }
         });
     }

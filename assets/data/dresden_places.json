@@ -1,33 +1,4 @@
 {
-    "markets": [
-        {
-            "id": "market-neumarkt",
-            "title": "Advent auf dem Neumarkt",
-            "description": "descNeumarkt",
-            "mapLink": "https://maps.app.goo.gl/YzVjwR9b2xPa35jn6",
-            "image": "https://placehold.co/600x400?text=Neumarkt",
-            "lat": 51.051956,
-            "lng": 13.741568
-        },
-        {
-            "id": "market-stallhof",
-            "title": "Rauhnächte im Stallhof",
-            "description": "descStallhof",
-            "mapLink": "https://maps.app.goo.gl/xdQAYCwW2ujAk4p5A",
-            "image": "https://placehold.co/600x400?text=Stallhof",
-            "lat": 51.052996,
-            "lng": 13.733927
-        },
-        {
-            "id": "market-augustus",
-            "title": "Augustusmarkt",
-            "description": "descAugustus",
-            "mapLink": "https://maps.app.goo.gl/3FGJru3tPnZR4Jfk9",
-            "image": "https://placehold.co/600x400?text=Augustusmarkt",
-            "lat": 51.0583,
-            "lng": 13.7413
-        }
-    ],
     "sights": [
         {
             "id": "sight-zwinger",
@@ -35,7 +6,7 @@
             "tag": "mustSee",
             "description": "descZwinger",
             "mapLink": "https://maps.app.goo.gl/4jH7vcYrXMmDDNcU6",
-            "image": "https://placehold.co/600x400?text=Zwinger",
+            "image": "/assets/images/dresden/zwinger.png",
             "lat": 51.05315,
             "lng": 13.73393
         },
@@ -45,7 +16,7 @@
             "tag": "mustSee",
             "description": "descFrauenkirche",
             "mapLink": "https://maps.app.goo.gl/ne4Az4LCJWgGr6Sd9",
-            "image": "https://placehold.co/600x400?text=Frauenkirche",
+            "image": "/assets/images/dresden/frauenkirche.png",
             "lat": 51.051956,
             "lng": 13.741568
         },
@@ -55,7 +26,7 @@
             "tag": "mustSee",
             "description": "descSemperoper",
             "mapLink": "https://maps.app.goo.gl/cDRx865Huzc8fdcf8",
-            "image": "https://placehold.co/600x400?text=Semperoper",
+            "image": "/assets/images/dresden/semperoper.png",
             "lat": 51.05444,
             "lng": 13.73528
         },
@@ -64,7 +35,7 @@
             "title": "Fürstenzug",
             "description": "descFuerstenzug",
             "mapLink": "https://maps.app.goo.gl/1n7LEm35yuGz1WRi6",
-            "image": "https://placehold.co/600x400?text=Fuerstenzug",
+            "image": "/assets/images/dresden/fuerstenzug.png",
             "lat": 51.0528,
             "lng": 13.7400
         },
@@ -73,7 +44,7 @@
             "title": "Brühlsche Terasse",
             "description": "descBruehl",
             "mapLink": "https://maps.app.goo.gl/rFVn6hbGL1mwnyUw9",
-            "image": "https://placehold.co/600x400?text=Bruehlsche+Terasse",
+            "image": "/assets/images/dresden/bruehl.png",
             "lat": 51.0530,
             "lng": 13.7430
         },
@@ -82,7 +53,7 @@
             "title": "Goldener Reiter",
             "description": "descReiter",
             "mapLink": "https://maps.app.goo.gl/eU2VAQuWGzHwcY3XA",
-            "image": "https://placehold.co/600x400?text=Goldener+Reiter",
+            "image": "/assets/images/dresden/reiter.png",
             "lat": 51.0583,
             "lng": 13.7413
         },
@@ -91,7 +62,7 @@
             "title": "Hofkirche",
             "description": "descHofkirche",
             "mapLink": "https://maps.app.goo.gl/rrPg4WzTTLT8tqDJ8",
-            "image": "https://placehold.co/600x400?text=Hofkirche",
+            "image": "/assets/images/dresden/hofkirche.png",
             "lat": 51.0535,
             "lng": 13.7373
         }
@@ -102,7 +73,7 @@
             "title": "Gemäldegalerie Alte Meister",
             "description": "descGemaelde",
             "mapLink": "https://maps.app.goo.gl/FQsDrRRFEtebKCvM7",
-            "image": "https://placehold.co/600x400?text=Gemaelde+Galerie",
+            "image": "/assets/images/dresden/gemaelde.png",
             "lat": 51.05315,
             "lng": 13.73393
         },
@@ -111,7 +82,7 @@
             "title": "Grünes Gewölbe",
             "description": "descGewoelbe",
             "mapLink": "https://maps.app.goo.gl/Q4MmApSeasG8rAyf9",
-            "image": "https://placehold.co/600x400?text=Gruenes+Gewoelbe",
+            "image": "/assets/images/dresden/gewoelbe.png",
             "lat": 51.0525,
             "lng": 13.7365
         },
@@ -120,7 +91,7 @@
             "title": "Albertinum",
             "description": "descAlbertinum",
             "mapLink": "https://maps.app.goo.gl/gWWpn84dgtJC89YJ9",
-            "image": "https://placehold.co/600x400?text=Albertinum",
+            "image": "/assets/images/dresden/albertinum.png",
             "lat": 51.0520,
             "lng": 13.7440
         }
@@ -132,7 +103,7 @@
             "tag": "tagKorean",
             "description": "descSura",
             "mapLink": "https://maps.app.goo.gl/nG5vCs3W7tJoHiQN9",
-            "image": "https://placehold.co/600x400?text=Sura",
+            "image": "/assets/images/dresden/korean.png",
             "lat": 51.0660,
             "lng": 13.7530
         },
@@ -142,7 +113,7 @@
             "tag": "tagChinese",
             "description": "descChinaZeit",
             "mapLink": "https://maps.app.goo.gl/vBsQGQPcYrcXtb1Z8",
-            "image": "https://placehold.co/600x400?text=China+Zeit",
+            "image": "/assets/images/dresden/chinese.png",
             "lat": 51.0545,
             "lng": 13.7250
         },
@@ -152,7 +123,7 @@
             "tag": "tagSpanish",
             "description": "descLasTapas",
             "mapLink": "https://maps.app.goo.gl/KerdQiUxhsZkHAJc9",
-            "image": "https://placehold.co/600x400?text=Las+Tapas",
+            "image": "/assets/images/dresden/tapas.png",
             "lat": 51.0520,
             "lng": 13.7410
         },
@@ -162,7 +133,7 @@
             "tag": "tagVietnamese",
             "description": "descAnamit",
             "mapLink": "https://maps.app.goo.gl/qyuoRNrX5TYuVthC7",
-            "image": "https://placehold.co/600x400?text=Anamit",
+            "image": "/assets/images/dresden/vietnamese.png",
             "lat": 51.0655,
             "lng": 13.7505
         },
@@ -172,7 +143,7 @@
             "tag": "tagGerman",
             "description": "descAugustiner",
             "mapLink": "https://maps.app.goo.gl/QZDQTHv3WguBxyrXA",
-            "image": "https://placehold.co/600x400?text=Augustiner",
+            "image": "/assets/images/dresden/german.png",
             "lat": 51.0517,
             "lng": 13.7423
         },
@@ -182,7 +153,7 @@
             "tag": "tagDoener",
             "description": "descArarat",
             "mapLink": "https://maps.app.goo.gl/9hZ7JU1XcFqkrHTn6",
-            "image": "https://placehold.co/600x400?text=Ararat",
+            "image": "/assets/images/dresden/doener.png",
             "lat": 51.0660,
             "lng": 13.7500
         },
@@ -192,7 +163,7 @@
             "tag": "tagVietnamese",
             "description": "descKinhDo",
             "mapLink": "https://maps.app.goo.gl/56mcJcJaNYy7CPDi9",
-            "image": "https://placehold.co/600x400?text=Kinh+Do",
+            "image": "/assets/images/dresden/vietnamese.png",
             "lat": 51.0495,
             "lng": 13.7405
         },
@@ -202,7 +173,7 @@
             "tag": "tagDoener",
             "description": "descBabaDoener",
             "mapLink": "https://maps.app.goo.gl/q9H2nKb5rBUZzEjz8",
-            "image": "https://placehold.co/600x400?text=Baba+Doener",
+            "image": "/assets/images/dresden/doener.png",
             "lat": 51.0410,
             "lng": 13.7330
         }
@@ -213,7 +184,7 @@
             "title": "KeXerei & Russisch Brot",
             "tag": "tagCookies",
             "description": "descKexereiNew",
-            "image": "https://placehold.co/600x400?text=KeXerei",
+            "image": "/assets/images/dresden/cookies.png",
             "lat": 51.0515,
             "lng": 13.7400
         },
@@ -223,7 +194,7 @@
             "tag": "empfehlung",
             "description": "descCurry24",
             "mapLink": "https://maps.app.goo.gl/au9VE2CXg1twPNmx6",
-            "image": "https://placehold.co/600x400?text=Curry24",
+            "image": "/assets/images/dresden/currywurst.png",
             "lat": 51.0504,
             "lng": 13.7335
         },
@@ -232,7 +203,7 @@
             "title": "Camondas",
             "tag": "tagIcecream",
             "description": "descCamondasNew",
-            "image": "https://placehold.co/600x400?text=Camondas",
+            "image": "/assets/images/dresden/chocolate.png",
             "lat": 51.0520,
             "lng": 13.7360
         }
@@ -243,7 +214,7 @@
             "title": "Kunst Cafe Antik",
             "description": "descAntik",
             "mapLink": "https://maps.app.goo.gl/b1Fjmb6k662tixit8",
-            "image": "https://placehold.co/600x400?text=Cafe+Antik",
+            "image": "/assets/images/dresden/cafe_antik.png",
             "lat": 51.0518,
             "lng": 13.7420
         },
@@ -252,7 +223,7 @@
             "title": "Kreutzkamm",
             "description": "descKreutzkamm",
             "mapLink": "https://maps.app.goo.gl/3i8nhnZ1YTTj6PYH9",
-            "image": "https://placehold.co/600x400?text=Kreutzkamm",
+            "image": "/assets/images/dresden/baumkuchen.png",
             "lat": 51.0498,
             "lng": 13.7385
         },
@@ -261,7 +232,7 @@
             "title": "Coselpalais",
             "description": "descCosel",
             "mapLink": "https://maps.app.goo.gl/kysQSMrh2hkqF1jd7",
-            "image": "https://placehold.co/600x400?text=Coselpalais",
+            "image": "/assets/images/dresden/cafe_antik.png",
             "lat": 51.0525,
             "lng": 13.7430
         }

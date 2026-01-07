@@ -325,6 +325,21 @@ footer {
     outline-offset: 2px;
 }
 
+.last-updated {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin-top: 1rem;
+    opacity: 0.7;
+}
+
+.ai-notice {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    margin-top: 0.5rem;
+    opacity: 0.6;
+    font-style: italic;
+}
+
 .card.visited {
     opacity: 0.6;
     background-color: #f1f1f1;
@@ -617,6 +632,7 @@ footer {
 
 /* Print Styles */
 @media print {
+
     .lang-switcher,
     .back-to-top,
     .dark-mode-toggle,
