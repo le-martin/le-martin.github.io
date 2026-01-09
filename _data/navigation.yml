@@ -29,6 +29,6 @@ main:
   # - title: "CV"
   #   url: /cv-json/
     
-  - title: "BTC Analysis"
-    url: /ta-finance/
+#  - title: "BTC Analysis"
+#    url: /ta-finance/
 
