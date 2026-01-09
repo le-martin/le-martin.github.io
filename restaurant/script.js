@@ -42,12 +42,8 @@ const translations = {
         widget_reviews_count: "1,037 reviews",
         widget_reviews_count_ta: "73 reviews",
         widget_see_reviews: "See all reviews",
-        ratings_disclaimer: "As of December 2025",
-        footer_rights: "© 2025 Sura Korean Restaurant Dresden. All rights reserved.",
-        closure_title: "Important Notice",
-        closure_message: "Sura Restaurant will be closed on January 1st, 2026 for the New Year's holiday.",
-        closure_wish: "We wish you a Happy New Year!",
-        close_btn: "Close"
+        ratings_disclaimer: "As of January 2026",
+        footer_rights: "© 2025 Sura Korean Restaurant Dresden. All rights reserved."
     },
     de: {
         page_title: "Sura | Koreanisches Restaurant in Dresden",
@@ -92,12 +88,8 @@ const translations = {
         widget_reviews_count: "1.037 Bewertungen",
         widget_reviews_count_ta: "73 Bewertungen",
         widget_see_reviews: "Alle Bewertungen ansehen",
-        ratings_disclaimer: "Stand: Dezember 2025",
-        footer_rights: "© 2025 Sura Koreanisches Restaurant Dresden. Alle Rechte vorbehalten.",
-        closure_title: "Wichtige Information",
-        closure_message: "Das Sura Restaurant bleibt am 01.01.2026 wegen des Feiertags geschlossen.",
-        closure_wish: "Wir wünschen Ihnen ein frohes neues Jahr!",
-        close_btn: "Schließen"
+        ratings_disclaimer: "Stand: Januar 2026",
+        footer_rights: "© 2025 Sura Koreanisches Restaurant Dresden. Alle Rechte vorbehalten."
     }
 };
 
@@ -239,43 +231,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     e.preventDefault();
                     firstElement.focus();
                 }
-            }
-        });
-    }
-
-    // Closure Modal Logic
-    const closureModal = document.getElementById('closureModal');
-    const closeClosureModalBtn = document.getElementById('closeClosureModal');
-    const closureOverlay = document.getElementById('closureOverlay');
-    const closeClosureBtn = document.getElementById('closeClosureBtn');
-
-    if (closureModal) {
-        const openClosureModal = () => {
-            closureModal.classList.add('active');
-            closureModal.setAttribute('aria-hidden', 'false');
-            document.body.style.overflow = 'hidden';
-            setTimeout(() => {
-                if (closeClosureBtn) closeClosureBtn.focus();
-            }, 300);
-        };
-
-        const closeClosureModal = () => {
-            closureModal.classList.remove('active');
-            closureModal.setAttribute('aria-hidden', 'true');
-            document.body.style.overflow = '';
-        };
-
-        // Show automatically on page load
-        setTimeout(openClosureModal, 1000);
-
-        if (closeClosureModalBtn) closeClosureModalBtn.addEventListener('click', closeClosureModal);
-        if (closureOverlay) closureOverlay.addEventListener('click', closeClosureModal);
-        if (closeClosureBtn) closeClosureBtn.addEventListener('click', closeClosureModal);
-
-        // Escape key to close
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && closureModal.classList.contains('active')) {
-                closeClosureModal();
             }
         });
     }

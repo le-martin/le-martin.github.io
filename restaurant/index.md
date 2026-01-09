@@ -228,7 +228,7 @@ permalink: /restaurant/
                 </div>
             </a>
         </div>
-        <p class="ratings-disclaimer" data-i18n="ratings_disclaimer">Stand: Dezember 2025</p>
+        <p class="ratings-disclaimer" data-i18n="ratings_disclaimer">Stand: Januar 2026</p>
         </div>
 </section>
 
@@ -242,22 +242,6 @@ permalink: /restaurant/
         </div>
     </footer>
 
-
-    <!-- Closure Notice Popup -->
-    <div id="closureModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="closureTitle">
-        <div class="modal-overlay" id="closureOverlay"></div>
-        <div class="modal-content" style="border-color: var(--accent-color);">
-            <button class="modal-close" id="closeClosureModal" aria-label="Schließen">&times;</button>
-            <div class="modal-header">
-                <h2 id="closureTitle" data-i18n="closure_title" style="color: var(--accent-color);">Wichtige Information</h2>
-            </div>
-            <div class="modal-body">
-                <p data-i18n="closure_message" style="font-size: 1.1rem; margin-bottom: 1rem;">Das Sura Restaurant bleibt am 1.1.2026 wegen des Feiertags geschlossen.</p>
-                <p data-i18n="closure_wish" style="color: var(--primary-color); font-weight: 600;">Wir wünschen Ihnen ein frohes neues Jahr!</p>
-                <button class="btn" id="closeClosureBtn" style="margin-top: 1.5rem; display: block; width: 100%;" data-i18n="close_btn">Schließen</button>
-            </div>
-        </div>
-    </div>
 
     <!-- Reservation Modal -->
     <div id="reservationModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
