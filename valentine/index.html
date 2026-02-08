@@ -462,20 +462,49 @@
 
         // No button logic
         const noBtn = document.getElementById('noBtn');
+        const yesBtn = document.getElementById('yesBtn');
         const buttonsContainer = document.getElementById('buttonsContainer');
         let isMobile = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
+        function isOverlapping(rect1, rect2, padding = 20) {
+            return !(rect1.right + padding < rect2.left ||
+                rect1.left - padding > rect2.right ||
+                rect1.bottom + padding < rect2.top ||
+                rect1.top - padding > rect2.bottom);
+        }
+
         function getRandomPosition() {
-            const containerRect = buttonsContainer.getBoundingClientRect();
-            const btnRect = noBtn.getBoundingClientRect();
+            const noBtnRect = noBtn.getBoundingClientRect();
+            const yesBtnRect = yesBtn.getBoundingClientRect();
 
             // Get viewport dimensions with some padding
-            const maxX = window.innerWidth - btnRect.width - 40;
-            const maxY = window.innerHeight - btnRect.height - 40;
+            const maxX = window.innerWidth - noBtnRect.width - 40;
+            const maxY = window.innerHeight - noBtnRect.height - 40;
 
-            // Generate random position
-            const randomX = Math.max(20, Math.random() * maxX);
-            const randomY = Math.max(20, Math.random() * maxY);
+            let randomX, randomY;
+            let attempts = 0;
+            const maxAttempts = 50;
+
+            // Keep generating positions until we find one that doesn't overlap with Yes button
+            do {
+                randomX = Math.max(20, Math.random() * maxX);
+                randomY = Math.max(20, Math.random() * maxY);
+
+                // Create a virtual rect for the new position
+                const newRect = {
+                    left: randomX,
+                    right: randomX + noBtnRect.width,
+                    top: randomY,
+                    bottom: randomY + noBtnRect.height
+                };
+
+                attempts++;
+
+                // Check if this position overlaps with the Yes button
+                if (!isOverlapping(newRect, yesBtnRect)) {
+                    break;
+                }
+            } while (attempts < maxAttempts);
 
             return { x: randomX, y: randomY };
         }
