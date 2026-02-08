@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🍜 너구리 타임! 맛있게 먹어~ 🦝</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;600;800&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 25%, #ffd166 50%, #ff6b35 75%, #d62828 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease infinite;
+            font-family: 'Nunito', sans-serif;
+            overflow: hidden;
+            position: relative;
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Floating noodles and food items */
+        .floating-item {
+            position: fixed;
+            font-size: 2rem;
+            animation: floatAround 10s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        @keyframes floatAround {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            25% {
+                transform: translateY(-30px) rotate(10deg);
+            }
+
+            50% {
+                transform: translateY(-10px) rotate(-5deg);
+            }
+
+            75% {
+                transform: translateY(-40px) rotate(15deg);
+            }
+        }
+
+        /* Steam animation */
+        .steam-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+        }
+
+        .steam {
+            position: absolute;
+            width: 8px;
+            height: 80px;
+            background: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.6));
+            border-radius: 50%;
+            animation: steamRise 2s ease-out infinite;
+            filter: blur(5px);
+        }
+
+        @keyframes steamRise {
+            0% {
+                transform: translateY(0) scaleX(1);
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: translateY(-150px) scaleX(2);
+                opacity: 0;
+            }
+        }
+
+        /* Main content */
+        .main-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .bowl-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .noodle-bowl {
+            font-size: 10rem;
+            animation: bowlBounce 2s ease-in-out infinite;
+            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .noodle-bowl:hover {
+            animation: bowlShake 0.5s ease-in-out;
+        }
+
+        @keyframes bowlBounce {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(-2deg);
+            }
+
+            50% {
+                transform: translateY(-15px) rotate(2deg);
+            }
+        }
+
+        @keyframes bowlShake {
+
+            0%,
+            100% {
+                transform: rotate(0deg);
+            }
+
+            25% {
+                transform: rotate(-10deg);
+            }
+
+            75% {
+                transform: rotate(10deg);
+            }
+        }
+
+        .raccoon {
+            position: absolute;
+            font-size: 4rem;
+            right: -60px;
+            top: 20px;
+            animation: raccoonPeek 3s ease-in-out infinite;
+        }
+
+        @keyframes raccoonPeek {
+
+            0%,
+            100% {
+                transform: translateX(0) rotate(-10deg);
+            }
+
+            50% {
+                transform: translateX(-20px) rotate(10deg);
+            }
+        }
+
+        h1 {
+            font-family: 'Bangers', cursive;
+            font-size: clamp(3rem, 10vw, 6rem);
+            color: #fff;
+            text-shadow:
+                4px 4px 0 #d62828,
+                8px 8px 0 rgba(0, 0, 0, 0.2);
+            margin: 1rem 0;
+            letter-spacing: 4px;
+            animation: titlePulse 1s ease-in-out infinite alternate;
+        }
+
+        @keyframes titlePulse {
+            from {
+                transform: scale(1);
+            }
+
+            to {
+                transform: scale(1.02);
+            }
+        }
+
+        .subtitle {
+            font-size: clamp(1.2rem, 4vw, 2rem);
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .korean-text {
+            font-size: clamp(1.5rem, 5vw, 2.5rem);
+            color: #fff3b0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+        }
+
+        /* Funny messages */
+        .message-box {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 1.5rem 2rem;
+            max-width: 500px;
+            margin: 1rem auto;
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.2),
+                0 0 0 5px #ffd166;
+            transform: rotate(-1deg);
+            transition: transform 0.3s ease;
+        }
+
+        .message-box:hover {
+            transform: rotate(1deg) scale(1.02);
+        }
+
+        .message-text {
+            font-size: 1.3rem;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .message-text .highlight {
+            color: #d62828;
+            font-weight: 800;
+        }
+
+        /* Fun facts ticker */
+        .ticker-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #d62828;
+            padding: 0.8rem 0;
+            overflow: hidden;
+            z-index: 100;
+        }
+
+        .ticker {
+            display: flex;
+            animation: tickerScroll 20s linear infinite;
+            white-space: nowrap;
+        }
+
+        @keyframes tickerScroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .ticker-item {
+            color: white;
+            font-weight: 600;
+            padding: 0 3rem;
+            font-size: 1.1rem;
+        }
+
+        /* Spicy meter */
+        .spicy-meter {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .fire {
+            font-size: 2rem;
+            animation: fireFlicker 0.5s ease-in-out infinite alternate;
+        }
+
+        .fire:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .fire:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        .fire:nth-child(4) {
+            animation-delay: 0.3s;
+        }
+
+        .fire:nth-child(5) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes fireFlicker {
+            from {
+                transform: scale(1) rotate(-5deg);
+            }
+
+            to {
+                transform: scale(1.2) rotate(5deg);
+            }
+        }
+
+        .spicy-label {
+            color: #fff;
+            font-size: 1rem;
+            margin-top: 0.5rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Slurp button */
+        .slurp-btn {
+            background: linear-gradient(135deg, #d62828, #ff6b35);
+            color: white;
+            border: none;
+            padding: 1rem 2.5rem;
+            font-size: 1.3rem;
+            font-family: 'Bangers', cursive;
+            letter-spacing: 3px;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(214, 40, 40, 0.4);
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .slurp-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(214, 40, 40, 0.5);
+        }
+
+        .slurp-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Slurp sound animation */
+        .slurp-text {
+            position: fixed;
+            font-family: 'Bangers', cursive;
+            font-size: 4rem;
+            color: #fff;
+            text-shadow: 3px 3px 0 #d62828;
+            pointer-events: none;
+            animation: slurpPop 1s ease-out forwards;
+            z-index: 200;
+        }
+
+        @keyframes slurpPop {
+            0% {
+                transform: scale(0) rotate(-20deg);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.5) rotate(10deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(2) translateY(-100px) rotate(0deg);
+                opacity: 0;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .noodle-bowl {
+                font-size: 6rem;
+            }
+
+            .raccoon {
+                font-size: 2.5rem;
+                right: -30px;
+                top: 10px;
+            }
+
+            .message-box {
+                margin: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Floating food items -->
+    <div id="floatingItems"></div>
+
+    <!-- Steam effect -->
+    <div class="steam-container" id="steamContainer"></div>
+
+    <!-- Main content -->
+    <div class="main-content">
+        <div class="bowl-container">
+            <div class="noodle-bowl" id="bowl" onclick="slurp()">🍜</div>
+            <div class="raccoon">🦝</div>
+        </div>
+
+        <h1>너구리 타임!</h1>
+        <p class="korean-text">오늘 저녁 풀코스야~ 🔥</p>
+        <p class="subtitle">고급 레스토랑 부럽지 않다! 👨‍🍳</p>
+
+        <div class="spicy-meter">
+            <span class="fire">🔥</span>
+            <span class="fire">🔥</span>
+            <span class="fire">🔥</span>
+            <span class="fire">🔥</span>
+            <span class="fire">🔥</span>
+        </div>
+        <p class="spicy-label">매운맛 레벨: 그냥 매움</p>
+
+        <div class="message-box">
+            <p class="message-text">
+                <span class="highlight">속보:</span> 비싼 레스토랑은 과대평가야.
+                집에서 먹는 너구리가 진리지! 🍜✨
+                너구리 마스코트도 응원해! 🦝👍
+            </p>
+        </div>
+
+        <button class="slurp-btn" onclick="slurp()">🍜 쩝쩝! 호로록~ 🍜</button>
+    </div>
+
+    <!-- Fun facts ticker -->
+    <div class="ticker-container">
+        <div class="ticker" id="ticker">
+            <span class="ticker-item">🦝 너구리 라면은 진짜 너구리가 만든 거 아님ㅋㅋ</span>
+            <span class="ticker-item">🍜 꿀팁: 계란 넣으면 인생이 달라짐!</span>
+            <span class="ticker-item">🔥 주의: 새벽 2시에 갑자기 땡길 수 있음!</span>
+            <span class="ticker-item">👨‍🍳 고든 램지도 이 저녁식사 부러워함!</span>
+            <span class="ticker-item">🦝 너구리가 널 응원해!</span>
+            <span class="ticker-item">🍜 너구리 + 넷플릭스 = 완벽한 저녁!</span>
+            <span class="ticker-item">🔥 영혼까지 따뜻해지는 매운맛!</span>
+            <span class="ticker-item">👑 오늘의 미식가: 바로 너!</span>
+            <!-- Duplicate for seamless loop -->
+            <span class="ticker-item">🦝 너구리 라면은 진짜 너구리가 만든 거 아님ㅋㅋ</span>
+            <span class="ticker-item">🍜 꿀팁: 계란 넣으면 인생이 달라짐!</span>
+            <span class="ticker-item">🔥 주의: 새벽 2시에 갑자기 땡길 수 있음!</span>
+            <span class="ticker-item">👨‍🍳 고든 램지도 이 저녁식사 부러워함!</span>
+            <span class="ticker-item">🦝 너구리가 널 응원해!</span>
+            <span class="ticker-item">🍜 너구리 + 넷플릭스 = 완벽한 저녁!</span>
+            <span class="ticker-item">🔥 영혼까지 따뜻해지는 매운맛!</span>
+            <span class="ticker-item">👑 오늘의 미식가: 바로 너!</span>
+        </div>
+    </div>
+
+    <script>
+        // Create floating food items
+        function createFloatingItems() {
+            const container = document.getElementById('floatingItems');
+            const items = ['🍜', '🦝', '🔥', '🥢', '🍥', '🌶️', '🥚', '🧅', '🍲', '✨'];
+
+            for (let i = 0; i < 20; i++) {
+                const item = document.createElement('div');
+                item.className = 'floating-item';
+                item.textContent = items[Math.floor(Math.random() * items.length)];
+                item.style.left = Math.random() * 100 + '%';
+                item.style.top = Math.random() * 100 + '%';
+                item.style.animationDuration = (Math.random() * 5 + 5) + 's';
+                item.style.animationDelay = Math.random() * 5 + 's';
+                item.style.fontSize = (Math.random() * 2 + 1.5) + 'rem';
+                item.style.opacity = Math.random() * 0.5 + 0.3;
+                container.appendChild(item);
+            }
+        }
+
+        // Create steam effect
+        function createSteam() {
+            const container = document.getElementById('steamContainer');
+
+            for (let i = 0; i < 5; i++) {
+                const steam = document.createElement('div');
+                steam.className = 'steam';
+                steam.style.left = (i * 30 - 60) + 'px';
+                steam.style.animationDelay = (i * 0.3) + 's';
+                container.appendChild(steam);
+            }
+        }
+
+        // Slurp effect
+        const slurpSounds = [
+            '호로록!',
+            '쩝쩝!',
+            '맛있다!',
+            '대박!',
+            '최고!',
+            '미쳤다!',
+            '존맛탱!',
+            '캬~!',
+            '진짜 맛있어!',
+            'ㅋㅋㅋ'
+        ];
+
+        function slurp() {
+            const text = document.createElement('div');
+            text.className = 'slurp-text';
+            text.textContent = slurpSounds[Math.floor(Math.random() * slurpSounds.length)];
+            text.style.left = (Math.random() * 60 + 20) + '%';
+            text.style.top = (Math.random() * 40 + 30) + '%';
+            document.body.appendChild(text);
+
+            // Shake the bowl
+            const bowl = document.getElementById('bowl');
+            bowl.style.animation = 'none';
+            bowl.offsetHeight;
+            bowl.style.animation = 'bowlShake 0.5s ease-in-out';
+
+            setTimeout(() => {
+                bowl.style.animation = 'bowlBounce 2s ease-in-out infinite';
+            }, 500);
+
+            setTimeout(() => text.remove(), 1000);
+        }
+
+        // Initialize
+        createFloatingItems();
+        createSteam();
+
+        // Auto slurp every few seconds for fun
+        setInterval(() => {
+            if (Math.random() > 0.7) {
+                slurp();
+            }
+        }, 5000);
+    </script>
+</body>
+
+</html>
