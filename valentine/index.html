@@ -485,7 +485,7 @@
             let attempts = 0;
             const maxAttempts = 50;
 
-            // Keep generating positions until we find one that doesn't overlap with Yes button
+            // Keep generating positions until we find one that doesn't overlap with Yes button or current position
             do {
                 randomX = Math.max(20, Math.random() * maxX);
                 randomY = Math.max(20, Math.random() * maxY);
@@ -500,8 +500,11 @@
 
                 attempts++;
 
-                // Check if this position overlaps with the Yes button
-                if (!isOverlapping(newRect, yesBtnRect)) {
+                // Check if this position overlaps with the Yes button or current No button position
+                const overlapsYes = isOverlapping(newRect, yesBtnRect);
+                const overlapsCurrentPos = isOverlapping(newRect, noBtnRect, 30); // Higher padding to ensure visible movement
+
+                if (!overlapsYes && !overlapsCurrentPos) {
                     break;
                 }
             } while (attempts < maxAttempts);
