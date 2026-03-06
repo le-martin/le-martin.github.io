@@ -13,41 +13,30 @@ permalink: /restaurant/
 
     <!-- Preload critical assets -->
     <link rel="preload" href="assets/images/hero.webp" as="image" type="image/webp">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Outfit:wght@300;400;600&display=swap" as="style">
+    <link rel="preload" href="assets/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/playfair-latin.woff2" as="font" type="font/woff2" crossorigin>
 
-    <!-- Critical CSS inlined for fast first paint -->
+    <!-- Critical CSS inlined for fast first paint (above-the-fold only) -->
     <style>
-        :root{--primary-color:#c9a050;--secondary-color:#1a1a1a;--text-color:#f5f5f5;--bg-dark:#0a0a0a;--glass:rgba(255,255,255,0.05);--transition:all 0.4s cubic-bezier(0.165,0.84,0.44,1)}
+        :root{--primary-color:#c9a050;--secondary-color:#1a1a1a;--text-color:#f5f5f5;--bg-dark:#0a0a0a;--transition:all 0.4s cubic-bezier(0.165,0.84,0.44,1)}
         *{margin:0;padding:0;box-sizing:border-box}
         body{font-family:'Outfit',sans-serif;background-color:var(--secondary-color);color:var(--text-color);line-height:1.6;overflow-x:hidden}
-        h1,h2,h3,.brand{font-family:'Playfair Display',serif}
-        nav{position:fixed;top:0;width:100%;padding:2rem 5%;display:flex;justify-content:space-between;align-items:center;z-index:1000;transition:var(--transition);background:linear-gradient(to bottom,rgba(0,0,0,0.8),transparent)}
+        h1,.brand{font-family:'Playfair Display',serif}
+        nav{position:fixed;top:0;width:100%;padding:2rem 5%;display:flex;justify-content:space-between;align-items:center;z-index:1000;background:linear-gradient(to bottom,rgba(0,0,0,0.8),transparent)}
         .brand{font-size:2rem;font-weight:700;color:var(--primary-color);text-decoration:none;letter-spacing:2px}
         .nav-links{display:flex;gap:3rem}
-        .nav-links a{text-decoration:none;color:var(--text-color);font-weight:400;text-transform:uppercase;letter-spacing:1px;font-size:0.9rem;position:relative;transition:var(--transition)}
+        .nav-links a{text-decoration:none;color:var(--text-color);text-transform:uppercase;letter-spacing:1px;font-size:0.9rem}
         .nav-actions{display:flex;align-items:center;gap:1.5rem}
-        .lang-switcher{display:flex;gap:0.5rem;background:rgba(255,255,255,0.05);padding:0.2rem;border-radius:5px;border:1px solid rgba(255,255,255,0.1)}
-        .lang-btn{background:none;border:none;color:#666;font-family:inherit;font-size:0.7rem;font-weight:600;cursor:pointer;padding:0.3rem 0.6rem;border-radius:3px;transition:var(--transition)}
+        .lang-switcher{display:flex;gap:0.5rem;background:rgba(255,255,255,0.05);padding:0.2rem;border-radius:5px}
+        .lang-btn{background:none;border:none;color:#888;font-size:0.7rem;font-weight:600;cursor:pointer;padding:0.3rem 0.6rem;border-radius:3px}
         .lang-btn.active{background:var(--primary-color);color:var(--bg-dark)}
         .mobile-nav-toggle{display:none}
-        .hero{height:100vh;width:100%;background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('assets/images/hero.webp');background-size:cover;background-position:center;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:0 10%}
-        .hero h1{font-size:5rem;margin-bottom:1rem;opacity:0;transform:translateY(30px);animation:fadeInUp 1s forwards 0.5s}
-        .hero p{font-size:1.2rem;margin-bottom:2rem;max-width:600px;font-weight:300;letter-spacing:1px;opacity:0;transform:translateY(30px);animation:fadeInUp 1s forwards 0.8s}
-        .hero-cta{display:flex;gap:1.5rem;opacity:0;transform:translateY(30px);animation:fadeInUp 1s forwards 1.1s}
-        .btn{display:inline-block;padding:1rem 2.5rem;border:1px solid var(--primary-color);color:var(--primary-color);text-decoration:none;text-transform:uppercase;letter-spacing:2px;font-size:0.8rem;transition:var(--transition);background:transparent;cursor:pointer}
-        .btn.disabled{opacity:0.5;cursor:not-allowed;pointer-events:none;border-color:#666;color:#666}
-        @keyframes fadeInUp{to{opacity:1;transform:translateY(0)}}
-        /* Review widgets - critical for mobile */
-        .review-widgets-wrapper{display:flex;flex-direction:column;align-items:center;width:100%}
-        .review-widgets{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;margin-top:2rem}
-        .review-widget{background:linear-gradient(135deg,rgba(255,255,255,0.08) 0%,rgba(255,255,255,0.03) 100%);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:1.5rem 2rem;min-width:280px;max-width:320px;text-decoration:none;color:var(--text-color);display:flex;flex-direction:column;gap:1rem}
-        .widget-header{display:flex;align-items:center;gap:0.75rem}
-        .widget-source{font-size:0.9rem;font-weight:600;color:#aaa;text-transform:uppercase;letter-spacing:1px}
-        .widget-rating{display:flex;align-items:center;gap:1rem}
-        .rating-number{font-size:2.5rem;font-weight:700;font-family:'Playfair Display',serif;color:var(--text-color)}
-        .widget-meta{font-size:0.85rem;color:#888}
-        .widget-cta{display:flex;align-items:center;gap:0.5rem;font-size:0.85rem;color:var(--primary-color);font-weight:500;margin-top:0.5rem}
-        @media(max-width:768px){.review-widgets{flex-direction:column;align-items:center;width:100%;padding:0 1rem}.review-widget{min-width:unset;max-width:100%;width:100%}}
+        .hero{height:100vh;background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('assets/images/hero.webp');background-size:cover;background-position:center;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:0 10%}
+        .hero h1{font-size:5rem;margin-bottom:1rem;opacity:0;animation:fadeInUp 1s forwards .5s}
+        .hero p{font-size:1.2rem;margin-bottom:2rem;max-width:600px;font-weight:300;opacity:0;animation:fadeInUp 1s forwards .8s}
+        .hero-cta{display:flex;gap:1.5rem;opacity:0;animation:fadeInUp 1s forwards 1.1s}
+        .btn{padding:1rem 2.5rem;border:1px solid var(--primary-color);color:var(--primary-color);text-decoration:none;text-transform:uppercase;letter-spacing:2px;font-size:0.8rem;background:transparent}
+        @keyframes fadeInUp{to{opacity:1}}
     </style>
 
     <!-- Full stylesheet -->
@@ -111,13 +100,12 @@ permalink: /restaurant/
             </p>
         </div>
         <div class="info-image">
-            <picture>
-                <source srcset="assets/images/bibimbap.webp" type="image/webp">
-                <img src="assets/images/bibimbap.png"
-                     alt="Buntes Bibimbap in traditioneller Steinschale - Reis mit Gemüse, Ei und Gochujang Sauce"
-                     loading="lazy"
-                     style="filter: brightness(0.9);">
-            </picture>
+            <img src="assets/images/bibimbap.webp"
+                 alt="Buntes Bibimbap in traditioneller Steinschale - Reis mit Gemüse, Ei und Gochujang Sauce"
+                 width="1024"
+                 height="1024"
+                 loading="lazy"
+                 style="filter: brightness(0.9);">
         </div>
     </section>
 
@@ -131,13 +119,12 @@ permalink: /restaurant/
             <a href="assets/menu.pdf" class="btn" target="_blank" data-i18n="menu_btn">Speisekarte (PDF)</a>
         </div>
         <div class="info-image">
-            <picture>
-                <source srcset="assets/images/hero.webp" type="image/webp">
-                <img src="assets/images/hero.png"
-                     alt="Elegantes Restaurant-Interieur mit warmer Beleuchtung und moderner koreanischer Einrichtung"
-                     loading="lazy"
-                     style="filter: brightness(0.8);">
-            </picture>
+            <img src="assets/images/hero.webp"
+                 alt="Elegantes Restaurant-Interieur mit warmer Beleuchtung und moderner koreanischer Einrichtung"
+                 width="1024"
+                 height="1024"
+                 loading="lazy"
+                 style="filter: brightness(0.8);">
         </div>
 </section>
 
@@ -163,7 +150,12 @@ permalink: /restaurant/
                 </div>
             </div>
             <div class="location-map">
-                <iframe data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2507.1308701221797!2d13.746738177751032!3d51.069134171716925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4709cf3d87677705%3A0xa89993fea0eaa95f!2sSura%20Restaurant!5e0!3m2!1sen!2sde!4v1767011093448!5m2!1sen!2sde" width="100%" height="300" style="border:0;" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade" title="Google Maps - Sura Restaurant Dresden"></iframe>
+                <div id="mapConsentPlaceholder" class="map-consent-placeholder">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    <p data-i18n="map_consent_text">Klicken Sie hier, um Google Maps zu laden. Dabei werden Daten an Google übertragen.</p>
+                    <button id="loadMapBtn" class="btn" data-i18n="map_consent_btn">Karte laden</button>
+                </div>
+                <iframe id="googleMap" data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2507.1308701221797!2d13.746738177751032!3d51.069134171716925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4709cf3d87677705%3A0xa89993fea0eaa95f!2sSura%20Restaurant!5e0!3m2!1sen!2sde!4v1767011093448!5m2!1sen!2sde" width="100%" height="300" style="border:0; display: none;" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade" title="Google Maps - Sura Restaurant Dresden"></iframe>
             </div>
         </div>
 </section>
@@ -239,8 +231,14 @@ permalink: /restaurant/
 
         <div class="footer-info">
             <p data-i18n="footer_rights">&copy; 2025 Sura Korean Restaurant Dresden. All rights reserved.</p>
+            <div class="footer-legal">
+                <a href="/restaurant/datenschutz/" data-i18n="footer_privacy">Datenschutz</a>
+                <span class="footer-divider">|</span>
+                <a href="/restaurant/impressum/" data-i18n="footer_imprint">Impressum</a>
+            </div>
         </div>
     </footer>
+
 
 
     <!-- Reservation Modal -->
@@ -264,6 +262,30 @@ permalink: /restaurant/
     </button>
 
     <script src="script.js"></script>
+    <script>
+        // Google Maps Consent - load map only after user consent
+        document.addEventListener('DOMContentLoaded', function() {
+            var mapPlaceholder = document.getElementById('mapConsentPlaceholder');
+            var loadMapBtn = document.getElementById('loadMapBtn');
+            var mapIframe = document.getElementById('googleMap');
+
+            // Check if user already consented to maps
+            if (localStorage.getItem('mapsConsent') === 'accepted' && mapIframe && mapPlaceholder) {
+                mapIframe.src = mapIframe.dataset.src;
+                mapIframe.style.display = 'block';
+                mapPlaceholder.style.display = 'none';
+            }
+
+            if (loadMapBtn && mapIframe && mapPlaceholder) {
+                loadMapBtn.addEventListener('click', function() {
+                    localStorage.setItem('mapsConsent', 'accepted');
+                    mapIframe.src = mapIframe.dataset.src;
+                    mapIframe.style.display = 'block';
+                    mapPlaceholder.style.display = 'none';
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>

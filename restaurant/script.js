@@ -43,7 +43,11 @@ const translations = {
         widget_reviews_count_ta: "73 reviews",
         widget_see_reviews: "See all reviews",
         ratings_disclaimer: "As of January 2026",
-        footer_rights: "© 2025 Sura Korean Restaurant Dresden. All rights reserved."
+        footer_rights: "© 2025 Sura Korean Restaurant Dresden. All rights reserved.",
+        footer_privacy: "Privacy Policy",
+        footer_imprint: "Legal Notice",
+        map_consent_text: "Click here to load Google Maps. This will transfer data to Google.",
+        map_consent_btn: "Load Map"
     },
     de: {
         page_title: "Sura | Koreanisches Restaurant in Dresden",
@@ -89,7 +93,11 @@ const translations = {
         widget_reviews_count_ta: "73 Bewertungen",
         widget_see_reviews: "Alle Bewertungen ansehen",
         ratings_disclaimer: "Stand: Januar 2026",
-        footer_rights: "© 2025 Sura Koreanisches Restaurant Dresden. Alle Rechte vorbehalten."
+        footer_rights: "© 2025 Sura Koreanisches Restaurant Dresden. Alle Rechte vorbehalten.",
+        footer_privacy: "Datenschutz",
+        footer_imprint: "Impressum",
+        map_consent_text: "Klicken Sie hier, um Google Maps zu laden. Dabei werden Daten an Google übertragen.",
+        map_consent_btn: "Karte laden"
     }
 };
 
@@ -391,19 +399,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Lazy load Google Maps iframe
-    const mapIframe = document.querySelector('.location-map iframe[data-src]');
-    if (mapIframe) {
-        const mapObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const iframe = entry.target;
-                    iframe.src = iframe.dataset.src;
-                    mapObserver.unobserve(iframe);
-                }
-            });
-        }, { rootMargin: '200px' }); // Load slightly before it comes into view
-
-        mapObserver.observe(mapIframe);
-    }
 });
