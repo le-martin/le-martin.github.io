@@ -37,9 +37,12 @@ learn-german/        # Expo React Native web app (pre-built SPA)
 scripts/             # Utility scripts (CV markdown-to-JSON converter)
 markdown_generator/  # Helper scripts for generating markdown files
 neoguri.disabled/    # Disabled sub-app
-restaurant/          # Restaurant-related sub-app
-ta_finance/          # Financial analysis sub-app (disabled in nav)
-talkmap.*            # Talk location map generator (Python/Jupyter)
+restaurant/          # Restaurant guide (standalone HTML/CSS/JS, not Jekyll-generated)
+ta_finance/          # FastAPI-based finance dashboard (Python/Plotly, disabled in nav)
+talkmap/             # Leaflet.js map of talk locations
+talkmap.ipynb/.py    # Talk location scraping (Jupyter/Python)
+markdown_generator/  # Jupyter notebooks for TSV → markdown conversion (talks, publications)
+bin/                 # Bundler binstubs
 ```
 
 ## Key Configuration
@@ -100,12 +103,18 @@ Static pages live in `_pages/` — disable a page by appending `.disabled` to th
 
 ## CI/CD Pipeline
 
-GitHub Actions workflow (`.github/workflows/jekyll.yml`):
-1. Triggers on push to `master` branch
-2. Sets up Ruby 3.1 with bundler cache
-3. Builds Jekyll site (`bundle exec jekyll build`)
-4. Copies `learn-german/_expo/` into the build output
-5. Deploys to GitHub Pages
+### Deploy (`jekyll.yml`)
+Triggers on push to `master`:
+1. Sets up Ruby 3.1 with bundler cache
+2. Builds Jekyll site (`bundle exec jekyll build`)
+3. Copies `learn-german/_expo/` into the build output
+4. Deploys to GitHub Pages
+
+### Scrape Talks (`scrape_talks.yml`)
+Triggers on changes to `talks/**` or `talkmap.ipynb`:
+1. Runs Python 3.9 with geopy, getorg, beautifulsoup4
+2. Executes `talkmap.ipynb` to geocode talk locations
+3. Auto-commits updated location data
 
 ## Conventions for AI Assistants
 
@@ -117,3 +126,5 @@ GitHub Actions workflow (`.github/workflows/jekyll.yml`):
 - **Sensitive data**: Do not commit personal email, API keys, or tracking IDs. These fields are intentionally left blank in `_config.yml`
 - **learn-german app**: Treat as a pre-built artifact. Do not modify generated files in `learn-german/_expo/`; source changes are made externally
 - **Git ignores**: `.claude/`, `node_modules/`, `_site/`, `Gemfile.lock`, `.sass-cache/` are all gitignored
+- **Auxiliary projects**: `restaurant/`, `ta_finance/`, and `talkmap/` are standalone sub-apps with their own HTML/CSS/JS — they are not processed by Jekyll's templating engine
+- **Ruby 3 compatibility**: `_plugins/ruby_3_compatibility.rb` provides shims for Jekyll on Ruby 3.x
