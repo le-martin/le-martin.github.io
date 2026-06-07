@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stock &amp; ETF Correlation Checker</title>
+  <script src="https://cdn.plot.ly/plotly-2.35.0.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Stock &amp; ETF Correlation Checker</h1>
+  </header>
+
+  <main>
+    <section class="controls">
+      <div class="input-group">
+        <label for="tickers">Tickers (comma-separated)</label>
+        <input type="text" id="tickers" value="QBTS, ^VIX" placeholder="e.g. AAPL, SPY, QQQ">
+      </div>
+      <div class="input-group">
+        <label for="period">Period</label>
+        <select id="period">
+          <option value="6mo">6 Months</option>
+          <option value="1y">1 Year</option>
+          <option value="2y" selected>2 Years</option>
+          <option value="5y">5 Years</option>
+        </select>
+      </div>
+      <button id="fetch-btn">Analyze</button>
+      <span id="status"></span>
+    </section>
+
+    <div class="tabs">
+      <button class="tab active" data-tab="heatmap">Heatmap</button>
+      <button class="tab" data-tab="rolling">Rolling Correlation</button>
+      <button class="tab" data-tab="lag">Lag Analysis</button>
+      <button class="tab" data-tab="overlay">Overlay (Shift)</button>
+    </div>
+
+    <div id="heatmap" class="tab-content active">
+      <div id="heatmap-chart" class="chart"></div>
+    </div>
+
+    <div id="rolling" class="tab-content">
+      <div id="rolling-chart" class="chart"></div>
+    </div>
+
+    <div id="lag" class="tab-content">
+      <div class="input-group inline">
+        <label for="lag-max">Max lag (days)</label>
+        <input type="number" id="lag-max" value="20" min="1" max="365">
+      </div>
+      <div id="lag-chart" class="chart"></div>
+      <p id="lag-result" class="result"></p>
+    </div>
+
+    <div id="overlay" class="tab-content">
+      <div class="slider-group">
+        <label for="shift-slider">Shift <span id="shift-ticker"></span>: <strong id="shift-value">0</strong> days</label>
+        <input type="range" id="shift-slider" min="-365" max="365" value="0">
+        <span id="overlay-corr" class="result"></span>
+      </div>
+      <div id="overlay-chart" class="chart"></div>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
