@@ -10,7 +10,6 @@ Personal academic website for Martin Le (Ph.D. Candidate @ TU Braunschweig), hos
 - **Theme**: academicpages (based on Minimal Mistakes)
 - **CSS**: Sass/SCSS (`_sass/` directory), compiled with Jekyll
 - **JS**: jQuery + plugins, bundled via uglify-js (`npm run build:js`)
-- **Learn German app**: Expo/React Native for Web SPA, pre-built and served as static files under `/learn-german/`
 - **CI/CD**: GitHub Actions (`.github/workflows/jekyll.yml`) — builds and deploys on push to `master`
 
 ## Repository Structure
@@ -30,16 +29,14 @@ _talks/              # Talk/presentation entries
 assets/              # Static assets (JS, CSS, images, fonts)
 files/               # Downloadable files (PDFs, etc.)
 images/              # Site images (profile photo, etc.)
-learn-german/        # Expo React Native web app (pre-built SPA)
-  _expo/static/      # Expo static assets (JS bundles, etc.)
-  index.html         # SPA entry point
-  404.html           # SPA fallback for client-side routing
 scripts/             # Utility scripts (CV markdown-to-JSON converter)
 markdown_generator/  # Helper scripts for generating markdown files
-neoguri.disabled/    # Disabled sub-app
-restaurant/          # Restaurant guide (standalone HTML/CSS/JS, not Jekyll-generated)
-ta_finance/          # FastAPI-based finance dashboard (Python/Plotly, disabled in nav)
+stock-correlation/   # Stock & ETF correlation checker (standalone HTML/CSS/JS)
 talkmap/             # Leaflet.js map of talk locations
+ta_finance/          # FastAPI-based finance dashboard (Python/Plotly, not built)
+neoguri.disabled/        # Disabled sub-app (ramen timer)
+learn-german.disabled/   # Disabled Expo React Native web app (pre-built SPA)
+restaurant.disabled/     # Disabled restaurant guide (excluded from build in _config.yml)
 talkmap.ipynb/.py    # Talk location scraping (Jupyter/Python)
 markdown_generator/  # Jupyter notebooks for TSV → markdown conversion (talks, publications)
 bin/                 # Bundler binstubs
@@ -79,8 +76,7 @@ npm run build:js   # Minifies JS into assets/js/main.min.js
 ### Important Notes
 
 - Changes to `_config.yml` require restarting the Jekyll server
-- The `learn-german/` app is a pre-built Expo SPA — its source is maintained separately. The `_expo/` directory is copied into `_site/` during CI build
-- The `404.md` at root serves as the SPA routing fallback for GitHub Pages
+- The `404.md` at root serves as the GitHub Pages 404 page
 
 ## Content Conventions
 
@@ -107,8 +103,7 @@ Static pages live in `_pages/` — disable a page by appending `.disabled` to th
 Triggers on push to `master`:
 1. Sets up Ruby 3.1 with bundler cache
 2. Builds Jekyll site (`bundle exec jekyll build`)
-3. Copies `learn-german/_expo/` into the build output
-4. Deploys to GitHub Pages
+3. Deploys to GitHub Pages
 
 ### Scrape Talks (`scrape_talks.yml`)
 Triggers on changes to `talks/**` or `talkmap.ipynb`:
@@ -124,7 +119,7 @@ Triggers on changes to `talks/**` or `talkmap.ipynb`:
 - **No tests**: There is no test suite for the Jekyll site
 - **No linter/formatter**: No configured linting or formatting tools
 - **Sensitive data**: Do not commit personal email, API keys, or tracking IDs. These fields are intentionally left blank in `_config.yml`
-- **learn-german app**: Treat as a pre-built artifact. Do not modify generated files in `learn-german/_expo/`; source changes are made externally
 - **Git ignores**: `.claude/`, `node_modules/`, `_site/`, `Gemfile.lock`, `.sass-cache/` are all gitignored
-- **Auxiliary projects**: `restaurant/`, `ta_finance/`, and `talkmap/` are standalone sub-apps with their own HTML/CSS/JS — they are not processed by Jekyll's templating engine
+- **Auxiliary projects**: `stock-correlation/`, `talkmap/`, and `ta_finance/` are standalone sub-apps with their own HTML/CSS/JS (or Python) — they are not processed by Jekyll's templating engine
+- **Disabled sub-apps**: `learn-german.disabled/`, `restaurant.disabled/`, and `neoguri.disabled/` are disabled via the `.disabled` suffix. Note that `restaurant.disabled/` is also listed under `exclude:` in `_config.yml`, because its `.md` files declare explicit permalinks that would otherwise still render
 - **Ruby 3 compatibility**: `_plugins/ruby_3_compatibility.rb` provides shims for Jekyll on Ruby 3.x
