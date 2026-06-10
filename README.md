@@ -1,3 +1,33 @@
+# le-martin.github.io
+
+Personal academic website for **Martin Le** (Ph.D. Candidate @ TU Braunschweig), hosted on GitHub Pages at <https://le-martin.github.io>. Built on the [Academic Pages](https://github.com/academicpages/academicpages.github.io) Jekyll template (a fork of Minimal Mistakes).
+
+## Pages & sub-apps
+
+**Active**
+
+| Path | Description |
+| --- | --- |
+| `/` | Home / about |
+| `/stock-correlation/` | Stock & ETF correlation checker (standalone HTML/CSS/JS) |
+| `/talkmap/map.html` | Leaflet.js map of talk locations |
+
+The academic pages (`about`, `cv`, `publications`, `talks`, etc.) under `_pages/` also build, though their header nav links are currently commented out in `_data/navigation.yml`.
+
+**Disabled** (kept in-repo via the `.disabled` suffix convention)
+
+| Directory | Description |
+| --- | --- |
+| `learn-german.disabled/` | Expo / React Native web app |
+| `restaurant.disabled/` | Restaurant guide (also listed under `exclude:` in `_config.yml`, because its pages declare explicit permalinks) |
+| `neoguri.disabled/` | Ramen timer sub-app |
+
+See [`CLAUDE.md`](CLAUDE.md) for fuller codebase documentation and conventions.
+
+---
+
+The remainder of this README is the upstream Academic Pages template documentation.
+
 # Academic Pages
 **Academic Pages is a GitHub Pages template for personal and professional portfolio-oriented websites.**
 
