@@ -9,6 +9,7 @@ Personal academic website for **Martin Le** (Ph.D. Candidate @ TU Braunschweig),
 | Path | Description |
 | --- | --- |
 | `/` | Home / about |
+| `/learn-german/` | Expo / React Native web app (pre-built SPA) |
 | `/stock-correlation/` | Stock & ETF correlation checker (standalone HTML/CSS/JS) |
 | `/talkmap/map.html` | Leaflet.js map of talk locations |
 
@@ -18,7 +19,6 @@ The academic pages (`about`, `cv`, `publications`, `talks`, etc.) under `_pages/
 
 | Directory | Description |
 | --- | --- |
-| `learn-german.disabled/` | Expo / React Native web app |
 | `restaurant.disabled/` | Restaurant guide (also listed under `exclude:` in `_config.yml`, because its pages declare explicit permalinks) |
 | `neoguri.disabled/` | Ramen timer sub-app |
 
