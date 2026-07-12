@@ -34,8 +34,8 @@ redirect_from:
 - Machinelles Lernen für Wi-Fi (in German), VDE ProfDate, Oct. 2021.
 
 <a id="section_reviews"></a>
-## Reviewer Activities (17)
-### Reviewer for the following Conferences/Workshops (13)
+## Reviewer Activities (16)
+### Reviewer for the following Conferences/Workshops (14)
 - IEEE Wireless Communications and Networking Conference (WCNC 2025)
 - European Conference on Networks and Communications (EuCNC) & 6G Summit 2025
 - IEEE International Conference on Communications (ICC 2025)
