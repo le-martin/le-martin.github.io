@@ -19,7 +19,7 @@ redirect_from:
 
 <a id="section_publication"></a>
 ## Publications (5)
-- S. Rezvani, P.-H. Lin, M. Le, G. C. Alexandropoulos, S. Stanczak, E. A. Jorswieck, "Reconfigurable Intelligent Surfaces for Wireless Communications - Physical-Layer Security with Benign and Malicious RISs," Chapter in Springer Nature Book, to be published, [Spinger Nature Link](https://link.springer.com/book/9789819518135).
+- S. Rezvani, P.-H. Lin, M. Le, G. C. Alexandropoulos, S. Stanczak, E. A. Jorswieck, "Physical-Layer Security with Benign and Malicious RISs", In: G. C. Alexandropoulos, A. Zappone, N. Shlezinger, M. Di Renzo, Y. Eldar (eds) "Reconfigurable Intelligent Surfaces for Wireless Communications"., Springer, Singapore, [doi: Spinger Nature Link](https://link.springer.com/chapter/10.1007/978-981-95-1814-2_17).
 - M. Le, B. Peng and E. A. Jorswieck, "WiFi-CUTS: Rate Adaptation with Cascaded Unimodal Multi-Armed Bandits in IEEE 802.11ac Testbed Experiments," in IEEE Transactions on Communications (Early Access), [doi: 10.1109/TCOMM.2025.3628731](https://doi.org/10.1109/TCOMM.2025.3628731).
 - M. Le et al., “Multi-Armed Bandits in IEEE 802.11ac: Efficient Algorithms and Testbed Experiments,” in CQR 2024 - IEEE International Workshop Technical Committee on Communications Quality and Reliability: Proceedings, Sep. 2024, pp. 7–12. [doi: 10.1109/cqr62340.2024.10705888](https://doi.org/10.1109/cqr62340.2024.10705888).
 - S. P. Pawar et al., “Open-source Resource Control API for real IEEE 802.11 Networks,” in Proceedings of the 30th Annual International Conference on Mobile Computing and Networking, ACM MobiCom ’24, Dec. 2024, pp. 1866–1873. [doi: 10.1145/3636534.3697314](https://doi.org/10.1145/3636534.3697314).
@@ -156,4 +156,4 @@ redirect_from:
 
 ***
 
-Last updated on May 7, 2025.
+Last updated on July 12, 2025.
