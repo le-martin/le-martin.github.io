@@ -37,10 +37,10 @@ learn-german/        # Expo React Native web app (pre-built SPA)
 scripts/             # Utility scripts (CV markdown-to-JSON converter)
 markdown_generator/  # Helper scripts for generating markdown files
 stock-correlation/   # Stock & ETF correlation checker (standalone HTML/CSS/JS)
+restaurant/          # Sura Korean restaurant site (standalone HTML/CSS/JS, own permalinks)
 talkmap/             # Leaflet.js map of talk locations
 ta_finance/          # FastAPI-based finance dashboard (Python/Plotly, not built)
 neoguri.disabled/        # Disabled sub-app (ramen timer)
-restaurant.disabled/     # Disabled restaurant guide (excluded from build in _config.yml)
 talkmap.ipynb/.py    # Talk location scraping (Jupyter/Python)
 markdown_generator/  # Jupyter notebooks for TSV → markdown conversion (talks, publications)
 bin/                 # Bundler binstubs
@@ -127,6 +127,6 @@ Triggers on changes to `talks/**` or `talkmap.ipynb`:
 - **Sensitive data**: Do not commit personal email, API keys, or tracking IDs. These fields are intentionally left blank in `_config.yml`
 - **learn-german app**: Treat as a pre-built artifact. Do not modify generated files in `learn-german/_expo/`; source changes are made externally
 - **Git ignores**: `.claude/`, `node_modules/`, `_site/`, `Gemfile.lock`, `.sass-cache/` are all gitignored
-- **Auxiliary projects**: `stock-correlation/`, `talkmap/`, and `ta_finance/` are standalone sub-apps with their own HTML/CSS/JS (or Python) — they are not processed by Jekyll's templating engine
-- **Disabled sub-apps**: `restaurant.disabled/` and `neoguri.disabled/` are disabled via the `.disabled` suffix. Note that `restaurant.disabled/` is also listed under `exclude:` in `_config.yml`, because its `.md` files declare explicit permalinks that would otherwise still render
+- **Auxiliary projects**: `restaurant/`, `stock-correlation/`, `talkmap/`, and `ta_finance/` are standalone sub-apps with their own HTML/CSS/JS (or Python) — they are not processed by Jekyll's templating engine. `restaurant/` declares explicit permalinks (`/restaurant/`, `/restaurant/datenschutz/`, `/restaurant/impressum/`) in its `.md` front matter
+- **Disabled sub-apps**: `neoguri.disabled/` is disabled via the `.disabled` suffix
 - **Ruby 3 compatibility**: `_plugins/ruby_3_compatibility.rb` provides shims for Jekyll on Ruby 3.x

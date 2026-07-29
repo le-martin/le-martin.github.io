@@ -10,6 +10,7 @@ Personal academic website for **Martin Le** (Ph.D. Candidate @ TU Braunschweig),
 | --- | --- |
 | `/` | Home / about |
 | `/learn-german/` | Expo / React Native web app (pre-built SPA) |
+| `/restaurant/` | Sura Korean restaurant site (standalone HTML/CSS/JS) |
 | `/stock-correlation/` | Stock & ETF correlation checker (standalone HTML/CSS/JS) |
 | `/talkmap/map.html` | Leaflet.js map of talk locations |
 
@@ -19,7 +20,6 @@ The academic pages (`about`, `cv`, `publications`, `talks`, etc.) under `_pages/
 
 | Directory | Description |
 | --- | --- |
-| `restaurant.disabled/` | Restaurant guide (also listed under `exclude:` in `_config.yml`, because its pages declare explicit permalinks) |
 | `neoguri.disabled/` | Ramen timer sub-app |
 
 See [`CLAUDE.md`](CLAUDE.md) for fuller codebase documentation and conventions.
