@@ -39,7 +39,6 @@ markdown_generator/  # Helper scripts for generating markdown files
 stock-correlation/   # Stock & ETF correlation checker (standalone HTML/CSS/JS)
 restaurant/          # Sura Korean restaurant site (standalone HTML/CSS/JS, own permalinks)
 talkmap/             # Leaflet.js map of talk locations
-ta_finance/          # FastAPI-based finance dashboard (Python/Plotly source, no built page)
 talkmap.ipynb/.py    # Talk location scraping (Jupyter/Python)
 markdown_generator/  # Jupyter notebooks for TSV → markdown conversion (talks, publications)
 bin/                 # Bundler binstubs
@@ -126,5 +125,5 @@ Triggers on changes to `talks/**` or `talkmap.ipynb`:
 - **Sensitive data**: Do not commit personal email, API keys, or tracking IDs. These fields are intentionally left blank in `_config.yml`
 - **learn-german app**: Treat as a pre-built artifact. Do not modify generated files in `learn-german/_expo/`; source changes are made externally
 - **Git ignores**: `.claude/`, `node_modules/`, `_site/`, `Gemfile.lock`, `.sass-cache/` are all gitignored
-- **Auxiliary projects**: `restaurant/`, `stock-correlation/`, `talkmap/`, and `ta_finance/` are standalone sub-apps with their own HTML/CSS/JS (or Python) — they are not processed by Jekyll's templating engine. `restaurant/` declares explicit permalinks (`/restaurant/`, `/restaurant/datenschutz/`, `/restaurant/impressum/`) in its `.md` front matter
+- **Auxiliary projects**: `restaurant/`, `stock-correlation/`, and `talkmap/` are standalone sub-apps with their own HTML/CSS/JS — they are not processed by Jekyll's templating engine. `restaurant/` declares explicit permalinks (`/restaurant/`, `/restaurant/datenschutz/`, `/restaurant/impressum/`) in its `.md` front matter
 - **Ruby 3 compatibility**: `_plugins/ruby_3_compatibility.rb` provides shims for Jekyll on Ruby 3.x
