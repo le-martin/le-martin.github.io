@@ -124,7 +124,8 @@ function renderHeatmap() {
     ...plotLayout,
     title: "Daily Return Correlations",
     annotations,
-    yaxis: { ...plotLayout.yaxis, autorange: "reversed" },
+    xaxis: { ...plotLayout.xaxis, type: "category" },
+    yaxis: { ...plotLayout.yaxis, type: "category", autorange: "reversed" },
   }, plotConfig);
 }
 
