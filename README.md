@@ -13,14 +13,13 @@ Personal academic website for **Martin Le** (Ph.D. Candidate @ TU Braunschweig),
 | `/restaurant/` | Sura Korean restaurant site (standalone HTML/CSS/JS) |
 | `/stock-correlation/` | Stock & ETF correlation checker (standalone HTML/CSS/JS) |
 | `/talkmap/map.html` | Leaflet.js map of talk locations |
+| `/dresden/` | Dresden travel guide (standalone HTML/CSS/JS, Leaflet map) |
 
 The academic pages (`about`, `cv`, `publications`, `talks`, etc.) under `_pages/` also build, though their header nav links are currently commented out in `_data/navigation.yml`.
 
-**Disabled** (kept in-repo via the `.disabled` suffix convention)
+**Disabled**
 
-| Directory | Description |
-| --- | --- |
-| `neoguri.disabled/` | Ramen timer sub-app |
+Nothing is currently disabled. Pages or sub-apps can be turned off by appending a `.disabled` suffix (e.g. `some-page.md.disabled`).
 
 See [`CLAUDE.md`](CLAUDE.md) for fuller codebase documentation and conventions.
 
