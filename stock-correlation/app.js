@@ -194,7 +194,7 @@ function renderLag() {
   }, plotConfig);
 }
 
-function renderOverlay(lag = 0) {
+function renderOverlay(lag = 0, init = false) {
   if (tickers.length !== 2) return;
   const [a, b] = tickers;
   document.getElementById("shift-ticker").textContent = b;
@@ -203,10 +203,6 @@ function renderOverlay(lag = 0) {
   const ra = returnsData[a];
   const rb = returnsData[b];
 
-  const rc30 = rollingCorr(ra, lag > 0 ? rb.slice(0, -lag || undefined).concat(Array(Math.max(0, lag)).fill(null)) : Array(Math.max(0, -lag)).fill(null).concat(rb.slice(0, rb.length + lag || undefined)), 30);
-  const rc60 = rollingCorr(ra, lag > 0 ? rb.slice(0, -lag || undefined).concat(Array(Math.max(0, lag)).fill(null)) : Array(Math.max(0, -lag)).fill(null).concat(rb.slice(0, rb.length + lag || undefined)), 60);
-
-  // Simpler approach: shift and compute
   const shifted = new Array(ra.length).fill(null);
   for (let i = 0; i < ra.length; i++) {
     const srcIdx = i - lag;
@@ -224,15 +220,22 @@ function renderOverlay(lag = 0) {
   document.getElementById("overlay-corr").textContent =
     `30d avg: ${avg30.toFixed(3)} | 60d avg: ${avg60.toFixed(3)}`;
 
-  Plotly.newPlot("overlay-chart", [
+  const traces = [
     { x: returnsData.dates, y: r30, name: "30d rolling", type: "scatter", mode: "lines", line: { color: "#58a6ff", width: 1.5 } },
     { x: returnsData.dates, y: r60, name: "60d rolling", type: "scatter", mode: "lines", line: { color: "#d62728", width: 2 } },
-  ], {
+  ];
+  const layout = {
     ...plotLayout,
     title: `${a} vs ${b} — shift ${b} by ${lag} days`,
     yaxis: { ...plotLayout.yaxis, range: [-1, 1], title: "Rolling Correlation" },
     shapes: [{ type: "line", x0: 0, x1: 1, xref: "paper", y0: 0, y1: 0, line: { color: "#555", dash: "dash" } }],
-  }, plotConfig);
+  };
+
+  if (init) {
+    Plotly.newPlot("overlay-chart", traces, layout, plotConfig);
+  } else {
+    Plotly.react("overlay-chart", traces, layout);
+  }
 }
 
 // --- Event wiring ---
@@ -285,7 +288,7 @@ async function analyze() {
     renderRolling();
     renderLag();
     document.getElementById("shift-slider").value = 0;
-    renderOverlay(0);
+    renderOverlay(0, true);
   } catch (err) {
     status.textContent = `Error: ${err.message}`;
     console.error(err);
