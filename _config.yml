@@ -158,7 +158,6 @@ include:
   - .htaccess
   - _pages
   - files
-  - learn-german/_expo
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
