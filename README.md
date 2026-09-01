@@ -9,6 +9,7 @@ Personal academic website for **Martin Le** (Ph.D. Candidate @ TU Braunschweig),
 | Path | Description |
 | --- | --- |
 | `/` | Home / about |
+| `/learn-german/` | Expo / React Native web app (pre-built SPA) |
 | `/restaurant/` | Sura Korean restaurant site (standalone HTML/CSS/JS) |
 | `/stock-correlation/` | Stock & ETF correlation checker (standalone HTML/CSS/JS) |
 | `/talkmap/map.html` | Leaflet.js map of talk locations |
@@ -16,11 +17,9 @@ Personal academic website for **Martin Le** (Ph.D. Candidate @ TU Braunschweig),
 
 The academic pages (`about`, `cv`, `publications`, `talks`, etc.) under `_pages/` also build, though their header nav links are currently commented out in `_data/navigation.yml`.
 
-**Disabled** (kept in-repo via the `.disabled` suffix convention)
+**Disabled**
 
-| Directory | Description |
-| --- | --- |
-| `learn-german.disabled/` | Expo / React Native web app (pre-built SPA) — disabled, not deleted |
+Nothing is currently disabled. Pages or sub-apps can be turned off by appending a `.disabled` suffix (e.g. `some-page.md.disabled`).
 
 See [`CLAUDE.md`](CLAUDE.md) for fuller codebase documentation and conventions.
 
