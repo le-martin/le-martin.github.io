@@ -10,6 +10,7 @@ Personal academic website for Martin Le (Ph.D. Candidate @ TU Braunschweig), hos
 - **Theme**: academicpages (based on Minimal Mistakes)
 - **CSS**: Sass/SCSS (`_sass/` directory), compiled with Jekyll
 - **JS**: jQuery + plugins, bundled via uglify-js (`npm run build:js`)
+- **Learn German app**: Expo/React Native for Web SPA, pre-built and served as static files under `/learn-german/`
 - **CI/CD**: GitHub Actions (`.github/workflows/jekyll.yml`) — builds and deploys on push to `master`
 
 ## Repository Structure
@@ -29,12 +30,15 @@ _talks/              # Talk/presentation entries
 assets/              # Static assets (JS, CSS, images, fonts)
 files/               # Downloadable files (PDFs, etc.)
 images/              # Site images (profile photo, etc.)
+learn-german/        # Expo React Native web app (pre-built SPA)
+  _expo/static/      # Expo static assets (JS bundles, etc.)
+  index.html         # SPA entry point
+  404.html           # SPA fallback for client-side routing
 scripts/             # Utility scripts (CV markdown-to-JSON converter)
 markdown_generator/  # Helper scripts for generating markdown files
 stock-correlation/   # Stock & ETF correlation checker (standalone HTML/CSS/JS)
 restaurant/          # Sura Korean restaurant site (standalone HTML/CSS/JS, own permalinks)
 talkmap/             # Leaflet.js map of talk locations
-learn-german.disabled/   # Disabled Expo React Native web app (pre-built SPA)
 talkmap.ipynb/.py    # Talk location scraping (Jupyter/Python)
 markdown_generator/  # Jupyter notebooks for TSV → markdown conversion (talks, publications)
 bin/                 # Bundler binstubs
@@ -74,6 +78,7 @@ npm run build:js   # Minifies JS into assets/js/main.min.js
 ### Important Notes
 
 - Changes to `_config.yml` require restarting the Jekyll server
+- The `learn-german/` app is a pre-built Expo SPA — its source is maintained separately. The `_expo/` directory is copied into `_site/` during CI build
 - The `404.md` at root serves as the SPA routing fallback for GitHub Pages
 
 ## Content Conventions
@@ -101,7 +106,8 @@ Static pages live in `_pages/` — disable a page by appending `.disabled` to th
 Triggers on push to `master`:
 1. Sets up Ruby 3.1 with bundler cache
 2. Builds Jekyll site (`bundle exec jekyll build`)
-3. Deploys to GitHub Pages
+3. Copies `learn-german/_expo/` into the build output
+4. Deploys to GitHub Pages
 
 ### Scrape Talks (`scrape_talks.yml`)
 Triggers on changes to `talks/**` or `talkmap.ipynb`:
@@ -113,11 +119,11 @@ Triggers on changes to `talks/**` or `talkmap.ipynb`:
 
 - **Default branch**: `master` (not `main`)
 - **Commit style**: Use conventional commit prefixes — `feat:`, `fix:`, `chore:`, `docs:` — followed by a concise description. Include scope in parentheses when relevant, e.g., `fix(learn-german): ...`
-- **Disabled features**: Append `.disabled` to filenames in `_pages/` or rename directories with a `.disabled` suffix (e.g., `some-page.md.disabled`). Currently `learn-german.disabled/` is disabled
+- **Disabled features**: Append `.disabled` to filenames in `_pages/` or rename directories with a `.disabled` suffix (e.g., `some-page.md.disabled`). No pages or sub-apps are currently disabled
 - **No tests**: There is no test suite for the Jekyll site
 - **No linter/formatter**: No configured linting or formatting tools
 - **Sensitive data**: Do not commit personal email, API keys, or tracking IDs. These fields are intentionally left blank in `_config.yml`
-- **learn-german app**: Treat as a pre-built artifact (currently disabled as `learn-german.disabled/`). Do not modify generated files in its `_expo/` directory; source changes are made externally. To re-enable, rename back to `learn-german/` and restore its build wiring (the `_expo` copy step in `jekyll.yml`, the `_config.yml` include, and the `/learn-german` SPA redirect in `404.md`)
+- **learn-german app**: Treat as a pre-built artifact. Do not modify generated files in `learn-german/_expo/`; source changes are made externally. To disable it, rename to `learn-german.disabled/` and remove its build wiring (the `_expo` copy step in `jekyll.yml`, the `_config.yml` include, and the `/learn-german` SPA redirect in `404.md`)
 - **Git ignores**: `.claude/`, `node_modules/`, `_site/`, `Gemfile.lock`, `.sass-cache/` are all gitignored
 - **Auxiliary projects**: `restaurant/`, `stock-correlation/`, and `talkmap/` are standalone sub-apps with their own HTML/CSS/JS — they are not processed by Jekyll's templating engine. `restaurant/` declares explicit permalinks (`/restaurant/`, `/restaurant/datenschutz/`, `/restaurant/impressum/`) in its `.md` front matter
 - **Ruby 3 compatibility**: `_plugins/ruby_3_compatibility.rb` provides shims for Jekyll on Ruby 3.x
