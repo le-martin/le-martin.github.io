@@ -10,6 +10,7 @@ Personal academic website for **Martin Le** (Ph.D. Candidate @ TU Braunschweig),
 | --- | --- |
 | `/` | Home / about |
 | `/learn-german/` | Expo / React Native web app (pre-built SPA) |
+| `/mathe-5/` | Mathe-Übungs-App Klasse 5 (vorgebaute Vite/React SPA, Quelle in einem privaten Repo) |
 | `/restaurant/` | Sura Korean restaurant site (standalone HTML/CSS/JS) |
 | `/stock-correlation/` | Stock & ETF correlation checker (standalone HTML/CSS/JS) |
 | `/talkmap/map.html` | Leaflet.js map of talk locations |
