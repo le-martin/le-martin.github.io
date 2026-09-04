@@ -11,6 +11,7 @@ Personal academic website for Martin Le (Ph.D. Candidate @ TU Braunschweig), hos
 - **CSS**: Sass/SCSS (`_sass/` directory), compiled with Jekyll
 - **JS**: jQuery + plugins, bundled via uglify-js (`npm run build:js`)
 - **Learn German app**: Expo/React Native for Web SPA, pre-built and served as static files under `/learn-german/`
+- **Mathe-5 app**: Vite/React SPA for maths practice (class 5), pre-built and served as static files under `/mathe-5/`; its source lives in a separate private repository
 - **CI/CD**: GitHub Actions (`.github/workflows/jekyll.yml`) — builds and deploys on push to `master`
 
 ## Repository Structure
@@ -34,6 +35,7 @@ learn-german/        # Expo React Native web app (pre-built SPA)
   _expo/static/      # Expo static assets (JS bundles, etc.)
   index.html         # SPA entry point
   404.html           # SPA fallback for client-side routing
+mathe-5/             # Maths practice app (pre-built Vite SPA, source in a private repo)
 scripts/             # Utility scripts (CV markdown-to-JSON converter)
 markdown_generator/  # Helper scripts for generating markdown files
 stock-correlation/   # Stock & ETF correlation checker (standalone HTML/CSS/JS)
@@ -124,6 +126,7 @@ Triggers on changes to `talks/**` or `talkmap.ipynb`:
 - **No linter/formatter**: No configured linting or formatting tools
 - **Sensitive data**: Do not commit personal email, API keys, or tracking IDs. These fields are intentionally left blank in `_config.yml`
 - **learn-german app**: Treat as a pre-built artifact. Do not modify generated files in `learn-german/_expo/`; source changes are made externally. To disable it, rename to `learn-german.disabled/` and remove its build wiring (the `_expo` copy step in `jekyll.yml`, the `_config.yml` include, and the `/learn-german` SPA redirect in `404.md`)
+- **mathe-5 app**: Treat as a pre-built artifact, like learn-german. Never edit `mathe-5/` by hand — it is build output. The source is a separate private repository (`mathe-nachhilfe-app`) whose build writes directly into `mathe-5/`; only the result is committed here
 - **Git ignores**: `.claude/`, `node_modules/`, `_site/`, `Gemfile.lock`, `.sass-cache/` are all gitignored
 - **Auxiliary projects**: `restaurant/`, `stock-correlation/`, and `talkmap/` are standalone sub-apps with their own HTML/CSS/JS — they are not processed by Jekyll's templating engine. `restaurant/` declares explicit permalinks (`/restaurant/`, `/restaurant/datenschutz/`, `/restaurant/impressum/`) in its `.md` front matter
 - **Ruby 3 compatibility**: `_plugins/ruby_3_compatibility.rb` provides shims for Jekyll on Ruby 3.x
