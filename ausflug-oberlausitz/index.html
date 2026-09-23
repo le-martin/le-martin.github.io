@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Reisebegleiter für den Tagesausflug mit Bus und Bahn: Dresden → Bautzen → Herrnhut → Zittau am 25. September 2026.">
+  <meta name="theme-color" content="#f6f1e9" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1b1916" media="(prefers-color-scheme: dark)">
+  <title>Tagesausflug Oberlausitz</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23b4532a'/%3E%3Cpath d='M32 12l5 13h13l-10.5 8 4 13L32 38l-11.5 8 4-13L14 25h13z' fill='%23fff'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip" href="#uebersicht" data-i18n="skip">Zum Inhalt springen</a>
+
+  <!-- ============================== Hero -->
+  <header class="hero" id="top">
+    <div class="lang lang--hero" role="group" aria-label="Sprache" data-i18n-aria="langAria">
+      <button type="button" data-lang="de" aria-pressed="true" lang="de">DE</button>
+      <button type="button" data-lang="en" aria-pressed="false" lang="en">EN</button>
+      <button type="button" data-lang="ko" aria-pressed="false" lang="ko">한</button>
+    </div>
+    <div class="hero__bg" role="img" aria-label="Panorama von Bautzen über der Spree" data-i18n-aria="heroAria"></div>
+    <div class="hero__inner wrap">
+      <p class="eyebrow" data-i18n="heroEyebrow">Reisebegleiter · Oberlausitz</p>
+      <h1 data-i18n="heroTitle">Tagesausflug Oberlausitz</h1>
+      <p class="hero__route" data-i18n-html="heroRoute">Dresden <span>→</span> Bautzen <span>→</span> Herrnhut <span>→</span> Zittau</p>
+      <p class="hero__meta" data-i18n="heroMeta">Freitag, 25. September 2026 · ÖPNV · 2 Personen · Deutschlandticket</p>
+      <dl class="stats" id="stats"></dl>
+      <div class="hero__actions">
+        <button class="btn btn--primary" type="button" data-action="travel-open">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>
+          <span data-i18n="startTravel">Reisemodus starten</span>
+        </button>
+        <a class="btn btn--ghost" href="#timeline" data-i18n="seePlan">Tagesplan ansehen</a>
+      </div>
+      <p class="hero__credit"><span data-i18n="photo">Foto</span>: <a href="https://commons.wikimedia.org/wiki/File:Panorama_(Bautzen).JPG" target="_blank" rel="noopener">Wikimedia Commons</a></p>
+    </div>
+  </header>
+
+  <!-- ============================== Sticky Navigation -->
+  <nav class="nav" aria-label="Abschnitte" data-i18n-aria="navAria">
+    <div class="nav__inner">
+      <a href="#uebersicht" data-i18n="navOverview">Übersicht</a>
+      <a href="#bautzen" data-i18n="navBautzen">Bautzen</a>
+      <a href="#herrnhut" data-i18n="navHerrnhut">Herrnhut</a>
+      <a href="#zittau" data-i18n="navZittau">Zittau</a>
+      <a href="#essen" data-i18n="navFood">Essen</a>
+      <a href="#oepnv" data-i18n="navTransport">ÖPNV</a>
+      <a href="#alternativ" data-i18n="navAlt">Alternativplan</a>
+      <div class="lang" role="group" aria-label="Sprache" data-i18n-aria="langAria">
+        <button type="button" data-lang="de" aria-pressed="true" lang="de">DE</button>
+        <button type="button" data-lang="en" aria-pressed="false" lang="en">EN</button>
+        <button type="button" data-lang="ko" aria-pressed="false" lang="ko">한</button>
+      </div>
+      <button class="nav__theme" type="button" data-action="theme" aria-label="Hell/Dunkel umschalten" data-i18n-aria="themeAria">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ============================== Übersicht -->
+    <section class="section" id="uebersicht">
+      <div class="wrap">
+        <div class="notice" role="note">
+          <strong data-i18n="noticeTitle">Fahrplandaten bitte prüfen.</strong>
+          <span data-i18n="noticeText">Bitte am Reisetag aktuelle Abfahrtszeiten und mögliche Fahrplanänderungen in DB Navigator bzw. ZVON prüfen.</span>
+          <span class="notice__stamp" data-checked></span>
+        </div>
+
+        <div class="section__head">
+          <h2 data-i18n="overviewTitle">Der Tag im Überblick</h2>
+          <p data-i18n="overviewHint">Tippe auf einen Punkt, um zur passenden Stelle zu springen.</p>
+        </div>
+
+        <div class="plan-switch" role="radiogroup" aria-label="Tagesplan wählen" data-i18n-aria="planAria">
+          <button type="button" role="radio" data-plan="relaxed" data-i18n="planRelaxed">Entspannter Plan</button>
+          <button type="button" role="radio" data-plan="fastentuch" data-i18n="planFast">Plan mit Fastentuch</button>
+        </div>
+        <p class="plan-hint" id="plan-hint"></p>
+
+        <div class="overview-grid">
+          <ol class="timeline" id="timeline" aria-label="Tagesablauf" data-i18n-aria="timelineAria"></ol>
+          <div class="overview-side">
+            <div class="card map-card">
+              <div class="map-card__head">
+                <h3 data-i18n="map">Karte</h3>
+                <div class="legend" id="legend"></div>
+              </div>
+              <div class="map" id="map-overview" role="region" aria-label="Übersichtskarte" data-i18n-aria="mapOverviewAria"></div>
+              <div class="map-card__jump">
+                <button type="button" data-fly="all" data-i18n="mapAll">Gesamt</button>
+                <button type="button" data-fly="bautzen" data-i18n="cityBautzen">Bautzen</button>
+                <button type="button" data-fly="herrnhut" data-i18n="cityHerrnhut">Herrnhut</button>
+                <button type="button" data-fly="zittau" data-i18n="cityZittau">Zittau</button>
+              </div>
+            </div>
+            <div class="card weather" id="weather" hidden>
+              <h3 data-i18n="weatherTitle">Wetter am 25.09.</h3>
+              <div class="weather__grid" id="weather-grid"></div>
+              <p class="fine" data-i18n-html="weatherNote">Vorhersage: <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a> · wird beim Öffnen der Seite live geladen.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== Bautzen -->
+    <section class="section city" id="bautzen">
+      <div class="wrap">
+        <div class="city__head">
+          <p class="eyebrow" data-i18n="bzEyebrow">Station 1 · ca. 09:15–13:05</p>
+          <h2 data-i18n-html="bzTitle">Bautzen <span class="sorb">Budyšin</span></h2>
+          <p class="lead" data-i18n="bzLead">Die „Stadt der Türme“ über der Spree ist das kulturelle Zentrum der Sorben. Die Altstadt ist kompakt – alles ist gut zu Fuß erreichbar.</p>
+          <ol class="route-chips" aria-label="Rundgang" data-i18n-aria="routeAria">
+            <li data-i18n="chipStation">Bahnhof</li><li>Kornmarkt</li><li>Reichenstraße</li><li>Hauptmarkt</li><li>Dom St. Petri</li><li>Ortenburg</li><li>Alte Wasserkunst</li><li data-i18n="chipOldTown">Altstadt</li>
+          </ol>
+        </div>
+        <div class="city-map card">
+          <div class="map map--city" id="map-bautzen" role="region" aria-label="Karte Rundgang Bautzen" data-i18n-aria="mapCityAria|cityBautzen"></div>
+        </div>
+        <div class="cards" id="sights-bautzen"></div>
+      </div>
+    </section>
+
+    <!-- ============================== Herrnhut -->
+    <section class="section city" id="herrnhut">
+      <div class="wrap">
+        <div class="city__head">
+          <p class="eyebrow" data-i18n="hhEyebrow">Station 2 · ca. 13:57–16:00</p>
+          <h2 data-i18n-html="hhTitle">Herrnhut</h2>
+          <p class="lead" data-i18n="hhLead">Die 1722 gegründete Siedlung der Herrnhuter Brüdergemeine ist seit 2024 UNESCO-Welterbe. Klein, ruhig und sehr besonders.</p>
+          <ol class="route-chips" aria-label="Rundgang" data-i18n-aria="routeAria">
+            <li>Zinzendorfplatz</li><li>Kirchensaal</li><li>Gottesacker</li><li>Zinzendorfplatz</li>
+          </ol>
+        </div>
+        <div class="city-map card">
+          <div class="map map--city" id="map-herrnhut" role="region" aria-label="Karte Rundgang Herrnhut" data-i18n-aria="mapCityAria|cityHerrnhut"></div>
+        </div>
+        <div class="cards" id="sights-herrnhut"></div>
+
+        <h3 class="subhead" data-i18n="optionalHead">Optional – nicht im Hauptplan</h3>
+        <div class="cards" id="optional-herrnhut"></div>
+      </div>
+    </section>
+
+    <!-- ============================== Zittau -->
+    <section class="section city" id="zittau">
+      <div class="wrap">
+        <div class="city__head">
+          <p class="eyebrow" data-i18n="ziEyebrow">Station 3 · ca. 16:34–21:01</p>
+          <h2 data-i18n-html="ziTitle">Zittau</h2>
+          <p class="lead" data-i18n="ziLead">Die einst reiche Handelsstadt im Dreiländereck mit großzügigen Plätzen, Brunnen und prächtigen Bauten – ideal für einen Rundgang bis zum Abendessen.</p>
+          <div class="arrival card" id="zittau-arrival"></div>
+          <ol class="route-chips" aria-label="Rundgang" data-i18n-aria="routeAria">
+            <li>Ottokarplatz</li><li>Markt</li><li>Rathaus</li><li>Johanniskirche</li><li>Salzhaus</li><li>Neustadt</li><li>Klosterplatz</li>
+          </ol>
+        </div>
+        <div class="city-map card">
+          <div class="map map--city" id="map-zittau" role="region" aria-label="Interaktive Karte Rundgang Zittau" data-i18n-aria="mapCityAria|cityZittau"></div>
+        </div>
+        <div class="cards" id="sights-zittau"></div>
+      </div>
+    </section>
+
+    <!-- ============================== Essen -->
+    <section class="section" id="essen">
+      <div class="wrap">
+        <div class="section__head">
+          <h2 data-i18n="foodTitle">Essen &amp; Cafés</h2>
+          <p data-i18n="foodLead">Reservierung für Mittag und Abend empfohlen – an beiden Stellen hängt ein fester Anschluss daran.</p>
+        </div>
+        <h3 class="subhead" data-i18n="lunchHead">Mittagessen in Bautzen</h3>
+        <div class="cards cards--food" id="food-lunch"></div>
+        <h3 class="subhead" data-i18n="dinnerHead">Abendessen in Zittau</h3>
+        <div class="cards cards--food" id="food-dinner"></div>
+
+        <h3 class="subhead" id="cafes" data-i18n="cafesHead">Cafés entlang der Route</h3>
+        <p class="fine" data-i18n="cafesNote">Nur real existierende Cafés; Öffnungszeiten aus offiziellen Seiten bzw. OpenStreetMap. Preisniveau ist eine Einschätzung.</p>
+        <div class="cafe-groups" id="cafe-groups"></div>
+      </div>
+    </section>
+
+    <!-- ============================== ÖPNV -->
+    <section class="section" id="oepnv">
+      <div class="wrap">
+        <div class="section__head">
+          <h2 data-i18n="connTitle">Verbindungen</h2>
+          <p data-i18n="connLead">Nur Regionalzüge und Busse – alles mit dem Deutschlandticket. Keine Reservierung nötig.</p>
+        </div>
+        <div class="notice" role="note">
+          <strong data-i18n="connNoticeTitle">Alle Fahrplandaten sind überprüfungsbedürftig.</strong>
+          <span data-i18n="noticeText">Bitte am Reisetag aktuelle Abfahrtszeiten und mögliche Fahrplanänderungen in DB Navigator bzw. ZVON prüfen.</span>
+          <span class="notice__stamp" data-checked></span>
+          <span class="notice__links">
+            <a href="https://www.bahn.de/" target="_blank" rel="noopener">DB / bahn.de</a>
+            <a href="https://www.zvon.de/" target="_blank" rel="noopener">ZVON</a>
+            <a href="https://www.vvo-online.de/" target="_blank" rel="noopener">VVO</a>
+          </span>
+        </div>
+        <div class="conns" id="connections"></div>
+      </div>
+    </section>
+
+    <!-- ============================== Alternativplan -->
+    <section class="section" id="alternativ">
+      <div class="wrap">
+        <div class="section__head">
+          <p class="eyebrow" data-i18n="altEyebrow">Wenn ihr früher in Zittau seid</p>
+          <h2 data-i18n="altTitle">Alternativplan mit dem Großen Zittauer Fastentuch</h2>
+        </div>
+        <div class="alt-grid">
+          <div id="fastentuch-card"></div>
+          <div class="card alt-plan">
+            <h3 data-i18n="altFlow">Ablauf ab Herrnhut</h3>
+            <p class="warn" data-i18n="altWarn">Diese Variante verkürzt den Aufenthalt in Herrnhut deutlich.</p>
+            <p class="fine" data-i18n="altNote">Das Museum schließt um 17:00 Uhr – deshalb fahrt ihr schon um 15:00 Uhr in Herrnhut ab. Der Gottesacker fällt dafür weitgehend weg.</p>
+            <ol class="mini-timeline" id="alt-timeline"></ol>
+            <button class="btn btn--primary btn--block" type="button" data-plan-set="fastentuch" data-i18n="altActivate">Diesen Plan aktivieren</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <h2 data-i18n="footerTitle">Quellen &amp; Hinweise</h2>
+      <p id="footer-text"></p>
+      <ul class="sources" id="sources"></ul>
+      <p class="fine" data-i18n-html="footerFine">Karten © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap-Mitwirkende</a>. Fotos: Wikimedia Commons (Urheber und Lizenz auf der jeweils verlinkten Dateiseite). „Besucht“ und Favoriten werden nur lokal in diesem Browser gespeichert.</p>
+      <p class="fine"><button class="linkish" type="button" data-action="reset" data-i18n="reset">Gespeicherte Häkchen &amp; Favoriten zurücksetzen</button></p>
+    </div>
+  </footer>
+
+  <!-- ============================== Reisemodus -->
+  <button class="fab" type="button" data-action="travel-open" aria-label="Reisemodus starten" data-i18n-aria="startTravel">
+    <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>
+    <span data-i18n="fab">Reisemodus</span>
+  </button>
+
+  <div class="travel" id="travel" role="dialog" aria-modal="true" aria-labelledby="travel-title" hidden>
+    <div class="travel__bar">
+      <h2 id="travel-title" data-i18n="travelTitle">Jetzt unterwegs</h2>
+      <span class="travel__clock" id="travel-clock"></span>
+      <button class="travel__close" type="button" data-action="travel-close" aria-label="Reisemodus beenden" data-i18n-aria="travelClose">×</button>
+    </div>
+    <div class="travel__body" id="travel-body"></div>
+    <details class="travel__sim">
+      <summary data-i18n="simSummary">Uhrzeit simulieren (zum Ausprobieren)</summary>
+      <label><span data-i18n="simLabel">Datum/Uhrzeit</span> <input type="datetime-local" id="sim-time" step="60"></label>
+      <div class="travel__sim-actions">
+        <button type="button" class="btn btn--ghost" data-action="sim-apply" data-i18n="simApply">Übernehmen</button>
+        <button type="button" class="btn btn--ghost" data-action="sim-clear" data-i18n="simClear">Echte Uhrzeit</button>
+      </div>
+    </details>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="js/walks.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

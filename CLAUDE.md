@@ -40,6 +40,7 @@ scripts/             # Utility scripts (CV markdown-to-JSON converter)
 markdown_generator/  # Helper scripts for generating markdown files
 stock-correlation/   # Stock & ETF correlation checker (standalone HTML/CSS/JS)
 restaurant/          # Sura Korean restaurant site (standalone HTML/CSS/JS, own permalinks)
+ausflug-oberlausitz/ # Day-trip travel guide Dresden → Bautzen → Herrnhut → Zittau (standalone HTML/CSS/JS + Leaflet)
 talkmap/             # Leaflet.js map of talk locations
 talkmap.ipynb/.py    # Talk location scraping (Jupyter/Python)
 markdown_generator/  # Jupyter notebooks for TSV → markdown conversion (talks, publications)
@@ -128,5 +129,5 @@ Triggers on changes to `talks/**` or `talkmap.ipynb`:
 - **learn-german app**: Treat as a pre-built artifact. Do not modify generated files in `learn-german/_expo/`; source changes are made externally. To disable it, rename to `learn-german.disabled/` and remove its build wiring (the `_expo` copy step in `jekyll.yml`, the `_config.yml` include, and the `/learn-german` SPA redirect in `404.md`)
 - **mathe-5 app**: Treat as a pre-built artifact, like learn-german. Never edit `mathe-5/` by hand — it is build output. The source is a separate private repository (`mathe-nachhilfe-app`) whose build writes directly into `mathe-5/`; only the result is committed here
 - **Git ignores**: `.claude/`, `node_modules/`, `_site/`, `Gemfile.lock`, `.sass-cache/` are all gitignored
-- **Auxiliary projects**: `restaurant/`, `stock-correlation/`, and `talkmap/` are standalone sub-apps with their own HTML/CSS/JS — they are not processed by Jekyll's templating engine. `restaurant/` declares explicit permalinks (`/restaurant/`, `/restaurant/datenschutz/`, `/restaurant/impressum/`) in its `.md` front matter
+- **Auxiliary projects**: `restaurant/`, `stock-correlation/`, `ausflug-oberlausitz/`, and `talkmap/` are standalone sub-apps with their own HTML/CSS/JS — they are not processed by Jekyll's templating engine. `restaurant/` declares explicit permalinks (`/restaurant/`, `/restaurant/datenschutz/`, `/restaurant/impressum/`) in its `.md` front matter. All trip content of `ausflug-oberlausitz/` (times, opening hours, connections) lives in `ausflug-oberlausitz/js/data.js`; see its README
 - **Ruby 3 compatibility**: `_plugins/ruby_3_compatibility.rb` provides shims for Jekyll on Ruby 3.x
