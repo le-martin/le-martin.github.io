@@ -1,7 +1,16 @@
 /*
  * Reisedaten für den Tagesausflug Oberlausitz (Fr, 25.09.2026).
+ * Angepasste Route: verspäteter Start – Dresden Mitte 12:27 → Bautzen → Löbau → Zittau.
+ * Herrnhut wird ausgelassen (der PlusBus 10 nach Zittau fährt zwar durch Herrnhut,
+ * es wird dort aber nicht ausgestiegen).
+ *
  * Alle Inhalte der Seite kommen aus dieser Datei. Zum Aktualisieren von Zeiten
  * nur hier ändern. CHECKED_AT bei jeder Prüfung anpassen.
+ *
+ * WICHTIG: Die Fahrplan-Uhrzeiten in diesem verspäteten Plan sind SCHÄTZUNGEN
+ * (Größenordnungen), nicht aus der Fahrplanauskunft verifiziert. Vor der Fahrt
+ * bitte in DB Navigator / ZVON / trilex prüfen. Öffnungszeiten stammen aus
+ * Sekundärquellen und sind teils saisonabhängig.
  */
 (function () {
   "use strict";
@@ -33,16 +42,16 @@
   }
 
   var TRIP_DATE = "2026-09-25";
-  var CHECKED_AT = "23.09.2026";
+  var CHECKED_AT = "25.09.2026";
 
   // ---------------------------------------------------------------- Orte
   // type: station | bus | sight | food | cafe
   var places = {
+    dd_mitte: { name: "Dresden Mitte", type: "station", lat: 51.05530, lon: 13.72130 },
     dd_hbf: { name: "Dresden Hauptbahnhof", type: "station", lat: 51.04039, lon: 13.73147 },
     bz_bhf: { name: "Bautzen Bahnhof", type: "station", lat: 51.17334, lon: 14.42895 },
     lb_bhf: { name: "Löbau Bahnhof", type: "station", lat: 51.09923, lon: 14.67179 },
     lb_bus: { name: "Löbau Busbahnhof", type: "bus", lat: 51.09906, lon: 14.67103 },
-    hh_zp_bus: { name: "Herrnhut Zinzendorfplatz (Bus)", type: "bus", lat: 51.01560, lon: 14.74400 },
     zi_otto: { name: "Zittau Ottokarplatz (Bus)", type: "bus", lat: 50.89321, lon: 14.80973 },
     zi_bhf: { name: "Zittau Bahnhof", type: "station", lat: 50.90426, lon: 14.80576 }
   };
@@ -93,38 +102,40 @@
       photo: photo("Alte_Wasserkunst_Bautzen_101.jpg"),
       text: "Der Wasserturm von 1558 versorgte die Stadt über Jahrhunderte mit Spreewasser und war zugleich Teil der Stadtbefestigung. Heute technisches Museum mit historischer Pumpenanlage.",
       why: "Technisches Denkmal, Aussicht vom Turm und das klassische Postkartenmotiv: Wasserkunst und Michaeliskirche über dem Spreetal.",
-      duration: "30 Min.", walkFrom: { label: "von der Ortenburg", key: "bz_orten>bz_wk" },
+      duration: "20–30 Min.", walkFrom: { label: "von der Ortenburg", key: "bz_orten>bz_wk" },
       hours: null, uncertain: true,
       hoursNote: "Achtung Freitag: Die Angaben widersprechen sich. Mehrere Quellen nennen April–Oktober „Mo–Do, Sa–So 10–17 Uhr“ (also freitags geschlossen), andere „täglich 10–17 Uhr“. Bitte vorher anrufen: 03591 41588.",
       planB: "Falls geschlossen: Das schönste Motiv ist ohnehin von außen – von der Friedensbrücke (ca. 200 m südlich). Als Aussichts-Ersatz eignet sich der Reichenturm."
     },
 
-    // ---------- Herrnhut
+    // ---------- Löbau
     {
-      id: "hh-zinzendorfplatz", city: "herrnhut", name: "Zinzendorfplatz", lat: 51.01574, lon: 14.74423,
-      photo: photo("Zinzendorfplatz (Herrnhut).jpg"),
-      text: "Das historische Zentrum der 1722 gegründeten Siedlung der Herrnhuter Brüdergemeine – schlichte Barockbauten, klare Ordnung, viel Ruhe.",
-      why: "Seit 2024 ist Herrnhut Teil des UNESCO-Welterbes „Siedlungen der Herrnhuter Brüdergemeine“. Die Bushaltestelle liegt direkt am Platz.",
-      duration: "10–15 Min.", walkFrom: { label: "Bushaltestelle", text: "direkt am Platz" },
-      hoursNote: "Öffentlicher Platz – jederzeit zugänglich.", hours: null, alwaysOpen: true
+      id: "lb-altmarkt", city: "loebau", name: "Altmarkt & Historisches Rathaus", lat: 51.09700, lon: 14.66900,
+      photo: photo("Löbau, Rathaus.jpg"),
+      text: "Der Altmarkt ist das barocke Herz Löbaus. Das Rathaus wurde 1711–1714 vom Zittauer Baumeister Prescher wieder aufgebaut und beherbergt eine der ursprünglich 14 Löbauer „Fleischbänke“; am Turm hängt eine Mondphasenuhr.",
+      why: "Ein geschlossenes barockes Marktplatz-Ensemble – das „Wohnzimmer“ der Stadt und guter Startpunkt für den Rundgang.",
+      duration: "15–20 Min.", walkFrom: { label: "vom Bahnhof", text: "ca. 0,5 km · 6 Min." },
+      hoursNote: "Platz jederzeit zugänglich; Rathaus-Inneres nur zu Amtszeiten.", hours: null, alwaysOpen: true
     },
     {
-      id: "hh-kirchensaal", city: "herrnhut", name: "Kirchensaal & Ausstellung „gemeinsam glauben leben“", lat: 51.01609, lon: 14.74519,
-      photo: photo("Herrnhut Kirchensaal 14.jpg"),
-      text: "Der weiße, schmucklose Kirchensaal ist das geistliche Zentrum der Brüdergemeine. Die 2026 eröffnete Ausstellung ist zugleich UNESCO-Welterbe-Infopunkt.",
-      why: "Themen: Geschichte der Brüdergemeine, heutiges Gemeindeleben, weltweite Verbindungen, UNESCO-Welterbe und die kulturelle Bedeutung Herrnhuts – auch schwierige Kapitel wie Sklaverei und NS-Zeit.",
-      duration: "ca. 30 Min. (14:00–14:30)", walkFrom: { label: "vom Zinzendorfplatz", key: "hh_zp>hh_ks" },
-      hours: hours({ "Mo,Di,Do,Fr,Sa": [["10:00", "12:00"], ["14:00", "17:00"]] }),
-      hoursNote: "Ausstellung: Mo, Di, Do, Fr, Sa 10–12 und 14–17 Uhr; Mi geschlossen. Hinweis: Vom 26.09. bis 03.10.2026 tagt die Synode – der Kirchensaal ist dann nicht zugänglich. Der 25.09. liegt einen Tag davor; bitte vorab prüfen, ob Vorbereitungen den Besuch einschränken.",
-      verify: true, web: "https://www.herrnhut-entdecken.de/ausstellung"
+      id: "lb-nikolai", city: "loebau", name: "Nikolaikirche", lat: 51.09720, lon: 14.66830,
+      photo: null,
+      text: "Die evangelische Hauptkirche, erstmals 1293 erwähnt, ist eine spätgotische Hallenkirche des 14. Jahrhunderts; 1742 wurde ein drittes, südliches Seitenschiff ergänzt.",
+      why: "Ältestes Bauwerk und geistliches Zentrum der Altstadt – nur wenige Schritte vom Altmarkt.",
+      duration: "10–15 Min.", walkFrom: { label: "vom Altmarkt", text: "wenige Schritte" },
+      hours: null, uncertain: true,
+      hoursNote: "Öffnungszeiten der Kirche variieren und sind nicht verlässlich belegt – bitte vor Ort bzw. bei der Kirchgemeinde prüfen. Außenansicht jederzeit."
     },
     {
-      id: "hh-gottesacker", city: "herrnhut", name: "Gottesacker", lat: 51.01856, lon: 14.74936,
-      photo: photo("Herrnhut Gottesacker aerial.jpg"),
-      text: "Der Friedhof der Brüdergemeine am Hutberg: Tausende gleich große, flach liegende Grabsteine in streng geordneten Reihen, gegliedert durch Lindenalleen.",
-      why: "Die einheitlichen Gräber stehen für die Gleichheit aller vor Gott – ein zentrales Zeugnis Herrnhuter Glaubens und Teil des Welterbes. Ruhig und eindrucksvoll, kulturgeschichtlich weit mehr als ein gewöhnlicher Friedhof.",
-      duration: "30–45 Min.", walkFrom: { label: "vom Kirchensaal", key: "hh_ks>hh_ga" },
-      hoursNote: "In der Regel tagsüber frei zugänglich. Bitte Ruhe und Würde des Ortes beachten.", hours: null, alwaysOpen: true
+      id: "lb-schminke", city: "loebau", name: "Haus Schminke", lat: 51.09300, lon: 14.68100,
+      photo: photo("Haus Schminke Löbau.jpg"),
+      text: "Wohnhaus des Nudelfabrikanten Fritz Schminke, 1930–1933 von Hans Scharoun erbaut – ein Hauptwerk der klassischen Moderne. Es gilt neben Villa Tugendhat, Villa Savoye und Fallingwater als eines der vier bedeutendsten modernen Wohnhäuser weltweit.",
+      why: "Weltweit ikonische Architektur der Moderne – für Architekturinteressierte der eigentliche Grund, in Löbau auszusteigen.",
+      duration: "45–60 Min. (nur mit früherer Ankunft)", walkFrom: { label: "vom Bahnhof", text: "ca. 0,9 km · 12 Min." },
+      hours: hours({ "Do-So": [["12:00", "17:00"]] }),
+      hoursNote: "Do–So 12:00–17:00 Uhr, letzter Einlass 15:45; öffentliche Führungen Sa/So 13:00 & 15:00 Uhr. Eintritt inkl. Führung 15 € / erm. 10 €. Mo–Mi geschlossen.",
+      verify: true, web: "https://www.stiftung-hausschminke.eu/",
+      planB: "⚠ Wichtig bei diesem späten Plan: Bei Ankunft in Löbau gegen 16 Uhr ist Haus Schminke praktisch nicht mehr zu besichtigen (letzter Einlass 15:45, letzte Führung 15:00). Nur sinnvoll, wenn ihr Bautzen deutlich kürzt und früher in Löbau seid – sonst nur von außen."
     },
 
     // ---------- Zittau
@@ -149,9 +160,9 @@
       photo: photo("Kirche_(Zittau_6).jpg"),
       text: "Die Hauptkirche Zittaus erhielt ihre heutige klassizistische Gestalt im 19. Jahrhundert, u. a. nach Entwürfen Karl Friedrich Schinkels. Der Turm ist über 266 Stufen zu besteigen.",
       why: "Vom Turm reicht der Blick über Zittau bis ins Zittauer, Iser- und Riesengebirge; fast täglich um 11:50 Uhr spielt der Türmer.",
-      duration: "20 Min.", walkFrom: { label: "vom Rathaus", key: "zi_rh>zi_joh" },
+      duration: "15–20 Min. (außen)", walkFrom: { label: "vom Rathaus", key: "zi_rh>zi_joh" },
       hours: hours({ "Mi-Sa": [["11:00", "17:00"]] }),
-      hoursNote: "Kirche & Turm bis Ende Oktober Mi–Sa 11–17 Uhr (ehrenamtlich, ohne Gewähr). Im entspannten Plan seid ihr nach 17 Uhr da – dann nur von außen. In der Fastentuch-Variante klappt der Innenbesuch.",
+      hoursNote: "Kirche & Turm bis Ende Oktober Mi–Sa 11–17 Uhr (ehrenamtlich, ohne Gewähr). Bei der späten Ankunft am Abend ist innen zu – also von außen.",
       verify: true, web: "https://www.johannis-kirche-zittau.de/"
     },
     {
@@ -159,7 +170,7 @@
       photo: photo("Neustadt_(Zittau).jpg"),
       text: "Das Salzhaus (erbaut 1511, später Kornspeicher) ist mit seinem riesigen Mansarddach eines der größten historischen Profangebäude der Stadt. Es steht am Platz „Neustadt“ mit mehreren Brunnen.",
       why: "Erinnert an Zittaus Reichtum durch den Salz- und Getreidehandel; heute mit Stadtbibliothek, Passage und Gastronomie.",
-      duration: "20–30 Min.", walkFrom: { label: "von der Johanniskirche", key: "zi_joh>zi_salz" },
+      duration: "15–20 Min.", walkFrom: { label: "von der Johanniskirche", key: "zi_joh>zi_salz" },
       hoursNote: "Außen jederzeit; Passage zu den Geschäftszeiten.", hours: null, alwaysOpen: true
     },
     {
@@ -167,43 +178,23 @@
       photo: null,
       text: "Ruhiger Platz am ehemaligen Franziskanerkloster mit der Klosterkirche St. Peter und Paul und dem Kulturhistorischen Museum.",
       why: "Einer der ältesten Teile der Stadt und schöner Abschluss des Rundgangs – vom Platz sind es nur 3 Minuten zum Dornspachhaus.",
-      duration: "15–20 Min.", walkFrom: { label: "vom Salzhaus", key: "zi_salz>zi_kloster" },
+      duration: "10–15 Min.", walkFrom: { label: "vom Salzhaus", key: "zi_salz>zi_kloster" },
       hours: hours({ "Di-So": [["10:00", "17:00"]] }), hoursLabel: "Kulturhist. Museum",
-      hoursNote: "Platz jederzeit zugänglich. Kulturhistorisches Museum Franziskanerkloster: Di–So 10–17 Uhr."
+      hoursNote: "Platz jederzeit zugänglich. Kulturhistorisches Museum Franziskanerkloster: Di–So 10–17 Uhr (am Abend zu)."
     }
   ];
 
   var optionalSights = [
     {
-      id: "hh-hutberg", city: "herrnhut", name: "Hutberg & Altan", lat: 51.02049, lon: 14.74841, optional: true,
-      photo: photo("Herrnhut Hutberg Altan 22.jpg"),
-      text: "Der Hutberg liegt direkt oberhalb des Gottesackers; auf seiner Kuppe steht der Altan, ein kleiner Aussichtsturm.",
-      why: "Aussicht über Herrnhut und das Oberlausitzer Bergland, kurzer Spaziergang (ca. 4 Min. vom oberen Ende des Gottesackers).",
-      duration: "20–30 Min. zusätzlich", walkFrom: { label: "vom Gottesacker", key: "hh_ga>hh_hb" },
-      hoursNote: "Öffnung des Altans nicht verifiziert – bitte vor dem Besuch prüfen.", hours: null, uncertain: true,
-      reason: "Nicht im Hauptplan: Mit dem Bus um 16:00 Uhr wird die Zeit sonst zu knapp."
-    },
-    {
-      id: "hh-sterne", city: "herrnhut", name: "Herrnhuter Sterne Manufaktur", lat: 51.01656, lon: 14.73779, optional: true,
-      photo: photo("Herrnhuter_Sterne.jpg"),
-      text: "Hier entstehen seit über 125 Jahren die berühmten Herrnhuter Sterne von Hand. Es gibt eine Schauwerkstatt, eine kleine Ausstellung mit Film, ein Besucherzentrum, einen Laden und das Café „Bei Sterns“.",
-      why: "Kulturell sehr bekannt: Der Herrnhuter Stern ist weltweit das Symbol des Ortes.",
-      duration: "45–60 Min. inkl. Wege", walkFrom: { label: "vom Zinzendorfplatz", key: "hh_zp>hh_st" },
-      hours: hours({ "Mo-Fr": [["09:00", "18:00"]], "Sa": [["10:00", "17:00"]] }),
-      hoursNote: "Schauwerkstatt Mo–Fr 9–18, Sa 10–17 Uhr, Eintritt frei. Oderwitzer Str. 8.",
-      verify: true, web: "https://www.herrnhuter-sterne.de/de/Schauwerkstatt-2.html",
-      reason: "Nicht im Hauptplan: Mit ÖPNV (ca. 11 Min. Fußweg pro Richtung) würde der Aufenthalt in Herrnhut zu hektisch.",
-      swapHint: "Wenn die Herrnhuter Sterne wichtiger sind als Gottesacker und Kirchensaal, kann der Tagesplan entsprechend angepasst werden."
-    },
-    {
-      id: "zi-fastentuch", city: "zittau", name: "Großes Zittauer Fastentuch", lat: 50.89791, lon: 14.81113, optional: true,
-      photo: photo("Großes Zittauer Fastentuch 1472.jpg"),
-      text: "Das Große Zittauer Fastentuch von 1472 misst etwa 8,20 × 6,80 Meter und zeigt in rund 90 Bildfeldern biblische Szenen von der Schöpfung bis zum Jüngsten Gericht.",
-      why: "Fastentücher verhüllten in der Fastenzeit den Altar bzw. Chorraum. Das Zittauer Tuch ist eines der außergewöhnlich gut erhaltenen großen mittelalterlichen Fastentücher – heute im Museum Kirche zum Heiligen Kreuz in einer der größten Museumsvitrinen der Welt.",
-      duration: "30–40 Min.", walkFrom: { label: "vom Ottokarplatz", key: "zi_otto>zi_kreuz" },
-      hours: hours({ "Mo-So": [["10:00", "12:30"], ["13:00", "17:00"]] }),
-      hoursNote: "April–Oktober täglich 10–17 Uhr (Mittagspause 12:30–13:00). Eintritt 6 €, ermäßigt 4 €; Kombiticket mit Kulturhistorischem Museum 10 €. Frauenstraße 23.",
-      verify: true, web: "https://zittau.de/tourismus-kultur-freizeit/sehenswertes/staedtische-museen/besucherservice"
+      id: "lb-turm", city: "loebau", name: "König-Friedrich-August-Turm (Löbauer Berg)", lat: 51.09110, lon: 14.69280, optional: true,
+      photo: photo("Loebau Koenig-Friedrich-August-Turm.jpg"),
+      text: "Der 28 m hohe Aussichtsturm auf dem Löbauer Berg (447,9 m) wurde 1854 aus rund 1000 gusseisernen Teilen errichtet und gilt als einziger erhaltener vollständig gusseiserner Aussichtsturm.",
+      why: "Einzigartiges technisches Denkmal mit Rundblick über die Oberlausitz bis ins Zittauer, Iser- und Riesengebirge – und in der Sommersaison bis in den Abend geöffnet, also das beste späte-Nachmittags-Ziel.",
+      duration: "60–90 Min. inkl. Aufstieg", walkFrom: { label: "vom Bahnhof", text: "ca. 2,5 km bergauf · 40–50 Min. (oder per Taxi)" },
+      hours: null, uncertain: true,
+      hoursNote: "Laut Suche Mai–Sep Mo–Fr 9–20, Sa/So 9–22 Uhr; Okt–Apr früher zu. Saisonabhängig – bitte prüfen.",
+      reason: "Nicht im Hauptplan: Der Berg liegt außerhalb der Stadt (~40–50 Min. Aufstieg). Nur sinnvoll, wenn ihr Bautzen kürzt oder Löbau als Schwerpunkt wählt.",
+      web: "https://www.loebau.de/freizeit-und-tourismus/stadtrundgang/k%C3%B6nig-friedrich-august-turm/"
     }
   ];
 
@@ -214,7 +205,7 @@
       name: "Wjelbik – Sorbisches Restaurant", lat: 51.18204, lon: 14.42514,
       address: "Kornstraße 7, 02625 Bautzen",
       cuisine: "Sorbische und regionale Lausitzer Küche",
-      when: "ca. 11:30–12:30 Uhr",
+      when: "spätes Mittagessen, ca. 13:30–14:30 Uhr",
       text: "Der Name bedeutet „kleines Gewölbe“ bzw. „Vorratskammer“. Das Restaurant liegt in einem rund 600 Jahre alten, denkmalgeschützten Gewölbebau nahe dem Dom und wird von einer Familie geführt. Empfohlen von Slow Food und Falstaff.",
       why: "Bautzen ist das Zentrum der sorbischen Kultur – hier bietet sich bewusst ein sorbisches Restaurant an.",
       hours: hours({ "Di-Sa": [["11:30", "15:00"], ["17:00", "21:30"]] }),
@@ -224,29 +215,30 @@
       phone: "+49359142060",
       web: "https://www.wjelbik.de/",
       reserve: "https://www.opentable.com/wjelbik-sorbisches-restaurant",
-      note: "Reservierung empfohlen – danach muss um 13:14 Uhr der Zug erreicht werden. Beim Reservieren erwähnen, dass ihr gegen 12:30 Uhr zahlen möchtet."
+      note: "Bei diesem späten Start knapp: Ankunft in Bautzen erst gegen 13:20 Uhr, Küche mittags nur bis 14:00. Reservierung empfohlen und beim Reservieren die späte Ankunft erwähnen – sonst ein Café/Imbiss und dafür abends in Zittau essen."
     },
     {
       id: "moenchshof", role: "lunch", priority: "Alternative", city: "bautzen",
       name: "Mönchshof", lat: 51.18162, lon: 14.42113,
       address: "Burglehn 1, 02625 Bautzen",
       cuisine: "Historisches Gasthaus, deftige Küche nach überlieferten Rezepten",
-      when: "falls Wjelbik ausgebucht oder geschlossen ist",
+      when: "durchgehend warme Küche – gut bei später Ankunft",
       text: "Historisches Gasthaus mit mittelalterlicher Einrichtung zwischen Altstadt und Ortenburg; hausgebackenes Brot, eigene Biere und Liköre, Biergarten.",
       hours: hours({ "Di-Do": [["11:00", "22:00"]], "Fr-Sa": [["11:00", "23:00"]], "So": [["11:00", "21:00"]] }),
-      hoursNote: "Fr 11–23 Uhr (Website). Andere Tage laut Drittquellen: Mo Ruhetag, Di–Do 11–22, Sa 11–23, So 11–21 Uhr – bitte prüfen.",
+      hoursNote: "Fr 11–23 Uhr (Website), durchgehend warme Küche. Andere Tage laut Drittquellen: Mo Ruhetag, Di–Do 11–22, So 11–21 Uhr – bitte prüfen.",
       price: "€€ (Einschätzung – Karte prüfen)",
       rating: null,
       phone: "+493591490141",
       web: "https://www.moenchshof.de/",
-      reserve: "https://www.opentable.com/monchshof-zu-bautzen"
+      reserve: "https://www.opentable.com/monchshof-zu-bautzen",
+      note: "Wegen der durchgehenden Küche die entspanntere Wahl, wenn ihr erst gegen 13:30 Uhr in Bautzen seid."
     },
     {
       id: "dornspachhaus", role: "dinner", priority: "Erste Empfehlung", city: "zittau",
       name: "Dornspachhaus", lat: 50.89701, lon: 14.80592,
       address: "Bautzner Straße 2, 02763 Zittau",
       cuisine: "Historisches Wirtshaus, Oberlausitzer Spezialitäten",
-      when: "ca. 19:00–20:20 Uhr",
+      when: "Abendessen, ca. 19:00–20:30 Uhr",
       text: "Eines der ältesten Bürgerhäuser Zittaus, benannt nach Bürgermeister Nikolaus von Dornspach, mit historischem Gewölbe und „Ritterkeller“.",
       pros: ["zentral gelegen (2 Min. vom Markt)", "historisches Ambiente", "gut mit dem Altstadtrundgang kombinierbar", "11 Min. zu Fuß zum Bahnhof"],
       hours: hours({ "Mo-So": [["11:30", "21:30"]] }),
@@ -256,7 +248,7 @@
       phone: "+493583795883",
       web: "https://www.dornspachhaus.de/",
       reserve: "https://www.dornspachhaus.de/kontakt/",
-      note: "Für Freitagabend reservieren – telefonisch oder über das Kontaktformular."
+      note: "Für Freitagabend reservieren – telefonisch oder über das Kontaktformular. Vor der Rückfahrt genug Zeit einplanen (11 Min. zum Bahnhof)."
     },
     {
       id: "altersack", role: "dinner", priority: "Alternative", city: "zittau",
@@ -264,7 +256,7 @@
       address: "Neustadt 47, 02763 Zittau",
       cuisine: "Rustikales Wirtshaus, Oberlausitzer Küche",
       when: "Alternative zum Dornspachhaus",
-      text: "Das rustikale Wirtshaus liegt im historischen Salzhaus und kocht bewusst typisch Oberlausitzer Gerichte. Speisekarten auch auf Englisch, Tschechisch und Polnisch. Hinweis: Vermutlich ist dies das als „Alte Sackfabrik“ gemeinte Lokal; ein Restaurant dieses Namens haben wir in Zittau nicht gefunden.",
+      text: "Das rustikale Wirtshaus liegt im historischen Salzhaus und kocht bewusst typisch Oberlausitzer Gerichte. Speisekarten auch auf Englisch, Tschechisch und Polnisch.",
       hours: hours({ "Di-So": [["11:00", "14:00"], ["17:00", "22:00"]] }),
       hoursNote: "Di–So 11–14 und 17–22 Uhr, Mo Ruhetag (Website).",
       price: "€–€€ (Einschätzung – Karte prüfen)",
@@ -292,29 +284,13 @@
       special: "Kaffee aus eigener Röstung", price: "€ (Einschätzung)", distance: "direkt an der Route, 1 Min. vom Hauptmarkt"
     },
     {
-      id: "c-schwerdtner-bz", city: "bautzen", name: "Schwerdtner (Bäckerei-Café)", lat: 51.18126, lon: 14.42474,
-      address: "Reichenstraße 3, Bautzen",
-      hours: hours({ "Mo-Sa": [["07:00", "18:00"]], "So": [["08:00", "18:00"]] }),
-      hoursNote: "Mo–Sa 7–18 Uhr (laut OpenStreetMap, bitte prüfen)", verify: true,
-      text: "Regionale Bäckerei mit Café-Plätzen – praktisch für einen Kaffee gleich nach der Ankunft, wenn vieles noch geschlossen ist.",
-      special: "Frühstück, Oberlausitzer Backwaren", price: "€ (Einschätzung)", distance: "direkt an der Route"
-    },
-    {
-      id: "c-foerster", city: "herrnhut", name: "Café Förster", lat: 51.01788, lon: 14.74349,
-      address: "August-Bebel-Straße 16, Herrnhut",
-      hours: hours({ "Di-So": [["11:00", "18:00"]] }),
-      hoursNote: "Di–So ab 11 Uhr (Stadt Herrnhut); Schließzeit nicht angegeben, bitte prüfen", verify: true,
-      text: "Sehr gemütliches Café mit Eisgarten – laut Stadt Herrnhut mit Oberlausitzer Kuchenspezialitäten und Eis aus eigener Herstellung.",
-      special: "Käsekuchen, Kleckselkuchen, 35 Eisbecher", price: "€ (Einschätzung)", distance: "ca. 250 m / 4 Min. vom Zinzendorfplatz",
-      web: "http://www.cafe-herrnhut.de/"
-    },
-    {
-      id: "c-sterns", city: "herrnhut", name: "Café „Bei Sterns“", lat: 51.01656, lon: 14.73779,
-      address: "Oderwitzer Straße 8, Herrnhut (Herrnhuter Sterne)",
-      hours: hours({ "Mo-Sa": [["09:00", "17:00"]] }), hoursNote: "Mo–Sa 9–17 Uhr (Stadt Herrnhut)",
-      text: "Das Café der Sterne-Manufaktur mit regionalen Spezialitäten – nur sinnvoll, wenn ihr die Manufaktur besucht.",
-      special: "Regionale Kuchen", price: "€ (Einschätzung)", distance: "ca. 860 m / 11 Min. vom Zinzendorfplatz (abseits der Route)",
-      web: "https://www.herrnhuter-sterne.de/"
+      id: "c-hof", city: "loebau", name: "Café im Hof", lat: 51.09680, lon: 14.66980,
+      address: "Teichgasse 3, 02708 Löbau",
+      hours: null, uncertain: true,
+      hoursNote: "Öffnungszeiten nicht verlässlich belegt; kleine Cafés dieser Art schließen meist gegen 17–18 Uhr – bei später Ankunft knapp, bitte prüfen.", verify: true,
+      text: "Kleines, gemütliches Hofcafé in der Löbauer Altstadt mit hausgebackenem Kuchen und Eis.",
+      special: "Hausgebackener Kuchen, Eis", price: "€ (Einschätzung)", distance: "in der Altstadt, wenige Minuten vom Altmarkt",
+      web: "https://www.pension-cafe-loebau.de/unser-cafe/"
     },
     {
       id: "c-marsbrunnen", city: "zittau", name: "Schwerdtners Café „Am Marsbrunnen“", lat: 50.89629, lon: 14.80567,
@@ -330,147 +306,100 @@
       address: "Neustadt 46, Zittau",
       hours: hours({ "Mo-Fr": [["09:30", "22:00"]], "Sa-So": [["13:00", "22:00"]] }),
       hoursNote: "Fr ab 9:30 Uhr bis abends (Quellen nennen 22 bzw. 24 Uhr – bitte prüfen)", verify: true,
-      text: "Eiscafé und Cocktailbar neben dem Salzhaus, mit Kaffee, Eis und durchgehend warmer Küche.",
+      text: "Eiscafé und Cocktailbar neben dem Salzhaus, mit Kaffee, Eis und durchgehend warmer Küche – auch am Abend offen.",
       special: "Eisbecher, Kaffee, Cocktails", price: "€–€€ (Einschätzung)", distance: "direkt an der Route (Neustadt)"
-    },
-    {
-      id: "c-rosengarten", city: "zittau", name: "Café Rosengarten", lat: 50.89723, lon: 14.81083,
-      address: "Frauenstraße 20, Zittau",
-      hours: null, uncertain: true,
-      hoursNote: "Widersprüchliche Angaben: eine Quelle nennt täglich 10–18 Uhr, eine andere freitags geschlossen. Bitte vorher prüfen.",
-      text: "Kleines Café direkt neben der Kirche zum Heiligen Kreuz – passt zur Fastentuch-Variante.",
-      special: "Kaffee & Kuchen", price: "€ (Einschätzung)", distance: "neben dem Fastentuch-Museum (nur Fastentuch-Variante)"
     }
   ];
 
   // ---------------------------------------------------------------- ÖPNV
-  // Quelle: VVO-Fahrplanauskunft (webapi.vvo-online.de), Abfrage für Fr, 25.09.2026.
+  // ACHTUNG: Uhrzeiten sind SCHÄTZUNGEN (Größenordnungen), NICHT aus der
+  // Fahrplanauskunft verifiziert. Vor der Fahrt in DB Navigator / ZVON / trilex prüfen.
   var connections = {
     hin: {
-      id: "hin", title: "Dresden → Bautzen", legs: [
-        { mode: "train", line: "RB60", dir: "Görlitz", dep: "08:23", from: "Dresden Hbf", fromPl: "Gleis 14", arr: "09:13", to: "Bautzen", toPl: "Gleis 2" }
+      id: "hin", title: "Dresden Mitte → Bautzen", legs: [
+        { mode: "train", line: "RE1", dir: "Görlitz", dep: "12:27", from: "Dresden Mitte", fromPl: "Gleis prüfen", arr: "13:17", to: "Bautzen", toPl: "Gleis prüfen" }
       ],
-      alts: ["07:53 → 08:53 (RB60, früher)", "08:53 → 09:55 (RB60, falls der 08:23 verpasst wird)"]
+      note: "⚠ Zeiten geschätzt (ca. 50 Min., direkt, trilex RE1/RB60). Exakte Abfahrt ab Dresden Mitte in DB Navigator prüfen.",
+      alts: ["Der langsamere RB60 hält überall und braucht länger.", "Bei verpasstem Zug fährt die Linie i. d. R. etwa stündlich."]
     },
-    herrnhut: {
-      id: "herrnhut", title: "Bautzen → Löbau → Herrnhut", legs: [
-        { mode: "train", line: "RB60", dir: "Görlitz", dep: "13:14", from: "Bautzen", fromPl: "Gleis 2", arr: "13:27", to: "Löbau (Sachs)", toPl: "Gleis 1" },
-        { mode: "walk", text: "Umstieg: ca. 2 Min. Fußweg zum Busbahnhof direkt am Bahnhof", buffer: "9 Min. Umstiegszeit" },
-        { mode: "bus", line: "PlusBus 10", dir: "Zittau Ottokarplatz", dep: "13:36", from: "Löbau Busbahnhof", fromPl: "Steig Ri. 1 Zittau", arr: "13:57", to: "Herrnhut Zinzendorfplatz", toPl: "" }
+    loebau: {
+      id: "loebau", title: "Bautzen → Löbau", legs: [
+        { mode: "train", line: "RE1", dir: "Görlitz", dep: "15:41", from: "Bautzen", fromPl: "Gleis prüfen", arr: "16:01", to: "Löbau (Sachs)", toPl: "Gleis prüfen" }
       ],
-      alts: ["Früher: RE1 12:19 → Löbau 12:33, Bus 10 12:38 → Herrnhut 13:00", "Später (Notfall): RE1 14:19 → Löbau 14:32, Bus 10 14:38 → Herrnhut 15:00"]
+      note: "⚠ Zeiten geschätzt (ca. 15–25 Min., direkt auf derselben Linie Richtung Görlitz). In DB Navigator prüfen.",
+      alts: ["Löbau liegt zwischen Bautzen und Görlitz auf der RE1/RB60 – kein Umstieg."]
     },
     zittau: {
-      id: "zittau", title: "Herrnhut → Zittau", legs: [
-        { mode: "bus", line: "PlusBus 10", dir: "Zittau Ottokarplatz", dep: "16:00", from: "Herrnhut Zinzendorfplatz", fromPl: "Steig 2 – Ri. Zittau", arr: "16:34", to: "Zittau Ottokarplatz", toPl: "Endhaltestelle" }
+      id: "zittau", title: "Löbau → Zittau (PlusBus)", legs: [
+        { mode: "bus", line: "PlusBus 10", dir: "Zittau", dep: "18:10", from: "Löbau Busbahnhof", fromPl: "Steig prüfen", arr: "19:05", to: "Zittau Ottokarplatz", toPl: "Endhaltestelle" }
       ],
-      alts: ["Früher: Bus 10 um 15:30 → Zittau Bahnhof 15:54 (dann ca. 15 Min. zu Fuß in die Altstadt)", "Der Bus hält vorher auch am Zittau Bahnhof (16:28). Für die Altstadt bis Ottokarplatz sitzen bleiben."],
-      note: "Hinweis: Einen Bus um 15:57 Uhr gibt es laut Auskunft nicht – die Fahrten sind um 15:30 und 16:00 Uhr."
-    },
-    zittauFastentuch: {
-      id: "zittauFastentuch", title: "Herrnhut → Zittau (Fastentuch-Variante)", legs: [
-        { mode: "bus", line: "PlusBus 10", dir: "Zittau Ottokarplatz", dep: "15:00", from: "Herrnhut Zinzendorfplatz", fromPl: "Steig 2 – Ri. Zittau", arr: "15:34", to: "Zittau Ottokarplatz", toPl: "Endhaltestelle" }
-      ],
-      alts: ["Noch früher: Bus 10 um 14:30 → Zittau Bahnhof 14:54"]
+      note: "⚠ Wichtig: Es gibt KEINEN durchgehenden Zug Löbau↔Zittau (Strecke stillgelegt). Der PlusBus 10 (Löbau–Herrnhut–Zittau) ist die praktikable Verbindung, ca. 50–60 Min. Er fährt durch Herrnhut, ihr steigt aber erst in Zittau aus. Takt/Wochenendfahrten und exakte Zeit über ZVON prüfen.",
+      alts: ["Der Bus hält vorher auch am Zittau Bahnhof – für die Altstadt bis Ottokarplatz sitzen bleiben.", "Rein per Bahn nur mit großem Umweg über Görlitz (Löbau→Görlitz→Zittau) – deutlich länger."]
     },
     rueck: {
       id: "rueck", title: "Zittau → Dresden", options: [
-        { label: "Empfohlen", legs: [{ mode: "train", line: "RB61", dir: "Dresden Hbf", dep: "21:01", from: "Zittau", fromPl: "Gleis 2b", arr: "22:57", to: "Dresden Hbf", toPl: "Gleis 11" }], info: "Direkt, ohne Umstieg, 1:56 h" },
-        { label: "Spät-Alternative", legs: [
-          { mode: "bus", line: "PlusBus 10", dir: "Löbau", dep: "21:30", from: "Zittau Bahnhof", fromPl: "Steig 6", arr: "22:18", to: "Löbau Busbahnhof", toPl: "" },
-          { mode: "train", line: "RB60", dir: "Dresden Hbf", dep: "22:38", from: "Löbau", fromPl: "Gleis 2", arr: "23:57", to: "Dresden Hbf", toPl: "Gleis 2" }
-        ], info: "1 Umstieg in Löbau (20 Min.), Ankunft 23:57" },
-        { label: "Letzte Möglichkeit", legs: [{ mode: "train", line: "RB61", dir: "Dresden Hbf", dep: "23:01", from: "Zittau", fromPl: "Gleis 3b", arr: "00:57", to: "Dresden Hbf", toPl: "Gleis 1" }], info: "Direkt, Ankunft nach Mitternacht" },
-        { label: "Früher", legs: [{ mode: "train", line: "RB61", dir: "Dresden Hbf", dep: "20:05", from: "Zittau", fromPl: "Gleis 1a", arr: "22:03", to: "Dresden Hbf", toPl: "Gleis 13" }], info: "Nur mit kurzem Abendessen (bis ca. 19:45)" }
-      ]
+        { label: "Empfohlen", legs: [{ mode: "train", line: "RB61", dir: "Dresden Hbf", dep: "21:01", from: "Zittau", fromPl: "Gleis prüfen", arr: "22:57", to: "Dresden Hbf", toPl: "Gleis prüfen" }], info: "Direkt, ohne Umstieg, ca. 1:56 h (geschätzt)" },
+        { label: "Letzte Möglichkeit", legs: [{ mode: "train", line: "RB61", dir: "Dresden Hbf", dep: "23:01", from: "Zittau", fromPl: "Gleis prüfen", arr: "00:57", to: "Dresden Hbf", toPl: "Gleis prüfen" }], info: "Direkt, Ankunft nach Mitternacht (geschätzt)" },
+        { label: "Früher", legs: [{ mode: "train", line: "RB61", dir: "Dresden Hbf", dep: "20:05", from: "Zittau", fromPl: "Gleis prüfen", arr: "22:03", to: "Dresden Hbf", toPl: "Gleis prüfen" }], info: "Nur mit kurzem/frühem Abendessen" }
+      ],
+      note: "⚠ Zeiten geschätzt (trilex RE2/RB61, direkt, ca. 1:40–2:00 h; bei Baustellen/SEV länger). Der Zug hält auch in Dresden Mitte. In DB Navigator prüfen."
     }
   };
 
-  // ---------------------------------------------------------------- Tagespläne
+  // ---------------------------------------------------------------- Tagesplan
   // kind: meet | train | bus | walk | sight | food | buffer | cafe
   // dep: true = zeitkritische Abfahrt (Countdown); ref: Anker der Sektion
-  var shared = [
-    { s: "08:00", e: "08:15", kind: "meet", title: "Treffen am Dresden Hauptbahnhof", sub: "Abfahrt an Gleis 14 prüfen", ref: "#oepnv", place: "dd_hbf" },
-    { s: "08:23", e: "09:13", kind: "train", dep: true, title: "RB60 Dresden Hbf → Bautzen", sub: "Gleis 14 → Gleis 2 · 50 Min.", ref: "#c-hin", place: "dd_hbf", to: "bz_bhf", major: true },
-    { s: "09:13", e: "09:25", kind: "walk", title: "Fußweg zum Kornmarkt", sub: "ca. 880 m · 12 Min.", ref: "#bz-kornmarkt", place: "bz_bhf" },
-    { s: "09:25", e: "09:40", kind: "sight", title: "Kornmarkt & Reichenstraße", sub: "Reichenturm · Kaffee bei Schwerdtner möglich", ref: "#bz-kornmarkt", sight: "bz-kornmarkt", city: "Bautzen", major: true },
-    { s: "09:40", e: "10:00", kind: "sight", title: "Hauptmarkt & Rathaus", sub: "15–20 Min.", ref: "#bz-hauptmarkt", sight: "bz-hauptmarkt" },
-    { s: "10:00", e: "10:20", kind: "sight", title: "Dom St. Petri", sub: "öffnet 10:00", ref: "#bz-dom", sight: "bz-dom" },
-    { s: "10:25", e: "10:55", kind: "sight", title: "Ortenburg", sub: "Burghof, Spreeblick, Sorbisches Museum", ref: "#bz-ortenburg", sight: "bz-ortenburg" },
-    { s: "11:00", e: "11:25", kind: "sight", title: "Alte Wasserkunst", sub: "⚠ Freitagsöffnung unklar – sonst Blick von der Friedensbrücke", ref: "#bz-wasserkunst", sight: "bz-wasserkunst" },
-    { s: "11:30", e: "12:30", kind: "food", title: "Mittagessen im Wjelbik", sub: "Kornstraße 7 · reservieren", ref: "#wjelbik", major: true },
-    { s: "12:30", e: "12:45", kind: "buffer", title: "Puffer / Espresso in der Reichenstraße", sub: "spätestens 12:45 losgehen", ref: "#cafes" },
-    { s: "12:45", e: "13:05", kind: "walk", title: "Fußweg zum Bahnhof Bautzen", sub: "ca. 1,2 km · 16 Min. · ~9 Min. Puffer", ref: "#c-herrnhut", place: "bz_bhf" },
-    { s: "13:14", e: "13:27", kind: "train", dep: true, title: "RB60 Bautzen → Löbau", sub: "Gleis 2 → Gleis 1", ref: "#c-herrnhut", place: "bz_bhf", to: "lb_bhf", major: true },
-    { s: "13:27", e: "13:36", kind: "walk", title: "Umstieg in Löbau", sub: "2 Min. zum Busbahnhof · 9 Min. Puffer", ref: "#c-herrnhut", place: "lb_bus" },
-    { s: "13:36", e: "13:57", kind: "bus", dep: true, title: "PlusBus 10 Löbau → Herrnhut", sub: "bis Zinzendorfplatz · 21 Min.", ref: "#c-herrnhut", place: "lb_bus", to: "hh_zp_bus", major: true }
+  // ⚠ Alle Uhrzeiten sind Schätzungen – siehe Verbindungen.
+  var main = [
+    { s: "12:15", e: "12:27", kind: "meet", title: "Start am Dresden Mitte", sub: "Gleis für RE1 Richtung Görlitz prüfen", ref: "#oepnv", place: "dd_mitte" },
+    { s: "12:27", e: "13:17", kind: "train", dep: true, title: "RE1 Dresden Mitte → Bautzen", sub: "direkt · ca. 50 Min. (Zeit prüfen)", ref: "#c-hin", place: "dd_mitte", to: "bz_bhf", major: true },
+    { s: "13:17", e: "13:30", kind: "walk", title: "Fußweg zum Kornmarkt", sub: "ca. 880 m · 12 Min.", ref: "#bz-kornmarkt", place: "bz_bhf" },
+    { s: "13:30", e: "14:30", kind: "food", title: "Spätes Mittagessen (Wjelbik / Mönchshof)", sub: "Küche im Wjelbik nur bis 14:00 – ggf. Mönchshof", ref: "#wjelbik", major: true },
+    { s: "14:30", e: "14:50", kind: "sight", title: "Hauptmarkt & Rathaus", sub: "kurzer Halt", ref: "#bz-hauptmarkt", sight: "bz-hauptmarkt", city: "Bautzen", major: true },
+    { s: "14:50", e: "15:10", kind: "sight", title: "Dom St. Petri", sub: "Simultankirche", ref: "#bz-dom", sight: "bz-dom" },
+    { s: "15:10", e: "15:25", kind: "sight", title: "Ortenburg", sub: "Burghof & Spreeblick", ref: "#bz-ortenburg", sight: "bz-ortenburg" },
+    { s: "15:25", e: "15:41", kind: "walk", title: "Fußweg zum Bahnhof Bautzen", sub: "ca. 1,2 km · 16 Min. – zügig gehen", ref: "#c-loebau", place: "bz_bhf" },
+    { s: "15:41", e: "16:01", kind: "train", dep: true, title: "RE1 Bautzen → Löbau", sub: "direkt · ca. 20 Min. (Zeit prüfen)", ref: "#c-loebau", place: "bz_bhf", to: "lb_bhf", major: true },
+    { s: "16:01", e: "16:07", kind: "walk", title: "Fußweg zum Altmarkt Löbau", sub: "ca. 0,5 km · 6 Min.", ref: "#lb-altmarkt", place: "lb_bhf" },
+    { s: "16:07", e: "16:30", kind: "sight", title: "Altmarkt & Rathaus", sub: "barockes Ensemble, Mondphasenuhr", ref: "#lb-altmarkt", sight: "lb-altmarkt", city: "Löbau", major: true },
+    { s: "16:30", e: "16:45", kind: "sight", title: "Nikolaikirche", sub: "spätgotisch, von außen", ref: "#lb-nikolai", sight: "lb-nikolai" },
+    { s: "16:45", e: "17:45", kind: "buffer", title: "Freie Zeit in Löbau", sub: "Café im Hof oder optional Löbauer Berg / Haus Schminke (Zeiten prüfen)", ref: "#lb-turm" },
+    { s: "17:55", e: "18:10", kind: "walk", title: "Fußweg zum Busbahnhof Löbau", sub: "direkt am Bahnhof", ref: "#c-zittau", place: "lb_bus" },
+    { s: "18:10", e: "19:05", kind: "bus", dep: true, title: "PlusBus 10 Löbau → Zittau", sub: "über Herrnhut (nicht aussteigen) · ca. 55 Min. (Zeit prüfen)", ref: "#c-zittau", place: "lb_bus", to: "zi_otto", major: true },
+    { s: "19:05", e: "19:12", kind: "walk", title: "Fußweg Ottokarplatz → Markt", sub: "ca. 470 m · 6 Min.", ref: "#zi-markt", place: "zi_otto", city: "Zittau" },
+    { s: "19:12", e: "19:30", kind: "sight", title: "Markt & Rathaus", sub: "Marsbrunnen, „italienisches“ Rathaus", ref: "#zi-markt", sight: "zi-markt", major: true },
+    { s: "19:30", e: "19:45", kind: "sight", title: "Salzhaus & Neustadt", sub: "kurzer Bummel", ref: "#zi-salzhaus", sight: "zi-salzhaus" },
+    { s: "19:45", e: "20:50", kind: "food", title: "Abendessen im Dornspachhaus", sub: "Bautzner Str. 2 · reservieren", ref: "#dornspachhaus", major: true },
+    { s: "20:50", e: "21:01", kind: "walk", title: "Fußweg zum Bahnhof Zittau", sub: "ca. 850 m · 11 Min.", ref: "#c-rueck", place: "zi_bhf" },
+    { s: "21:01", e: "22:57", kind: "train", dep: true, title: "RB61 Zittau → Dresden", sub: "direkt · hält auch in Dresden Mitte (Zeit prüfen)", ref: "#c-rueck", place: "zi_bhf", to: "dd_hbf", major: true }
   ];
 
-  var relaxed = shared.concat([
-    { s: "13:57", e: "14:00", kind: "sight", title: "Zinzendorfplatz", sub: "Ankunft direkt am Platz", ref: "#hh-zinzendorfplatz", sight: "hh-zinzendorfplatz", city: "Herrnhut", major: true },
-    { s: "14:00", e: "14:30", kind: "sight", title: "Kirchensaal & Ausstellung", sub: "„gemeinsam glauben leben“ · öffnet 14:00", ref: "#hh-kirchensaal", sight: "hh-kirchensaal" },
-    { s: "14:30", e: "14:40", kind: "walk", title: "Fußweg zum Gottesacker", sub: "ca. 420 m · 6 Min.", ref: "#hh-gottesacker" },
-    { s: "14:40", e: "15:25", kind: "sight", title: "Gottesacker", sub: "30–45 Min.", ref: "#hh-gottesacker", sight: "hh-gottesacker" },
-    { s: "15:25", e: "15:35", kind: "walk", title: "Rückweg zum Zinzendorfplatz", sub: "ca. 530 m · 7 Min.", ref: "#hh-zinzendorfplatz" },
-    { s: "15:35", e: "15:55", kind: "buffer", title: "Puffer: Kuchen im Café Förster", sub: "4 Min. vom Platz · um 15:55 an der Haltestelle sein", ref: "#cafes" },
-    { s: "16:00", e: "16:34", kind: "bus", dep: true, title: "PlusBus 10 Herrnhut → Zittau", sub: "Zinzendorfplatz Steig 2 → Ottokarplatz · 34 Min.", ref: "#c-zittau", place: "hh_zp_bus", to: "zi_otto", major: true },
-    { s: "16:34", e: "16:42", kind: "walk", title: "Fußweg Ottokarplatz → Markt", sub: "ca. 470 m · 6 Min.", ref: "#zi-markt", place: "zi_otto", city: "Zittau" },
-    { s: "16:45", e: "17:05", kind: "sight", title: "Markt", sub: "Marsbrunnen, Bürgerhäuser", ref: "#zi-markt", sight: "zi-markt", major: true },
-    { s: "17:05", e: "17:15", kind: "sight", title: "Rathaus", sub: "von außen", ref: "#zi-rathaus", sight: "zi-rathaus" },
-    { s: "17:15", e: "17:35", kind: "sight", title: "Johanniskirche", sub: "innen nur bis 17:00 – außen", ref: "#zi-johannis", sight: "zi-johannis" },
-    { s: "17:40", e: "18:10", kind: "sight", title: "Salzhaus & Neustadt", sub: "20–30 Min.", ref: "#zi-salzhaus", sight: "zi-salzhaus" },
-    { s: "18:15", e: "18:35", kind: "sight", title: "Klosterplatz", sub: "Abschluss des Rundgangs", ref: "#zi-kloster", sight: "zi-kloster" },
-    { s: "18:35", e: "19:00", kind: "buffer", title: "Freie Zeit", sub: "Café am Markt oder Bummel", ref: "#cafes" },
-    { s: "19:00", e: "20:20", kind: "food", title: "Abendessen im Dornspachhaus", sub: "Bautzner Str. 2 · reservieren", ref: "#dornspachhaus", major: true },
-    { s: "20:35", e: "20:50", kind: "walk", title: "Fußweg zum Bahnhof Zittau", sub: "ca. 850 m · 11 Min. · 10 Min. Puffer", ref: "#c-rueck", place: "zi_bhf" },
-    { s: "21:01", e: "22:57", kind: "train", dep: true, title: "RB61 Zittau → Dresden Hbf", sub: "Gleis 2b → Gleis 11 · direkt", ref: "#c-rueck", place: "zi_bhf", to: "dd_hbf", major: true }
-  ]);
-
-  var fastentuch = shared.concat([
-    { s: "13:57", e: "14:25", kind: "sight", title: "Zinzendorfplatz + Kirchensaal", sub: "kurzer Besuch der Ausstellung", ref: "#hh-kirchensaal", sight: "hh-kirchensaal", city: "Herrnhut", major: true },
-    { s: "14:25", e: "14:50", kind: "sight", title: "Kurzer Rundgang", sub: "Richtung Gottesacker (unterer Teil) und zurück", ref: "#hh-gottesacker", sight: "hh-gottesacker" },
-    { s: "14:50", e: "15:00", kind: "buffer", title: "Zurück zur Haltestelle", sub: "Zinzendorfplatz, Steig 2", ref: "#c-zittauFastentuch" },
-    { s: "15:00", e: "15:34", kind: "bus", dep: true, title: "PlusBus 10 Herrnhut → Zittau", sub: "→ Ottokarplatz · 34 Min.", ref: "#c-zittauFastentuch", place: "hh_zp_bus", to: "zi_otto", major: true },
-    { s: "15:34", e: "15:42", kind: "walk", title: "Fußweg zur Kirche zum Heiligen Kreuz", sub: "ca. 570 m · 8 Min.", ref: "#zi-fastentuch", place: "zi_otto", city: "Zittau" },
-    { s: "15:45", e: "16:30", kind: "sight", title: "Großes Zittauer Fastentuch", sub: "Museum schließt 17:00", ref: "#zi-fastentuch", sight: "zi-fastentuch", major: true },
-    { s: "16:30", e: "16:40", kind: "walk", title: "Fußweg zum Markt", sub: "ca. 460 m · 6 Min.", ref: "#zi-markt" },
-    { s: "16:40", e: "17:00", kind: "sight", title: "Johanniskirche (innen bis 17:00)", sub: "zuerst hierhin", ref: "#zi-johannis", sight: "zi-johannis" },
-    { s: "17:00", e: "17:30", kind: "sight", title: "Markt & Rathaus", sub: "", ref: "#zi-markt", sight: "zi-markt" },
-    { s: "17:35", e: "18:15", kind: "sight", title: "Salzhaus & Neustadt", sub: "", ref: "#zi-salzhaus", sight: "zi-salzhaus" },
-    { s: "18:20", e: "18:40", kind: "sight", title: "Klosterplatz", sub: "", ref: "#zi-kloster", sight: "zi-kloster" },
-    { s: "18:40", e: "19:00", kind: "buffer", title: "Freie Zeit", sub: "", ref: "#cafes" },
-    { s: "19:00", e: "20:20", kind: "food", title: "Abendessen im Dornspachhaus", sub: "Bautzner Str. 2 · reservieren", ref: "#dornspachhaus", major: true },
-    { s: "20:35", e: "20:50", kind: "walk", title: "Fußweg zum Bahnhof Zittau", sub: "ca. 850 m · 11 Min.", ref: "#c-rueck", place: "zi_bhf" },
-    { s: "21:01", e: "22:57", kind: "train", dep: true, title: "RB61 Zittau → Dresden Hbf", sub: "Gleis 2b → Gleis 11 · direkt", ref: "#c-rueck", place: "zi_bhf", to: "dd_hbf", major: true }
-  ]);
-
-  // Rundgang-Reihenfolge für die Karten (Schlüssel in window.WALKS)
+  // Rundgang-Reihenfolge für die Karten (Schlüssel in window.WALKS; fehlende werden ignoriert)
   var routes = {
     bautzen: ["bz_bhf>bz_korn", "bz_korn>bz_reichen", "bz_reichen>bz_haupt", "bz_haupt>bz_dom", "bz_dom>bz_orten", "bz_orten>bz_wk", "bz_wk>bz_wjelbik", "bz_wjelbik>bz_bhf"],
-    herrnhut: ["hh_zp>hh_ks", "hh_ks>hh_ga", "hh_ga>hh_zp"],
-    zittau: ["zi_otto>zi_markt", "zi_markt>zi_rh", "zi_rh>zi_joh", "zi_joh>zi_salz", "zi_salz>zi_kloster", "zi_kloster>zi_dorn", "zi_dorn>zi_bhf"],
-    zittauFastentuch: ["zi_otto>zi_kreuz", "zi_kreuz>zi_markt"]
+    loebau: [],
+    zittau: ["zi_otto>zi_markt", "zi_markt>zi_rh", "zi_rh>zi_joh", "zi_joh>zi_salz", "zi_salz>zi_kloster", "zi_kloster>zi_dorn", "zi_dorn>zi_bhf"]
   };
 
   var weatherSpots = [
-    { name: "Bautzen", lat: 51.181, lon: 14.424, from: 9, to: 13 },
-    { name: "Herrnhut", lat: 51.016, lon: 14.744, from: 14, to: 16 },
-    { name: "Zittau", lat: 50.896, lon: 14.807, from: 16, to: 21 }
+    { name: "Bautzen", lat: 51.181, lon: 14.424, from: 13, to: 15 },
+    { name: "Löbau", lat: 51.097, lon: 14.669, from: 16, to: 18 },
+    { name: "Zittau", lat: 50.896, lon: 14.807, from: 19, to: 22 }
   ];
 
   var sources = [
-    { label: "VVO-Fahrplanauskunft (Verbindungen am 25.09.2026)", url: "https://www.vvo-online.de/" },
-    { label: "ZVON – Zweckverband Verkehrsverbund Oberlausitz-Niederschlesien", url: "https://www.zvon.de/" },
-    { label: "DB Navigator / bahn.de", url: "https://www.bahn.de/" },
+    { label: "DB Navigator / bahn.de (Fahrplan bitte am Reisetag prüfen)", url: "https://www.bahn.de/" },
+    { label: "ZVON – Verkehrsverbund Oberlausitz-Niederschlesien (PlusBus 10)", url: "https://www.zvon.de/de/plusbus-und-taktbus" },
+    { label: "trilex / Die Länderbahn (RE1/RB60, RE2/RB61)", url: "https://www.laenderbahn.com/trilex" },
+    { label: "VVO-Fahrplanauskunft", url: "https://www.vvo-online.de/" },
     { label: "Stadt Bautzen – Öffnungszeiten ausgewählter Sehenswürdigkeiten (PDF)", url: "https://www.bautzen.de/fileadmin/media/info_tourismus/oeffnungszeiten-ausgewaehlter-sehenswuerdigkeiten.pdf" },
-    { label: "Ausstellung „gemeinsam glauben leben“, Herrnhut", url: "https://www.herrnhut-entdecken.de/ausstellung" },
-    { label: "Stadt Herrnhut – Gastronomie", url: "https://www.herrnhut.de/tourismus/gastronomie" },
+    { label: "Stiftung Haus Schminke, Löbau", url: "https://www.stiftung-hausschminke.eu/" },
+    { label: "Stadt Löbau – König-Friedrich-August-Turm / Stadtrundgang", url: "https://www.loebau.de/freizeit-und-tourismus/stadtrundgang/" },
     { label: "Stadt Zittau – Städtische Museen, Besucherservice", url: "https://zittau.de/tourismus-kultur-freizeit/sehenswertes/staedtische-museen/besucherservice" },
     { label: "Johanniskirche Zittau", url: "https://www.johannis-kirche-zittau.de/" },
-    { label: "Wjelbik", url: "https://www.wjelbik.de/" },
+    { label: "Wjelbik Bautzen", url: "https://www.wjelbik.de/" },
     { label: "Mönchshof Bautzen", url: "https://www.moenchshof.de/" },
     { label: "Dornspachhaus Zittau", url: "https://www.dornspachhaus.de/" },
-    { label: "Zum Alten Sack Zittau", url: "https://www.zumaltensack.de/" },
     { label: "OpenStreetMap (Café-Öffnungszeiten, Karten, Fußwege)", url: "https://www.openstreetmap.org/" },
     { label: "Wetter: Open-Meteo (kostenlos, ohne API-Schlüssel)", url: "https://open-meteo.com/" }
   ];
@@ -479,7 +408,7 @@
     date: TRIP_DATE, checkedAt: CHECKED_AT,
     places: places, sights: sights, optionalSights: optionalSights,
     restaurants: restaurants, cafes: cafes, connections: connections,
-    plans: { relaxed: relaxed, fastentuch: fastentuch },
+    plans: { main: main },
     routes: routes, weatherSpots: weatherSpots, sources: sources
   };
 })();
