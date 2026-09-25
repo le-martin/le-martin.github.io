@@ -1,18 +1,20 @@
 # Tagesausflug Oberlausitz
 
 Interaktiver Reisebegleiter für einen Tagesausflug mit Bus und Bahn am **Freitag, 25. September 2026**:
-Dresden Hbf → Bautzen → Löbau → Herrnhut → Zittau → Dresden (2 Personen, Deutschlandticket, nur Nahverkehr).
+Dresden Mitte → Bautzen → Löbau → Zittau → Dresden (Deutschlandticket, nur Nahverkehr). Verspäteter Start ab **Dresden Mitte um 12:27 Uhr**, Herrnhut ausgelassen.
+
+> ⚠ Die Fahrplan-Uhrzeiten in dieser nachträglich angepassten Variante sind **Schätzungen** und nicht aus der Fahrplanauskunft verifiziert – bitte in DB Navigator / ZVON / trilex prüfen.
 
 Live: <https://le-martin.github.io/ausflug-oberlausitz/>
 
 ## Funktionen
 
-- **Tages-Timeline** mit zwei Varianten: „Entspannter Plan“ und „Plan mit Fastentuch“ (Umschalter, Auswahl wird gespeichert)
-- **Karten** mit Leaflet + OpenStreetMap: Übersicht und je eine Rundgangskarte für Bautzen, Herrnhut und Zittau, mit echten Fußwegen und eigenen Markern für Bahnhof, Bus, Sehenswürdigkeit, Restaurant, Café und optionale Ziele
+- **Tages-Timeline** für den kompakten Nachmittagsplan (ein Plan; Haus Schminke und der Löbauer Berg sind als optionale Ziele gelistet)
+- **Karten** mit Leaflet + OpenStreetMap: Übersicht und je eine Rundgangskarte für Bautzen, Löbau und Zittau, mit eigenen Markern für Bahnhof, Bus, Sehenswürdigkeit, Restaurant, Café und optionale Ziele
 - **Sehenswürdigkeiten** als Karten mit Foto, Beschreibung, „Sehenswert“, Dauer, Öffnungszeiten, Gehzeit vom vorherigen Punkt sowie Links zu Google Maps und OSM
 - **Öffnungszeiten-Ampel** (🟢 geöffnet / 🟡 schließt bald / 🔴 geschlossen / ⚪ bitte prüfen), live berechnet
 - **„besucht“-Häkchen und ♥-Favoriten**, gespeichert in `localStorage`
-- **Countdowns** wie „Bus nach Herrnhut in 34 Minuten“ (nur am Reisetag, rein clientseitig)
+- **Countdowns** wie „Bus nach Zittau in 34 Minuten“ (nur am Reisetag, rein clientseitig)
 - **Reisemodus**: Vollbildansicht für unterwegs mit nächster Abfahrt, Gehzeit, aktueller Sehenswürdigkeit und nächster wichtiger Uhrzeit, dazu eine Zeitsimulation zum Ausprobieren. Direkt aufrufbar über `…/ausflug-oberlausitz/#reise`
 - **Wetter** über [Open-Meteo](https://open-meteo.com/) (kostenlos, ohne API-Schlüssel). Ohne verfügbare Vorhersage wird das Modul ausgeblendet, es wird nichts simuliert
 - **Dreisprachig**: Deutsch, Englisch, Koreanisch (Umschalter oben rechts und in der Navigation). Die Auswahl wird gespeichert und lässt sich per Link setzen: `?lang=de`, `?lang=en`, `?lang=ko`. Ohne Auswahl richtet sich die Sprache nach dem Browser.
@@ -63,7 +65,7 @@ Alle Zeiten stehen in `js/data.js`:
 
 - `CHECKED_AT`: Datum der letzten Prüfung. Wird überall als „Zuletzt geprüft“ angezeigt
 - `connections`: Zug- und Busverbindungen inklusive Gleis und Steig
-- `plans.relaxed` / `plans.fastentuch`: Tagesablauf. `kind` legt das Icon fest, `dep: true` aktiviert Countdown und Reisemodus-Abfahrt, `ref` ist das Sprungziel
+- `plans.main`: Tagesablauf. `kind` legt das Icon fest, `dep: true` aktiviert Countdown und Reisemodus-Abfahrt, `ref` ist das Sprungziel
 - `hours({ "Mo-Fr": [["09:00","18:00"]] })`: Öffnungszeiten für die Ampel. `alwaysOpen: true` steht für frei zugänglich, `uncertain: true` für „bitte prüfen“
 
 ### Übersetzungen
@@ -87,14 +89,17 @@ Die Fußwege in `js/walks.js` wurden mit dem OSRM-Fußgängerprofil von `routing
 
 ## Datenstand und Quellen
 
-Stand: **23.09.2026**. Die Verbindungen stammen aus der VVO-Fahrplanauskunft für den 25.09.2026, die Öffnungszeiten von den offiziellen Seiten der Städte, Sehenswürdigkeiten und Restaurants. Für Cafés wurden teilweise OpenStreetMap-Daten verwendet. Wo Quellen sich widersprechen, zeigt die Seite „Bitte vor dem Besuch prüfen“.
+Stand: **25.09.2026**. Öffnungszeiten stammen von den offiziellen Seiten der Städte, Sehenswürdigkeiten und Restaurants; für Cafés teilweise aus OpenStreetMap. Wo Quellen sich widersprechen, zeigt die Seite „Bitte vor dem Besuch prüfen“.
+
+⚠ **Fahrzeiten sind Schätzungen.** Die Uhrzeiten dieser nachträglich angepassten Variante (verspäteter Start) wurden nicht aus der Fahrplanauskunft verifiziert – bitte vor der Fahrt in DB Navigator / ZVON / trilex prüfen.
 
 Wichtige Befunde der Recherche:
 
-- Der Bus ab Herrnhut fährt laut Auskunft um **15:30** und **16:00** Uhr. Einen Bus um 15:57 Uhr gibt es nicht. Der 16:00-Bus fährt bis **Zittau Ottokarplatz** (16:34) direkt an die Altstadt.
-- **Alte Wasserkunst Bautzen:** Ob sie freitags geöffnet hat, ist unklar. Mehrere Quellen nennen „Mo–Do, Sa–So“, andere „täglich“. Vorher anrufen: 03591 41588. Die frühere Website `altewasserkunstbautzen.de` zeigt inzwischen Spam und wird deshalb nicht verlinkt.
-- **Herrnhut:** Die Ausstellung im Kirchensaal ist freitags 10–12 und 14–17 Uhr geöffnet. Vom 26.09. bis 03.10.2026 tagt die Synode, dann ist der Kirchensaal nicht zugänglich.
-- **Johanniskirche Zittau:** Mi–Sa 11–17 Uhr, im entspannten Plan also nur von außen.
+- **Löbau → Zittau: kein durchgehender Zug.** Die Bahnstrecke Löbau–Herrnhut–Zittau ist für den Personenverkehr stillgelegt. Praktikabel ist der **PlusBus 10** (Löbau–Herrnhut–Zittau, ca. 50–60 Min.); er fährt durch Herrnhut, Ausstieg erst in Zittau.
+- **Haus Schminke (Löbau):** Do–So 12–17 Uhr, letzter Einlass 15:45, Führungen Sa/So 13:00 & 15:00. Bei Ankunft gegen 16 Uhr praktisch nicht mehr besuchbar – nur mit deutlich früherer Ankunft oder von außen. Deshalb als optionales Ziel gelistet.
+- **König-Friedrich-August-Turm (Löbauer Berg):** einziger erhaltener gusseiserner Aussichtsturm; im Sommerhalbjahr bis abends geöffnet, aber ~40–50 Min. Aufstieg außerhalb der Stadt (optional).
+- **Alte Wasserkunst Bautzen:** Ob sie freitags geöffnet hat, ist unklar. Mehrere Quellen nennen „Mo–Do, Sa–So“, andere „täglich“. Vorher anrufen: 03591 41588.
+- **Johanniskirche Zittau:** Mi–Sa 11–17 Uhr; bei der späten Ankunft am Abend nur von außen.
 - **„Alte Sackfabrik“:** Ein Lokal dieses Namens wurde nicht gefunden. Gemeint ist vermutlich das Wirtshaus **„Zum Alten Sack“** im Salzhaus.
 
 > Bitte am Reisetag aktuelle Abfahrtszeiten und mögliche Fahrplanänderungen in DB Navigator bzw. ZVON prüfen.

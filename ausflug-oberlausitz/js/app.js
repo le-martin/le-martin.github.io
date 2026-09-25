@@ -16,7 +16,7 @@
   };
 
   var state = {
-    plan: store.get("plan", "relaxed"),
+    plan: "main",
     visited: store.get("visited", {}),
     favs: store.get("favs", {}),
     sim: null, // Date für simulierte Uhrzeit
@@ -78,7 +78,7 @@
   function durText(ms, dative) { return U("dur", Math.max(1, Math.round(ms / 60000)), dative); }
   function inHowLong(ms) { return Math.round(ms / 60000) <= 0 ? U("nowWord") : U("inTime", durText(ms, true)); }
 
-  var DEST = { dd_hbf: "Dresden", bz_bhf: "Bautzen", lb_bhf: "Löbau", hh_zp_bus: "Herrnhut", zi_otto: "Zittau", zi_bhf: "Zittau" };
+  var DEST = { dd_mitte: "Dresden", dd_hbf: "Dresden", bz_bhf: "Bautzen", lb_bhf: "Löbau", zi_otto: "Zittau", zi_bhf: "Zittau" };
   function depPhrase(ev) { return U("depPhrase", ev.kind, city(DEST[ev.to] || "")); }
 
   function mapsLinks(lat, lon, name) {
@@ -148,12 +148,12 @@
 
   // ------------------------------------------------------------ Hero-Stats
   function renderStats() {
-    var plan = T.plans.relaxed;
+    var plan = T.plans.main;
     var first = plan.filter(function (e) { return e.dep; })[0];
     var last = plan[plan.length - 1];
     var dur = toMin(last.e) - toMin(first.s);
     var meters = 0;
-    ["bautzen", "herrnhut", "zittau"].forEach(function (c) { T.routes[c].forEach(function (k) { meters += (WALKS[k] || { m: 0 }).m; }); });
+    ["bautzen", "loebau", "zittau"].forEach(function (c) { T.routes[c].forEach(function (k) { meters += (WALKS[k] || { m: 0 }).m; }); });
     var km = String(Math.round(meters / 500) / 2).replace(".", U("decimal"));
     var items = [
       [U("statDuration"), U("durHM", Math.floor(dur / 60), dur % 60)],
@@ -201,15 +201,6 @@
     });
   }
 
-  function renderPlanSwitch() {
-    $$("[data-plan]").forEach(function (b) { b.setAttribute("aria-checked", String(b.getAttribute("data-plan") === state.plan)); });
-    $("#plan-hint").textContent = state.plan === "relaxed" ? U("planHintRelaxed") : U("planHintFast");
-  }
-  function setPlan(p) {
-    state.plan = p; store.set("plan", p);
-    renderPlanSwitch(); renderTimeline(); renderArrival(); if (travelOpen()) renderTravel();
-  }
-
   // ------------------------------------------------------------ Sehenswürdigkeiten
   function favBtn(id, name, inline) {
     var on = !!state.favs[id];
@@ -253,19 +244,16 @@
   }
 
   function renderSights() {
-    ["bautzen", "herrnhut", "zittau"].forEach(function (c) {
+    ["bautzen", "loebau", "zittau"].forEach(function (c) {
       var list = T.sights.filter(function (s) { return s.city === c; });
       $("#sights-" + c).innerHTML = list.map(function (s, i) { return sightCard(s, i + 1); }).join("");
     });
-    var opt = T.optionalSights.filter(function (s) { return s.city === "herrnhut"; });
-    $("#optional-herrnhut").innerHTML = opt.map(function (s) { return sightCard(s); }).join("");
-    var ft = T.optionalSights.filter(function (s) { return s.id === "zi-fastentuch"; })[0];
-    $("#fastentuch-card").innerHTML = sightCard(ft);
+    var opt = T.optionalSights.filter(function (s) { return s.city === "loebau"; });
+    $("#optional-loebau").innerHTML = opt.map(function (s) { return sightCard(s); }).join("");
   }
 
   function renderArrival() {
-    var fast = state.plan === "fastentuch";
-    var c = fast ? T.connections.zittauFastentuch : T.connections.zittau;
+    var c = T.connections.zittau;
     var leg = c.legs[0];
     $("#zittau-arrival").innerHTML =
       "<h3>" + esc(U("arrTitle")) + "</h3>" +
@@ -274,9 +262,9 @@
       '<div><dt>🚌</dt><dd><strong>' + esc(U("arrLine")) + ":</strong> " + esc(leg.line) + " " + esc(U("direction", leg.dir)) + "</dd></div>" +
       '<div><dt>⏱</dt><dd><strong>' + esc(U("arrTime")) + ":</strong> " + esc(U("min", toMin(leg.arr) - toMin(leg.dep))) + "</dd></div>" +
       '<div><dt>🎯</dt><dd><strong>' + esc(U("arrDest")) + ":</strong> " + esc(U("arrDestNote", leg.to, leg.arr)) + "</dd></div>" +
-      '<div><dt>🚶</dt><dd><strong>' + esc(U("arrWalk")) + ":</strong> " + esc(fast ? U("walkFast", walkText("zi_otto>zi_kreuz")) : U("walkRelaxed", walkText("zi_otto>zi_markt"))) + "</dd></div>" +
+      '<div><dt>🚶</dt><dd><strong>' + esc(U("arrWalk")) + ":</strong> " + esc(U("walkRelaxed", walkText("zi_otto>zi_markt"))) + "</dd></div>" +
       "</dl>" +
-      '<p class="fine">' + esc(fast ? U("activeFast") : U("activeRelaxed")) + " " + esc(U("checkOnDay")) + "</p>";
+      '<p class="fine">' + esc(U("checkOnDay")) + "</p>";
   }
 
   // ------------------------------------------------------------ Essen
@@ -310,7 +298,7 @@
   function renderFood() {
     $("#food-lunch").innerHTML = T.restaurants.filter(function (r) { return r.role === "lunch"; }).map(foodCard).join("");
     $("#food-dinner").innerHTML = T.restaurants.filter(function (r) { return r.role === "dinner"; }).map(foodCard).join("");
-    var names = { bautzen: "Bautzen", herrnhut: "Herrnhut", zittau: "Zittau" };
+    var names = { bautzen: "Bautzen", loebau: "Löbau", zittau: "Zittau" };
     $("#cafe-groups").innerHTML = Object.keys(names).map(function (c) {
       return '<div class="cafe-group"><h4>' + esc(city(names[c])) + "</h4>" + T.cafes.filter(function (x) { return x.city === c; }).map(function (x) {
         statusItems[x.id] = x;
@@ -369,15 +357,8 @@
   function renderConnections() {
     var X = T.connections;
     $("#connections").innerHTML =
-      connCard(X.hin, U("tagOut")) + connCard(X.herrnhut, U("tagMidday")) + connCard(X.zittau, U("tagAfternoon")) +
-      connCard(X.zittauFastentuch, U("tagFast")) + connCard(X.rueck, U("tagReturn"));
-  }
-
-  function renderAltTimeline() {
-    var list = T.plans.fastentuch.filter(function (e) { return toMin(e.s) >= toMin("13:57"); });
-    $("#alt-timeline").innerHTML = list.map(function (e) {
-      return "<li><b>" + e.s + "–" + e.e + '</b><span class="' + (e.sight === "zi-fastentuch" ? "hl" : "") + '">' + ICON[e.kind] + " " + esc(P(e.title)) + "</span></li>";
-    }).join("");
+      connCard(X.hin, U("tagOut")) + connCard(X.loebau, U("tagMidday")) + connCard(X.zittau, U("tagAfternoon")) +
+      connCard(X.rueck, U("tagReturn"));
   }
 
   function renderSources() {
@@ -389,7 +370,7 @@
   var PIN = { station: "🚆", bus: "🚌", sight: "★", food: "🍽", cafe: "☕", optional: "☆" };
   var CITY_VIEW = {
     bautzen: [[51.1725, 14.4185], [51.1840, 14.4300]],
-    herrnhut: [[51.0145, 14.7360], [51.0215, 14.7510]],
+    loebau: [[51.0890, 14.6650], [51.1010, 14.6940]],
     zittau: [[50.8925, 14.8045], [50.9050, 14.8120]]
   };
 
@@ -443,23 +424,22 @@
       L.marker([s.lat, s.lon], { icon: pinIcon("sight"), title: C(s, "name") }).bindPopup(popup(C(s, "name"), C(s, "duration"), "#" + s.id)).addTo(o);
     });
     var Pl = T.places;
-    L.polyline([[Pl.dd_hbf.lat, Pl.dd_hbf.lon], [Pl.bz_bhf.lat, Pl.bz_bhf.lon], [Pl.lb_bhf.lat, Pl.lb_bhf.lon]], { color: "#2f5f8a", weight: 3, dashArray: "6 8" }).addTo(o).bindTooltip(U("ttTrain"));
-    L.polyline([[Pl.lb_bus.lat, Pl.lb_bus.lon], [Pl.hh_zp_bus.lat, Pl.hh_zp_bus.lon], [Pl.zi_otto.lat, Pl.zi_otto.lon]], { color: "#b4532a", weight: 3, dashArray: "6 8" }).addTo(o).bindTooltip(U("ttBus"));
+    L.polyline([[Pl.dd_mitte.lat, Pl.dd_mitte.lon], [Pl.bz_bhf.lat, Pl.bz_bhf.lon], [Pl.lb_bhf.lat, Pl.lb_bhf.lon]], { color: "#2f5f8a", weight: 3, dashArray: "6 8" }).addTo(o).bindTooltip(U("ttTrain"));
+    L.polyline([[Pl.lb_bus.lat, Pl.lb_bus.lon], [Pl.zi_otto.lat, Pl.zi_otto.lon]], { color: "#b4532a", weight: 3, dashArray: "6 8" }).addTo(o).bindTooltip(U("ttBus"));
     L.polyline([[Pl.zi_bhf.lat, Pl.zi_bhf.lon], [Pl.dd_hbf.lat, Pl.dd_hbf.lon]], { color: "#2f5f8a", weight: 2, opacity: .5, dashArray: "2 8" }).addTo(o).bindTooltip(U("ttReturn"));
-    ["bautzen", "herrnhut", "zittau"].forEach(function (c) { addRoute(o, T.routes[c], "#3e6b4f"); });
+    ["bautzen", "loebau", "zittau"].forEach(function (c) { addRoute(o, T.routes[c], "#3e6b4f"); });
     var all = L.latLngBounds(Object.keys(Pl).map(function (k) { return [Pl[k].lat, Pl[k].lon]; }));
     o.fitBounds(all, { padding: [20, 20] });
     maps.overview = o; maps.all = all;
 
     // Städte
-    ["bautzen", "herrnhut", "zittau"].forEach(function (c) {
+    ["bautzen", "loebau", "zittau"].forEach(function (c) {
       var m = baseMap("map-" + c);
       addCommonMarkers(m, c);
       T.sights.filter(function (s) { return s.city === c; }).forEach(function (s, i) {
         L.marker([s.lat, s.lon], { icon: pinIcon("sight", i + 1), title: C(s, "name"), zIndexOffset: 500 }).bindPopup(popup(C(s, "name"), C(s, "duration"), "#" + s.id)).addTo(m);
       });
       addRoute(m, T.routes[c], "#3e6b4f");
-      if (c === "zittau") addRoute(m, T.routes.zittauFastentuch, "#b4532a", "4 8");
       m.fitBounds(CITY_VIEW[c]);
       maps[c] = m;
     });
@@ -471,7 +451,7 @@
 
   // Beim Sprachwechsel Karten neu aufbauen (Popups, Tooltips, Legende)
   function rebuildMaps() {
-    ["overview", "bautzen", "herrnhut", "zittau"].forEach(function (k) { if (maps[k]) { maps[k].remove(); delete maps[k]; } });
+    ["overview", "bautzen", "loebau", "zittau"].forEach(function (k) { if (maps[k]) { maps[k].remove(); delete maps[k]; } });
     try { initMaps(); } catch (e) { console.warn("Karte nicht verfügbar", e); }
   }
 
@@ -633,11 +613,9 @@
   // ------------------------------------------------------------ Events
   function bind() {
     document.addEventListener("click", function (ev) {
-      var t = ev.target.closest("[data-action],[data-plan],[data-plan-set],[data-fav],[data-lang],[data-fly]");
+      var t = ev.target.closest("[data-action],[data-fav],[data-lang],[data-fly]");
       if (!t) return;
       if (t.hasAttribute("data-lang")) return setLang(t.getAttribute("data-lang"));
-      if (t.hasAttribute("data-plan")) return setPlan(t.getAttribute("data-plan"));
-      if (t.hasAttribute("data-plan-set")) { setPlan(t.getAttribute("data-plan-set")); $("#uebersicht").scrollIntoView(); return; }
       if (t.hasAttribute("data-fly")) {
         if (!maps.overview) return;
         var k = t.getAttribute("data-fly");
@@ -678,7 +656,7 @@
     });
 
     document.addEventListener("keydown", function (ev) { if (ev.key === "Escape" && travelOpen()) closeTravel(); });
-    window.addEventListener("resize", function () { ["overview", "bautzen", "herrnhut", "zittau"].forEach(function (k) { if (maps[k]) maps[k].invalidateSize(); }); });
+    window.addEventListener("resize", function () { ["overview", "bautzen", "loebau", "zittau"].forEach(function (k) { if (maps[k]) maps[k].invalidateSize(); }); });
   }
 
   // Simulierte Zeit läuft mit – Offset zur echten Uhr merken
@@ -697,14 +675,14 @@
   function renderAll() {
     statusItems = {};
     applyStatic();
-    renderStats(); renderSources(); renderPlanSwitch(); renderTimeline();
-    renderSights(); renderArrival(); renderFood(); renderConnections(); renderAltTimeline();
+    renderStats(); renderSources(); renderTimeline();
+    renderSights(); renderArrival(); renderFood(); renderConnections();
     renderWeather();
   }
 
   function init() {
     applyTheme(store.get("theme", null));
-    $("#sim-time").value = T.date + "T13:20";
+    $("#sim-time").value = T.date + "T16:00";
     renderAll();
     bind(); initNav(); initFab();
     try { initMaps(); } catch (e) { console.warn("Karte nicht verfügbar", e); }
