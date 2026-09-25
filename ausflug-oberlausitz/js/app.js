@@ -81,10 +81,18 @@
   var DEST = { dd_mitte: "Dresden", dd_hbf: "Dresden", bz_bhf: "Bautzen", lb_bhf: "Löbau", zi_otto: "Zittau", zi_bhf: "Zittau" };
   function depPhrase(ev) { return U("depPhrase", ev.kind, city(DEST[ev.to] || "")); }
 
-  function mapsLinks(lat, lon, name) {
-    var q = encodeURIComponent(lat + "," + lon);
+  // Google Maps per Name suchen (öffnet die Ortsseite statt nur einer Koordinate);
+  // Reihenfolge: eigener Suchbegriff (gmaps) > Name + Adresse > Name + Stadt. OSM bleibt koordinatengenau.
+  var CITY_Q = { bautzen: "Bautzen", loebau: "Löbau", zittau: "Zittau" };
+  function gQuery(o) {
+    if (o.gmaps) return o.gmaps;
+    if (o.address) return o.name + ", " + o.address;
+    return o.name + (CITY_Q[o.city] ? ", " + CITY_Q[o.city] : "");
+  }
+  function mapsLinks(o, label) {
+    var q = encodeURIComponent(gQuery(o));
     return '<a class="chip-link" href="https://www.google.com/maps/search/?api=1&query=' + q + '" target="_blank" rel="noopener">📍 Google Maps</a>' +
-      '<a class="chip-link" href="https://www.openstreetmap.org/?mlat=' + lat + "&mlon=" + lon + "#map=18/" + lat + "/" + lon + '" target="_blank" rel="noopener" aria-label="' + esc(U("osmAria", name)) + '">🗺 OSM</a>';
+      '<a class="chip-link" href="https://www.openstreetmap.org/?mlat=' + o.lat + "&mlon=" + o.lon + "#map=18/" + o.lat + "/" + o.lon + '" target="_blank" rel="noopener" aria-label="' + esc(U("osmAria", label)) + '">🗺 OSM</a>';
   }
 
   // ------------------------------------------------------------ Öffnungszeiten-Ampel
@@ -236,7 +244,7 @@
       (planB ? '<p class="alert alert--info">' + esc(planB) + "</p>" : "") +
       (reason ? '<p class="alert">' + esc(reason) + "</p>" : "") +
       (swap ? '<p class="alert alert--info">' + esc(swap) + "</p>" : "") +
-      '<div class="sight__links">' + mapsLinks(s.lat, s.lon, name) +
+      '<div class="sight__links">' + mapsLinks(s, name) +
       (s.web ? '<a class="chip-link" href="' + s.web + '" target="_blank" rel="noopener">↗ ' + esc(U("website")) + "</a>" : "") + "</div>" +
       "</div>" +
       '<label class="visited"><input type="checkbox" data-visit="' + esc(s.id) + '"' + (visited ? " checked" : "") + "> " + esc(U("visited")) + "</label>" +
@@ -291,7 +299,7 @@
       (r.reserve ? '<a class="chip-link" href="' + r.reserve + '" target="_blank" rel="noopener">📅 ' + esc(U("reserve")) + "</a>" : "") +
       '<a class="chip-link" href="tel:' + r.phone + '">📞 ' + esc(U("call")) + "</a>" +
       '<a class="chip-link" href="' + r.web + '" target="_blank" rel="noopener">↗ ' + esc(U("website")) + "</a>" +
-      mapsLinks(r.lat, r.lon, name) + "</div>" +
+      mapsLinks(r, name) + "</div>" +
       "</div></article>";
   }
 
@@ -312,7 +320,7 @@
           '<div><dt>🍰</dt><dd>' + esc(C(x, "special")) + " · " + esc(C(x, "price")) + "</dd></div>" +
           '<div><dt>🚶</dt><dd>' + esc(C(x, "distance")) + "</dd></div>" +
           "</dl>" +
-          '<div class="sight__links">' + mapsLinks(x.lat, x.lon, name) + (x.web ? '<a class="chip-link" href="' + x.web + '" target="_blank" rel="noopener">↗ ' + esc(U("website")) + "</a>" : "") + "</div>" +
+          '<div class="sight__links">' + mapsLinks(x, name) + (x.web ? '<a class="chip-link" href="' + x.web + '" target="_blank" rel="noopener">↗ ' + esc(U("website")) + "</a>" : "") + "</div>" +
           "</article>";
       }).join("") + "</div>";
     }).join("");
@@ -507,7 +515,7 @@
         '<div class="card tv tv--hero"><p class="tv__label">' + esc(U("notYet")) + '</p><p class="tv__big">' + esc(U("tripDate")) + "</p>" +
         '<p class="tv__count">' + esc(durText(tripStart(firstDep.s) - d)) + '</p><p class="tv__sub">' + esc(U("untilFirst", P(firstDep.title), firstDep.s)) + "</p></div>" +
         '<div class="card tv"><p class="tv__label">' + esc(U("meetLabel")) + '</p><p class="tv__big">' + esc(U("meetVal", plan[0].s)) + '</p><p class="tv__sub">' + esc(U("meetSub")) + "</p>" +
-        '<div class="tv__actions">' + mapsLinks(T.places.dd_hbf.lat, T.places.dd_hbf.lon, "Dresden Hbf") + "</div></div>" +
+        '<div class="tv__actions">' + mapsLinks(T.places.dd_mitte, "Dresden Mitte") + "</div></div>" +
         '<p class="fine">' + esc(U("travelIntro")) + "</p>";
       return;
     }
@@ -536,7 +544,7 @@
         '<p class="tv__big">' + esc(depPhrase(nextDep)) + " · " + nextDep.s + '</p><p class="tv__sub">' + esc(P(nextDep.title)) + " · " + esc(P(nextDep.sub)) + "</p>" +
         '<p class="tv__count">' + esc(inHowLong(tripStart(nextDep.s) - d)) + "</p>" +
         (walkEv ? '<p class="tv__sub">🚶 ' + esc(U("walkTime")) + ": " + esc(P(walkEv.title)) + " – " + esc(P(walkEv.sub)) + esc(toMin(walkEv.s) <= m ? U("walkRunning", walkEv.e) : U("walkStart", walkEv.s)) + "</p>" : "") +
-        '<div class="tv__actions">' + (place ? mapsLinks(place.lat, place.lon, place.name) : "") + '<a class="chip-link" href="' + nextDep.ref + '" data-action="travel-jump">' + esc(U("seeConn")) + "</a></div></div>";
+        '<div class="tv__actions">' + (place ? mapsLinks(place, place.name) : "") + '<a class="chip-link" href="' + nextDep.ref + '" data-action="travel-jump">' + esc(U("seeConn")) + "</a></div></div>";
     }
 
     html += '<div class="tv__row">';
@@ -551,7 +559,7 @@
         html += '<div class="card tv"><p class="tv__label">' + esc(current === nextSight ? U("currentSight") : U("nextSight", nextSight.s)) + "</p>" +
           '<p class="tv__big" style="font-size:1.3rem">' + esc(C(s, "name")) + '</p><div class="status-row" style="margin-top:6px">' + statusHTML(s) + "</div>" +
           '<p class="tv__sub">⏱ ' + esc(C(s, "duration")) + (s.walkFrom && s.walkFrom.key ? " · 🚶 " + esc(walkText(s.walkFrom.key)) : "") + "</p>" +
-          '<div class="tv__actions">' + mapsLinks(s.lat, s.lon, C(s, "name")) + '<a class="chip-link" href="#' + s.id + '" data-action="travel-jump">' + esc(U("details")) + "</a></div></div>";
+          '<div class="tv__actions">' + mapsLinks(s, C(s, "name")) + '<a class="chip-link" href="#' + s.id + '" data-action="travel-jump">' + esc(U("details")) + "</a></div></div>";
       }
     }
 
