@@ -66,6 +66,7 @@ Alle Zeiten stehen in `js/data.js`:
 - `CHECKED_AT`: Datum der letzten Prüfung. Wird überall als „Zuletzt geprüft“ angezeigt
 - `connections`: Zug- und Busverbindungen inklusive Gleis und Steig
 - `plans.main`: Tagesablauf. `kind` legt das Icon fest, `dep: true` aktiviert Countdown und Reisemodus-Abfahrt, `ref` ist das Sprungziel
+- `gmaps`: optionaler Suchbegriff für den Google-Maps-Link (öffnet die Ortsseite statt nur einer Koordinate). Ohne `gmaps` wird „Name, Adresse“ bzw. „Name, Stadt“ gesucht; der OSM-Link nutzt weiter die Koordinaten
 - `hours({ "Mo-Fr": [["09:00","18:00"]] })`: Öffnungszeiten für die Ampel. `alwaysOpen: true` steht für frei zugänglich, `uncertain: true` für „bitte prüfen“
 
 ### Übersetzungen
