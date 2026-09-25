@@ -47,20 +47,20 @@
   // ---------------------------------------------------------------- Orte
   // type: station | bus | sight | food | cafe
   var places = {
-    dd_mitte: { name: "Dresden Mitte", type: "station", lat: 51.05530, lon: 13.72130 },
-    dd_hbf: { name: "Dresden Hauptbahnhof", type: "station", lat: 51.04039, lon: 13.73147 },
-    bz_bhf: { name: "Bautzen Bahnhof", type: "station", lat: 51.17334, lon: 14.42895 },
-    lb_bhf: { name: "Löbau Bahnhof", type: "station", lat: 51.09923, lon: 14.67179 },
-    lb_bus: { name: "Löbau Busbahnhof", type: "bus", lat: 51.09906, lon: 14.67103 },
-    zi_otto: { name: "Zittau Ottokarplatz (Bus)", type: "bus", lat: 50.89321, lon: 14.80973 },
-    zi_bhf: { name: "Zittau Bahnhof", type: "station", lat: 50.90426, lon: 14.80576 }
+    dd_mitte: { gmaps: "Bahnhof Dresden Mitte", name: "Dresden Mitte", type: "station", lat: 51.05530, lon: 13.72130 },
+    dd_hbf: { gmaps: "Dresden Hauptbahnhof", name: "Dresden Hauptbahnhof", type: "station", lat: 51.04039, lon: 13.73147 },
+    bz_bhf: { gmaps: "Bahnhof Bautzen", name: "Bautzen Bahnhof", type: "station", lat: 51.17334, lon: 14.42895 },
+    lb_bhf: { gmaps: "Bahnhof Löbau", name: "Löbau Bahnhof", type: "station", lat: 51.09923, lon: 14.67179 },
+    lb_bus: { gmaps: "Busbahnhof Löbau", name: "Löbau Busbahnhof", type: "bus", lat: 51.09906, lon: 14.67103 },
+    zi_otto: { gmaps: "Ottokarplatz Zittau", name: "Zittau Ottokarplatz (Bus)", type: "bus", lat: 50.89321, lon: 14.80973 },
+    zi_bhf: { gmaps: "Bahnhof Zittau", name: "Zittau Bahnhof", type: "station", lat: 50.90426, lon: 14.80576 }
   };
 
   // ---------------------------------------------------------------- Sehenswürdigkeiten
   var sights = [
     // ---------- Bautzen
     {
-      id: "bz-kornmarkt", city: "bautzen", name: "Kornmarkt & Reichenstraße", lat: 51.18000, lon: 14.42650,
+      id: "bz-kornmarkt", gmaps: "Reichenturm Bautzen", city: "bautzen", name: "Kornmarkt & Reichenstraße", lat: 51.18000, lon: 14.42650,
       photo: photo("Bautzen_-_Kornmarkt_01_ies.jpg"),
       text: "Vom Kornmarkt führt die Reichenstraße als Hauptachse der Altstadt direkt zum Hauptmarkt – gesäumt von barocken Bürgerhäusern.",
       why: "Am Ende der Straße steht der Reichenturm, Bautzens „schiefer Turm“ (rund 1,4 m aus dem Lot).",
@@ -70,7 +70,7 @@
       hours: null, alwaysOpen: true
     },
     {
-      id: "bz-hauptmarkt", city: "bautzen", name: "Hauptmarkt & Rathaus", lat: 51.18139, lon: 14.42407,
+      id: "bz-hauptmarkt", gmaps: "Rathaus Bautzen", city: "bautzen", name: "Hauptmarkt & Rathaus", lat: 51.18139, lon: 14.42407,
       photo: photo("Bautzen - Hauptmarkt 03 ies.jpg"),
       text: "Das historische Zentrum Bautzens mit dem barocken Rathaus (heutige Form 1729–1732) und prächtigen Patrizierhäusern ringsum.",
       why: "Hier spürt man die Geschichte der Stadt als Hauptort der Oberlausitz am deutlichsten – ideal für die ersten Fotos.",
@@ -78,7 +78,7 @@
       hoursNote: "Öffentlicher Platz – jederzeit zugänglich.", hours: null, alwaysOpen: true
     },
     {
-      id: "bz-dom", city: "bautzen", name: "Dom St. Petri", lat: 51.18245, lon: 14.42375,
+      id: "bz-dom", gmaps: "Dom St. Petri Bautzen", city: "bautzen", name: "Dom St. Petri", lat: 51.18245, lon: 14.42375,
       photo: photo("St_Petri_church_Bautzen_101.JPG"),
       text: "Eine der ältesten Simultankirchen Deutschlands: Seit 1524 teilen sich evangelische und katholische Gemeinde den Dom – getrennt nur durch ein Gitter.",
       why: "Die gemeinsame Nutzung durch zwei Konfessionen seit fast 500 Jahren ist einzigartig; auffällig ist auch der „geknickte“ Grundriss des Langhauses.",
@@ -88,7 +88,7 @@
       verify: true, web: "https://www.st-petri-bautzen.de/"
     },
     {
-      id: "bz-ortenburg", city: "bautzen", name: "Ortenburg", lat: 51.18315, lon: 14.42028,
+      id: "bz-ortenburg", gmaps: "Ortenburg Bautzen", city: "bautzen", name: "Ortenburg", lat: 51.18315, lon: 14.42028,
       photo: photo("Ortenburg_Bautzen_100.JPG"),
       text: "Die Burganlage auf dem Felsplateau über der Spree war über Jahrhunderte Sitz der Landesherren der Oberlausitz. Markant: das spätgotische Matthiasturm-Tor mit dem Relief des ungarischen Königs Matthias Corvinus.",
       why: "Historische Architektur, Blick ins Spreetal – und im Burghof das Sorbische Museum als Zentrum sorbischer Kultur.",
@@ -98,7 +98,7 @@
       web: "https://sorbisches-museum.de/"
     },
     {
-      id: "bz-wasserkunst", city: "bautzen", name: "Alte Wasserkunst", lat: 51.18062, lon: 14.42073,
+      id: "bz-wasserkunst", gmaps: "Alte Wasserkunst Bautzen", city: "bautzen", name: "Alte Wasserkunst", lat: 51.18062, lon: 14.42073,
       photo: photo("Alte_Wasserkunst_Bautzen_101.jpg"),
       text: "Der Wasserturm von 1558 versorgte die Stadt über Jahrhunderte mit Spreewasser und war zugleich Teil der Stadtbefestigung. Heute technisches Museum mit historischer Pumpenanlage.",
       why: "Technisches Denkmal, Aussicht vom Turm und das klassische Postkartenmotiv: Wasserkunst und Michaeliskirche über dem Spreetal.",
@@ -110,7 +110,7 @@
 
     // ---------- Löbau
     {
-      id: "lb-altmarkt", city: "loebau", name: "Altmarkt & Historisches Rathaus", lat: 51.09700, lon: 14.66900,
+      id: "lb-altmarkt", gmaps: "Altmarkt Löbau", city: "loebau", name: "Altmarkt & Historisches Rathaus", lat: 51.09700, lon: 14.66900,
       photo: photo("Löbau, Rathaus.jpg"),
       text: "Der Altmarkt ist das barocke Herz Löbaus. Das Rathaus wurde 1711–1714 vom Zittauer Baumeister Prescher wieder aufgebaut und beherbergt eine der ursprünglich 14 Löbauer „Fleischbänke“; am Turm hängt eine Mondphasenuhr.",
       why: "Ein geschlossenes barockes Marktplatz-Ensemble – das „Wohnzimmer“ der Stadt und guter Startpunkt für den Rundgang.",
@@ -118,7 +118,7 @@
       hoursNote: "Platz jederzeit zugänglich; Rathaus-Inneres nur zu Amtszeiten.", hours: null, alwaysOpen: true
     },
     {
-      id: "lb-nikolai", city: "loebau", name: "Nikolaikirche", lat: 51.09720, lon: 14.66830,
+      id: "lb-nikolai", gmaps: "Nikolaikirche Löbau", city: "loebau", name: "Nikolaikirche", lat: 51.09720, lon: 14.66830,
       photo: null,
       text: "Die evangelische Hauptkirche, erstmals 1293 erwähnt, ist eine spätgotische Hallenkirche des 14. Jahrhunderts; 1742 wurde ein drittes, südliches Seitenschiff ergänzt.",
       why: "Ältestes Bauwerk und geistliches Zentrum der Altstadt – nur wenige Schritte vom Altmarkt.",
@@ -127,7 +127,7 @@
       hoursNote: "Öffnungszeiten der Kirche variieren und sind nicht verlässlich belegt – bitte vor Ort bzw. bei der Kirchgemeinde prüfen. Außenansicht jederzeit."
     },
     {
-      id: "lb-schminke", city: "loebau", name: "Haus Schminke", lat: 51.09300, lon: 14.68100,
+      id: "lb-schminke", gmaps: "Haus Schminke, Kirschallee 1b, 02708 Löbau", city: "loebau", name: "Haus Schminke", lat: 51.09300, lon: 14.68100,
       photo: photo("Haus Schminke Löbau.jpg"),
       text: "Wohnhaus des Nudelfabrikanten Fritz Schminke, 1930–1933 von Hans Scharoun erbaut – ein Hauptwerk der klassischen Moderne. Es gilt neben Villa Tugendhat, Villa Savoye und Fallingwater als eines der vier bedeutendsten modernen Wohnhäuser weltweit.",
       why: "Weltweit ikonische Architektur der Moderne – für Architekturinteressierte der eigentliche Grund, in Löbau auszusteigen.",
@@ -140,7 +140,7 @@
 
     // ---------- Zittau
     {
-      id: "zi-markt", city: "zittau", name: "Markt", lat: 50.89594, lon: 14.80645,
+      id: "zi-markt", gmaps: "Marktplatz Zittau", city: "zittau", name: "Markt", lat: 50.89594, lon: 14.80645,
       photo: photo("Marktplatz Zittau 2016.jpg"),
       text: "Der weite Marktplatz mit barocken Bürgerhäusern und dem Marsbrunnen (Rolandbrunnen) ist das Herz der Altstadt.",
       why: "Guter Startpunkt für den Rundgang – alle weiteren Stationen liegen in wenigen Minuten Entfernung.",
@@ -148,7 +148,7 @@
       hoursNote: "Öffentlicher Platz – jederzeit zugänglich.", hours: null, alwaysOpen: true
     },
     {
-      id: "zi-rathaus", city: "zittau", name: "Rathaus", lat: 50.89598, lon: 14.80792,
+      id: "zi-rathaus", gmaps: "Rathaus Zittau", city: "zittau", name: "Rathaus", lat: 50.89598, lon: 14.80792,
       photo: photo("Rathaus Zittau 2022.jpg"),
       text: "Das Rathaus entstand 1840–1845 nach Plänen im Geist Karl Friedrich Schinkels – im Stil eines italienischen Renaissance-Palazzo, mit markantem Turm am Markt.",
       why: "Ungewöhnlich für Sachsen: ein „italienischer“ Palast mitten in der Oberlausitz, Ausdruck des Selbstbewusstseins der reichen Handelsstadt.",
@@ -156,7 +156,7 @@
       hoursNote: "Außenbesichtigung jederzeit.", hours: null, alwaysOpen: true
     },
     {
-      id: "zi-johannis", city: "zittau", name: "Johanniskirche", lat: 50.89681, lon: 14.80659,
+      id: "zi-johannis", gmaps: "Johanniskirche Zittau", city: "zittau", name: "Johanniskirche", lat: 50.89681, lon: 14.80659,
       photo: photo("Kirche_(Zittau_6).jpg"),
       text: "Die Hauptkirche Zittaus erhielt ihre heutige klassizistische Gestalt im 19. Jahrhundert, u. a. nach Entwürfen Karl Friedrich Schinkels. Der Turm ist über 266 Stufen zu besteigen.",
       why: "Vom Turm reicht der Blick über Zittau bis ins Zittauer, Iser- und Riesengebirge; fast täglich um 11:50 Uhr spielt der Türmer.",
@@ -166,7 +166,7 @@
       verify: true, web: "https://www.johannis-kirche-zittau.de/"
     },
     {
-      id: "zi-salzhaus", city: "zittau", name: "Salzhaus & Neustadt", lat: 50.89598, lon: 14.81035,
+      id: "zi-salzhaus", gmaps: "Salzhaus Zittau", city: "zittau", name: "Salzhaus & Neustadt", lat: 50.89598, lon: 14.81035,
       photo: photo("Neustadt_(Zittau).jpg"),
       text: "Das Salzhaus (erbaut 1511, später Kornspeicher) ist mit seinem riesigen Mansarddach eines der größten historischen Profangebäude der Stadt. Es steht am Platz „Neustadt“ mit mehreren Brunnen.",
       why: "Erinnert an Zittaus Reichtum durch den Salz- und Getreidehandel; heute mit Stadtbibliothek, Passage und Gastronomie.",
@@ -174,7 +174,7 @@
       hoursNote: "Außen jederzeit; Passage zu den Geschäftszeiten.", hours: null, alwaysOpen: true
     },
     {
-      id: "zi-kloster", city: "zittau", name: "Klosterplatz", lat: 50.89735, lon: 14.80837,
+      id: "zi-kloster", gmaps: "Klosterplatz Zittau", city: "zittau", name: "Klosterplatz", lat: 50.89735, lon: 14.80837,
       photo: null,
       text: "Ruhiger Platz am ehemaligen Franziskanerkloster mit der Klosterkirche St. Peter und Paul und dem Kulturhistorischen Museum.",
       why: "Einer der ältesten Teile der Stadt und schöner Abschluss des Rundgangs – vom Platz sind es nur 3 Minuten zum Dornspachhaus.",
@@ -186,7 +186,7 @@
 
   var optionalSights = [
     {
-      id: "lb-turm", city: "loebau", name: "König-Friedrich-August-Turm (Löbauer Berg)", lat: 51.09110, lon: 14.69280, optional: true,
+      id: "lb-turm", gmaps: "König-Friedrich-August-Turm Löbau", city: "loebau", name: "König-Friedrich-August-Turm (Löbauer Berg)", lat: 51.09110, lon: 14.69280, optional: true,
       photo: photo("Loebau Koenig-Friedrich-August-Turm.jpg"),
       text: "Der 28 m hohe Aussichtsturm auf dem Löbauer Berg (447,9 m) wurde 1854 aus rund 1000 gusseisernen Teilen errichtet und gilt als einziger erhaltener vollständig gusseiserner Aussichtsturm.",
       why: "Einzigartiges technisches Denkmal mit Rundblick über die Oberlausitz bis ins Zittauer, Iser- und Riesengebirge – und in der Sommersaison bis in den Abend geöffnet, also das beste späte-Nachmittags-Ziel.",
