@@ -40,7 +40,7 @@ scripts/             # Utility scripts (CV markdown-to-JSON converter)
 markdown_generator/  # Helper scripts for generating markdown files
 stock-correlation/   # Stock & ETF correlation checker (standalone HTML/CSS/JS)
 restaurant/          # Sura Korean restaurant site (standalone HTML/CSS/JS, own permalinks)
-ausflug-oberlausitz/ # Day-trip travel guide Dresden → Bautzen → Herrnhut → Zittau (standalone HTML/CSS/JS + Leaflet)
+ausflug-oberlausitz/ # Day-trip travel guide Dresden Mitte → Bautzen → Löbau → Zittau (standalone HTML/CSS/JS + Leaflet; EN/KO in js/i18n.js, check with node tools/check-i18n.js)
 talkmap/             # Leaflet.js map of talk locations
 talkmap.ipynb/.py    # Talk location scraping (Jupyter/Python)
 markdown_generator/  # Jupyter notebooks for TSV → markdown conversion (talks, publications)
