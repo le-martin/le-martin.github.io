@@ -545,7 +545,7 @@
         when: "Lunch alternative, 2 min from Old Town Square",
         text: "Korean restaurant right behind Old Town Square – with dishes like jjajangmyeon and jjamppong.",
         why: "Instead of burgers: Korean food right next to the Astronomical Clock.",
-        hoursNote: "Opening hours not found – check in Google Maps.",
+        hoursNote: "11:45 am–4 pm and 5–10 pm (per Google Maps; check closing days there).",
         price: "on the pricier side (per review site)"
       },
       "malatang": {
@@ -553,7 +553,7 @@
         when: "Afternoon snack, approx. 16:25–17:05",
         text: "Put your ingredients in a bowl, have it weighed and cooked as a spicy soup; mix your own sauce.",
         why: "A small bowl to share is enough – dinner comes at 7 pm.",
-        hoursNote: "Open for lunch and dinner; exact hours not found – check in Google Maps.",
+        hoursNote: "11 am–10 pm (per Google Maps).",
         price: "up to approx. 240 CZK per person, cards accepted",
         rating: "Google approx. 4.3–4.4 (per review site)"
       },
@@ -577,7 +577,7 @@
         when: "Dinner, approx. 19:00–20:05",
         text: "A rustic Žižkov pub with hearty Czech food at neighbourhood prices – only 10–15 min from Riegrovy sady.",
         why: "Perfect after the sunset, and only about 20 min from the main station.",
-        hoursNote: "Per research approx. 11 am–midnight – please check.",
+        hoursNote: "Per research approx. 11 am–midnight – please check the opening hours.",
         price: "€ (estimate)",
         note: "Bring cash and reserve for Friday evening."
       },
@@ -585,7 +585,7 @@
         cuisine: "Asian (per listing Vietnamese & vegetarian)",
         when: "Dinner alternative, approx. 12 min from the main station",
         text: "The listing found describes an Asian restaurant with duck, beef noodles and summer rolls. If your saved place is Korean, it is a different restaurant.",
-        hoursNote: "Opening hours not found – check in Google Maps.",
+        hoursNote: "11 am–9:30 pm (per Google Maps).",
         price: "approx. 200–300 CZK",
         rating: "4.5 (per review site)"
       },
@@ -745,7 +745,7 @@
         when: "점심 대안, 구시가지 광장에서 2분",
         text: "구시가지 광장 바로 뒤에 있는 한식당 – 짜장면, 짬뽕 같은 메뉴가 있습니다.",
         why: "버거 대신 천문시계 바로 옆에서 한식을.",
-        hoursNote: "영업시간을 찾지 못함 – Google 지도에서 확인하세요.",
+        hoursNote: "11:45–16시, 17–22시 (Google 지도 기준; 휴무일은 지도에서 확인).",
         price: "가격대가 높은 편 (리뷰 사이트 기준)"
       },
       "malatang": {
@@ -753,7 +753,7 @@
         when: "오후 간식, 약 16:25–17:05",
         text: "재료를 그릇에 담아 무게를 재면 매운 탕으로 끓여 줍니다. 소스는 직접 섞어요.",
         why: "작은 그릇 하나를 나눠 먹으면 충분 – 저녁은 7시에 먹습니다.",
-        hoursNote: "점심·저녁 영업, 정확한 시간은 찾지 못함 – Google 지도에서 확인하세요.",
+        hoursNote: "11–22시 (Google 지도 기준).",
         price: "1인 약 240 CZK 이하, 카드 가능",
         rating: "Google 약 4.3–4.4 (리뷰 사이트 기준)"
       },
@@ -777,7 +777,7 @@
         when: "저녁, 약 19:00–20:05",
         text: "든든한 체코 요리를 동네 가격에 파는 지슈코프의 소박한 선술집 – 리에그로비 사디에서 10–15분.",
         why: "일몰 뒤에 딱 좋고, 중앙역까지 약 20분입니다.",
-        hoursNote: "조사 결과 약 11–24시 – 확인 필요.",
+        hoursNote: "조사 결과 약 11–24시 – 영업시간 확인 필요.",
         price: "€ (추정)",
         note: "현금을 챙기고 금요일 저녁은 예약하세요."
       },
@@ -785,7 +785,7 @@
         cuisine: "아시아 요리 (등록 정보상 베트남식 & 채식)",
         when: "저녁 대안, 중앙역에서 약 12분",
         text: "찾은 정보에 따르면 오리 요리, 소고기 쌀국수, 월남쌈을 파는 아시아 식당입니다. 저장한 장소가 한식당이라면 다른 곳입니다.",
-        hoursNote: "영업시간을 찾지 못함 – Google 지도에서 확인하세요.",
+        hoursNote: "11–21:30 (Google 지도 기준).",
         price: "약 200–300 CZK",
         rating: "4.5 (리뷰 사이트 기준)"
       },
