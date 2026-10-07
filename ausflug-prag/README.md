@@ -42,7 +42,6 @@ Recherche: **07.10.2026**, über Suchergebnisse (Direktabrufe waren gesperrt). K
 - **Trdelník** ist entgegen der Werbung kein traditionell tschechisches Gebäck.
 - Bezahlt wird in **Kronen (CZK)**; bei Kartenzahlung immer in CZK zahlen.
 - **Sonnenuntergang** am 9.10.2026 ca. 18:25 Uhr (noch Sommerzeit; Zeitumstellung am 25.10.).
-- **Unsichere Angaben** (in der App als „prüfen“ markiert): Öffnungszeiten von Zubang, Malatang No.1, K-Remember und The Kimchi; Adresse von Budvarka Dejvice (Wuchterlova 22, Stand 2010) und U Houdků; K-Remember ist laut Eintrag vietnamesisch/vegetarisch.
-- **Nicht aufgenommen**, weil keine Adresse gefunden wurde: *Coffee Star Origins & Blends* und *K-Food* (koreanischer Lebensmittelladen).
+- **Laut Google Maps** (vom Nutzer übermittelt): Zubang 11:45–16 und 17–22, Malatang No.1 11–22, K-Remember (vietnamesisch) 11–21:30, U Houdků 11–24, The Kimchi freitags 11–15 und 16:30–21 Uhr; Adressen Budvarka (Wuchterlova 336/22), U Houdků (Bořivojova 693/110) und K-Food (Koněvova 1185/102, Kartenpunkt ungefähr).
 
 > Bitte am Reisetag aktuelle Abfahrtszeiten und Öffnungszeiten prüfen.
