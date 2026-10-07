@@ -505,6 +505,13 @@
   // ------------------------------------------------------------------ Inhalte nach id
   var content = {
     en: {
+      "c-kfood": {
+        text: "Small Korean grocery with ramyeon, rice, sauces and snacks – for shopping, not a café. Map pin is approximate.",
+        hoursNote: "Opening hours not found – check in Google Maps.",
+        special: "Korean groceries",
+        price: "€",
+        distance: "approx. 15 min on foot from U Houdků (off the route)"
+      },
       "pr-antik": {
         name: "Antikvariát Dlážděná (ADPlus)",
         text: "A large antiquarian bookshop with over 24,000 books, old prints, maps and graphics – between Náměstí Republiky and Masaryk station.",
@@ -577,21 +584,21 @@
         when: "Dinner, approx. 19:00–20:05",
         text: "A rustic Žižkov pub with hearty Czech food at neighbourhood prices – only 10–15 min from Riegrovy sady.",
         why: "Perfect after the sunset, and only about 20 min from the main station.",
-        hoursNote: "Per research approx. 11 am–midnight – please check the opening hours.",
+        hoursNote: "11 am–midnight (per Google Maps).",
         price: "€ (estimate)",
         note: "Bring cash and reserve for Friday evening."
       },
       "k-remember": {
-        cuisine: "Asian (per listing Vietnamese & vegetarian)",
+        cuisine: "Vietnamese, vegetarian options too",
         when: "Dinner alternative, approx. 12 min from the main station",
-        text: "The listing found describes an Asian restaurant with duck, beef noodles and summer rolls. If your saved place is Korean, it is a different restaurant.",
+        text: "Vietnamese restaurant with duck, beef noodles, summer rolls and vegetarian dishes – close to the main station, good for dinner before the train.",
         hoursNote: "11 am–9:30 pm (per Google Maps).",
         price: "approx. 200–300 CZK",
         rating: "4.5 (per review site)"
       },
       "c-kimchi": {
         text: "Korean guesthouse (minbak) “Dobrý Praha”; according to blogs, breakfast is served in the Korean bistro The Kimchi in the same building. Not needed for the day trip – saved as an address for an overnight stay.",
-        hoursNote: "Opening hours not found – check in Google Maps.",
+        hoursNote: "Friday 11 am–3 pm and 4:30–9 pm (per Google Maps); other days may differ.",
         special: "Korean bistro",
         price: "€€ (estimate)",
         distance: "approx. 3 min from the bookshop"
@@ -705,6 +712,13 @@
       }
     },
     ko: {
+      "c-kfood": {
+        text: "라면, 쌀, 소스, 과자를 파는 작은 한국 식료품점 – 카페가 아니라 장보기용입니다. 지도 위치는 대략적입니다.",
+        hoursNote: "영업시간을 찾지 못함 – Google 지도에서 확인하세요.",
+        special: "한국 식료품",
+        price: "€",
+        distance: "우 호우드쿠에서 걸어서 약 15분 (동선 밖)"
+      },
       "pr-antik": {
         name: "들라주데나 고서점 (ADPlus)",
         text: "책 24,000권 이상과 옛 인쇄물, 지도, 판화를 갖춘 큰 고서점 – 공화국 광장과 마사리크역 사이에 있습니다.",
@@ -777,21 +791,21 @@
         when: "저녁, 약 19:00–20:05",
         text: "든든한 체코 요리를 동네 가격에 파는 지슈코프의 소박한 선술집 – 리에그로비 사디에서 10–15분.",
         why: "일몰 뒤에 딱 좋고, 중앙역까지 약 20분입니다.",
-        hoursNote: "조사 결과 약 11–24시 – 영업시간 확인 필요.",
+        hoursNote: "11–24시 (Google 지도 기준).",
         price: "€ (추정)",
         note: "현금을 챙기고 금요일 저녁은 예약하세요."
       },
       "k-remember": {
-        cuisine: "아시아 요리 (등록 정보상 베트남식 & 채식)",
+        cuisine: "베트남 요리, 채식 메뉴도 있음",
         when: "저녁 대안, 중앙역에서 약 12분",
-        text: "찾은 정보에 따르면 오리 요리, 소고기 쌀국수, 월남쌈을 파는 아시아 식당입니다. 저장한 장소가 한식당이라면 다른 곳입니다.",
+        text: "오리 요리, 소고기 쌀국수, 월남쌈과 채식 메뉴가 있는 베트남 식당 – 중앙역과 가까워 기차 타기 전 저녁으로 좋습니다.",
         hoursNote: "11–21:30 (Google 지도 기준).",
         price: "약 200–300 CZK",
         rating: "4.5 (리뷰 사이트 기준)"
       },
       "c-kimchi": {
         text: "한인민박 ‘도브리 프라하’. 블로그에 따르면 같은 건물의 한식 비스트로 The Kimchi에서 아침을 줍니다. 당일 여행에는 필요 없지만 숙박용 주소로 저장해 두었습니다.",
-        hoursNote: "영업시간을 찾지 못함 – Google 지도에서 확인하세요.",
+        hoursNote: "금요일 11–15시, 16:30–21시 (Google 지도 기준); 다른 요일은 다를 수 있음.",
         special: "한식 비스트로",
         price: "€€ (추정)",
         distance: "고서점에서 약 3분"

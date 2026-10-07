@@ -297,7 +297,7 @@
       text: "Urige Žižkover Kneipe mit deftiger tschechischer Küche zu Nachbarschaftspreisen – nur 10–15 Min. vom Riegrovy sady.",
       why: "Perfekt nach dem Sonnenuntergang, und vom Hauptbahnhof nur ca. 20 Min. entfernt.",
       hours: hours({ "Mo-So": [["11:00", "23:59"]] }),
-      hoursNote: "Laut Recherche ca. 11–24 Uhr – Öffnungszeiten bitte prüfen.",
+      hoursNote: "11–24 Uhr (laut Google Maps).",
       price: "€ (Einschätzung)",
       rating: null,
       note: "Bargeld mitnehmen und für Freitagabend reservieren."
@@ -305,10 +305,10 @@
     {
       id: "k-remember", role: "dinner", priority: "Alternative", city: "altstadt",
       name: "K-Remember", gmaps: "K-Remember Praha", lat: 50.09170, lon: 14.43380,
-      address: "Biskupská 1753/5, 110 00 Praha 1 (laut Bewertungsportal – prüfen)",
-      cuisine: "Asiatisch (laut Eintrag vietnamesisch & vegetarisch)",
+      address: "Biskupská 1753/5, 110 00 Praha 1",
+      cuisine: "Vietnamesisch, auch vegetarisch",
       when: "Alternative abends, ca. 12 Min. vom Hauptbahnhof",
-      text: "Der gefundene Eintrag beschreibt ein asiatisches Restaurant mit Ente, Rindfleischnudeln und Sommerrollen. Falls der gespeicherte Ort koreanisch ist, ist es ein anderes Lokal.",
+      text: "Vietnamesisches Restaurant mit Ente, Rindfleischnudeln, Sommerrollen und vegetarischen Gerichten – nah am Hauptbahnhof, gut als Abendessen vor dem Zug.",
       hours: hours({ "Mo-So": [["11:00", "21:30"]] }),
       hoursNote: "11–21:30 Uhr (laut Google Maps).",
       price: "ca. 200–300 CZK",
@@ -328,10 +328,18 @@
     {
       id: "c-kimchi", city: "altstadt", name: "Dobrý Praha / The Kimchi", gmaps: "The Kimchi Havlíčkova Praha", lat: 50.08820, lon: 14.43350,
       address: "Havlíčkova 1682/15, Praha 1 (The Kimchi; Adresse des Minbaks unbestätigt)",
-      hours: null,
-      hoursNote: "Öffnungszeiten nicht gefunden – in Google Maps prüfen.",
+      hours: hours({ "Mo-So": [["11:00", "15:00"], ["16:30", "21:00"]] }),
+      hoursNote: "Freitag 11–15 und 16:30–21 Uhr (laut Google Maps); andere Tage können abweichen.",
       text: "Koreanisches Gästehaus (Minbak) „Dobrý Praha“; laut Blogs gibt es das Frühstück im koreanischen Bistro The Kimchi im selben Haus. Für den Tagesausflug nicht nötig – als Adresse für eine Übernachtung gespeichert.",
       special: "Koreanisches Bistro", price: "€€ (Einschätzung)", distance: "ca. 3 Min. vom Antiquariat"
+    },
+    {
+      id: "c-kfood", city: "vinohrady", name: "K-Food", gmaps: "K-Food, Koněvova 1185/102, Praha 3", lat: 50.08770, lon: 14.46250,
+      address: "Koněvova 1185/102, 130 00 Praha 3 (Žižkov)",
+      hours: null,
+      hoursNote: "Öffnungszeiten nicht gefunden – in Google Maps prüfen.",
+      text: "Kleiner koreanischer Lebensmittelladen mit Ramyeon, Reis, Soßen und Snacks – zum Einkaufen, kein Café. Kartenpunkt nur ungefähr.",
+      special: "Koreanische Lebensmittel", price: "€", distance: "ca. 15 Min. zu Fuß von U Houdků (abseits der Route)"
     },
     {
       id: "c-louvre", city: "vinohrady", name: "Café Louvre", lat: 50.08220, lon: 14.41870,
