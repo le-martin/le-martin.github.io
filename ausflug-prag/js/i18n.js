@@ -93,7 +93,7 @@
       planned: "Geplant",
       noRating: "Keine verlässliche Bewertungsübersicht gefunden – siehe Google Maps",
 
-      tagOut: "Hinfahrt", tagReturn: "Rückfahrt",
+      tagOut: "Hinfahrt", tagReturn: "Rückfahrt", planSwitchAria: "Tagesplan wählen",
       alternatives: "Alternativen",
       dirShort: function (d) { return "Ri. " + d; },
       connChecked: function (d) { return "Stand " + d + " · Beispielzeiten, bitte am Reisetag prüfen"; },
@@ -206,7 +206,7 @@
       planned: "Planned",
       noRating: "No reliable rating summary found – see Google Maps",
 
-      tagOut: "Outbound", tagReturn: "Return",
+      tagOut: "Outbound", tagReturn: "Return", planSwitchAria: "Choose day plan",
       alternatives: "Alternatives",
       dirShort: function (d) { return "to " + d; },
       connChecked: function (d) { return "As of " + d + " · example times, please check on the day of travel"; },
@@ -317,7 +317,7 @@
       planned: "예정",
       noRating: "믿을 만한 평점 정보를 찾지 못했습니다 – Google 지도 참고",
 
-      tagOut: "가는 길", tagReturn: "돌아오는 길",
+      tagOut: "가는 길", tagReturn: "돌아오는 길", planSwitchAria: "일정 선택",
       alternatives: "다른 교통편",
       dirShort: function (d) { return d + " 방면"; },
       connChecked: function (d) { return d + " 기준 · 예시 시간이니 여행 당일 확인하세요"; },
@@ -398,7 +398,11 @@
       travelIntro: "Am Freitag, 9.10., zeigt dieser Modus automatisch die nächste Station, Abfahrt und Gehzeit; vorher zählt er bis zur Abfahrt herunter. Zum Ausprobieren unten „Uhrzeit simulieren“ nutzen.",
       connChecked: function (d) { return "Stand " + d + " · Hinfahrt laut Suchergebnis, Rückfahrt unbestätigt – bitte prüfen"; },
       travelFoot: function (d) { return "Zugzeiten im DB Navigator bestätigen · Stand " + d; },
-      meetSub: "Mit Yeji · Railjet RJ 257 Richtung Graz ab 08:10 Uhr – Ticket vorher kaufen"
+      meetSub: "Mit Yeji · Railjet RJ 257 Richtung Graz ab 08:10 Uhr – Ticket vorher kaufen",
+      planMain: "Früh · ab 08:10", planLate: "Später · ab 10:10",
+      planMainNote: "Ganzer Tag mit allen Lieblingsorten inkl. Malatang-Snack.",
+      planLateNote: "Abfahrt 10:10 (unbestätigt), an ca. 12:25 – ohne Malatang, Strahov und Burg im Eiltempo.",
+      meetSubLate: "Mit Yeji · Zug ab 10:10 Uhr (unbestätigt) – Ticket vorher kaufen"
     },
     en: {
       docTitle: "Day Trip to Prague",
@@ -442,7 +446,11 @@
       travelIntro: "On Friday 9 Oct this mode automatically shows the next stop, departure and walking time; before that it counts down to departure. To try it out, use “Simulate time” below.",
       connChecked: function (d) { return "As of " + d + " · outbound per search results, return unconfirmed – please check"; },
       travelFoot: function (d) { return "Confirm train times in DB Navigator · as of " + d; },
-      meetSub: "With Yeji · Railjet RJ 257 towards Graz at 08:10 – buy your ticket in advance"
+      meetSub: "With Yeji · Railjet RJ 257 towards Graz at 08:10 – buy your ticket in advance",
+      planMain: "Early · from 08:10", planLate: "Later · from 10:10",
+      planMainNote: "Full day with all your favourites, including the malatang snack.",
+      planLateNote: "Departs 10:10 (unconfirmed), arrives approx. 12:25 – no malatang, Strahov and the castle at a brisk pace.",
+      meetSubLate: "With Yeji · train at 10:10 (unconfirmed) – buy your ticket in advance"
     },
     ko: {
       docTitle: "프라하 당일 여행",
@@ -486,7 +494,11 @@
       travelIntro: "10월 9일(금)에는 다음 장소, 출발 시간, 도보 시간을 자동으로 보여 주고, 그 전에는 출발까지 남은 시간을 셉니다. 미리 체험하려면 아래 ‘시간 시뮬레이션’을 사용하세요.",
       connChecked: function (d) { return d + " 기준 · 가는 열차는 검색 결과, 돌아오는 열차는 미확인 – 확인 필요"; },
       travelFoot: function (d) { return "열차 시간은 DB Navigator에서 확인하세요 · " + d + " 기준"; },
-      meetSub: "예지와 함께 · 그라츠행 레일젯 RJ 257, 08:10 출발 – 승차권은 미리 구입"
+      meetSub: "예지와 함께 · 그라츠행 레일젯 RJ 257, 08:10 출발 – 승차권은 미리 구입",
+      planMain: "이른 출발 · 08:10", planLate: "늦은 출발 · 10:10",
+      planMainNote: "마라탕 간식까지 저장한 장소를 모두 들르는 하루 일정.",
+      planLateNote: "10:10 출발 (미확인), 약 12:25 도착 – 마라탕은 빼고 스트라호프와 프라하 성은 빠르게.",
+      meetSubLate: "예지와 함께 · 10:10 출발 열차 (미확인) – 승차권은 미리 구입"
     }
   };
 
@@ -899,6 +911,24 @@
   // ------------------------------------------------------------------ Kurztexte (deutsches Original als Schlüssel)
   var phrases = {
     en: {
+      "Zug Richtung Praha – Ticket vorher kaufen (Deutschlandticket gilt nicht)": "Train towards Praha – buy your ticket in advance (Deutschlandticket not valid)",
+      "Zug Dresden Hbf → Praha hl. n.": "Train Dresden Hbf → Praha hl. n.",
+      "Abfahrt 10:10 unbestätigt · im DB Navigator prüfen": "10:10 departure unconfirmed · check in DB Navigator",
+      "Am Pulverturm vorbei zu Naše maso": "Past the Powder Tower to Naše maso",
+      "Mittagsandrang lässt nach": "the lunch rush is easing",
+      "Teynkirche ab 15 Uhr wieder offen": "Týn Church open again from 3 pm",
+      "Apostelumgang um 15:00 Uhr": "procession of the apostles at 3 pm",
+      "letzter Einlass 16:30 – nicht trödeln": "last entry 4:30 pm – don't dawdle",
+      "Durchs Burgareal bergab": "Downhill through the castle grounds",
+      "Veitsdom schließt um 17 Uhr – kurzer Blick": "St. Vitus closes at 5 pm – quick look",
+      "5 Stationen ohne Umstieg": "5 stops, no change",
+      "Dresden → Prag (später)": "Dresden → Prague (later)",
+      "⚠ Diese Abfahrt ist NICHT bestätigt: Gefunden wurden Railjets ab Dresden Hbf um 09:10 (an 11:25) und 11:10 (an 13:25) – die Züge fahren offenbar jeweils zur Minute :10. Bitte im DB Navigator für Fr, 9.10. prüfen; bei 09:10 wird der Tag entspannter, bei 11:10 Strahov und Burg streichen.": "⚠ This departure is NOT confirmed: Railjets were found from Dresden Hbf at 09:10 (arr. 11:25) and 11:10 (arr. 13:25) – trains apparently leave at :10 past the hour. Please check in DB Navigator for Fri 9 Oct; with 09:10 the day gets more relaxed, with 11:10 drop Strahov and the castle.",
+      "Railjet 09:10 → 11:25 (laut bahn.de, Stand März 2026)": "Railjet 09:10 → 11:25 (per bahn.de, as of March 2026)",
+      "Railjet 11:10 → 13:25 (laut Kombo)": "Railjet 11:10 → 13:25 (per Kombo)",
+      "Burg → Riegrovy sady": "Castle → Riegrovy sady",
+      "Beispielzeit – Metro A fährt alle paar Minuten und ohne Umstieg (5 Stationen). 30-Minuten-Ticket reicht.": "Example time – metro A runs every few minutes, no change needed (5 stops). A 30-minute ticket is enough.",
+      "Entspanntere Variante: Strahov und Burg auslassen, nach dem Orloj Malatang No.1 (ca. 15:30–16:15) und über den Wenzelsplatz mit Metro A ab Muzeum zum Riegrovy sady (ca. 17:00 da).": "More relaxed option: skip Strahov and the castle; after the Astronomical Clock have Malatang No.1 (approx. 15:30–16:15), then walk across Wenceslas Square and take metro A from Muzeum to Riegrovy sady (there by approx. 17:00).",
       "Treffen mit Yeji am Dresden Hauptbahnhof": "Meet Yeji at Dresden Hauptbahnhof",
       "Railjet Richtung Praha – Ticket vorher kaufen (Deutschlandticket gilt nicht)": "Railjet towards Praha – buy your ticket in advance (Deutschlandticket not valid)",
       "Fußweg zum Antikvariát Dlážděná": "Walk to Antikvariát Dlážděná",
@@ -1039,6 +1069,24 @@
       "Wetter: Open-Meteo (kostenlos, ohne API-Schlüssel)": "Weather: Open-Meteo (free, no API key)"
     },
     ko: {
+      "Zug Richtung Praha – Ticket vorher kaufen (Deutschlandticket gilt nicht)": "프라하행 열차 – 승차권은 미리 구입 (도이칠란트티켓 불가)",
+      "Zug Dresden Hbf → Praha hl. n.": "열차 드레스덴 중앙역 → 프라하 중앙역",
+      "Abfahrt 10:10 unbestätigt · im DB Navigator prüfen": "10:10 출발 미확인 · DB Navigator에서 확인",
+      "Am Pulverturm vorbei zu Naše maso": "화약탑을 지나 나셰 마소로",
+      "Mittagsandrang lässt nach": "점심 붐비는 시간이 지나가요",
+      "Teynkirche ab 15 Uhr wieder offen": "틴 성당 15시부터 다시 개방",
+      "Apostelumgang um 15:00 Uhr": "15시 사도 행렬",
+      "letzter Einlass 16:30 – nicht trödeln": "마지막 입장 16:30 – 서두르세요",
+      "Durchs Burgareal bergab": "프라하 성 구역을 지나 내리막으로",
+      "Veitsdom schließt um 17 Uhr – kurzer Blick": "성 비투스 대성당 17시 마감 – 잠깐 보기",
+      "5 Stationen ohne Umstieg": "환승 없이 5정거장",
+      "Dresden → Prag (später)": "드레스덴 → 프라하 (늦은 출발)",
+      "⚠ Diese Abfahrt ist NICHT bestätigt: Gefunden wurden Railjets ab Dresden Hbf um 09:10 (an 11:25) und 11:10 (an 13:25) – die Züge fahren offenbar jeweils zur Minute :10. Bitte im DB Navigator für Fr, 9.10. prüfen; bei 09:10 wird der Tag entspannter, bei 11:10 Strahov und Burg streichen.": "⚠ 이 출발 시간은 확인되지 않았습니다: 드레스덴 중앙역 09:10 (11:25 도착)과 11:10 (13:25 도착) 레일젯만 찾았습니다 – 매시 10분에 출발하는 것으로 보입니다. DB Navigator에서 10월 9일(금)로 확인하세요. 09:10이면 여유가 생기고, 11:10이면 스트라호프와 프라하 성은 빼세요.",
+      "Railjet 09:10 → 11:25 (laut bahn.de, Stand März 2026)": "레일젯 09:10 → 11:25 (bahn.de 기준, 2026년 3월)",
+      "Railjet 11:10 → 13:25 (laut Kombo)": "레일젯 11:10 → 13:25 (Kombo 기준)",
+      "Burg → Riegrovy sady": "프라하 성 → 리에그로비 사디",
+      "Beispielzeit – Metro A fährt alle paar Minuten und ohne Umstieg (5 Stationen). 30-Minuten-Ticket reicht.": "예시 시간 – 지하철 A는 몇 분 간격으로 다니고 환승이 없습니다 (5정거장). 30분권이면 충분합니다.",
+      "Entspanntere Variante: Strahov und Burg auslassen, nach dem Orloj Malatang No.1 (ca. 15:30–16:15) und über den Wenzelsplatz mit Metro A ab Muzeum zum Riegrovy sady (ca. 17:00 da).": "여유로운 버전: 스트라호프와 프라하 성은 빼고, 천문시계 다음에 마라탕 No.1 (약 15:30–16:15), 그다음 바츨라프 광장을 지나 무제움역에서 지하철 A로 리에그로비 사디까지 (약 17:00 도착).",
       "Treffen mit Yeji am Dresden Hauptbahnhof": "드레스덴 중앙역에서 예지와 만나기",
       "Railjet Richtung Praha – Ticket vorher kaufen (Deutschlandticket gilt nicht)": "프라하행 레일젯 – 승차권은 미리 구입 (도이칠란트티켓 불가)",
       "Fußweg zum Antikvariát Dlážděná": "들라주데나 고서점까지 도보",
