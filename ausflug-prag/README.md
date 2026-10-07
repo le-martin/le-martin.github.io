@@ -7,6 +7,8 @@ Live: <https://le-martin.github.io/ausflug-prag/>
 > ⚠ **Das Deutschlandticket gilt im EC nach Prag nicht** – ein eigenes Ticket ist nötig (z. B. DB Sparpreis Europa).
 >
 > **Geplant für Freitag, 9. Oktober 2026** (`TRIP_DATE` in `js/data.js`): Countdown, Reisemodus und Wetter beziehen sich auf diesen Tag, saisonale Öffnungszeiten werden aus dem Reisedatum berechnet. Hinfahrt laut Suchergebnis: **Railjet RJ 257, Dresden Hbf 08:10 → Praha hl. n. 10:27**. Die **Rückfahrt ist noch nicht bestätigt** – beides vor der Buchung im DB Navigator prüfen. Für einen anderen Tag `TRIP_DATE` ändern (`null` = Beispielplan für „heute“).
+>
+> **Zwei Tagespläne** (Umschalter über der Timeline): *Früh* mit RJ 257 ab 08:10 und *Später* mit Abfahrt ca. 10:10 (unbestätigt; gefunden wurden Railjets um 09:10 und 11:10) – ohne Malatang, Strahov und Burg im Eiltempo. Definiert über `plans` und `planList` in `js/data.js`.
 
 ## Funktionen
 
