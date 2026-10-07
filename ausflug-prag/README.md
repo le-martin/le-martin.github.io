@@ -1,6 +1,6 @@
 # Tagesausflug Prag
 
-Interaktiver Reisebegleiter für einen Tagesausflug mit dem **EuroCity von Dresden nach Prag**: Altstadt mit Astronomischer Uhr und Karlsbrücke, Kleinseite und Prager Burg.
+Interaktiver Reisebegleiter für einen Tagesausflug mit dem **EuroCity von Dresden nach Prag**. Der Freitagsplan ist um gespeicherte Lieblingsorte gebaut: Antiquariat Dlážděná, Burger bei Naše maso, Astronomische Uhr, Kloster Strahov und Prager Burg, Malatang-Snack, Sonnenuntergang im Riegrovy sady und Abendessen bei U Houdků.
 
 Live: <https://le-martin.github.io/ausflug-prag/>
 
@@ -16,7 +16,7 @@ Wie beim [Oberlausitz-Reisebegleiter](../ausflug-oberlausitz/): Tages-Timeline, 
 
 ```
 ausflug-prag/
-├── index.html           # Seitengerüst (Bereiche: altstadt, burg)
+├── index.html           # Seitengerüst (Bereiche: altstadt, burg, vinohrady)
 ├── css/style.css        # Gestaltung (Hero mit Farbverlauf)
 ├── js/data.js           # ALLE Inhalte (Deutsch), inkl. monatsabhängiger Öffnungszeiten
 ├── js/i18n.js           # Oberflächentexte (common + trip) und EN/KO-Übersetzungen
@@ -39,5 +39,8 @@ Recherche: **07.10.2026**, über Suchergebnisse (Direktabrufe waren gesperrt). K
 - **Jüdisches Museum** samstags und an jüdischen Feiertagen geschlossen.
 - **Trdelník** ist entgegen der Werbung kein traditionell tschechisches Gebäck.
 - Bezahlt wird in **Kronen (CZK)**; bei Kartenzahlung immer in CZK zahlen.
+- **Sonnenuntergang** am 9.10.2026 ca. 18:25 Uhr (noch Sommerzeit; Zeitumstellung am 25.10.).
+- **Unsichere Angaben** (in der App als „prüfen“ markiert): Öffnungszeiten von Zubang, Malatang No.1, K-Remember und The Kimchi; Adresse von Budvarka Dejvice (Wuchterlova 22, Stand 2010) und U Houdků; K-Remember ist laut Eintrag vietnamesisch/vegetarisch.
+- **Nicht aufgenommen**, weil keine Adresse gefunden wurde: *Coffee Star Origins & Blends* und *K-Food* (koreanischer Lebensmittelladen).
 
 > Bitte am Reisetag aktuelle Abfahrtszeiten und Öffnungszeiten prüfen.
