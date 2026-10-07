@@ -6,9 +6,14 @@ Live: <https://le-martin.github.io/ausflug-prag/>
 
 > ⚠ **Das Deutschlandticket gilt im EC nach Prag nicht** – ein eigenes Ticket ist nötig (z. B. DB Sparpreis Europa).
 >
-> **Geplant für Freitag, 9. Oktober 2026** (`TRIP_DATE` in `js/data.js`): Countdown, Reisemodus und Wetter beziehen sich auf diesen Tag, saisonale Öffnungszeiten werden aus dem Reisedatum berechnet. Hinfahrt laut Suchergebnis: **Railjet RJ 257, Dresden Hbf 08:10 → Praha hl. n. 10:27**. Die **Rückfahrt ist noch nicht bestätigt** – beides vor der Buchung im DB Navigator prüfen. Für einen anderen Tag `TRIP_DATE` ändern (`null` = Beispielplan für „heute“).
+> **Geplant für Freitag, 9. Oktober 2026** (`TRIP_DATE` in `js/data.js`): Countdown, Reisemodus und Wetter beziehen sich auf diesen Tag, saisonale Öffnungszeiten werden aus dem Reisedatum berechnet. Für einen anderen Tag `TRIP_DATE` ändern (`null` = Beispielplan für „heute“).
 >
-> **Zwei Tagespläne** (Umschalter über der Timeline): *Früh* mit RJ 257 ab 08:10 und *Später* mit Abfahrt ca. 10:10 (unbestätigt; gefunden wurden Railjets um 09:10 und 11:10) – ohne Malatang, Strahov und Burg im Eiltempo. Definiert über `plans` und `planList` in `js/data.js`.
+> **Zwei Tagespläne** (Umschalter über der Timeline, `plans` + `planList` in `js/data.js`):
+> - *Früh*: **EC 459** Dresden Hbf 07:08 → Praha hl. n. 09:25 (Nachtzug aus Zürich, oft verspätet) – alle Wunschorte.
+> - *Später*: **RJ 171** 09:10 → 11:25 – Teynkirche nur von außen, Burg kurz und kostenlos. Eine Direktverbindung um 10:10 gibt es nicht.
+> - Rückfahrt in beiden Plänen: **RJ 170** Praha hl. n. 20:47 → Dresden Hbf 23:19 – der letzte sinnvolle Direktzug am selben Abend; spätestens 20:10 bei U Houdků aufbrechen.
+>
+> Die Zugzeiten stammen aus Fahrplanlisten (Direktabrufe von bahn.de/cd.cz waren gesperrt) – vor der Buchung im DB Navigator bestätigen.
 
 ## Funktionen
 
@@ -41,7 +46,9 @@ Recherche: **07.10.2026**, über Suchergebnisse (Direktabrufe waren gesperrt). K
 - **Jüdisches Museum** samstags und an jüdischen Feiertagen geschlossen.
 - **Trdelník** ist entgegen der Werbung kein traditionell tschechisches Gebäck.
 - Bezahlt wird in **Kronen (CZK)**; bei Kartenzahlung immer in CZK zahlen.
-- **Sonnenuntergang** am 9.10.2026 ca. 18:25 Uhr (noch Sommerzeit; Zeitumstellung am 25.10.).
+- **Sonnenuntergang** am 9.10.2026 um 18:24 Uhr (eigene Berechnung, timeanddate: 18:23), hinter dem Burghügel einige Minuten früher; bürgerliche Dämmerung bis ca. 18:57. Noch Sommerzeit (Umstellung am 25.10.).
+- **PID-Tarif seit 1.1.2026**: 30 Min. 36 CZK (App) / 39 CZK (Automat), 24 Std. 140 / 150 CZK.
+- **Teynkirche**: freitags Messe um 15 Uhr, währenddessen keine Besichtigung.
 - **Laut Google Maps** (vom Nutzer übermittelt): Zubang 11:45–16 und 17–22, Malatang No.1 11–22, K-Remember (vietnamesisch) 11–21:30, U Houdků 11–24, The Kimchi freitags 11–15 und 16:30–21 Uhr; Adressen Budvarka (Wuchterlova 336/22), U Houdků (Bořivojova 693/110) und K-Food (Koněvova 1185/102, Kartenpunkt ungefähr).
 
 > Bitte am Reisetag aktuelle Abfahrtszeiten und Öffnungszeiten prüfen.

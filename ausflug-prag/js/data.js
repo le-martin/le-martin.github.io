@@ -1,6 +1,6 @@
 /*
  * Reisedaten: Tagesausflug Dresden → Prag (EuroCity).
- * Geplant für FREITAG, 9. Oktober 2026 (TRIP_DATE), Tagesausflug mit Yeji rund um
+ * Geplant für FREITAG, 9. Oktober 2026 (TRIP_DATE), zwei Pläne (EC 459 ab 07:08 / RJ 171 ab 09:10), Tagesausflug mit Yeji rund um
  * gespeicherte Essens-Tipps und den Sonnenuntergang im Riegrovy sady. Countdown, Reisemodus und Wetter
  * beziehen sich auf diesen Tag; saisonale Öffnungszeiten werden aus dem Reisedatum
  * berechnet. Für einen anderen Tag TRIP_DATE ändern (oder null = „heute“).
@@ -102,7 +102,7 @@
       hours: SUMMER || M === 2 || M === 10
         ? hours({ "Di-Sa": [["10:00", "13:00"], ["15:00", "17:00"]] })
         : hours({ "Di-Sa": [["10:00", "13:00"], ["15:00", "17:00"]], "So": [["10:30", "12:00"]] }),
-      hoursNote: "März–Nov: Di–Sa 10–13 und 15–17 Uhr, Mo und So geschlossen. Dez–Feb: zusätzlich So 10:30–12 Uhr. Spende empfohlen (ca. 50 CZK); während Messen keine Besichtigung.",
+      hoursNote: "März–Nov: Di–Sa 10–13 und 15–17 Uhr, Mo und So geschlossen. Dez–Feb: zusätzlich So 10:30–12 Uhr. Spende empfohlen (ca. 50 CZK); während Messen keine Besichtigung – freitags Messe um 15 Uhr.",
       verify: true
     },
     {
@@ -123,7 +123,7 @@
       why: "Einer der schönsten Bibliothekssäle der Welt – und vom Klostergarten ein weiter Blick über Prag.",
       duration: "45–60 Min.", walkFrom: { label: "von der Tram", text: "ca. 3 Min. von der Haltestelle Pohořelec" },
       hours: hours({ "Mo-So": [["09:00", "17:00"]] }), hoursLabel: "Bibliothek",
-      hoursNote: "Täglich 9–17 Uhr, Kasse bis 16:15, letzter Einlass 16:30 Uhr. Eintritt ca. 220 CZK (ältere Angabe 190 CZK – vor Ort prüfen). Die Säle sieht man von der Tür aus.",
+      hoursNote: "Täglich 9–17 Uhr, Kasse bis 16:15, letzter Einlass 16:30 Uhr. Eintritt 220 CZK, mit Strahover Galerie 390 CZK. Die Säle sieht man von der Tür aus.",
       verify: true, web: "https://www.strahovskyklaster.cz/"
     },
     {
@@ -158,10 +158,10 @@
     {
       id: "pr-riegrovy", city: "vinohrady", gmaps: "Riegrovy sady vyhlídka Praha", name: "Riegrovy sady (Aussichtspunkt)", lat: 50.08000, lon: 14.44100, photo: null,
       text: "Park auf dem Hügel von Vinohrady: Der Westhang blickt über die ganze Stadt bis zur Prager Burg; daneben liegt ein großer Biergarten.",
-      why: "Der Sonnenuntergangs-Treffpunkt der Prager – am 9. Oktober geht die Sonne gegen 18:25 Uhr hinter der Burg unter.",
+      why: "Der Sonnenuntergangs-Treffpunkt der Prager – am 9. Oktober geht die Sonne um 18:24 Uhr unter, hinter dem Burghügel ein paar Minuten früher.",
       duration: "60 Min.", walkFrom: { label: "von der Metro", text: "ca. 8 Min. von Jiřího z Poděbrad (Metro A)" },
-      hoursNote: "Park jederzeit frei zugänglich. Der Biergarten hat ca. April–Oktober geöffnet – Anfang Oktober evtl. schon verkürzt, bei Regen geschlossen.",
-      extra: "Gegen 17:45 Uhr da sein, um einen Platz auf der Wiese zu bekommen; nach Sonnenuntergang wird es schnell kühl – Jacke mitnehmen.",
+      hoursNote: "Park jederzeit frei zugänglich. Energy Pub (Biergarten): Bier & Grill Mo–Fr 14–22, Sa–So 12–22 Uhr, Café täglich 10–20 Uhr, laut prague.eu ganzjährig – ob draußen ausgeschenkt wird, hängt vom Wetter ab.",
+      extra: "Gegen 18 Uhr da sein, um einen Platz auf der Wiese zu bekommen; nach Sonnenuntergang wird es schnell kühl – Jacke mitnehmen.",
       hours: null, alwaysOpen: true
     }
   ];
@@ -225,11 +225,11 @@
       name: "Naše maso", gmaps: "Naše maso Dlouhá Praha", lat: 50.09040, lon: 14.42620,
       address: "Dlouhá 727/39, 110 00 Praha 1",
       cuisine: "Metzgerei mit Burgern, Sekaná (Hackbraten) und Würsten",
-      when: "Frühes Mittagessen, ca. 11:40–12:25 Uhr",
+      when: "Mittagessen (Früh: 11:10, Später: 12:35 Uhr)",
       text: "Kleine Metzgerei mit Theke und Stehtischen – Burger und Hackbraten werden frisch aus dem eigenen Fleisch gemacht.",
-      why: "Einer der bekanntesten Burger Prags; vor 12 Uhr ist die Schlange noch kurz.",
-      hours: hours({ "Mo-Sa": [["11:00", "20:00"]] }),
-      hoursNote: "Laut Recherche Mo–Sa ab ca. 10/11 bis 20–22 Uhr (Quellen widersprechen sich), So geschlossen.",
+      why: "Einer der bekanntesten Burger Prags; vor 12 Uhr ist die Schlange noch kurz. Bei mehr als 20 Min. Wartezeit: Burger zum Mitnehmen.",
+      hours: hours({ "Mo-Do": [["11:00", "22:00"]], "Fr-Sa": [["10:00", "22:00"]] }),
+      hoursNote: "Mo–Do 11–22, Fr–Sa 10–22 Uhr, So geschlossen (prague.eu).",
       price: "Burger ca. 200–250 CZK (Schätzung)",
       rating: null,
       phone: "+420222311378", web: "https://nasemaso.ambi.cz/en",
@@ -253,7 +253,7 @@
       name: "Malatang No.1", gmaps: "Malatang No.1 Vodičkova Praha", lat: 50.08120, lon: 14.42470,
       address: "Vodičkova 33, 110 00 Praha 1",
       cuisine: "Chinesischer Malatang (scharfer Suppentopf zum Selbstzusammenstellen)",
-      when: "Snack am Nachmittag, ca. 16:25–17:05 Uhr",
+      when: "Snack am Nachmittag (Früh: 16:45, Später: 17:00 Uhr)",
       text: "Zutaten selbst in die Schüssel legen, wiegen lassen und als scharfe Suppe kochen lassen; Soße selbst mischen.",
       why: "Kleine Portion zum Teilen reicht – das Abendessen kommt um 19 Uhr.",
       hours: hours({ "Mo-So": [["11:00", "22:00"]] }),
@@ -293,14 +293,14 @@
       name: "U Houdků", gmaps: "U Houdků Praha", lat: 50.08030, lon: 14.45080,
       address: "Bořivojova 693/110, 130 00 Praha 3 (Žižkov)",
       cuisine: "Günstige tschechische Kneipenküche",
-      when: "Abendessen, ca. 19:00–20:05 Uhr",
+      when: "Abendessen, 19:00–20:00 Uhr",
       text: "Urige Žižkover Kneipe mit deftiger tschechischer Küche zu Nachbarschaftspreisen – nur 10–15 Min. vom Riegrovy sady.",
       why: "Perfekt nach dem Sonnenuntergang, und vom Hauptbahnhof nur ca. 20 Min. entfernt.",
       hours: hours({ "Mo-So": [["11:00", "23:59"]] }),
       hoursNote: "11–24 Uhr (laut Google Maps).",
       price: "€ (Einschätzung)",
       rating: null,
-      note: "Bargeld mitnehmen und für Freitagabend reservieren."
+      note: "Für Freitag 19 Uhr reservieren. Kartenzahlung laut Website möglich (unbestätigt) – etwas Bargeld mitnehmen. Spätestens 20:10 Uhr zum Bahnhof aufbrechen."
     },
     {
       id: "k-remember", role: "dinner", priority: "Alternative", city: "altstadt",
@@ -351,131 +351,131 @@
     }
   ];
 
-  // ---------------------------------------------------------------- Verbindungen (BEISPIELZEITEN)
+  // ---------------------------------------------------------------- Verbindungen (Züge laut Recherche 07.10.2026, Metro/Tram BEISPIELZEITEN)
   var connections = {
     hin: {
       id: "hin", title: "Dresden → Prag", legs: [
-        { mode: "train", line: "RJ 257", dir: "Graz Hbf", dep: "08:10", from: "Dresden Hbf", fromPl: "Gleis prüfen", arr: "10:27", to: "Praha hl. n.", toPl: "Gleis prüfen", toCity: "Praha" }
+        { mode: "train", line: "EC 459", dir: "Praha hl. n.", dep: "07:08", from: "Dresden Hbf", fromPl: "Gleis prüfen", arr: "09:25", to: "Praha hl. n.", toPl: "Gleis prüfen", toCity: "Praha" }
       ],
-      note: "Laut Suchergebnis fährt am Morgen der Railjet RJ 257 (Richtung Graz) ab Dresden Hbf 08:10, an Praha hl. n. 10:27 – bitte im DB Navigator für Fr, 9.10. bestätigen und das Ticket zuggebunden buchen. ⚠ Allgemein: Der EuroCity fährt etwa alle 2 Stunden (ca. 2:15–2:30 h) durchs Elbtal über Bad Schandau, Děčín und Ústí nad Labem; er hält auch in Dresden-Neustadt. Das Deutschlandticket gilt im EC NICHT – Ticket z. B. als DB Sparpreis Europa (ab ca. 18 €). Reservierung meist freiwillig, im Sommer teils Pflicht – bitte prüfen.",
-      alts: ["FlixBus ab Dresden Hbf nach Praha Florenc in ca. 1:50 h (ca. 15–20 Min. zu Fuß zur Altstadt).", "Regional über Bad Schandau und Děčín: deutlich langsamer (ca. 3–3,5 h); das Deutschlandticket gilt nur bis Bad Schandau."]
+      note: "Laut Fahrplanlisten fährt der EC 459 (Nachtzug „Canopus“ aus Zürich, auch als EN 40459 geführt) ab Dresden Hbf 07:08, an Praha hl. n. 09:25. ⚠ Er ist oft verspätet (laut Zugfinder im Schnitt ca. 24 Min.) – der Plan fängt bis ca. 45 Min. auf, weil das Antiquariat bis 18 Uhr offen hat. Bitte im DB Navigator für Fr, 9.10. bestätigen. Das Deutschlandticket gilt NICHT; Sparpreis Europa ab ca. 15 € pro Person und Richtung, Sitzplatz mitbuchen.",
+      alts: ["RJ 251 ab 08:09 → Praha-Holešovice 10:22 (nicht Hauptbahnhof!) – von dort mit Metro C in die Stadt.", "RJ 171 ab 09:10 → Praha hl. n. 11:25 – siehe Plan „Später“."]
     },
     strahov: {
       id: "strahov", title: "Altstadt → Kloster Strahov", legs: [
-        { mode: "metro", line: "Metro A", dir: "Nemocnice Motol", dep: "13:12", from: "Staroměstská", fromPl: "Bahnsteig A", arr: "13:14", to: "Malostranská", toCity: "Malostranská" },
-        { mode: "tram", line: "Tram 22", dir: "Bílá Hora", dep: "13:19", from: "Malostranská", fromPl: "Haltestelle prüfen", arr: "13:29", to: "Pohořelec", toCity: "Pohořelec" }
+        { mode: "metro", line: "Metro A", dir: "Nemocnice Motol", dep: "13:15", from: "Staroměstská", fromPl: "Bahnsteig A", arr: "13:18", to: "Malostranská", toCity: "Malostranská" },
+        { mode: "tram", line: "Tram 22", dir: "Bílá Hora", dep: "13:25", from: "Malostranská", fromPl: "Haltestelle prüfen", arr: "13:40", to: "Pohořelec", toCity: "Pohořelec" }
       ],
-      note: "Beispielzeiten – Metro A fährt alle paar Minuten, Tram 22 etwa alle 5–10 Min. Fahrschein (PID): 30-Minuten-Ticket 39 CZK am Automaten bzw. 36 CZK in der App „PID Lítačka“ – reicht für Metro + Tram; Papiertickets vor dem Bahnsteig bzw. beim Einsteigen entwerten.",
+      note: "Beispielzeiten – Metro A fährt alle paar Minuten, Tram 22 etwa alle 5–10 Min.; mit Rolltreppen, Umstieg und Warten 40–45 Min. einplanen. Fahrschein (PID): 30-Minuten-Ticket 36 CZK in der App „PID Lítačka“ bzw. 39 CZK am Automaten – reicht für Metro + Tram; Papiertickets entwerten.",
       alts: ["Zu Fuß über Karlsbrücke und Nerudova: ca. 40 Min., die letzten 20 Min. bergauf."]
     },
     abend: {
-      id: "abend", title: "Burg → Wenzelsplatz → Riegrovy sady", legs: [
-        { mode: "metro", line: "Metro A", dir: "Depo Hostivař", dep: "16:12", from: "Malostranská", fromPl: "Bahnsteig A", arr: "16:16", to: "Můstek", toCity: "Můstek" },
-        { mode: "walk", text: "Malatang No.1 und über den Wenzelsplatz zur Metro Muzeum" },
-        { mode: "metro", line: "Metro A", dir: "Depo Hostivař", dep: "17:22", from: "Muzeum", fromPl: "Bahnsteig A", arr: "17:25", to: "Jiřího z Poděbrad", toCity: "Jiřího z Poděbrad" }
+      id: "abend", title: "Burg → Malatang → Riegrovy sady", legs: [
+        { mode: "metro", line: "Metro A", dir: "Depo Hostivař", dep: "16:20", from: "Malostranská", fromPl: "Bahnsteig A", arr: "16:24", to: "Můstek", toCity: "Můstek" },
+        { mode: "walk", text: "Malatang No.1, danach zu Fuß zum Riegrovy sady (ca. 1,5 km · 30–35 Min. bis zur Wiese)" }
       ],
-      note: "Beispielzeiten – Metro A fährt alle paar Minuten. Für jede Fahrt ein neues 30-Minuten-Ticket (oder gleich ein 24-Stunden-Ticket für ca. 120 CZK kaufen).",
-      alts: ["Von Malatang No.1 zu Fuß zum Riegrovy sady: ca. 2 km, 25–30 Min. über die Vinohradská."]
+      note: "Beispielzeit – Metro A fährt alle paar Minuten. Einzelne 30-Minuten-Tickets sind günstiger als das 24-Stunden-Ticket (140 CZK in der App, 150 CZK am Automaten).",
+      alts: ["Statt zu laufen: Metro A ab Muzeum bis Jiřího z Poděbrad (2 Stationen), dann ca. 8 Min. zu Fuß."]
     },
     rueck: {
       id: "rueck", title: "Prag → Dresden", options: [
         { label: "Empfohlen", legs: [
-          { mode: "walk", text: "Von U Houdků zu Fuß zum Hauptbahnhof (ca. 1,8 km · 25 Min.) oder Tram 5/9/26 bis Hlavní nádraží", buffer: "ca. 15 Min. Puffer" },
-          { mode: "train", line: "EC", dir: "Dresden Hbf", dep: "20:47", from: "Praha hl. n.", fromPl: "Gleis prüfen", arr: "23:05", to: "Dresden Hbf", toPl: "Gleis prüfen", toCity: "Dresden" }
-        ], info: "Beispielzeiten · letzte Direktverbindung laut Recherche ca. 20:47 Uhr" },
+          { mode: "walk", text: "Von U Houdků zum Hauptbahnhof – bis zum Gleis ca. 25 Min. einplanen", buffer: "ca. 20 Min. Puffer" },
+          { mode: "train", line: "RJ 170", dir: "Dresden Hbf", dep: "20:47", from: "Praha hl. n.", fromPl: "Gleis prüfen", arr: "23:19", to: "Dresden Hbf", toPl: "Gleis prüfen", toCity: "Dresden" }
+        ], info: "Laut Fahrplanlisten · letzter sinnvoller Direktzug am selben Abend" },
         { label: "Früher", legs: [
-          { mode: "train", line: "EC", dir: "Dresden Hbf", dep: "17:02", from: "Praha hl. n.", fromPl: "Gleis prüfen", arr: "19:24", to: "Dresden Hbf", toPl: "Gleis prüfen", toCity: "Dresden" }
-        ], info: "Laut Suchergebnis · dann ohne Sonnenuntergang und Abendessen" }
+          { mode: "train", line: "EC 458", dir: "Dresden Hbf", dep: "18:31", from: "Praha hl. n.", fromPl: "Gleis prüfen", arr: "20:58", to: "Dresden Hbf", toPl: "Gleis prüfen", toCity: "Dresden" }
+        ], info: "Laut Fahrplanlisten · dann ohne Sonnenuntergang und Abendessen" }
       ],
-      note: "⚠ Die Rückfahrzeiten sind nicht bestätigt (Suchergebnisse widersprechen sich). Vor der Buchung im DB Navigator für Fr, 9.10. prüfen – der Zug fährt etwa alle 2 Stunden; Ticket zuggebunden buchen."
+      note: "⚠ Spätestens 20:10 Uhr bei U Houdků aufbrechen. Danach gibt es laut Recherche nur eine unsichere Verbindung um 22:32 (an ca. 01:36, evtl. mit Umstiegen) oder den Nachtzug um 03:14. Zeiten im DB Navigator für Fr, 9.10. prüfen; Ticket zuggebunden buchen."
+    },
+    hin2: {
+      id: "hin2", title: "Dresden → Prag (später)", legs: [
+        { mode: "train", line: "RJ 171", dir: "Praha hl. n.", dep: "09:10", from: "Dresden Hbf", fromPl: "Gleis prüfen", arr: "11:25", to: "Praha hl. n.", toPl: "Gleis prüfen", toCity: "Praha" }
+      ],
+      note: "Laut Fahrplanlisten fährt der RJ 171 ab Dresden Hbf 09:10 (DB-Aushang: 09:07), an Praha hl. n. 11:25. Eine Direktverbindung um 10:10 gibt es nicht. Bitte im DB Navigator für Fr, 9.10. bestätigen; Deutschlandticket gilt nicht.",
+      alts: ["Notlösung RJ 173 ab 11:10 → 13:25: Antiquariat, Naše maso, Orloj um 16 Uhr, Malatang, Sonnenuntergang – ohne Strahov und Burg."]
+    },
+    strahov2: {
+      id: "strahov2", title: "Altstadt → Kloster Strahov", legs: [
+        { mode: "metro", line: "Metro A", dir: "Nemocnice Motol", dep: "14:15", from: "Staroměstská", fromPl: "Bahnsteig A", arr: "14:18", to: "Malostranská", toCity: "Malostranská" },
+        { mode: "tram", line: "Tram 22", dir: "Bílá Hora", dep: "14:25", from: "Malostranská", fromPl: "Haltestelle prüfen", arr: "14:40", to: "Pohořelec", toCity: "Pohořelec" }
+      ]
+    },
+    abend2: {
+      id: "abend2", title: "Burg → Malatang → Riegrovy sady", legs: [
+        { mode: "metro", line: "Metro A", dir: "Depo Hostivař", dep: "16:45", from: "Malostranská", fromPl: "Bahnsteig A", arr: "16:49", to: "Můstek", toCity: "Můstek" },
+        { mode: "walk", text: "Malatang No.1 und über den Wenzelsplatz zur Metro Muzeum" },
+        { mode: "metro", line: "Metro A", dir: "Depo Hostivař", dep: "17:48", from: "Muzeum", fromPl: "Bahnsteig A", arr: "17:51", to: "Jiřího z Poděbrad", toCity: "Jiřího z Poděbrad" }
+      ],
+      note: "Beispielzeiten – Metro A fährt alle paar Minuten. Wer Strahov nach 15:40 Uhr verlässt, lässt die Burg aus und fährt mit Tram 22 zurück nach Malostranská."
     }
   };
-  // Verbindungen für den späteren Plan (Abfahrt Dresden 10:10)
-  connections.hin2 = {
-    id: "hin2", title: "Dresden → Prag (später)", legs: [
-      { mode: "train", line: "RJ/EC", dir: "Praha hl. n.", dep: "10:10", from: "Dresden Hbf", fromPl: "Gleis prüfen", arr: "12:25", to: "Praha hl. n.", toPl: "Gleis prüfen", toCity: "Praha" }
-    ],
-    note: "⚠ Diese Abfahrt ist NICHT bestätigt: Gefunden wurden Railjets ab Dresden Hbf um 09:10 (an 11:25) und 11:10 (an 13:25) – die Züge fahren offenbar jeweils zur Minute :10. Bitte im DB Navigator für Fr, 9.10. prüfen; bei 09:10 wird der Tag entspannter, bei 11:10 Strahov und Burg streichen.",
-    alts: ["Railjet 09:10 → 11:25 (laut bahn.de, Stand März 2026)", "Railjet 11:10 → 13:25 (laut Kombo)"]
-  };
-  connections.strahov2 = {
-    id: "strahov2", title: "Altstadt → Kloster Strahov", legs: [
-      { mode: "metro", line: "Metro A", dir: "Nemocnice Motol", dep: "15:12", from: "Staroměstská", fromPl: "Bahnsteig A", arr: "15:14", to: "Malostranská", toCity: "Malostranská" },
-      { mode: "tram", line: "Tram 22", dir: "Bílá Hora", dep: "15:19", from: "Malostranská", fromPl: "Haltestelle prüfen", arr: "15:29", to: "Pohořelec", toCity: "Pohořelec" }
-    ],
-    note: connections.strahov.note,
-    alts: connections.strahov.alts
-  };
-  connections.abend2 = {
-    id: "abend2", title: "Burg → Riegrovy sady", legs: [
-      { mode: "metro", line: "Metro A", dir: "Depo Hostivař", dep: "17:17", from: "Malostranská", fromPl: "Bahnsteig A", arr: "17:28", to: "Jiřího z Poděbrad", toCity: "Jiřího z Poděbrad" }
-    ],
-    note: "Beispielzeit – Metro A fährt alle paar Minuten und ohne Umstieg (5 Stationen). 30-Minuten-Ticket reicht.",
-    alts: ["Entspanntere Variante: Strahov und Burg auslassen, nach dem Orloj Malatang No.1 (ca. 15:30–16:15) und über den Wenzelsplatz mit Metro A ab Muzeum zum Riegrovy sady (ca. 17:00 da)."]
-  };
+  connections.strahov2.note = connections.strahov.note;
+  connections.strahov2.alts = connections.strahov.alts;
   var connOrder = [["hin", "tagOut"], ["strahov", "tagTram"], ["abend", "tagEvening"], ["rueck", "tagReturn"]];
 
-  // ---------------------------------------------------------------- Tagesplan Freitag (BEISPIELZEITEN)
+  // ---------------------------------------------------------------- Plan „Früh“: EC 459 ab 07:08, alle Wunschorte
   var main = [
-    { s: "07:50", e: "08:10", kind: "meet", title: "Treffen mit Yeji am Dresden Hauptbahnhof", sub: "Railjet Richtung Praha – Ticket vorher kaufen (Deutschlandticket gilt nicht)", ref: "#oepnv", place: "dd_hbf" },
-    { s: "08:10", e: "10:27", kind: "train", dep: true, title: "Railjet RJ 257 Dresden Hbf → Praha hl. n.", sub: "laut Suchergebnis · im DB Navigator bestätigen", ref: "#c-hin", place: "dd_hbf", to: "pr_hln", major: true },
-    { s: "10:30", e: "10:45", kind: "walk", title: "Fußweg zum Antikvariát Dlážděná", sub: "ca. 900 m · 12 Min.", ref: "#pr-antik", place: "pr_hln", city: "Praha" },
-    { s: "10:45", e: "11:15", kind: "sight", title: "Antikvariát Dlážděná", sub: "nur werktags – heute die Chance", ref: "#pr-antik", sight: "pr-antik", major: true },
-    { s: "11:15", e: "11:20", kind: "walk", title: "Fußweg zum Pulverturm", sub: "ca. 400 m · 5 Min.", ref: "#pr-pulverturm" },
-    { s: "11:20", e: "11:30", kind: "sight", title: "Pulverturm & Gemeindehaus", sub: "kurzer Fotostopp", ref: "#pr-pulverturm", sight: "pr-pulverturm" },
-    { s: "11:30", e: "11:40", kind: "walk", title: "Fußweg zu Naše maso", sub: "ca. 600 m · 8 Min.", ref: "#nase-maso" },
-    { s: "11:40", e: "12:25", kind: "food", title: "Burger bei Naše maso", sub: "vor 12 Uhr ist die Schlange kurz", ref: "#nase-maso", major: true },
-    { s: "12:25", e: "12:35", kind: "walk", title: "Über die Dlouhá zum Altstädter Ring", sub: "ca. 500 m · 7 Min.", ref: "#pr-ring" },
-    { s: "12:35", e: "12:55", kind: "sight", title: "Altstädter Ring & Teynkirche", sub: "Teynkirche Di–Sa bis 13 Uhr", ref: "#pr-teyn", sight: "pr-teyn" },
-    { s: "12:55", e: "13:05", kind: "sight", title: "Astronomische Uhr (Orloj)", sub: "Apostelumgang um 13:00 Uhr", ref: "#pr-orloj", sight: "pr-orloj", major: true },
-    { s: "13:05", e: "13:12", kind: "walk", title: "Fußweg zur Metro Staroměstská", sub: "ca. 400 m · 5 Min.", ref: "#c-strahov", place: "pr_starom" },
-    { s: "13:12", e: "13:14", kind: "metro", dep: true, title: "Metro A → Malostranská", sub: "1 Station · 30-Min.-Ticket reicht bis Strahov", ref: "#c-strahov", place: "pr_starom", to: "pr_malostr", toCity: "Malostranská" },
-    { s: "13:19", e: "13:29", kind: "tram", dep: true, title: "Tram 22 → Pohořelec", sub: "ca. 10 Min. bergauf, vorbei an der Burg", ref: "#c-strahov", place: "pr_malostr", to: "pr_pohor", major: true },
-    { s: "13:29", e: "13:35", kind: "walk", title: "Fußweg zum Kloster Strahov", sub: "ca. 3 Min.", ref: "#pr-strahov", place: "pr_pohor", city: "Strahov" },
-    { s: "13:35", e: "14:35", kind: "sight", title: "Kloster Strahov & Bibliothek", sub: "Bibliothekssäle und Blick über Prag", ref: "#pr-strahov", sight: "pr-strahov", major: true },
-    { s: "14:35", e: "14:50", kind: "walk", title: "Über den Hradschiner Platz zur Burg", sub: "ca. 800 m · 12 Min.", ref: "#pr-burg", city: "Prager Burg" },
-    { s: "14:50", e: "15:50", kind: "sight", title: "Prager Burg & Veitsdom", sub: "Areal kostenlos · Dom bis 17 Uhr", ref: "#pr-veitsdom", sight: "pr-veitsdom", major: true },
-    { s: "15:50", e: "16:10", kind: "walk", title: "Abstieg über die Alte Schlossstiege", sub: "ca. 600 m · 15 Min. zur Metro Malostranská", ref: "#c-abend", place: "pr_malostr" },
-    { s: "16:12", e: "16:16", kind: "metro", dep: true, title: "Metro A → Můstek", sub: "3 Stationen", ref: "#c-abend", place: "pr_malostr", to: "pr_mustek", toCity: "Můstek" },
-    { s: "16:16", e: "16:25", kind: "walk", title: "Fußweg zu Malatang No.1", sub: "ca. 400 m · 6 Min.", ref: "#malatang", place: "pr_mustek" },
-    { s: "16:25", e: "17:05", kind: "food", title: "Snack bei Malatang No.1", sub: "kleine Schüssel teilen", ref: "#malatang", major: true },
-    { s: "17:05", e: "17:20", kind: "sight", title: "Über den Wenzelsplatz zur Metro Muzeum", sub: "ca. 600 m · am Nationalmuseum vorbei", ref: "#pr-wenzel", sight: "pr-wenzel" },
-    { s: "17:22", e: "17:25", kind: "metro", dep: true, title: "Metro A → Jiřího z Poděbrad", sub: "2 Stationen", ref: "#c-abend", place: "pr_muzeum", to: "pr_jzp", toCity: "Jiřího z Poděbrad" },
-    { s: "17:25", e: "17:35", kind: "walk", title: "Fußweg zum Riegrovy sady", sub: "ca. 700 m · 8 Min.", ref: "#pr-riegrovy", place: "pr_jzp", city: "Vinohrady" },
-    { s: "17:35", e: "18:45", kind: "sight", title: "Sonnenuntergang im Riegrovy sady", sub: "Sonne geht gegen 18:25 Uhr hinter der Burg unter", ref: "#pr-riegrovy", sight: "pr-riegrovy", major: true },
-    { s: "18:45", e: "19:00", kind: "walk", title: "Fußweg nach Žižkov zu U Houdků", sub: "ca. 1 km · 12 Min.", ref: "#houdku" },
-    { s: "19:00", e: "20:05", kind: "food", title: "Abendessen bei U Houdků", sub: "reservieren · Bargeld mitnehmen", ref: "#houdku", major: true },
-    { s: "20:05", e: "20:30", kind: "walk", title: "Zum Hauptbahnhof", sub: "ca. 1,8 km · 25 Min. (oder Tram 5/9/26)", ref: "#c-rueck", place: "pr_hln" },
-    { s: "20:30", e: "20:45", kind: "buffer", title: "Puffer am Bahnhof", sub: "Proviant kaufen, zum Gleis gehen", ref: "#c-rueck" },
-    { s: "20:47", e: "23:05", kind: "train", dep: true, title: "EC Praha hl. n. → Dresden Hbf", sub: "Zeit noch prüfen · Ticket zuggebunden", ref: "#c-rueck", place: "pr_hln", to: "dd_hbf", major: true }
+    { s: "06:45", e: "07:08", kind: "meet", title: "Treffen mit Yeji am Dresden Hauptbahnhof", sub: "EuroCity Richtung Praha – Ticket vorher kaufen (Deutschlandticket gilt nicht)", ref: "#oepnv", place: "dd_hbf" },
+    { s: "07:08", e: "09:25", kind: "train", dep: true, title: "EC 459 Dresden Hbf → Praha hl. n.", sub: "oft verspätet · im DB Navigator bestätigen", ref: "#c-hin", place: "dd_hbf", to: "pr_hln", major: true },
+    { s: "09:25", e: "10:00", kind: "walk", title: "Fußweg zum Antikvariát Dlážděná", sub: "ca. 550 m · mit Bahnhofsausgang 15–20 Min., Rest Puffer", ref: "#pr-antik", place: "pr_hln", city: "Praha" },
+    { s: "10:00", e: "10:40", kind: "sight", title: "Antikvariát Dlážděná", sub: "nur werktags – heute die Chance", ref: "#pr-antik", sight: "pr-antik", major: true },
+    { s: "10:40", e: "11:00", kind: "sight", title: "Pulverturm & Gemeindehaus", sub: "von außen", ref: "#pr-pulverturm", sight: "pr-pulverturm" },
+    { s: "11:00", e: "11:10", kind: "walk", title: "Fußweg zu Naše maso", sub: "ca. 600 m · 8 Min.", ref: "#nase-maso" },
+    { s: "11:10", e: "12:10", kind: "food", title: "Burger bei Naše maso", sub: "vor dem Mittagsandrang", ref: "#nase-maso", major: true },
+    { s: "12:10", e: "12:25", kind: "walk", title: "Über die Dlouhá zum Altstädter Ring", sub: "ca. 500 m · 7 Min.", ref: "#pr-ring" },
+    { s: "12:25", e: "12:45", kind: "sight", title: "Teynkirche", sub: "Fr bis 13 Uhr offen", ref: "#pr-teyn", sight: "pr-teyn" },
+    { s: "12:45", e: "13:05", kind: "sight", title: "Astronomische Uhr (Orloj)", sub: "Apostelumgang um 13:00 Uhr", ref: "#pr-orloj", sight: "pr-orloj", major: true },
+    { s: "13:05", e: "13:15", kind: "walk", title: "Fußweg zur Metro Staroměstská", sub: "ca. 400 m · 5 Min.", ref: "#c-strahov", place: "pr_starom" },
+    { s: "13:15", e: "13:18", kind: "metro", dep: true, title: "Metro A → Malostranská", sub: "1 Station · 30-Min.-Ticket reicht bis Strahov", ref: "#c-strahov", place: "pr_starom", to: "pr_malostr", toCity: "Malostranská" },
+    { s: "13:25", e: "13:40", kind: "tram", dep: true, title: "Tram 22 → Pohořelec", sub: "bergauf, vorbei an der Burg", ref: "#c-strahov", place: "pr_malostr", to: "pr_pohor", major: true },
+    { s: "13:40", e: "13:50", kind: "walk", title: "Fußweg zum Kloster Strahov", sub: "ca. 3 Min.", ref: "#pr-strahov", place: "pr_pohor", city: "Strahov" },
+    { s: "13:50", e: "14:35", kind: "sight", title: "Kloster Strahov & Bibliothek", sub: "Bibliothekssäle und Blick über Prag", ref: "#pr-strahov", sight: "pr-strahov", major: true },
+    { s: "14:35", e: "15:00", kind: "walk", title: "Über den Hradschiner Platz zur Burg", sub: "ca. 1,2 km · 25 Min. inkl. Sicherheitskontrolle", ref: "#pr-burg", city: "Prager Burg" },
+    { s: "15:00", e: "15:50", kind: "sight", title: "Prager Burg & Veitsdom", sub: "Areal kostenlos · Dom letzter Einlass ca. 16:40", ref: "#pr-veitsdom", sight: "pr-veitsdom", major: true },
+    { s: "15:50", e: "16:15", kind: "walk", title: "Abstieg über die Alte Schlossstiege", sub: "ca. 950 m · 20–25 Min. zur Metro Malostranská", ref: "#c-abend", place: "pr_malostr" },
+    { s: "16:20", e: "16:24", kind: "metro", dep: true, title: "Metro A → Můstek", sub: "3 Stationen", ref: "#c-abend", place: "pr_malostr", to: "pr_mustek", toCity: "Můstek" },
+    { s: "16:24", e: "16:45", kind: "walk", title: "Fußweg zu Malatang No.1", sub: "ca. 400 m · mit Metroausgang 10–15 Min.", ref: "#malatang", place: "pr_mustek" },
+    { s: "16:45", e: "17:25", kind: "food", title: "Snack bei Malatang No.1", sub: "kleine Schüssel teilen", ref: "#malatang", major: true },
+    { s: "17:25", e: "18:00", kind: "walk", title: "Fußweg zum Riegrovy sady", sub: "ca. 1,5 km · 30–35 Min. bis zur Wiese (oder Metro A ab Muzeum)", ref: "#pr-riegrovy", city: "Vinohrady" },
+    { s: "18:00", e: "18:40", kind: "sight", title: "Sonnenuntergang im Riegrovy sady", sub: "Sonnenuntergang 18:24 Uhr, hinter dem Burghügel etwas früher", ref: "#pr-riegrovy", sight: "pr-riegrovy", major: true },
+    { s: "18:40", e: "19:00", kind: "walk", title: "Fußweg nach Žižkov zu U Houdků", sub: "ca. 1 km · 12–20 Min.", ref: "#houdku" },
+    { s: "19:00", e: "20:00", kind: "food", title: "Abendessen bei U Houdků", sub: "reservieren · Rechnung bis 19:50 Uhr", ref: "#houdku", major: true },
+    { s: "20:00", e: "20:25", kind: "walk", title: "Zum Hauptbahnhof", sub: "bis zum Gleis ca. 25 Min. einplanen · spätestens 20:10 los", ref: "#c-rueck", place: "pr_hln" },
+    { s: "20:25", e: "20:45", kind: "buffer", title: "Puffer am Bahnhof", sub: "Gleis suchen, Proviant kaufen", ref: "#c-rueck" },
+    { s: "20:47", e: "23:19", kind: "train", dep: true, title: "RJ 170 Praha hl. n. → Dresden Hbf", sub: "letzter sinnvoller Direktzug · im DB Navigator prüfen", ref: "#c-rueck", place: "pr_hln", to: "dd_hbf", major: true }
   ];
 
-  // ---------------------------------------------------------------- Später Plan: Abfahrt Dresden 10:10 (BEISPIELZEITEN, unbestätigt)
+  // ---------------------------------------------------------------- Plan „Später“: RJ 171 ab 09:10, kurzer Burgrundgang
   var spaet = [
-    { s: "09:50", e: "10:10", kind: "meet", title: "Treffen mit Yeji am Dresden Hauptbahnhof", sub: "Zug Richtung Praha – Ticket vorher kaufen (Deutschlandticket gilt nicht)", ref: "#oepnv", place: "dd_hbf" },
-    { s: "10:10", e: "12:25", kind: "train", dep: true, title: "Zug Dresden Hbf → Praha hl. n.", sub: "Abfahrt 10:10 unbestätigt · im DB Navigator prüfen", ref: "#c-hin2", place: "dd_hbf", to: "pr_hln", major: true },
-    { s: "12:30", e: "12:45", kind: "walk", title: "Fußweg zum Antikvariát Dlážděná", sub: "ca. 900 m · 12 Min.", ref: "#pr-antik", place: "pr_hln", city: "Praha" },
-    { s: "12:45", e: "13:10", kind: "sight", title: "Antikvariát Dlážděná", sub: "nur werktags – heute die Chance", ref: "#pr-antik", sight: "pr-antik", major: true },
-    { s: "13:10", e: "13:25", kind: "walk", title: "Am Pulverturm vorbei zu Naše maso", sub: "ca. 1 km · 13 Min.", ref: "#nase-maso" },
-    { s: "13:25", e: "14:05", kind: "food", title: "Burger bei Naše maso", sub: "Mittagsandrang lässt nach", ref: "#nase-maso", major: true },
-    { s: "14:05", e: "14:15", kind: "walk", title: "Über die Dlouhá zum Altstädter Ring", sub: "ca. 500 m · 7 Min.", ref: "#pr-ring" },
-    { s: "14:15", e: "14:55", kind: "sight", title: "Altstädter Ring & Teynkirche", sub: "Teynkirche ab 15 Uhr wieder offen", ref: "#pr-teyn", sight: "pr-teyn" },
-    { s: "14:55", e: "15:05", kind: "sight", title: "Astronomische Uhr (Orloj)", sub: "Apostelumgang um 15:00 Uhr", ref: "#pr-orloj", sight: "pr-orloj", major: true },
-    { s: "15:05", e: "15:12", kind: "walk", title: "Fußweg zur Metro Staroměstská", sub: "ca. 400 m · 5 Min.", ref: "#c-strahov2", place: "pr_starom" },
-    { s: "15:12", e: "15:14", kind: "metro", dep: true, title: "Metro A → Malostranská", sub: "1 Station · 30-Min.-Ticket reicht bis Strahov", ref: "#c-strahov2", place: "pr_starom", to: "pr_malostr", toCity: "Malostranská" },
-    { s: "15:19", e: "15:29", kind: "tram", dep: true, title: "Tram 22 → Pohořelec", sub: "ca. 10 Min. bergauf, vorbei an der Burg", ref: "#c-strahov2", place: "pr_malostr", to: "pr_pohor", major: true },
-    { s: "15:29", e: "15:35", kind: "walk", title: "Fußweg zum Kloster Strahov", sub: "ca. 3 Min.", ref: "#pr-strahov", place: "pr_pohor", city: "Strahov" },
-    { s: "15:35", e: "16:20", kind: "sight", title: "Kloster Strahov & Bibliothek", sub: "letzter Einlass 16:30 – nicht trödeln", ref: "#pr-strahov", sight: "pr-strahov", major: true },
-    { s: "16:20", e: "17:00", kind: "sight", title: "Durchs Burgareal bergab", sub: "Veitsdom schließt um 17 Uhr – kurzer Blick", ref: "#pr-burg", sight: "pr-burg", city: "Prager Burg" },
-    { s: "17:00", e: "17:15", kind: "walk", title: "Abstieg über die Alte Schlossstiege", sub: "ca. 600 m · 15 Min. zur Metro Malostranská", ref: "#c-abend2", place: "pr_malostr" },
-    { s: "17:17", e: "17:28", kind: "metro", dep: true, title: "Metro A → Jiřího z Poděbrad", sub: "5 Stationen ohne Umstieg", ref: "#c-abend2", place: "pr_malostr", to: "pr_jzp", toCity: "Jiřího z Poděbrad" },
-    { s: "17:28", e: "17:40", kind: "walk", title: "Fußweg zum Riegrovy sady", sub: "ca. 700 m · 8 Min.", ref: "#pr-riegrovy", place: "pr_jzp", city: "Vinohrady" },
-    { s: "17:40", e: "18:45", kind: "sight", title: "Sonnenuntergang im Riegrovy sady", sub: "Sonne geht gegen 18:25 Uhr hinter der Burg unter", ref: "#pr-riegrovy", sight: "pr-riegrovy", major: true },
-    { s: "18:45", e: "19:00", kind: "walk", title: "Fußweg nach Žižkov zu U Houdků", sub: "ca. 1 km · 12 Min.", ref: "#houdku" },
-    { s: "19:00", e: "20:05", kind: "food", title: "Abendessen bei U Houdků", sub: "reservieren · Bargeld mitnehmen", ref: "#houdku", major: true },
-    { s: "20:05", e: "20:30", kind: "walk", title: "Zum Hauptbahnhof", sub: "ca. 1,8 km · 25 Min. (oder Tram 5/9/26)", ref: "#c-rueck", place: "pr_hln" },
-    { s: "20:30", e: "20:45", kind: "buffer", title: "Puffer am Bahnhof", sub: "Proviant kaufen, zum Gleis gehen", ref: "#c-rueck" },
-    { s: "20:47", e: "23:05", kind: "train", dep: true, title: "EC Praha hl. n. → Dresden Hbf", sub: "Zeit noch prüfen · Ticket zuggebunden", ref: "#c-rueck", place: "pr_hln", to: "dd_hbf", major: true }
+    { s: "08:45", e: "09:10", kind: "meet", title: "Treffen mit Yeji am Dresden Hauptbahnhof", sub: "Railjet Richtung Praha – Ticket vorher kaufen (Deutschlandticket gilt nicht)", ref: "#oepnv", place: "dd_hbf" },
+    { s: "09:10", e: "11:25", kind: "train", dep: true, title: "RJ 171 Dresden Hbf → Praha hl. n.", sub: "im DB Navigator bestätigen", ref: "#c-hin2", place: "dd_hbf", to: "pr_hln", major: true },
+    { s: "11:25", e: "11:45", kind: "walk", title: "Fußweg zum Antikvariát Dlážděná", sub: "ca. 550 m · mit Bahnhofsausgang 15–20 Min.", ref: "#pr-antik", place: "pr_hln", city: "Praha" },
+    { s: "11:45", e: "12:20", kind: "sight", title: "Antikvariát Dlážděná", sub: "nur werktags – heute die Chance", ref: "#pr-antik", sight: "pr-antik", major: true },
+    { s: "12:20", e: "12:35", kind: "sight", title: "Pulverturm & Gemeindehaus", sub: "von außen, auf dem Weg", ref: "#pr-pulverturm", sight: "pr-pulverturm" },
+    { s: "12:35", e: "13:35", kind: "food", title: "Burger bei Naše maso", sub: "Mittagszeit – Schlange einplanen", ref: "#nase-maso", major: true },
+    { s: "13:35", e: "13:50", kind: "sight", title: "Altstädter Ring, Teynkirche von außen", sub: "Teynkirche 13–15 Uhr geschlossen", ref: "#pr-ring", sight: "pr-ring" },
+    { s: "13:50", e: "14:05", kind: "sight", title: "Astronomische Uhr (Orloj)", sub: "Apostelumgang um 14:00 Uhr", ref: "#pr-orloj", sight: "pr-orloj", major: true },
+    { s: "14:05", e: "14:15", kind: "walk", title: "Fußweg zur Metro Staroměstská", sub: "ca. 400 m · 5 Min.", ref: "#c-strahov2", place: "pr_starom" },
+    { s: "14:15", e: "14:18", kind: "metro", dep: true, title: "Metro A → Malostranská", sub: "1 Station · 30-Min.-Ticket reicht bis Strahov", ref: "#c-strahov2", place: "pr_starom", to: "pr_malostr", toCity: "Malostranská" },
+    { s: "14:25", e: "14:40", kind: "tram", dep: true, title: "Tram 22 → Pohořelec", sub: "bergauf, vorbei an der Burg", ref: "#c-strahov2", place: "pr_malostr", to: "pr_pohor", major: true },
+    { s: "14:40", e: "14:50", kind: "walk", title: "Fußweg zum Kloster Strahov", sub: "ca. 3 Min.", ref: "#pr-strahov", place: "pr_pohor", city: "Strahov" },
+    { s: "14:50", e: "15:30", kind: "sight", title: "Kloster Strahov & Bibliothek", sub: "Kasse bis 16:15 Uhr", ref: "#pr-strahov", sight: "pr-strahov", major: true },
+    { s: "15:30", e: "15:55", kind: "walk", title: "Über den Hradschiner Platz zur Burg", sub: "ca. 1,2 km · 25 Min. · nach 15:40 Uhr Burg auslassen", ref: "#pr-burg", city: "Prager Burg" },
+    { s: "15:55", e: "16:15", kind: "sight", title: "Burghöfe & Veitsdom von außen", sub: "nur das kostenlose Areal", ref: "#pr-burg", sight: "pr-burg" },
+    { s: "16:15", e: "16:40", kind: "walk", title: "Abstieg über die Alte Schlossstiege", sub: "ca. 950 m · 20–25 Min. zur Metro Malostranská", ref: "#c-abend2", place: "pr_malostr" },
+    { s: "16:45", e: "16:49", kind: "metro", dep: true, title: "Metro A → Můstek", sub: "3 Stationen", ref: "#c-abend2", place: "pr_malostr", to: "pr_mustek", toCity: "Můstek" },
+    { s: "16:49", e: "17:00", kind: "walk", title: "Fußweg zu Malatang No.1", sub: "ca. 400 m · 6 Min.", ref: "#malatang", place: "pr_mustek" },
+    { s: "17:00", e: "17:35", kind: "food", title: "Snack bei Malatang No.1", sub: "kleine Schüssel teilen", ref: "#malatang", major: true },
+    { s: "17:35", e: "17:45", kind: "sight", title: "Über den Wenzelsplatz zur Metro Muzeum", sub: "ca. 600 m · am Nationalmuseum vorbei", ref: "#pr-wenzel", sight: "pr-wenzel" },
+    { s: "17:48", e: "17:51", kind: "metro", dep: true, title: "Metro A → Jiřího z Poděbrad", sub: "2 Stationen", ref: "#c-abend2", place: "pr_muzeum", to: "pr_jzp", toCity: "Jiřího z Poděbrad" },
+    { s: "17:51", e: "18:05", kind: "walk", title: "Fußweg zum Riegrovy sady", sub: "ca. 700 m · 8 Min. bis zur Wiese", ref: "#pr-riegrovy", place: "pr_jzp", city: "Vinohrady" },
+    { s: "18:05", e: "18:40", kind: "sight", title: "Sonnenuntergang im Riegrovy sady", sub: "Sonnenuntergang 18:24 Uhr, hinter dem Burghügel etwas früher", ref: "#pr-riegrovy", sight: "pr-riegrovy", major: true },
+    { s: "18:40", e: "19:00", kind: "walk", title: "Fußweg nach Žižkov zu U Houdků", sub: "ca. 1 km · 12–20 Min.", ref: "#houdku" },
+    { s: "19:00", e: "20:00", kind: "food", title: "Abendessen bei U Houdků", sub: "reservieren · Rechnung bis 19:50 Uhr", ref: "#houdku", major: true },
+    { s: "20:00", e: "20:25", kind: "walk", title: "Zum Hauptbahnhof", sub: "bis zum Gleis ca. 25 Min. einplanen · spätestens 20:10 los", ref: "#c-rueck", place: "pr_hln" },
+    { s: "20:25", e: "20:45", kind: "buffer", title: "Puffer am Bahnhof", sub: "Gleis suchen, Proviant kaufen", ref: "#c-rueck" },
+    { s: "20:47", e: "23:19", kind: "train", dep: true, title: "RJ 170 Praha hl. n. → Dresden Hbf", sub: "letzter sinnvoller Direktzug · im DB Navigator prüfen", ref: "#c-rueck", place: "pr_hln", to: "dd_hbf", major: true }
   ];
 
   var planList = [
