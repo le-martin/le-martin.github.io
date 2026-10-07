@@ -299,7 +299,7 @@
     { s: "16:30", e: "17:15", kind: "tram", dep: true, title: "Straßenbahn nach Plagwitz", sub: "Linie 15 bis Hauptbahnhof, dann Linie 14 · ca. 45 Min.", ref: "#c-tram2", place: "le_vsd", to: "le_plag", major: true },
     { s: "17:15", e: "18:15", kind: "sight", title: "Karl-Heine-Kanal", sub: "Spaziergang am Wasser", ref: "#le-kanal", sight: "le-kanal", city: "Plagwitz", major: true },
     { s: "18:15", e: "19:45", kind: "food", title: "Abendessen im Stelzenhaus", sub: "am Karl-Heine-Kanal · reservieren", ref: "#stelzenhaus", major: true },
-    { s: "19:45", e: "20:05", kind: "tram", dep: true, title: "Straßenbahn 14 → Hauptbahnhof", sub: "ca. 20 Min.", ref: "#c-rueck", place: "le_plag", to: "le_hbf" },
+    { s: "19:45", e: "20:05", kind: "tram", dep: true, title: "Straßenbahn 14 → Hauptbahnhof", sub: "ca. 20 Min.", ref: "#c-rueck", place: "le_plag", to: "le_hbf", toCity: "Hauptbahnhof" },
     { s: "20:15", e: "22:00", kind: "train", dep: true, title: "RE50 Leipzig Hbf → Dresden", sub: "Beispielzeit · hält auch in Dresden-Neustadt und Mitte", ref: "#c-rueck", place: "le_hbf", to: "dd_hbf", major: true }
   ];
 

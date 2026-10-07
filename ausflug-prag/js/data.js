@@ -1,7 +1,8 @@
 /*
  * Reisedaten: Tagesausflug Dresden → Prag (EuroCity).
- * Kein festes Reisedatum (date: null): Der Ablauf ist ein Beispieltag, die
- * Öffnungs-Ampel und der Reisemodus beziehen sich immer auf den heutigen Tag.
+ * Geplant für FREITAG, 9. Oktober 2026 (TRIP_DATE). Countdown, Reisemodus und Wetter
+ * beziehen sich auf diesen Tag; saisonale Öffnungszeiten werden aus dem Reisedatum
+ * berechnet. Für einen anderen Tag TRIP_DATE ändern (oder null = „heute“).
  *
  * Alle Inhalte der Seite kommen aus dieser Datei. Fahrzeiten sind BEISPIELE
  * (der EC fährt etwa alle 2 Stunden) – die passende Verbindung im DB Navigator wählen.
@@ -27,8 +28,9 @@
     });
     return out;
   }
-  // Saison: Monat (0 = Januar) und Tag des heutigen Datums
-  var NOW = new Date(), M = NOW.getMonth(), D = NOW.getDate();
+  var TRIP_DATE = "2026-10-09";
+  // Saison: Monat (0 = Januar) und Tag des Reisedatums (ohne Datum: heute)
+  var NOW = TRIP_DATE ? new Date(TRIP_DATE + "T12:00") : new Date(), M = NOW.getMonth(), D = NOW.getDate();
   var SUMMER = M >= 3 && M <= 9; // April–Oktober (Prager Burg: 1.4.–31.10.)
 
   // Pulverturm (prague.eu 2026)
@@ -266,9 +268,9 @@
   var connections = {
     hin: {
       id: "hin", title: "Dresden → Prag", legs: [
-        { mode: "train", line: "EC", dir: "Praha hl. n.", dep: "08:10", from: "Dresden Hbf", fromPl: "Gleis prüfen", arr: "10:27", to: "Praha hl. n.", toPl: "Gleis prüfen", toCity: "Praha" }
+        { mode: "train", line: "RJ 257", dir: "Graz Hbf", dep: "08:10", from: "Dresden Hbf", fromPl: "Gleis prüfen", arr: "10:27", to: "Praha hl. n.", toPl: "Gleis prüfen", toCity: "Praha" }
       ],
-      note: "⚠ Beispielzeit: Der EuroCity fährt etwa alle 2 Stunden (ca. 2:15–2:30 h) durchs Elbtal über Bad Schandau, Děčín und Ústí nad Labem; er hält auch in Dresden-Neustadt. Das Deutschlandticket gilt im EC NICHT – Ticket z. B. als DB Sparpreis Europa (ab ca. 18 €). Reservierung meist freiwillig, im Sommer teils Pflicht – bitte prüfen.",
+      note: "Laut Suchergebnis fährt am Morgen der Railjet RJ 257 (Richtung Graz) ab Dresden Hbf 08:10, an Praha hl. n. 10:27 – bitte im DB Navigator für Fr, 9.10. bestätigen und das Ticket zuggebunden buchen. ⚠ Allgemein: Der EuroCity fährt etwa alle 2 Stunden (ca. 2:15–2:30 h) durchs Elbtal über Bad Schandau, Děčín und Ústí nad Labem; er hält auch in Dresden-Neustadt. Das Deutschlandticket gilt im EC NICHT – Ticket z. B. als DB Sparpreis Europa (ab ca. 18 €). Reservierung meist freiwillig, im Sommer teils Pflicht – bitte prüfen.",
       alts: ["FlixBus ab Dresden Hbf nach Praha Florenc in ca. 1:50 h (ca. 15–20 Min. zu Fuß zur Altstadt).", "Regional über Bad Schandau und Děčín: deutlich langsamer (ca. 3–3,5 h); das Deutschlandticket gilt nur bis Bad Schandau."]
     },
     tram: {
@@ -285,10 +287,10 @@
           { mode: "train", line: "EC", dir: "Dresden Hbf", dep: "20:47", from: "Praha hl. n.", fromPl: "Gleis prüfen", arr: "23:05", to: "Dresden Hbf", toPl: "Gleis prüfen", toCity: "Dresden" }
         ], info: "Beispielzeiten · letzte Direktverbindung laut Recherche ca. 20:47 Uhr" },
         { label: "Früher", legs: [
-          { mode: "train", line: "EC", dir: "Dresden Hbf", dep: "18:47", from: "Praha hl. n.", fromPl: "Gleis prüfen", arr: "21:05", to: "Dresden Hbf", toPl: "Gleis prüfen", toCity: "Dresden" }
-        ], info: "Nur mit kurzem, frühem Abendessen" }
+          { mode: "train", line: "EC", dir: "Dresden Hbf", dep: "17:02", from: "Praha hl. n.", fromPl: "Gleis prüfen", arr: "19:24", to: "Dresden Hbf", toPl: "Gleis prüfen", toCity: "Dresden" }
+        ], info: "Laut Suchergebnis · dann ohne Abendessen in Prag" }
       ],
-      note: "⚠ Beispielzeiten. Der EC fährt etwa alle 2 Stunden – im DB Navigator die passende Rückfahrt wählen und das Ticket zuggebunden buchen."
+      note: "⚠ Die Rückfahrzeiten sind nicht bestätigt (Suchergebnisse widersprechen sich). Vor der Buchung im DB Navigator für Fr, 9.10. prüfen – der Zug fährt etwa alle 2 Stunden; Ticket zuggebunden buchen."
     }
   };
   var connOrder = [["hin", "tagOut"], ["tram", "tagTram"], ["rueck", "tagReturn"]];
@@ -296,7 +298,7 @@
   // ---------------------------------------------------------------- Tagesplan (BEISPIELZEITEN)
   var main = [
     { s: "07:50", e: "08:10", kind: "meet", title: "Treffen am Dresden Hauptbahnhof", sub: "EuroCity Richtung Praha – Ticket vorher kaufen (Deutschlandticket gilt nicht)", ref: "#oepnv", place: "dd_hbf" },
-    { s: "08:10", e: "10:27", kind: "train", dep: true, title: "EC Dresden Hbf → Praha hl. n.", sub: "Beispielzeit · ca. alle 2 Std. · durchs Elbtal", ref: "#c-hin", place: "dd_hbf", to: "pr_hln", major: true },
+    { s: "08:10", e: "10:27", kind: "train", dep: true, title: "Railjet RJ 257 Dresden Hbf → Praha hl. n.", sub: "laut Suchergebnis · im DB Navigator bestätigen", ref: "#c-hin", place: "dd_hbf", to: "pr_hln", major: true },
     { s: "10:30", e: "10:40", kind: "walk", title: "Fußweg zum Wenzelsplatz", sub: "ca. 650 m · 8 Min.", ref: "#pr-wenzel", place: "pr_hln", city: "Praha" },
     { s: "10:40", e: "10:55", kind: "sight", title: "Wenzelsplatz", sub: "Schauplatz von 1968 und 1989", ref: "#pr-wenzel", sight: "pr-wenzel", major: true },
     { s: "10:55", e: "11:05", kind: "walk", title: "Fußweg zum Pulverturm", sub: "ca. 700 m · 9 Min.", ref: "#pr-pulverturm" },
@@ -317,9 +319,9 @@
     { s: "17:10", e: "17:35", kind: "walk", title: "Abstieg über die Alte Schlossstiege", sub: "ca. 1,2 km · 20 Min.", ref: "#kuzelka", city: "Kleinseite" },
     { s: "17:40", e: "19:10", kind: "food", title: "Abendessen im Lokál U Bílé kuželky", sub: "an der Karlsbrücke · reservieren", ref: "#kuzelka", major: true },
     { s: "19:10", e: "19:20", kind: "walk", title: "Fußweg zur Metro Malostranská", sub: "ca. 600 m · 8 Min.", ref: "#c-rueck", place: "pr_malostr" },
-    { s: "19:20", e: "19:40", kind: "metro", dep: true, title: "Metro A + C → Hlavní nádraží", sub: "Umstieg in Muzeum · ca. 20 Min.", ref: "#c-rueck", place: "pr_malostr", to: "pr_hln" },
+    { s: "19:20", e: "19:40", kind: "metro", dep: true, title: "Metro A + C → Hlavní nádraží", sub: "Umstieg in Muzeum · ca. 20 Min.", ref: "#c-rueck", place: "pr_malostr", to: "pr_hln", toCity: "Hlavní nádraží" },
     { s: "19:40", e: "20:35", kind: "buffer", title: "Puffer am Bahnhof", sub: "Proviant kaufen, zum Gleis gehen", ref: "#c-rueck" },
-    { s: "20:47", e: "23:05", kind: "train", dep: true, title: "EC Praha hl. n. → Dresden Hbf", sub: "Beispielzeit · Ticket zuggebunden", ref: "#c-rueck", place: "pr_hln", to: "dd_hbf", major: true }
+    { s: "20:47", e: "23:05", kind: "train", dep: true, title: "EC Praha hl. n. → Dresden Hbf", sub: "Zeit noch prüfen · Ticket zuggebunden", ref: "#c-rueck", place: "pr_hln", to: "dd_hbf", major: true }
   ];
 
   var mapLines = [
@@ -347,7 +349,7 @@
   ];
 
   window.TRIP = {
-    date: null, checkedAt: CHECKED_AT, storeKey: "pr26", meet: "dd_hbf", simTime: "13:00", walkKm: 8,
+    date: TRIP_DATE, checkedAt: CHECKED_AT, storeKey: "pr26", meet: "dd_hbf", simTime: "13:00", walkKm: 8,
     areas: areas, places: places, sights: sights, optionalSights: optionalSights,
     restaurants: restaurants, cafes: cafes, connections: connections, connOrder: connOrder,
     mapLines: mapLines, plans: { main: main }, routes: {}, weatherSpots: weatherSpots, sources: sources

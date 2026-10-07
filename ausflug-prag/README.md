@@ -4,7 +4,9 @@ Interaktiver Reisebegleiter für einen Tagesausflug mit dem **EuroCity von Dresd
 
 Live: <https://le-martin.github.io/ausflug-prag/>
 
-> ⚠ **Das Deutschlandticket gilt im EC nach Prag nicht** – ein eigenes Ticket ist nötig (z. B. DB Sparpreis Europa). Es gibt **kein festes Reisedatum**: Der Tagesplan ist ein **Beispielablauf**, Öffnungs-Ampel, Reisemodus und Wetter beziehen sich immer auf den **heutigen Tag**. Alle Fahrzeiten sind Beispielzeiten.
+> ⚠ **Das Deutschlandticket gilt im EC nach Prag nicht** – ein eigenes Ticket ist nötig (z. B. DB Sparpreis Europa).
+>
+> **Geplant für Freitag, 9. Oktober 2026** (`TRIP_DATE` in `js/data.js`): Countdown, Reisemodus und Wetter beziehen sich auf diesen Tag, saisonale Öffnungszeiten werden aus dem Reisedatum berechnet. Hinfahrt laut Suchergebnis: **Railjet RJ 257, Dresden Hbf 08:10 → Praha hl. n. 10:27**. Die **Rückfahrt ist noch nicht bestätigt** – beides vor der Buchung im DB Navigator prüfen. Für einen anderen Tag `TRIP_DATE` ändern (`null` = Beispielplan für „heute“).
 
 ## Funktionen
 
