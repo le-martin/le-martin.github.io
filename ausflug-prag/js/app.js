@@ -17,8 +17,12 @@
     clear: function () { try { Object.keys(localStorage).forEach(function (k) { if (k.indexOf(NS) === 0) localStorage.removeItem(k); }); } catch (e) { /* ignorieren */ } }
   };
 
+  // Mehrere Tagespläne (optional): T.planList = [{ key, label, note?, conn?, meetSub? }]
+  var PLANS = (T.planList || []).filter(function (p) { return T.plans[p.key]; });
+  function planMeta() { return PLANS.filter(function (p) { return p.key === state.plan; })[0] || {}; }
+
   var state = {
-    plan: "main",
+    plan: (function () { var k = store.get("plan", "main"); return T.plans[k] ? k : "main"; })(),
     visited: store.get("visited", {}),
     favs: store.get("favs", {}),
     sim: null, // Date für simulierte Uhrzeit
@@ -162,7 +166,7 @@
 
   // ------------------------------------------------------------ Hero-Stats
   function renderStats() {
-    var plan = T.plans.main;
+    var plan = T.plans[state.plan];
     var first = plan.filter(function (e) { return e.dep; })[0];
     var last = plan[plan.length - 1];
     var dur = toMin(last.e) - toMin(first.s);
@@ -182,6 +186,34 @@
 
   // ------------------------------------------------------------ Timeline
   var ICON = { meet: "👋", train: "🚆", bus: "🚌", walk: "🚶", sight: "📍", food: "🍽", buffer: "☕", cafe: "☕", tram: "🚋", metro: "🚇" };
+
+  // Umschalter zwischen den Tagesplänen (nur bei mehr als einem Plan)
+  function renderPlanSwitch() {
+    if (PLANS.length < 2) return;
+    var box = $("#plan-box");
+    if (!box) {
+      box = document.createElement("div");
+      box.id = "plan-box";
+      var grid = $("#timeline").parentNode;
+      grid.parentNode.insertBefore(box, grid);
+      box.addEventListener("click", function (e) {
+        var btn = e.target.closest("[data-plan]");
+        if (!btn || btn.getAttribute("data-plan") === state.plan) return;
+        state.plan = btn.getAttribute("data-plan");
+        store.set("plan", state.plan);
+        renderAll();
+        if (travelOpen()) renderTravel();
+      });
+    }
+    var meta = planMeta();
+    // Gestaltung wie beim Oberlausitz-Umschalter (.plan-switch / .plan-hint in style.css)
+    box.innerHTML = '<div class="plan-switch" role="radiogroup" aria-label="' + esc(U("planSwitchAria")) + '"' +
+      (PLANS.length !== 2 ? ' style="grid-template-columns:repeat(' + PLANS.length + ',1fr)"' : "") + ">" +
+      PLANS.map(function (p) {
+        return '<button type="button" role="radio" data-plan="' + esc(p.key) + '" aria-checked="' + (p.key === state.plan) + '">' + esc(U(p.label)) + "</button>";
+      }).join("") + "</div>" +
+      '<p class="plan-hint">' + (meta.note ? esc(U(meta.note)) : "") + "</p>";
+  }
 
   function renderTimeline() {
     var plan = T.plans[state.plan];
@@ -353,7 +385,7 @@
   }
 
   function renderConnections() {
-    $("#connections").innerHTML = T.connOrder.map(function (o) { return connCard(T.connections[o[0]], U(o[1])); }).join("");
+    $("#connections").innerHTML = (planMeta().conn || T.connOrder).map(function (o) { return connCard(T.connections[o[0]], U(o[1])); }).join("");
   }
 
   function renderSources() {
@@ -505,7 +537,7 @@
       body.innerHTML =
         '<div class="card tv tv--hero"><p class="tv__label">' + esc(U("notYet")) + '</p><p class="tv__big">' + esc(U("tripDate")) + "</p>" +
         '<p class="tv__count">' + esc(durText(tripStart(firstDep.s) - d)) + '</p><p class="tv__sub">' + esc(U("untilFirst", P(firstDep.title), firstDep.s)) + "</p></div>" +
-        '<div class="card tv"><p class="tv__label">' + esc(U("meetLabel")) + '</p><p class="tv__big">' + esc(U("meetVal", plan[0].s)) + '</p><p class="tv__sub">' + esc(U("meetSub")) + "</p>" +
+        '<div class="card tv"><p class="tv__label">' + esc(U("meetLabel")) + '</p><p class="tv__big">' + esc(U("meetVal", plan[0].s)) + '</p><p class="tv__sub">' + esc(U(planMeta().meetSub || "meetSub")) + "</p>" +
         '<div class="tv__actions">' + mapsLinks(T.places[T.meet], T.places[T.meet].name) + "</div></div>" +
         '<p class="fine">' + esc(U("travelIntro")) + "</p>";
       return;
@@ -674,7 +706,7 @@
   function renderAll() {
     statusItems = {};
     applyStatic();
-    renderStats(); renderSources(); renderTimeline();
+    renderStats(); renderSources(); renderPlanSwitch(); renderTimeline();
     renderSights(); renderFood(); renderConnections();
     renderWeather();
   }

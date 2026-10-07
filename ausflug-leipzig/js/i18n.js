@@ -93,7 +93,7 @@
       planned: "Geplant",
       noRating: "Keine verlässliche Bewertungsübersicht gefunden – siehe Google Maps",
 
-      tagOut: "Hinfahrt", tagReturn: "Rückfahrt",
+      tagOut: "Hinfahrt", tagReturn: "Rückfahrt", planSwitchAria: "Tagesplan wählen",
       alternatives: "Alternativen",
       dirShort: function (d) { return "Ri. " + d; },
       connChecked: function (d) { return "Stand " + d + " · Beispielzeiten, bitte am Reisetag prüfen"; },
@@ -206,7 +206,7 @@
       planned: "Planned",
       noRating: "No reliable rating summary found – see Google Maps",
 
-      tagOut: "Outbound", tagReturn: "Return",
+      tagOut: "Outbound", tagReturn: "Return", planSwitchAria: "Choose day plan",
       alternatives: "Alternatives",
       dirShort: function (d) { return "to " + d; },
       connChecked: function (d) { return "As of " + d + " · example times, please check on the day of travel"; },
@@ -317,7 +317,7 @@
       planned: "예정",
       noRating: "믿을 만한 평점 정보를 찾지 못했습니다 – Google 지도 참고",
 
-      tagOut: "가는 길", tagReturn: "돌아오는 길",
+      tagOut: "가는 길", tagReturn: "돌아오는 길", planSwitchAria: "일정 선택",
       alternatives: "다른 교통편",
       dirShort: function (d) { return d + " 방면"; },
       connChecked: function (d) { return d + " 기준 · 예시 시간이니 여행 당일 확인하세요"; },

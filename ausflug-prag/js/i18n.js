@@ -93,7 +93,7 @@
       planned: "Geplant",
       noRating: "Keine verlässliche Bewertungsübersicht gefunden – siehe Google Maps",
 
-      tagOut: "Hinfahrt", tagReturn: "Rückfahrt",
+      tagOut: "Hinfahrt", tagReturn: "Rückfahrt", planSwitchAria: "Tagesplan wählen",
       alternatives: "Alternativen",
       dirShort: function (d) { return "Ri. " + d; },
       connChecked: function (d) { return "Stand " + d + " · Beispielzeiten, bitte am Reisetag prüfen"; },
@@ -206,7 +206,7 @@
       planned: "Planned",
       noRating: "No reliable rating summary found – see Google Maps",
 
-      tagOut: "Outbound", tagReturn: "Return",
+      tagOut: "Outbound", tagReturn: "Return", planSwitchAria: "Choose day plan",
       alternatives: "Alternatives",
       dirShort: function (d) { return "to " + d; },
       connChecked: function (d) { return "As of " + d + " · example times, please check on the day of travel"; },
@@ -317,7 +317,7 @@
       planned: "예정",
       noRating: "믿을 만한 평점 정보를 찾지 못했습니다 – Google 지도 참고",
 
-      tagOut: "가는 길", tagReturn: "돌아오는 길",
+      tagOut: "가는 길", tagReturn: "돌아오는 길", planSwitchAria: "일정 선택",
       alternatives: "다른 교통편",
       dirShort: function (d) { return d + " 방면"; },
       connChecked: function (d) { return d + " 기준 · 예시 시간이니 여행 당일 확인하세요"; },
@@ -363,25 +363,28 @@
       heroMeta: "Tagesausflug mit dem EuroCity · eigenes Ticket nötig (kein Deutschlandticket) · Beispielablauf",
       heroAria: "Prag",
       noticeText: "Der EuroCity fährt etwa alle 2 Stunden – die Uhrzeiten hier sind ein Beispiel. Bitte Hin- und Rückfahrt im DB Navigator wählen; das Deutschlandticket gilt im EC nicht.",
-      foodLead: "Tschechische Küche mittags in der Altstadt, abends auf der Kleinseite. Bezahlt wird in Kronen (CZK) – mit Karte immer in CZK zahlen.",
-      lunchHead: "Mittagessen in der Altstadt",
-      dinnerHead: "Abendessen auf der Kleinseite",
+      foodLead: "Eure gespeicherten Lieblingsorte: Burger zum Mittag, Malatang als Snack, tschechisches Abendessen in Žižkov. Bezahlt wird in Kronen (CZK) – mit Karte immer in CZK zahlen.",
+      lunchHead: "Mittag & Snacks",
+      dinnerHead: "Abendessen",
       connLead: "EuroCity durchs Elbtal, in Prag Tram und Metro (PID-Tickets in Kronen).",
-      nav_altstadt: "Altstadt", nav_burg: "Burg & Kleinseite",
-      area_altstadt: "Altstadt", area_burg: "Kleinseite & Prager Burg",
-      ar_altstadt_eyebrow: "Bereich 1 · ca. 10:30–14:15",
+      nav_altstadt: "Altstadt", nav_burg: "Strahov & Burg", nav_vinohrady: "Sonnenuntergang",
+      area_altstadt: "Altstadt & Náměstí Republiky", area_burg: "Strahov & Prager Burg", area_vinohrady: "Wenzelsplatz, Vinohrady & Žižkov",
+      ar_altstadt_eyebrow: "Bereich 1 · ca. 10:30–13:10",
       ar_altstadt_title: 'Altstadt <span class="sorb">Staré Město</span>',
-      ar_altstadt_lead: "Vom Wenzelsplatz über Pulverturm und Altstädter Ring mit der Astronomischen Uhr bis zur Karlsbrücke – alles zu Fuß.",
-      ar_burg_eyebrow: "Bereich 2 · ca. 14:15–19:10",
-      ar_burg_title: 'Kleinseite & Burg <span class="sorb">Malá Strana · Pražský hrad</span>',
-      ar_burg_lead: "Barocke Kleinseite, mit der Tram hinauf zur Prager Burg mit Veitsdom und Goldenem Gässchen, zu Fuß über die Alte Schlossstiege zurück.",
+      ar_altstadt_lead: "Vom Hauptbahnhof ins Antiquariat in der Dlážděná, am Pulverturm vorbei zum Burger bei Naše maso und zum Altstädter Ring mit der Astronomischen Uhr um 13 Uhr – alles zu Fuß.",
+      ar_burg_eyebrow: "Bereich 2 · ca. 13:10–16:10",
+      ar_burg_title: 'Strahov & Burg <span class="sorb">Strahovský klášter · Pražský hrad</span>',
+      ar_burg_lead: "Mit Metro und Tram 22 hinauf nach Strahov zur Klosterbibliothek, dann bergab durch das Burgareal mit dem Veitsdom und über die Alte Schlossstiege zur Metro.",
+      ar_vinohrady_eyebrow: "Bereich 3 · ca. 16:10–20:30",
+      ar_vinohrady_title: 'Sonnenuntergang & Abendessen <span class="sorb">Vinohrady · Žižkov</span>',
+      ar_vinohrady_lead: "Malatang am Wenzelsplatz, mit der Metro A nach Vinohrady, Sonnenuntergang über der Burg im Riegrovy sady und Abendessen bei U Houdků – von dort zu Fuß zum Hauptbahnhof.",
       cityName: function (c) { return { Praha: "Prag" }[c] || c; },
-      citiesVal: "2 in Prag",
+      citiesVal: "3 in Prag",
       meetVal: function (t) { return "Dresden Hbf, " + t + " Uhr"; },
       meetSub: "EuroCity Richtung Praha, Beispielzeit 08:10 Uhr – Ticket vorher kaufen",
       doneSub: "Hoffentlich war es ein schöner Tag in Prag!",
-      tagTram: "Nachmittag",
-      ttTram: "Tram 22 (schematisch)", ttMetro: "Metro A + C (schematisch)",
+      tagTram: "Mittag", tagEvening: "Abend",
+      ttTram: "Tram 22 (schematisch)", ttMetro: "Metro A (schematisch)",
       lgBus: "Tram/Metro",
       // Festes Reisedatum: Freitag, 9.10.2026
       heroMeta: "Freitag, 9. Oktober 2026 · Railjet/EuroCity · eigenes Ticket nötig (kein Deutschlandticket)",
@@ -395,7 +398,11 @@
       travelIntro: "Am Freitag, 9.10., zeigt dieser Modus automatisch die nächste Station, Abfahrt und Gehzeit; vorher zählt er bis zur Abfahrt herunter. Zum Ausprobieren unten „Uhrzeit simulieren“ nutzen.",
       connChecked: function (d) { return "Stand " + d + " · Hinfahrt laut Suchergebnis, Rückfahrt unbestätigt – bitte prüfen"; },
       travelFoot: function (d) { return "Zugzeiten im DB Navigator bestätigen · Stand " + d; },
-      meetSub: "Railjet RJ 257 Richtung Graz ab 08:10 Uhr – Ticket vorher kaufen"
+      meetSub: "Mit Yeji · Railjet RJ 257 Richtung Graz ab 08:10 Uhr – Ticket vorher kaufen",
+      planMain: "Früh · ab 08:10", planLate: "Später · ab 10:10",
+      planMainNote: "Ganzer Tag mit allen Lieblingsorten inkl. Malatang-Snack.",
+      planLateNote: "Abfahrt 10:10 (unbestätigt), an ca. 12:25 – ohne Malatang, Strahov und Burg im Eiltempo.",
+      meetSubLate: "Mit Yeji · Zug ab 10:10 Uhr (unbestätigt) – Ticket vorher kaufen"
     },
     en: {
       docTitle: "Day Trip to Prague",
@@ -405,25 +412,28 @@
       heroMeta: "Day trip by EuroCity · separate ticket needed (no Deutschlandticket) · example schedule",
       heroAria: "Prague",
       noticeText: "The EuroCity runs about every 2 hours – the times shown are an example. Please choose your outbound and return trains in DB Navigator; the Deutschlandticket is not valid on the EC.",
-      foodLead: "Czech food for lunch in the Old Town and for dinner in the Lesser Town. You pay in crowns (CZK) – when paying by card, always pay in CZK.",
-      lunchHead: "Lunch in the Old Town",
-      dinnerHead: "Dinner in the Lesser Town",
+      foodLead: "Your saved favourites: burgers for lunch, malatang as a snack, Czech dinner in Žižkov. You pay in crowns (CZK) – when paying by card, always pay in CZK.",
+      lunchHead: "Lunch & snacks",
+      dinnerHead: "Dinner",
       connLead: "EuroCity through the Elbe valley, then tram and metro in Prague (PID tickets in crowns).",
-      nav_altstadt: "Old Town", nav_burg: "Castle & Lesser Town",
-      area_altstadt: "Old Town", area_burg: "Lesser Town & Prague Castle",
-      ar_altstadt_eyebrow: "Area 1 · approx. 10:30–14:15",
+      nav_altstadt: "Old Town", nav_burg: "Strahov & Castle", nav_vinohrady: "Sunset",
+      area_altstadt: "Old Town & Náměstí Republiky", area_burg: "Strahov & Prague Castle", area_vinohrady: "Wenceslas Square, Vinohrady & Žižkov",
+      ar_altstadt_eyebrow: "Area 1 · approx. 10:30–13:10",
       ar_altstadt_title: 'Old Town <span class="sorb">Staré Město</span>',
-      ar_altstadt_lead: "From Wenceslas Square via the Powder Tower and Old Town Square with the Astronomical Clock to Charles Bridge – all on foot.",
-      ar_burg_eyebrow: "Area 2 · approx. 14:15–19:10",
-      ar_burg_title: 'Lesser Town & Castle <span class="sorb">Malá Strana · Pražský hrad</span>',
-      ar_burg_lead: "The Baroque Lesser Town, up to Prague Castle by tram with St. Vitus Cathedral and Golden Lane, and back down on foot via the Old Castle Steps.",
-      cityName: function (c) { return { Praha: "Prague", Altstadt: "Old Town", "Prager Burg": "Prague Castle", Kleinseite: "Lesser Town", "Hlavní nádraží": "the main station" }[c] || c; },
-      citiesVal: "2 in Prague",
+      ar_altstadt_lead: "From the main station to the antiquarian bookshop on Dlážděná, past the Powder Tower to burgers at Naše maso and on to Old Town Square for the Astronomical Clock at 1 pm – all on foot.",
+      ar_burg_eyebrow: "Area 2 · approx. 13:10–16:10",
+      ar_burg_title: 'Strahov & Castle <span class="sorb">Strahovský klášter · Pražský hrad</span>',
+      ar_burg_lead: "Up to Strahov by metro and tram 22 for the monastery library, then downhill through the castle grounds with St. Vitus Cathedral and down the Old Castle Steps to the metro.",
+      ar_vinohrady_eyebrow: "Area 3 · approx. 16:10–20:30",
+      ar_vinohrady_title: 'Sunset & dinner <span class="sorb">Vinohrady · Žižkov</span>',
+      ar_vinohrady_lead: "Malatang by Wenceslas Square, metro A to Vinohrady, sunset over the castle in Riegrovy sady and dinner at U Houdků – then on foot to the main station.",
+      cityName: function (c) { return { Praha: "Prague", Altstadt: "Old Town", "Prager Burg": "Prague Castle", Kleinseite: "Lesser Town", "Hlavní nádraží": "the main station", "Jiřího z Poděbrad": "Jiřího z Poděbrad" }[c] || c; },
+      citiesVal: "3 in Prague",
       meetVal: function (t) { return "Dresden Hbf, " + t; },
       meetSub: "EuroCity towards Praha, example time 08:10 – buy your ticket in advance",
       doneSub: "Hope you had a lovely day in Prague!",
-      tagTram: "Afternoon",
-      ttTram: "Tram 22 (schematic)", ttMetro: "Metro A + C (schematic)",
+      tagTram: "Midday", tagEvening: "Evening",
+      ttTram: "Tram 22 (schematic)", ttMetro: "Metro A (schematic)",
       lgBus: "Tram/metro",
       heroMeta: "Friday, 9 October 2026 · Railjet/EuroCity · separate ticket needed (no Deutschlandticket)",
       tripDate: "Friday, 9 October 2026",
@@ -436,7 +446,11 @@
       travelIntro: "On Friday 9 Oct this mode automatically shows the next stop, departure and walking time; before that it counts down to departure. To try it out, use “Simulate time” below.",
       connChecked: function (d) { return "As of " + d + " · outbound per search results, return unconfirmed – please check"; },
       travelFoot: function (d) { return "Confirm train times in DB Navigator · as of " + d; },
-      meetSub: "Railjet RJ 257 towards Graz at 08:10 – buy your ticket in advance"
+      meetSub: "With Yeji · Railjet RJ 257 towards Graz at 08:10 – buy your ticket in advance",
+      planMain: "Early · from 08:10", planLate: "Later · from 10:10",
+      planMainNote: "Full day with all your favourites, including the malatang snack.",
+      planLateNote: "Departs 10:10 (unconfirmed), arrives approx. 12:25 – no malatang, Strahov and the castle at a brisk pace.",
+      meetSubLate: "With Yeji · train at 10:10 (unconfirmed) – buy your ticket in advance"
     },
     ko: {
       docTitle: "프라하 당일 여행",
@@ -446,25 +460,28 @@
       heroMeta: "유로시티 당일 여행 · 별도 승차권 필요 (도이칠란트티켓 불가) · 예시 일정",
       heroAria: "프라하",
       noticeText: "유로시티는 약 2시간 간격으로 운행하며, 여기 시간은 예시입니다. DB Navigator에서 왕복 열차를 고르세요. 도이칠란트티켓은 EC에서 사용할 수 없습니다.",
-      foodLead: "점심은 구시가지, 저녁은 말라스트라나에서 체코 요리를. 결제는 코루나(CZK)로 – 카드 결제 시 항상 CZK로 하세요.",
-      lunchHead: "구시가지에서 점심",
-      dinnerHead: "말라스트라나에서 저녁",
+      foodLead: "저장해 둔 맛집들: 점심은 버거, 간식은 마라탕, 저녁은 지슈코프에서 체코 요리. 결제는 코루나(CZK)로 – 카드 결제 시 항상 CZK로 하세요.",
+      lunchHead: "점심 & 간식",
+      dinnerHead: "저녁",
       connLead: "엘베 강 계곡을 따라가는 유로시티, 프라하 안에서는 트램과 지하철 (코루나로 PID 승차권).",
-      nav_altstadt: "구시가지", nav_burg: "프라하 성 & 말라스트라나",
-      area_altstadt: "구시가지", area_burg: "말라스트라나 & 프라하 성",
-      ar_altstadt_eyebrow: "구역 1 · 약 10:30–14:15",
+      nav_altstadt: "구시가지", nav_burg: "스트라호프 & 프라하 성", nav_vinohrady: "일몰",
+      area_altstadt: "구시가지 & 공화국 광장", area_burg: "스트라호프 & 프라하 성", area_vinohrady: "바츨라프 광장, 비노흐라디 & 지슈코프",
+      ar_altstadt_eyebrow: "구역 1 · 약 10:30–13:10",
       ar_altstadt_title: '구시가지 <span class="sorb">Staré Město</span>',
-      ar_altstadt_lead: "바츨라프 광장에서 화약탑, 천문시계가 있는 구시가지 광장을 지나 카를교까지 – 모두 걸어서.",
-      ar_burg_eyebrow: "구역 2 · 약 14:15–19:10",
-      ar_burg_title: '말라스트라나 & 프라하 성 <span class="sorb">Malá Strana · Pražský hrad</span>',
-      ar_burg_lead: "바로크 양식의 말라스트라나, 트램으로 올라가는 성 비투스 대성당과 황금소로가 있는 프라하 성, 그리고 옛 성 계단으로 걸어 내려오기.",
-      cityName: function (c) { return { Dresden: "드레스덴", Praha: "프라하", Altstadt: "구시가지", "Prager Burg": "프라하 성", Kleinseite: "말라스트라나", "Pražský hrad": "프라하 성 정류장", "Malostranské náměstí": "말로스트란스케 광장", Malostranská: "말로스트란스카역", "Hlavní nádraží": "중앙역" }[c] || c; },
-      citiesVal: "프라하 2곳",
+      ar_altstadt_lead: "중앙역에서 들라주데나 거리의 고서점으로, 화약탑을 지나 나셰 마소에서 버거를 먹고 오후 1시 천문시계가 있는 구시가지 광장까지 – 모두 걸어서.",
+      ar_burg_eyebrow: "구역 2 · 약 13:10–16:10",
+      ar_burg_title: '스트라호프 & 프라하 성 <span class="sorb">Strahovský klášter · Pražský hrad</span>',
+      ar_burg_lead: "지하철과 트램 22로 스트라호프 수도원 도서관까지 올라간 뒤, 성 비투스 대성당이 있는 프라하 성을 지나 옛 성 계단으로 지하철역까지 내려오기.",
+      ar_vinohrady_eyebrow: "구역 3 · 약 16:10–20:30",
+      ar_vinohrady_title: '일몰 & 저녁 <span class="sorb">Vinohrady · Žižkov</span>',
+      ar_vinohrady_lead: "바츨라프 광장 근처에서 마라탕, 지하철 A로 비노흐라디로 가서 리에그로비 사디에서 프라하 성 너머 일몰을 보고 우 호우드쿠에서 저녁 – 그다음 걸어서 중앙역으로.",
+      cityName: function (c) { return { Dresden: "드레스덴", Praha: "프라하", Altstadt: "구시가지", "Prager Burg": "프라하 성", Kleinseite: "말라스트라나", "Pražský hrad": "프라하 성 정류장", "Malostranské náměstí": "말로스트란스케 광장", Malostranská: "말로스트란스카역", "Hlavní nádraží": "중앙역", Pohořelec: "포호르젤레츠 정류장", "Můstek": "무스테크역", "Jiřího z Poděbrad": "이르지호 즈 포데브라트역", Strahov: "스트라호프", Vinohrady: "비노흐라디" }[c] || c; },
+      citiesVal: "프라하 3곳",
       meetVal: function (t) { return "드레스덴 중앙역, " + t; },
       meetSub: "프라하행 유로시티, 예시 시간 08:10 – 승차권은 미리 구입",
       doneSub: "프라하에서 즐거운 하루 보내셨기를!",
-      tagTram: "오후",
-      ttTram: "트램 22 (개략도)", ttMetro: "지하철 A + C (개략도)",
+      tagTram: "낮", tagEvening: "저녁",
+      ttTram: "트램 22 (개략도)", ttMetro: "지하철 A (개략도)",
       lgBus: "트램/지하철",
       heroMeta: "2026년 10월 9일 (금) · 레일젯/유로시티 · 별도 승차권 필요 (도이칠란트티켓 불가)",
       tripDate: "2026년 10월 9일 (금)",
@@ -477,25 +494,120 @@
       travelIntro: "10월 9일(금)에는 다음 장소, 출발 시간, 도보 시간을 자동으로 보여 주고, 그 전에는 출발까지 남은 시간을 셉니다. 미리 체험하려면 아래 ‘시간 시뮬레이션’을 사용하세요.",
       connChecked: function (d) { return d + " 기준 · 가는 열차는 검색 결과, 돌아오는 열차는 미확인 – 확인 필요"; },
       travelFoot: function (d) { return "열차 시간은 DB Navigator에서 확인하세요 · " + d + " 기준"; },
-      meetSub: "그라츠행 레일젯 RJ 257, 08:10 출발 – 승차권은 미리 구입"
+      meetSub: "예지와 함께 · 그라츠행 레일젯 RJ 257, 08:10 출발 – 승차권은 미리 구입",
+      planMain: "이른 출발 · 08:10", planLate: "늦은 출발 · 10:10",
+      planMainNote: "마라탕 간식까지 저장한 장소를 모두 들르는 하루 일정.",
+      planLateNote: "10:10 출발 (미확인), 약 12:25 도착 – 마라탕은 빼고 스트라호프와 프라하 성은 빠르게.",
+      meetSubLate: "예지와 함께 · 10:10 출발 열차 (미확인) – 승차권은 미리 구입"
     }
   };
 
   // ------------------------------------------------------------------ Inhalte nach id
   var content = {
     en: {
+      "pr-antik": {
+        name: "Antikvariát Dlážděná (ADPlus)",
+        text: "A large antiquarian bookshop with over 24,000 books, old prints, maps and graphics – between Náměstí Republiky and Masaryk station.",
+        why: "Open on weekdays only – Friday is the one chance. It lies right on the way from the main station to the Old Town.",
+        duration: "30 min",
+        walkText: "approx. 900 m · 12 min from the main station",
+        hoursNote: "Mon–Fri 10 am–6 pm, closed Sat–Sun."
+      },
+      "pr-strahov": {
+        name: "Strahov Monastery & Library",
+        text: "Premonstratensian monastery above the castle with its famous library: the Theological and Philosophical Halls with Baroque ceiling frescoes.",
+        why: "One of the most beautiful library halls in the world – and a wide view over Prague from the monastery garden.",
+        duration: "45–60 min",
+        walkText: "approx. 3 min from the Pohořelec stop",
+        hoursLabel: "Library",
+        hoursNote: "Daily 9 am–5 pm, ticket desk until 4:15 pm, last entry 4:30 pm. Admission approx. 220 CZK (older figure 190 CZK – check on site). The halls are viewed from the doorway."
+      },
+      "pr-riegrovy": {
+        name: "Riegrovy sady (viewpoint)",
+        text: "A hilltop park in Vinohrady: its western slope looks across the whole city to Prague Castle, with a large beer garden next to it.",
+        why: "Prague's favourite sunset spot – on 9 October the sun sets behind the castle at about 6:25 pm.",
+        duration: "60 min",
+        walkText: "approx. 8 min from Jiřího z Poděbrad (metro A)",
+        hoursNote: "Park always open, free. The beer garden is open roughly April–October – in early October possibly with shorter hours, closed in rain.",
+        extra: "Be there by about 5:45 pm to get a spot on the lawn; it gets cold quickly after sunset – bring a jacket."
+      },
+      "nase-maso": {
+        cuisine: "Butcher's shop with burgers, sekaná (meatloaf) and sausages",
+        when: "Early lunch, approx. 11:40–12:25",
+        text: "A small butcher's shop with a counter and standing tables – burgers and meatloaf are made fresh from their own meat.",
+        why: "One of Prague's best-known burgers; before noon the queue is still short.",
+        hoursNote: "Per research Mon–Sat from about 10/11 am until 8–10 pm (sources disagree), closed Sun.",
+        price: "Burger approx. 200–250 CZK (estimate)",
+        note: "Few seats – if needed, take the burger to go and walk on to Old Town Square."
+      },
+      "zubang": {
+        cuisine: "Korean & Korean-Chinese",
+        when: "Lunch alternative, 2 min from Old Town Square",
+        text: "Korean restaurant right behind Old Town Square – with dishes like jjajangmyeon and jjamppong.",
+        why: "Instead of burgers: Korean food right next to the Astronomical Clock.",
+        hoursNote: "Opening hours not found – check in Google Maps.",
+        price: "on the pricier side (per review site)"
+      },
+      "malatang": {
+        cuisine: "Chinese malatang (build-your-own spicy hotpot)",
+        when: "Afternoon snack, approx. 16:25–17:05",
+        text: "Put your ingredients in a bowl, have it weighed and cooked as a spicy soup; mix your own sauce.",
+        why: "A small bowl to share is enough – dinner comes at 7 pm.",
+        hoursNote: "Open for lunch and dinner; exact hours not found – check in Google Maps.",
+        price: "up to approx. 240 CZK per person, cards accepted",
+        rating: "Google approx. 4.3–4.4 (per review site)"
+      },
+      "wokin": {
+        cuisine: "Asian wok dishes",
+        when: "Alternative to the malatang snack",
+        text: "Quick wok bowls to take away or eat in, a few steps from Wenceslas Square.",
+        hoursNote: "Mon–Fri 10:30 am–8:30 pm (Jindřišská branch).",
+        price: "Bowl approx. 139 CZK"
+      },
+      "budvarka": {
+        cuisine: "Czech beer hall, unfiltered Budweiser Budvar",
+        when: "Alternative after the castle (instead of malatang)",
+        text: "Traditional beer hall in Dejvice dating from 1914, with kroužkovaný ležák (unfiltered lager) and Czech food.",
+        why: "Off the route: approx. 15 min from the castle by tram/bus, then metro A from Dejvická straight to Jiřího z Poděbrad.",
+        hoursNote: "Daily 11 am–11 pm (prague.eu).",
+        price: "€€ (estimate)"
+      },
+      "houdku": {
+        cuisine: "Cheap Czech pub food",
+        when: "Dinner, approx. 19:00–20:05",
+        text: "A rustic Žižkov pub with hearty Czech food at neighbourhood prices – only 10–15 min from Riegrovy sady.",
+        why: "Perfect after the sunset, and only about 20 min from the main station.",
+        hoursNote: "Per research approx. 11 am–midnight – please check.",
+        price: "€ (estimate)",
+        note: "Bring cash and reserve for Friday evening."
+      },
+      "k-remember": {
+        cuisine: "Asian (per listing Vietnamese & vegetarian)",
+        when: "Dinner alternative, approx. 12 min from the main station",
+        text: "The listing found describes an Asian restaurant with duck, beef noodles and summer rolls. If your saved place is Korean, it is a different restaurant.",
+        hoursNote: "Opening hours not found – check in Google Maps.",
+        price: "approx. 200–300 CZK",
+        rating: "4.5 (per review site)"
+      },
+      "c-kimchi": {
+        text: "Korean guesthouse (minbak) “Dobrý Praha”; according to blogs, breakfast is served in the Korean bistro The Kimchi in the same building. Not needed for the day trip – saved as an address for an overnight stay.",
+        hoursNote: "Opening hours not found – check in Google Maps.",
+        special: "Korean bistro",
+        price: "€€ (estimate)",
+        distance: "approx. 3 min from the bookshop"
+      },
       "pr-wenzel": {
         name: "Wenceslas Square (Václavské náměstí)",
         text: "A boulevard some 750 m long with the National Museum at the top end and the equestrian statue of St. Wenceslas.",
         why: "The stage of 1968 and 1989 – Czech recent history comes alive here.",
-        duration: "15 min", walkText: "approx. 650 m · 8 min from the main station",
+        duration: "15 min", walkText: "approx. 3 min from Malatang No.1",
         hoursNote: "Public square – always accessible."
       },
       "pr-pulverturm": {
         name: "Powder Tower & Municipal House",
         text: "The late-Gothic Powder Tower of 1475 marks the start of the Royal Route to the castle; right next to it stands the Art Nouveau Municipal House (Obecní dům) with Smetana Hall.",
         why: "Gothic and Art Nouveau side by side.",
-        duration: "15 min", walkText: "approx. 700 m · 9 min from Wenceslas Square",
+        duration: "15 min", walkText: "approx. 400 m · 5 min from the bookshop",
         hoursNote: "Tower open depending on the month (Jan–Mar 10–18, Apr–May 10–19, Jun–Sep 9–20:30, Oct–Nov 10–18, Dec 10–19:30). Municipal House: guided tours approx. 1 h, 320 CZK, box office daily 10–19.",
         hoursLabel: "Powder Tower"
       },
@@ -503,7 +615,7 @@
         name: "Old Town Square (Staroměstské náměstí)",
         text: "The historic main square of the Old Town with the Jan Hus Memorial, the Old Town Hall and the Týn Church.",
         why: "The heart of Prague – with the towers of the Týn Church as the classic postcard view.",
-        duration: "15–20 min", walkText: "approx. 450 m · 6 min via Celetná",
+        duration: "15–20 min", walkText: "approx. 500 m · 7 min via Dlouhá",
         hoursNote: "Public square – always accessible."
       },
       "pr-orloj": {
@@ -527,20 +639,22 @@
         text: "The 516 m bridge was built in 1357–1402 and is lined with 30 Baroque statues of saints.",
         why: "The classic view of Prague Castle – much quieter early in the morning or in the evening.",
         duration: "20–30 min", walkText: "approx. 750 m · 10 min via Karlova",
-        hoursNote: "Bridge freely accessible around the clock. Old Town Bridge Tower approx. 10–22 in high season (please check in winter)."
+        hoursNote: "Bridge freely accessible around the clock. Old Town Bridge Tower approx. 10–22 in high season (please check in winter).",
+        reason: "Not in the Friday plan: dropped in favour of Strahov and food. Fits after the Astronomical Clock (10 min on foot) if you skip the castle."
       },
       "pr-nikolaus": {
         name: "Lesser Town Square & St. Nicholas Church",
         text: "The High Baroque Jesuit church by the Dientzenhofer family of architects, with its great dome, dominates Lesser Town Square.",
         why: "One of Prague's most splendid Baroque interiors.",
-        duration: "25–30 min", walkText: "approx. 550 m · 7 min via Mostecká",
-        hoursNote: "Depending on the month approx. 9–16/17/18 (e.g. Jul–Oct Mon–Thu & Sun 9–18, Fri–Sat 9–17); last entry 15 min before closing. Admission 150 CZK, reduced 90 CZK."
+        duration: "25–30 min", walkText: "approx. 7 min from Malostranská",
+        hoursNote: "Depending on the month approx. 9–16/17/18 (e.g. Jul–Oct Mon–Thu & Sun 9–18, Fri–Sat 9–17); last entry 15 min before closing. Admission 150 CZK, reduced 90 CZK.",
+        reason: "Not in the Friday plan: at the foot of the castle, if you have 30 minutes left after the Old Castle Steps."
       },
       "pr-burg": {
         name: "Prague Castle (Pražský hrad)",
         text: "One of the largest castle complexes in the world and seat of the Czech president – with courtyards, palaces, churches and gardens.",
         why: "The castle grounds are free; the circuit ticket gets you into the main buildings.",
-        duration: "60–90 min", walkText: "approx. 5 min from the Pražský hrad stop to the 2nd courtyard",
+        duration: "60–90 min", walkText: "approx. 800 m · 12 min via Hradčany Square",
         hoursNote: "Grounds daily 6:00–22:00, free. Buildings in summer (1 Apr–31 Oct) 9–17, in winter 9–16. “Main Circuit” ticket approx. 450 CZK according to research (check on hrad.cz).",
         extra: "Airport-style security checks at all entrances – leave large backpacks behind and expect queues in summer.",
         hoursLabel: "Castle grounds"
@@ -558,7 +672,8 @@
         text: "Tiny colourful houses built into the castle wall – Franz Kafka lived for a while at No. 22.",
         why: "The most picturesque corner of the castle.",
         duration: "15–20 min", walkText: "approx. 300 m · 4 min from the cathedral",
-        hoursNote: "During the day (until building closing time) only with a castle ticket; free in the evening until approx. 22:00 (from approx. 17:00 in summer, 16:00 in winter)."
+        hoursNote: "During the day (until building closing time) only with a castle ticket; free in the evening until approx. 22:00 (from approx. 17:00 in summer, 16:00 in winter).",
+        reason: "Not in the Friday plan: during the day only with a castle ticket – the plan covers the (free) castle grounds and St. Vitus Cathedral."
       },
       "pr-juedisch": {
         name: "Jewish Museum (Josefov)",
@@ -566,7 +681,7 @@
         why: "One of Europe's most important Jewish museums – moving and historically unique.",
         duration: "60–90 min", walkText: "approx. 5 min from Old Town Square via Pařížská",
         hoursNote: "Closed on Saturdays and Jewish holidays (2026 incl. 2–3 Apr, 8–9 Apr, 22 May, 13 Sep, 21 Sep, 27 Sep, 4 Oct). 2026: Jan–Mar 9–16:30, Apr 9–18, May–Aug 9–19, 1 Sep–17 Oct 9–18, from 18 Oct 9–16:30.",
-        reason: "Not in the main plan: with the Old Town, Charles Bridge and the castle, one day is otherwise too full. To visit it, it's best to skip Wenceslas Square and the Powder Tower."
+        reason: "Not in the main plan: with the Old Town, Charles Bridge and the castle, one day is otherwise too full. To visit it, it's best to skip Strahov and the castle."
       },
       "pr-altneu": {
         name: "Old-New Synagogue (Staronová synagoga)",
@@ -577,39 +692,6 @@
         reason: "Not in the main plan – easy to combine with the Jewish Museum."
       },
 
-      "lokal-dlouha": {
-        cuisine: "Czech pub food, tank Pilsner",
-        when: "lunch, approx. 12:30–13:30",
-        text: "A long, lively beer hall with Pilsner Urquell straight from the tank and Czech classics such as svíčková or schnitzel.",
-        why: "Real Czech food at fair prices, just a few minutes from Old Town Square.",
-        hoursNote: "Mon–Sat 11:00–24:00, Sun 11:00–22:00.",
-        price: "main course approx. 250–350 CZK (estimate)",
-        note: "Usually no booking needed at lunchtime; book for the evening."
-      },
-      "pinkasu": {
-        cuisine: "Traditional Czech food, Pilsner",
-        when: "alternative for lunch, near Wenceslas Square",
-        text: "Prague's first Pilsner pub since 1843 – steeped in tradition and centrally located.",
-        hoursNote: "Daily 10:00–22:30.",
-        price: "€€ (estimate)"
-      },
-      "kuzelka": {
-        cuisine: "Czech pub food, tank Pilsner",
-        when: "dinner, approx. 17:40–19:10",
-        text: "A cosy pub right at the Lesser Town end of Charles Bridge – same concept as Lokál Dlouhááá.",
-        why: "Perfectly placed on the way back from the castle.",
-        hoursNote: "Mon–Sat 11:00–24:00, Sun 11:00–23:00; kitchen in the evening until approx. 21:45.",
-        price: "main course approx. 250–350 CZK (estimate)",
-        note: "Booking recommended for the evening."
-      },
-      "flek": {
-        cuisine: "Brewery pub, dark house beer",
-        when: "alternative for dinner, in the New Town",
-        text: "Prague's oldest brewery pub with its own dark beer and large halls.",
-        hoursNote: "Daily 11:00–23:00.",
-        price: "€€ (estimate)",
-        note: "Very touristy: waiters often bring Becherovka or beer unasked, which costs extra – simply decline if you don't want it."
-      },
 
       "c-orient": {
         text: "The only Cubist café in the world, on the first floor of the Cubist “House of the Black Madonna”.",
@@ -619,27 +701,113 @@
       "c-louvre": {
         text: "A traditional café since 1902 – Kafka and Einstein were guests here.",
         hoursNote: "Mon–Fri 8:00–23:30, Sat–Sun 9:00–23:30.",
-        special: "Coffee-house classic", price: "€ (estimate)", distance: "approx. 10 min south of the Old Town"
-      },
-      "c-savoy": {
-        text: "An elegant café with a Neo-Renaissance ceiling by the Legion Bridge – good for breakfast or a cake break.",
-        hoursNote: "Mon–Fri 8:00–22:00, Sat–Sun & public holidays 9:00–22:00.",
-        special: "Breakfast, cakes", price: "€–€€ (estimate)", distance: "approx. 10 min from Charles Bridge"
+        special: "Coffee-house classic", price: "€ (estimate)", distance: "approx. 8 min from Malatang No.1"
       }
     },
     ko: {
+      "pr-antik": {
+        name: "들라주데나 고서점 (ADPlus)",
+        text: "책 24,000권 이상과 옛 인쇄물, 지도, 판화를 갖춘 큰 고서점 – 공화국 광장과 마사리크역 사이에 있습니다.",
+        why: "평일에만 문을 열어서 금요일이 유일한 기회입니다. 중앙역에서 구시가지로 가는 길에 바로 있습니다.",
+        duration: "30분",
+        walkText: "중앙역에서 약 900 m · 12분",
+        hoursNote: "월–금 10–18시, 토–일 휴무."
+      },
+      "pr-strahov": {
+        name: "스트라호프 수도원 & 도서관",
+        text: "프라하 성 위쪽의 프레몽트레회 수도원으로, 바로크 천장화가 있는 신학의 방과 철학의 방 도서관이 유명합니다.",
+        why: "세계에서 가장 아름다운 도서관 중 하나 – 수도원 정원에서는 프라하 전경도 보입니다.",
+        duration: "45–60분",
+        walkText: "포호르젤레츠 정류장에서 약 3분",
+        hoursLabel: "도서관",
+        hoursNote: "매일 9–17시, 매표 16:15까지, 마지막 입장 16:30. 입장료 약 220 CZK (예전 정보 190 CZK – 현장 확인). 홀은 입구에서 바라보는 방식입니다."
+      },
+      "pr-riegrovy": {
+        name: "리에그로비 사디 (전망 공원)",
+        text: "비노흐라디 언덕 위의 공원으로, 서쪽 비탈에서 도시 전체와 프라하 성이 보이고 옆에 큰 비어가든이 있습니다.",
+        why: "프라하 사람들이 사랑하는 일몰 명소 – 10월 9일에는 오후 6시 25분쯤 성 뒤로 해가 집니다.",
+        duration: "60분",
+        walkText: "이르지호 즈 포데브라트역(지하철 A)에서 약 8분",
+        hoursNote: "공원은 언제나 무료 개방. 비어가든은 대략 4–10월 운영 – 10월 초에는 단축 운영일 수 있고 비가 오면 닫습니다.",
+        extra: "잔디밭 자리를 잡으려면 17:45쯤 도착하세요. 해가 지면 금방 추워지니 겉옷을 챙기세요."
+      },
+      "nase-maso": {
+        cuisine: "버거, 세카나(미트로프), 소시지를 파는 정육점",
+        when: "이른 점심, 약 11:40–12:25",
+        text: "카운터와 스탠딩 테이블이 있는 작은 정육점 – 직접 손질한 고기로 버거와 미트로프를 바로 만들어 줍니다.",
+        why: "프라하에서 가장 유명한 버거 중 하나. 12시 전에는 줄이 아직 짧습니다.",
+        hoursNote: "조사 결과 월–토 10/11시경부터 20–22시까지 (출처마다 다름), 일요일 휴무.",
+        price: "버거 약 200–250 CZK (추정)",
+        note: "좌석이 적어요 – 필요하면 버거를 들고 구시가지 광장으로 걸어가세요."
+      },
+      "zubang": {
+        cuisine: "한식 & 중화요리(한국식)",
+        when: "점심 대안, 구시가지 광장에서 2분",
+        text: "구시가지 광장 바로 뒤에 있는 한식당 – 짜장면, 짬뽕 같은 메뉴가 있습니다.",
+        why: "버거 대신 천문시계 바로 옆에서 한식을.",
+        hoursNote: "영업시간을 찾지 못함 – Google 지도에서 확인하세요.",
+        price: "가격대가 높은 편 (리뷰 사이트 기준)"
+      },
+      "malatang": {
+        cuisine: "중국식 마라탕 (재료를 골라 만드는 매운 탕)",
+        when: "오후 간식, 약 16:25–17:05",
+        text: "재료를 그릇에 담아 무게를 재면 매운 탕으로 끓여 줍니다. 소스는 직접 섞어요.",
+        why: "작은 그릇 하나를 나눠 먹으면 충분 – 저녁은 7시에 먹습니다.",
+        hoursNote: "점심·저녁 영업, 정확한 시간은 찾지 못함 – Google 지도에서 확인하세요.",
+        price: "1인 약 240 CZK 이하, 카드 가능",
+        rating: "Google 약 4.3–4.4 (리뷰 사이트 기준)"
+      },
+      "wokin": {
+        cuisine: "아시아 웍 요리",
+        when: "마라탕 간식 대안",
+        text: "바츨라프 광장에서 몇 걸음 거리의 빠른 웍 볼, 포장 또는 매장 식사.",
+        hoursNote: "월–금 10:30–20:30 (인드르지슈스카 지점).",
+        price: "볼 약 139 CZK"
+      },
+      "budvarka": {
+        cuisine: "체코 맥줏집, 비여과 부드바르 맥주",
+        when: "프라하 성 다음 대안 (마라탕 대신)",
+        text: "1914년부터 이어진 데이비체의 전통 맥줏집으로, 비여과 라거(크로우슈코바니 레자크)와 체코 요리가 있습니다.",
+        why: "동선에서 벗어나 있어요: 성에서 트램/버스로 약 15분, 돌아올 때는 데이비츠카역에서 지하철 A로 이르지호 즈 포데브라트까지 바로.",
+        hoursNote: "매일 11–23시 (prague.eu).",
+        price: "€€ (추정)"
+      },
+      "houdku": {
+        cuisine: "저렴한 체코 선술집 요리",
+        when: "저녁, 약 19:00–20:05",
+        text: "든든한 체코 요리를 동네 가격에 파는 지슈코프의 소박한 선술집 – 리에그로비 사디에서 10–15분.",
+        why: "일몰 뒤에 딱 좋고, 중앙역까지 약 20분입니다.",
+        hoursNote: "조사 결과 약 11–24시 – 확인 필요.",
+        price: "€ (추정)",
+        note: "현금을 챙기고 금요일 저녁은 예약하세요."
+      },
+      "k-remember": {
+        cuisine: "아시아 요리 (등록 정보상 베트남식 & 채식)",
+        when: "저녁 대안, 중앙역에서 약 12분",
+        text: "찾은 정보에 따르면 오리 요리, 소고기 쌀국수, 월남쌈을 파는 아시아 식당입니다. 저장한 장소가 한식당이라면 다른 곳입니다.",
+        hoursNote: "영업시간을 찾지 못함 – Google 지도에서 확인하세요.",
+        price: "약 200–300 CZK",
+        rating: "4.5 (리뷰 사이트 기준)"
+      },
+      "c-kimchi": {
+        text: "한인민박 ‘도브리 프라하’. 블로그에 따르면 같은 건물의 한식 비스트로 The Kimchi에서 아침을 줍니다. 당일 여행에는 필요 없지만 숙박용 주소로 저장해 두었습니다.",
+        hoursNote: "영업시간을 찾지 못함 – Google 지도에서 확인하세요.",
+        special: "한식 비스트로",
+        price: "€€ (추정)",
+        distance: "고서점에서 약 3분"
+      },
       "pr-wenzel": {
         name: "바츨라프 광장",
         text: "길이 약 750 m의 대로로, 위쪽 끝에 국립박물관과 성 바츨라프 기마상이 있습니다.",
         why: "1968년과 1989년의 무대 – 체코 현대사를 생생하게 느낄 수 있습니다.",
-        duration: "15분", walkText: "중앙역에서 약 650 m · 8분",
+        duration: "15분", walkText: "마라탕 No.1에서 약 3분",
         hoursNote: "공공 광장 – 언제나 개방."
       },
       "pr-pulverturm": {
         name: "화약탑 & 시민회관",
         text: "1475년의 후기 고딕 화약탑은 성으로 가는 ‘왕의 길’의 시작점이며, 바로 옆에 스메타나 홀이 있는 아르누보 양식의 시민회관(Obecní dům)이 있습니다.",
         why: "고딕과 아르누보가 나란히 서 있습니다.",
-        duration: "15분", walkText: "바츨라프 광장에서 약 700 m · 9분",
+        duration: "15분", walkText: "고서점에서 약 400 m · 5분",
         hoursNote: "탑은 월별로 운영 (1–3월 10–18, 4–5월 10–19, 6–9월 9–20:30, 10–11월 10–18, 12월 10–19:30). 시민회관: 가이드 투어 약 1시간, 320 CZK, 매표소 매일 10–19.",
         hoursLabel: "화약탑"
       },
@@ -647,7 +815,7 @@
         name: "구시가지 광장",
         text: "얀 후스 기념비, 구 시청사, 틴 성당이 있는 구시가지의 역사적인 중심 광장입니다.",
         why: "프라하의 심장 – 틴 성당의 탑이 엽서 속 풍경을 만듭니다.",
-        duration: "15–20분", walkText: "첼레트나 거리로 약 450 m · 6분",
+        duration: "15–20분", walkText: "들로우하 거리로 약 500 m · 7분",
         hoursNote: "공공 광장 – 언제나 개방."
       },
       "pr-orloj": {
@@ -671,20 +839,22 @@
         text: "1357–1402년에 지어진 길이 516 m의 다리로, 30개의 바로크 성인상이 늘어서 있습니다.",
         why: "프라하 성을 바라보는 고전적인 풍경 – 이른 아침이나 저녁에는 훨씬 한산합니다.",
         duration: "20–30분", walkText: "카를로바 거리로 약 750 m · 10분",
-        hoursNote: "다리는 24시간 자유 통행. 구시가지 교탑은 성수기 약 10–22시 (겨울은 확인 필요)."
+        hoursNote: "다리는 24시간 자유 통행. 구시가지 교탑은 성수기 약 10–22시 (겨울은 확인 필요).",
+        reason: "금요일 일정에는 없음: 스트라호프와 맛집을 위해 뺐습니다. 프라하 성을 건너뛴다면 천문시계 다음에 (걸어서 10분) 들르기 좋습니다."
       },
       "pr-nikolaus": {
         name: "말라스트라나 광장 & 성 미쿨라시 성당",
         text: "딘첸호퍼 가문이 지은 거대한 돔의 전성기 바로크 예수회 성당이 말라스트라나 광장을 압도합니다.",
         why: "프라하에서 가장 화려한 바로크 실내 중 하나입니다.",
-        duration: "25–30분", walkText: "모스테츠카 거리로 약 550 m · 7분",
-        hoursNote: "월에 따라 약 9–16/17/18시 (예: 7–10월 월–목·일 9–18, 금–토 9–17); 마감 15분 전 마지막 입장. 입장료 150 CZK, 할인 90 CZK."
+        duration: "25–30분", walkText: "말로스트란스카역에서 약 7분",
+        hoursNote: "월에 따라 약 9–16/17/18시 (예: 7–10월 월–목·일 9–18, 금–토 9–17); 마감 15분 전 마지막 입장. 입장료 150 CZK, 할인 90 CZK.",
+        reason: "금요일 일정에는 없음: 성 아래에 있어서, 옛 성 계단을 내려온 뒤 30분 여유가 있으면 들르세요."
       },
       "pr-burg": {
         name: "프라하 성",
         text: "세계에서 가장 큰 성 단지 중 하나이자 체코 대통령 관저로, 안뜰·궁전·성당·정원이 있습니다.",
         why: "성 구역은 무료이며, 순환 관람권으로 주요 건물에 들어갈 수 있습니다.",
-        duration: "60–90분", walkText: "프라하 성 정류장에서 제2안뜰까지 약 5분",
+        duration: "60–90분", walkText: "흐라트차니 광장을 지나 약 800 m · 12분",
         hoursNote: "성 구역 매일 6:00–22:00, 무료. 건물은 여름(4.1–10.31) 9–17, 겨울 9–16. ‘메인 서킷’ 관람권 조사 기준 약 450 CZK (hrad.cz에서 확인).",
         extra: "모든 입구에서 공항식 보안 검색 – 큰 배낭은 두고 오고, 여름에는 대기 시간을 예상하세요.",
         hoursLabel: "성 구역"
@@ -702,7 +872,8 @@
         text: "성벽에 붙은 작고 알록달록한 집들 – 프란츠 카프카가 한동안 22번지에 살았습니다.",
         why: "성에서 가장 그림 같은 구석입니다.",
         duration: "15–20분", walkText: "대성당에서 약 300 m · 4분",
-        hoursNote: "낮에는 (건물 마감 시각까지) 성 관람권이 필요하고, 저녁에는 약 22시까지 무료 (여름 약 17시부터, 겨울 약 16시부터)."
+        hoursNote: "낮에는 (건물 마감 시각까지) 성 관람권이 필요하고, 저녁에는 약 22시까지 무료 (여름 약 17시부터, 겨울 약 16시부터).",
+        reason: "금요일 일정에는 없음: 낮에는 성 입장권이 있어야 합니다 – 일정에는 무료인 성 구역과 성 비투스 대성당만 넣었습니다."
       },
       "pr-juedisch": {
         name: "유대인 박물관 (요세포프)",
@@ -710,7 +881,7 @@
         why: "유럽에서 가장 중요한 유대인 박물관 중 하나 – 감동적이고 역사적으로 독보적입니다.",
         duration: "60–90분", walkText: "구시가지 광장에서 파르지주스카 거리로 약 5분",
         hoursNote: "토요일과 유대교 명절에 휴관 (2026년 4.2–3, 4.8–9, 5.22, 9.13, 9.21, 9.27, 10.4 등). 2026년: 1–3월 9–16:30, 4월 9–18, 5–8월 9–19, 9.1–10.17 9–18, 10.18부터 9–16:30.",
-        reason: "기본 일정에는 없음: 구시가지, 카를교, 성까지 하면 하루가 너무 빡빡합니다. 방문하려면 바츨라프 광장과 화약탑을 빼는 것이 좋습니다."
+        reason: "기본 일정에는 없음: 구시가지, 카를교, 성까지 하면 하루가 너무 빡빡합니다. 방문하려면 스트라호프와 프라하 성을 빼는 것이 좋습니다."
       },
       "pr-altneu": {
         name: "구신 시나고그",
@@ -721,43 +892,6 @@
         reason: "기본 일정에는 없음 – 유대인 박물관과 함께 둘러보기 좋습니다."
       },
 
-      "lokal-dlouha": {
-        name: "로칼 들로우하",
-        cuisine: "체코 선술집 요리, 탱크 필스너",
-        when: "점심, 약 12:30–13:30",
-        text: "탱크에서 바로 따르는 필스너 우르켈과 스비치코바, 슈니첼 같은 체코 대표 요리를 내는 길고 활기찬 맥주홀입니다.",
-        why: "구시가지 광장에서 몇 분 거리, 합리적인 가격의 진짜 체코 요리.",
-        hoursNote: "월–토 11:00–24:00, 일 11:00–22:00.",
-        price: "메인 요리 약 250–350 CZK (추정)",
-        note: "점심은 보통 예약 없이 가능, 저녁은 예약하세요."
-      },
-      "pinkasu": {
-        name: "우 핀카수",
-        cuisine: "전통 체코 요리, 필스너",
-        when: "점심 대안, 바츨라프 광장 근처",
-        text: "1843년부터 프라하 최초의 필스너 술집 – 전통 깊고 중심가에 있습니다.",
-        hoursNote: "매일 10:00–22:30.",
-        price: "€€ (추정)"
-      },
-      "kuzelka": {
-        name: "로칼 우 빌레 쿠젤키",
-        cuisine: "체코 선술집 요리, 탱크 필스너",
-        when: "저녁, 약 17:40–19:10",
-        text: "카를교 말라스트라나 쪽 끝에 있는 아늑한 선술집 – 로칼 들로우하와 같은 콘셉트입니다.",
-        why: "성에서 내려오는 길에 딱 맞는 위치입니다.",
-        hoursNote: "월–토 11:00–24:00, 일 11:00–23:00; 저녁 주방은 약 21:45까지.",
-        price: "메인 요리 약 250–350 CZK (추정)",
-        note: "저녁에는 예약을 권합니다."
-      },
-      "flek": {
-        name: "우 플레쿠",
-        cuisine: "양조장 식당, 흑맥주",
-        when: "저녁 대안, 신시가지",
-        text: "자체 양조 흑맥주와 큰 홀이 있는 프라하에서 가장 오래된 양조장 식당입니다.",
-        hoursNote: "매일 11:00–23:00.",
-        price: "€€ (추정)",
-        note: "매우 관광객 위주: 직원이 묻지 않고 베헤로브카나 맥주를 가져오는 경우가 많고 별도 요금입니다 – 원하지 않으면 거절하세요."
-      },
 
       "c-orient": {
         name: "그랜드 카페 오리엔트",
@@ -769,13 +903,7 @@
         name: "카페 루브르",
         text: "1902년부터 이어진 전통 카페 – 카프카와 아인슈타인이 손님이었습니다.",
         hoursNote: "월–금 8:00–23:30, 토–일 9:00–23:30.",
-        special: "클래식 카페하우스", price: "€ (추정)", distance: "구시가지에서 남쪽으로 약 10분"
-      },
-      "c-savoy": {
-        name: "카페 사보이",
-        text: "레기이 다리 옆, 네오르네상스 천장이 있는 우아한 카페 – 아침 식사나 케이크 타임에 좋습니다.",
-        hoursNote: "월–금 8:00–22:00, 토–일·공휴일 9:00–22:00.",
-        special: "아침 식사, 케이크", price: "€–€€ (추정)", distance: "카를교에서 약 10분"
+        special: "클래식 카페하우스", price: "€ (추정)", distance: "마라탕 No.1에서 약 8분"
       }
     }
   };
@@ -783,6 +911,83 @@
   // ------------------------------------------------------------------ Kurztexte (deutsches Original als Schlüssel)
   var phrases = {
     en: {
+      "Zug Richtung Praha – Ticket vorher kaufen (Deutschlandticket gilt nicht)": "Train towards Praha – buy your ticket in advance (Deutschlandticket not valid)",
+      "Zug Dresden Hbf → Praha hl. n.": "Train Dresden Hbf → Praha hl. n.",
+      "Abfahrt 10:10 unbestätigt · im DB Navigator prüfen": "10:10 departure unconfirmed · check in DB Navigator",
+      "Am Pulverturm vorbei zu Naše maso": "Past the Powder Tower to Naše maso",
+      "Mittagsandrang lässt nach": "the lunch rush is easing",
+      "Teynkirche ab 15 Uhr wieder offen": "Týn Church open again from 3 pm",
+      "Apostelumgang um 15:00 Uhr": "procession of the apostles at 3 pm",
+      "letzter Einlass 16:30 – nicht trödeln": "last entry 4:30 pm – don't dawdle",
+      "Durchs Burgareal bergab": "Downhill through the castle grounds",
+      "Veitsdom schließt um 17 Uhr – kurzer Blick": "St. Vitus closes at 5 pm – quick look",
+      "5 Stationen ohne Umstieg": "5 stops, no change",
+      "Dresden → Prag (später)": "Dresden → Prague (later)",
+      "⚠ Diese Abfahrt ist NICHT bestätigt: Gefunden wurden Railjets ab Dresden Hbf um 09:10 (an 11:25) und 11:10 (an 13:25) – die Züge fahren offenbar jeweils zur Minute :10. Bitte im DB Navigator für Fr, 9.10. prüfen; bei 09:10 wird der Tag entspannter, bei 11:10 Strahov und Burg streichen.": "⚠ This departure is NOT confirmed: Railjets were found from Dresden Hbf at 09:10 (arr. 11:25) and 11:10 (arr. 13:25) – trains apparently leave at :10 past the hour. Please check in DB Navigator for Fri 9 Oct; with 09:10 the day gets more relaxed, with 11:10 drop Strahov and the castle.",
+      "Railjet 09:10 → 11:25 (laut bahn.de, Stand März 2026)": "Railjet 09:10 → 11:25 (per bahn.de, as of March 2026)",
+      "Railjet 11:10 → 13:25 (laut Kombo)": "Railjet 11:10 → 13:25 (per Kombo)",
+      "Burg → Riegrovy sady": "Castle → Riegrovy sady",
+      "Beispielzeit – Metro A fährt alle paar Minuten und ohne Umstieg (5 Stationen). 30-Minuten-Ticket reicht.": "Example time – metro A runs every few minutes, no change needed (5 stops). A 30-minute ticket is enough.",
+      "Entspanntere Variante: Strahov und Burg auslassen, nach dem Orloj Malatang No.1 (ca. 15:30–16:15) und über den Wenzelsplatz mit Metro A ab Muzeum zum Riegrovy sady (ca. 17:00 da).": "More relaxed option: skip Strahov and the castle; after the Astronomical Clock have Malatang No.1 (approx. 15:30–16:15), then walk across Wenceslas Square and take metro A from Muzeum to Riegrovy sady (there by approx. 17:00).",
+      "Treffen mit Yeji am Dresden Hauptbahnhof": "Meet Yeji at Dresden Hauptbahnhof",
+      "Railjet Richtung Praha – Ticket vorher kaufen (Deutschlandticket gilt nicht)": "Railjet towards Praha – buy your ticket in advance (Deutschlandticket not valid)",
+      "Fußweg zum Antikvariát Dlážděná": "Walk to Antikvariát Dlážděná",
+      "Antikvariát Dlážděná": "Antikvariát Dlážděná",
+      "nur werktags – heute die Chance": "weekdays only – today's the chance",
+      "kurzer Fotostopp": "quick photo stop",
+      "Fußweg zu Naše maso": "Walk to Naše maso",
+      "Burger bei Naše maso": "Burgers at Naše maso",
+      "vor 12 Uhr ist die Schlange kurz": "the queue is short before noon",
+      "Über die Dlouhá zum Altstädter Ring": "Along Dlouhá to Old Town Square",
+      "Altstädter Ring & Teynkirche": "Old Town Square & Týn Church",
+      "Teynkirche Di–Sa bis 13 Uhr": "Týn Church Tue–Sat until 1 pm",
+      "Astronomische Uhr (Orloj)": "Astronomical Clock (Orloj)",
+      "Apostelumgang um 13:00 Uhr": "procession of the apostles at 1 pm",
+      "Fußweg zur Metro Staroměstská": "Walk to Staroměstská metro",
+      "Metro A → Malostranská": "Metro A → Malostranská",
+      "1 Station · 30-Min.-Ticket reicht bis Strahov": "1 stop · a 30-min ticket covers the ride to Strahov",
+      "Tram 22 → Pohořelec": "Tram 22 → Pohořelec",
+      "ca. 10 Min. bergauf, vorbei an der Burg": "approx. 10 min uphill, past the castle",
+      "Fußweg zum Kloster Strahov": "Walk to Strahov Monastery",
+      "ca. 3 Min.": "approx. 3 min",
+      "Strahov": "Strahov",
+      "Kloster Strahov & Bibliothek": "Strahov Monastery & Library",
+      "Bibliothekssäle und Blick über Prag": "library halls and a view over Prague",
+      "Über den Hradschiner Platz zur Burg": "Via Hradčany Square to the castle",
+      "Areal kostenlos · Dom bis 17 Uhr": "grounds free · cathedral until 5 pm",
+      "ca. 600 m · 15 Min. zur Metro Malostranská": "approx. 600 m · 15 min to Malostranská metro",
+      "Metro A → Můstek": "Metro A → Můstek",
+      "3 Stationen": "3 stops",
+      "Fußweg zu Malatang No.1": "Walk to Malatang No.1",
+      "Snack bei Malatang No.1": "Snack at Malatang No.1",
+      "kleine Schüssel teilen": "share a small bowl",
+      "Über den Wenzelsplatz zur Metro Muzeum": "Across Wenceslas Square to Muzeum metro",
+      "ca. 600 m · am Nationalmuseum vorbei": "approx. 600 m · past the National Museum",
+      "Metro A → Jiřího z Poděbrad": "Metro A → Jiřího z Poděbrad",
+      "2 Stationen": "2 stops",
+      "Fußweg zum Riegrovy sady": "Walk to Riegrovy sady",
+      "Vinohrady": "Vinohrady",
+      "Sonnenuntergang im Riegrovy sady": "Sunset at Riegrovy sady",
+      "Sonne geht gegen 18:25 Uhr hinter der Burg unter": "the sun sets behind the castle at about 6:25 pm",
+      "Fußweg nach Žižkov zu U Houdků": "Walk to U Houdků in Žižkov",
+      "Abendessen bei U Houdků": "Dinner at U Houdků",
+      "reservieren · Bargeld mitnehmen": "reserve · bring cash",
+      "Zum Hauptbahnhof": "To the main station",
+      "ca. 1,8 km · 25 Min. (oder Tram 5/9/26)": "approx. 1.8 km · 25 min (or tram 5/9/26)",
+      "Altstadt → Kloster Strahov": "Old Town → Strahov Monastery",
+      "Beispielzeiten – Metro A fährt alle paar Minuten, Tram 22 etwa alle 5–10 Min. Fahrschein (PID): 30-Minuten-Ticket 39 CZK am Automaten bzw. 36 CZK in der App „PID Lítačka“ – reicht für Metro + Tram; Papiertickets vor dem Bahnsteig bzw. beim Einsteigen entwerten.": "Example times – metro A runs every few minutes, tram 22 about every 5–10 min. Ticket (PID): 30-minute ticket 39 CZK from the machine or 36 CZK in the “PID Lítačka” app – covers metro + tram; validate paper tickets before the platform or when boarding.",
+      "Zu Fuß über Karlsbrücke und Nerudova: ca. 40 Min., die letzten 20 Min. bergauf.": "On foot via Charles Bridge and Nerudova: approx. 40 min, the last 20 min uphill.",
+      "Bahnsteig A": "Platform A",
+      "Burg → Wenzelsplatz → Riegrovy sady": "Castle → Wenceslas Square → Riegrovy sady",
+      "Beispielzeiten – Metro A fährt alle paar Minuten. Für jede Fahrt ein neues 30-Minuten-Ticket (oder gleich ein 24-Stunden-Ticket für ca. 120 CZK kaufen).": "Example times – metro A runs every few minutes. Use a new 30-minute ticket for each ride (or buy a 24-hour ticket for approx. 120 CZK).",
+      "Von Malatang No.1 zu Fuß zum Riegrovy sady: ca. 2 km, 25–30 Min. über die Vinohradská.": "On foot from Malatang No.1 to Riegrovy sady: approx. 2 km, 25–30 min via Vinohradská.",
+      "Malatang No.1 und über den Wenzelsplatz zur Metro Muzeum": "Malatang No.1, then across Wenceslas Square to Muzeum metro",
+      "Laut Suchergebnis · dann ohne Sonnenuntergang und Abendessen": "Per search results · then without sunset and dinner",
+      "Von U Houdků zu Fuß zum Hauptbahnhof (ca. 1,8 km · 25 Min.) oder Tram 5/9/26 bis Hlavní nádraží": "From U Houdků on foot to the main station (approx. 1.8 km · 25 min) or tram 5/9/26 to Hlavní nádraží",
+      "ca. 15 Min. Puffer": "approx. 15 min buffer",
+      "Kloster Strahov (strahovskyklaster.cz)": "Strahov Monastery (strahovskyklaster.cz)",
+      "Antikvariát Dlážděná (adplus.cz)": "Antikvariát Dlážděná (adplus.cz)",
+      "Nachmittags-Snack": "Afternoon snack",
       "Treffen am Dresden Hauptbahnhof": "Meet at Dresden Hauptbahnhof",
       "EuroCity Richtung Praha – Ticket vorher kaufen (Deutschlandticket gilt nicht)": "EuroCity towards Praha – buy your ticket in advance (Deutschlandticket not valid)",
       "EC Dresden Hbf → Praha hl. n.": "EC Dresden Hbf → Praha hl. n.",
@@ -864,6 +1069,83 @@
       "Wetter: Open-Meteo (kostenlos, ohne API-Schlüssel)": "Weather: Open-Meteo (free, no API key)"
     },
     ko: {
+      "Zug Richtung Praha – Ticket vorher kaufen (Deutschlandticket gilt nicht)": "프라하행 열차 – 승차권은 미리 구입 (도이칠란트티켓 불가)",
+      "Zug Dresden Hbf → Praha hl. n.": "열차 드레스덴 중앙역 → 프라하 중앙역",
+      "Abfahrt 10:10 unbestätigt · im DB Navigator prüfen": "10:10 출발 미확인 · DB Navigator에서 확인",
+      "Am Pulverturm vorbei zu Naše maso": "화약탑을 지나 나셰 마소로",
+      "Mittagsandrang lässt nach": "점심 붐비는 시간이 지나가요",
+      "Teynkirche ab 15 Uhr wieder offen": "틴 성당 15시부터 다시 개방",
+      "Apostelumgang um 15:00 Uhr": "15시 사도 행렬",
+      "letzter Einlass 16:30 – nicht trödeln": "마지막 입장 16:30 – 서두르세요",
+      "Durchs Burgareal bergab": "프라하 성 구역을 지나 내리막으로",
+      "Veitsdom schließt um 17 Uhr – kurzer Blick": "성 비투스 대성당 17시 마감 – 잠깐 보기",
+      "5 Stationen ohne Umstieg": "환승 없이 5정거장",
+      "Dresden → Prag (später)": "드레스덴 → 프라하 (늦은 출발)",
+      "⚠ Diese Abfahrt ist NICHT bestätigt: Gefunden wurden Railjets ab Dresden Hbf um 09:10 (an 11:25) und 11:10 (an 13:25) – die Züge fahren offenbar jeweils zur Minute :10. Bitte im DB Navigator für Fr, 9.10. prüfen; bei 09:10 wird der Tag entspannter, bei 11:10 Strahov und Burg streichen.": "⚠ 이 출발 시간은 확인되지 않았습니다: 드레스덴 중앙역 09:10 (11:25 도착)과 11:10 (13:25 도착) 레일젯만 찾았습니다 – 매시 10분에 출발하는 것으로 보입니다. DB Navigator에서 10월 9일(금)로 확인하세요. 09:10이면 여유가 생기고, 11:10이면 스트라호프와 프라하 성은 빼세요.",
+      "Railjet 09:10 → 11:25 (laut bahn.de, Stand März 2026)": "레일젯 09:10 → 11:25 (bahn.de 기준, 2026년 3월)",
+      "Railjet 11:10 → 13:25 (laut Kombo)": "레일젯 11:10 → 13:25 (Kombo 기준)",
+      "Burg → Riegrovy sady": "프라하 성 → 리에그로비 사디",
+      "Beispielzeit – Metro A fährt alle paar Minuten und ohne Umstieg (5 Stationen). 30-Minuten-Ticket reicht.": "예시 시간 – 지하철 A는 몇 분 간격으로 다니고 환승이 없습니다 (5정거장). 30분권이면 충분합니다.",
+      "Entspanntere Variante: Strahov und Burg auslassen, nach dem Orloj Malatang No.1 (ca. 15:30–16:15) und über den Wenzelsplatz mit Metro A ab Muzeum zum Riegrovy sady (ca. 17:00 da).": "여유로운 버전: 스트라호프와 프라하 성은 빼고, 천문시계 다음에 마라탕 No.1 (약 15:30–16:15), 그다음 바츨라프 광장을 지나 무제움역에서 지하철 A로 리에그로비 사디까지 (약 17:00 도착).",
+      "Treffen mit Yeji am Dresden Hauptbahnhof": "드레스덴 중앙역에서 예지와 만나기",
+      "Railjet Richtung Praha – Ticket vorher kaufen (Deutschlandticket gilt nicht)": "프라하행 레일젯 – 승차권은 미리 구입 (도이칠란트티켓 불가)",
+      "Fußweg zum Antikvariát Dlážděná": "들라주데나 고서점까지 도보",
+      "Antikvariát Dlážděná": "들라주데나 고서점",
+      "nur werktags – heute die Chance": "평일에만 영업 – 오늘이 기회",
+      "kurzer Fotostopp": "잠깐 사진 찍기",
+      "Fußweg zu Naše maso": "나셰 마소까지 도보",
+      "Burger bei Naše maso": "나셰 마소에서 버거",
+      "vor 12 Uhr ist die Schlange kurz": "12시 전에는 줄이 짧아요",
+      "Über die Dlouhá zum Altstädter Ring": "들로우하 거리를 따라 구시가지 광장으로",
+      "Altstädter Ring & Teynkirche": "구시가지 광장 & 틴 성당",
+      "Teynkirche Di–Sa bis 13 Uhr": "틴 성당 화–토 13시까지",
+      "Astronomische Uhr (Orloj)": "천문시계 (오를로이)",
+      "Apostelumgang um 13:00 Uhr": "13시 사도 행렬",
+      "Fußweg zur Metro Staroměstská": "스타로메스츠카역까지 도보",
+      "Metro A → Malostranská": "지하철 A → 말로스트란스카",
+      "1 Station · 30-Min.-Ticket reicht bis Strahov": "1정거장 · 30분권으로 스트라호프까지",
+      "Tram 22 → Pohořelec": "트램 22 → 포호르젤레츠",
+      "ca. 10 Min. bergauf, vorbei an der Burg": "약 10분 오르막, 프라하 성을 지나서",
+      "Fußweg zum Kloster Strahov": "스트라호프 수도원까지 도보",
+      "ca. 3 Min.": "약 3분",
+      "Strahov": "스트라호프",
+      "Kloster Strahov & Bibliothek": "스트라호프 수도원 & 도서관",
+      "Bibliothekssäle und Blick über Prag": "도서관 홀과 프라하 전망",
+      "Über den Hradschiner Platz zur Burg": "흐라트차니 광장을 지나 프라하 성으로",
+      "Areal kostenlos · Dom bis 17 Uhr": "성 구역 무료 · 대성당 17시까지",
+      "ca. 600 m · 15 Min. zur Metro Malostranská": "약 600 m · 말로스트란스카역까지 15분",
+      "Metro A → Můstek": "지하철 A → 무스테크",
+      "3 Stationen": "3정거장",
+      "Fußweg zu Malatang No.1": "마라탕 No.1까지 도보",
+      "Snack bei Malatang No.1": "마라탕 No.1에서 간식",
+      "kleine Schüssel teilen": "작은 그릇 하나 나눠 먹기",
+      "Über den Wenzelsplatz zur Metro Muzeum": "바츨라프 광장을 지나 무제움역으로",
+      "ca. 600 m · am Nationalmuseum vorbei": "약 600 m · 국립박물관을 지나서",
+      "Metro A → Jiřího z Poděbrad": "지하철 A → 이르지호 즈 포데브라트",
+      "2 Stationen": "2정거장",
+      "Fußweg zum Riegrovy sady": "리에그로비 사디까지 도보",
+      "Vinohrady": "비노흐라디",
+      "Sonnenuntergang im Riegrovy sady": "리에그로비 사디에서 일몰",
+      "Sonne geht gegen 18:25 Uhr hinter der Burg unter": "18:25쯤 프라하 성 뒤로 해가 집니다",
+      "Fußweg nach Žižkov zu U Houdků": "지슈코프의 우 호우드쿠까지 도보",
+      "Abendessen bei U Houdků": "우 호우드쿠에서 저녁",
+      "reservieren · Bargeld mitnehmen": "예약 · 현금 준비",
+      "Zum Hauptbahnhof": "중앙역으로",
+      "ca. 1,8 km · 25 Min. (oder Tram 5/9/26)": "약 1.8 km · 25분 (또는 트램 5/9/26)",
+      "Altstadt → Kloster Strahov": "구시가지 → 스트라호프 수도원",
+      "Beispielzeiten – Metro A fährt alle paar Minuten, Tram 22 etwa alle 5–10 Min. Fahrschein (PID): 30-Minuten-Ticket 39 CZK am Automaten bzw. 36 CZK in der App „PID Lítačka“ – reicht für Metro + Tram; Papiertickets vor dem Bahnsteig bzw. beim Einsteigen entwerten.": "예시 시간 – 지하철 A는 몇 분 간격, 트램 22는 약 5–10분 간격으로 다닙니다. 승차권(PID): 30분권 자판기 39 CZK, ‘PID Lítačka’ 앱 36 CZK – 지하철 + 트램 모두 이용 가능. 종이 승차권은 승강장 앞이나 탑승할 때 개찰하세요.",
+      "Zu Fuß über Karlsbrücke und Nerudova: ca. 40 Min., die letzten 20 Min. bergauf.": "카를교와 네루도바 거리를 지나 걸어서: 약 40분, 마지막 20분은 오르막.",
+      "Bahnsteig A": "A선 승강장",
+      "Burg → Wenzelsplatz → Riegrovy sady": "프라하 성 → 바츨라프 광장 → 리에그로비 사디",
+      "Beispielzeiten – Metro A fährt alle paar Minuten. Für jede Fahrt ein neues 30-Minuten-Ticket (oder gleich ein 24-Stunden-Ticket für ca. 120 CZK kaufen).": "예시 시간 – 지하철 A는 몇 분 간격으로 다닙니다. 탈 때마다 새 30분권을 쓰세요 (또는 약 120 CZK인 24시간권 구입).",
+      "Von Malatang No.1 zu Fuß zum Riegrovy sady: ca. 2 km, 25–30 Min. über die Vinohradská.": "마라탕 No.1에서 리에그로비 사디까지 걸어서: 비노흐라츠카 거리로 약 2 km, 25–30분.",
+      "Malatang No.1 und über den Wenzelsplatz zur Metro Muzeum": "마라탕 No.1, 그다음 바츨라프 광장을 지나 무제움역으로",
+      "Laut Suchergebnis · dann ohne Sonnenuntergang und Abendessen": "검색 결과 기준 · 이 경우 일몰과 저녁은 생략",
+      "Von U Houdků zu Fuß zum Hauptbahnhof (ca. 1,8 km · 25 Min.) oder Tram 5/9/26 bis Hlavní nádraží": "우 호우드쿠에서 중앙역까지 걸어서 (약 1.8 km · 25분) 또는 트램 5/9/26으로 흘라브니 나드라지까지",
+      "ca. 15 Min. Puffer": "약 15분 여유",
+      "Kloster Strahov (strahovskyklaster.cz)": "스트라호프 수도원 (strahovskyklaster.cz)",
+      "Antikvariát Dlážděná (adplus.cz)": "들라주데나 고서점 (adplus.cz)",
+      "Nachmittags-Snack": "오후 간식",
       "Treffen am Dresden Hauptbahnhof": "드레스덴 중앙역(Dresden Hbf)에서 만나기",
       "EuroCity Richtung Praha – Ticket vorher kaufen (Deutschlandticket gilt nicht)": "프라하행 유로시티 – 승차권 미리 구입 (도이칠란트티켓 불가)",
       "EC Dresden Hbf → Praha hl. n.": "EC 드레스덴 중앙역 → 프라하 중앙역",
