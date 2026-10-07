@@ -48,6 +48,7 @@
       <a href="#uebersicht" data-i18n="navOverview">Übersicht</a>
       <a href="#altstadt" data-i18n="nav_altstadt">altstadt</a>
       <a href="#burg" data-i18n="nav_burg">burg</a>
+      <a href="#vinohrady" data-i18n="nav_vinohrady">vinohrady</a>
       <a href="#essen" data-i18n="navFood">Essen</a>
       <a href="#oepnv" data-i18n="navTransport">Anreise</a>
       <div class="lang" role="group" data-i18n-aria="langAria">
@@ -89,6 +90,7 @@
                 <button type="button" data-fly="all" data-i18n="mapAll">Gesamt</button>
                 <button type="button" data-fly="altstadt" data-i18n="area_altstadt">altstadt</button>
                 <button type="button" data-fly="burg" data-i18n="area_burg">burg</button>
+                <button type="button" data-fly="vinohrady" data-i18n="area_vinohrady">vinohrady</button>
               </div>
             </div>
             <div class="card weather" id="weather" hidden>
@@ -108,7 +110,7 @@
           <h2 data-i18n-html="ar_altstadt_title"></h2>
           <p class="lead" data-i18n="ar_altstadt_lead"></p>
           <ol class="route-chips" aria-label="Rundgang" data-i18n-aria="routeAria">
-            <li>Hlavní nádraží</li><li>Pulverturm</li><li>Altstädter Ring</li><li>Orloj</li><li>Teynkirche</li><li>Karlsbrücke</li>
+            <li>Hlavní nádraží</li><li>Antikvariát Dlážděná</li><li>Pulverturm</li><li>Naše maso</li><li>Altstädter Ring</li><li>Orloj</li>
           </ol>
         </div>
         <div class="city-map card">
@@ -128,13 +130,33 @@
           <h2 data-i18n-html="ar_burg_title"></h2>
           <p class="lead" data-i18n="ar_burg_lead"></p>
           <ol class="route-chips" aria-label="Rundgang" data-i18n-aria="routeAria">
-            <li>Kleinseitner Ring</li><li>St. Nikolaus</li><li>Prager Burg</li><li>Veitsdom</li><li>Goldenes Gässchen</li>
+            <li>Pohořelec</li><li>Kloster Strahov</li><li>Hradschiner Platz</li><li>Veitsdom</li><li>Alte Schlossstiege</li>
           </ol>
         </div>
         <div class="city-map card">
           <div class="map map--city" id="map-burg" role="region" data-i18n-aria="mapCityAria|area_burg"></div>
         </div>
         <div class="cards" id="sights-burg"></div>
+
+        <h3 class="subhead" data-i18n="optionalHead">Optional – nicht im Hauptplan</h3>
+        <div class="cards" id="optional-burg"></div>
+      </div>
+    </section>
+
+    <section class="section city" id="vinohrady">
+      <div class="wrap">
+        <div class="city__head">
+          <p class="eyebrow" data-i18n="ar_vinohrady_eyebrow"></p>
+          <h2 data-i18n-html="ar_vinohrady_title"></h2>
+          <p class="lead" data-i18n="ar_vinohrady_lead"></p>
+          <ol class="route-chips" aria-label="Rundgang" data-i18n-aria="routeAria">
+            <li>Malatang No.1</li><li>Wenzelsplatz</li><li>Riegrovy sady</li><li>U Houdků</li><li>Hlavní nádraží</li>
+          </ol>
+        </div>
+        <div class="city-map card">
+          <div class="map map--city" id="map-vinohrady" role="region" data-i18n-aria="mapCityAria|area_vinohrady"></div>
+        </div>
+        <div class="cards" id="sights-vinohrady"></div>
       </div>
     </section>
 
