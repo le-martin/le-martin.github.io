@@ -243,8 +243,8 @@
       when: "Alternative mittags, 2 Min. vom Altstädter Ring",
       text: "Koreanisches Restaurant direkt hinter dem Altstädter Ring – mit Gerichten wie Jjajangmyeon und Jjamppong.",
       why: "Statt Burger: koreanisch essen, gleich neben dem Orloj.",
-      hours: null,
-      hoursNote: "Öffnungszeiten nicht gefunden – in Google Maps prüfen.",
+      hours: hours({ "Mo-So": [["11:45", "16:00"], ["17:00", "22:00"]] }),
+      hoursNote: "11:45–16 und 17–22 Uhr (laut Google Maps; Ruhetage dort prüfen).",
       price: "eher hochpreisig (laut Bewertungsportal)",
       rating: null
     },
@@ -256,8 +256,8 @@
       when: "Snack am Nachmittag, ca. 16:25–17:05 Uhr",
       text: "Zutaten selbst in die Schüssel legen, wiegen lassen und als scharfe Suppe kochen lassen; Soße selbst mischen.",
       why: "Kleine Portion zum Teilen reicht – das Abendessen kommt um 19 Uhr.",
-      hours: null,
-      hoursNote: "Mittags und abends geöffnet; genaue Zeiten nicht gefunden – in Google Maps prüfen.",
+      hours: hours({ "Mo-So": [["11:00", "22:00"]] }),
+      hoursNote: "11–22 Uhr (laut Google Maps).",
       price: "bis ca. 240 CZK pro Person, Kartenzahlung möglich",
       rating: "Google ca. 4,3–4,4 (laut Bewertungsportal)"
     },
@@ -277,7 +277,7 @@
     {
       id: "budvarka", role: "lunch", priority: "Alternative", city: "burg",
       name: "Original pivnice Budvarka Dejvice", gmaps: "Original pivnice Budvarka Dejvice", lat: 50.10150, lon: 14.39350,
-      address: "Wuchterlova 22, 160 00 Praha 6 (ältere Angabe – prüfen)",
+      address: "Wuchterlova 336/22, 160 00 Praha 6",
       cuisine: "Tschechische Bierstube, ungefiltertes Budweiser Budvar",
       when: "Alternative nach der Burg (statt Malatang)",
       text: "Traditionsreiche Bierstube von 1914 in Dejvice mit kroužkovaný ležák (ungefiltertes Lagerbier) und tschechischer Küche.",
@@ -297,7 +297,7 @@
       text: "Urige Žižkover Kneipe mit deftiger tschechischer Küche zu Nachbarschaftspreisen – nur 10–15 Min. vom Riegrovy sady.",
       why: "Perfekt nach dem Sonnenuntergang, und vom Hauptbahnhof nur ca. 20 Min. entfernt.",
       hours: hours({ "Mo-So": [["11:00", "23:59"]] }),
-      hoursNote: "Laut Recherche ca. 11–24 Uhr – bitte prüfen.",
+      hoursNote: "Laut Recherche ca. 11–24 Uhr – Öffnungszeiten bitte prüfen.",
       price: "€ (Einschätzung)",
       rating: null,
       note: "Bargeld mitnehmen und für Freitagabend reservieren."
@@ -309,8 +309,8 @@
       cuisine: "Asiatisch (laut Eintrag vietnamesisch & vegetarisch)",
       when: "Alternative abends, ca. 12 Min. vom Hauptbahnhof",
       text: "Der gefundene Eintrag beschreibt ein asiatisches Restaurant mit Ente, Rindfleischnudeln und Sommerrollen. Falls der gespeicherte Ort koreanisch ist, ist es ein anderes Lokal.",
-      hours: null,
-      hoursNote: "Öffnungszeiten nicht gefunden – in Google Maps prüfen.",
+      hours: hours({ "Mo-So": [["11:00", "21:30"]] }),
+      hoursNote: "11–21:30 Uhr (laut Google Maps).",
       price: "ca. 200–300 CZK",
       rating: "4,5 (laut Bewertungsportal)"
     }
