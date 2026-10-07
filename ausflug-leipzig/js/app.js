@@ -84,7 +84,7 @@
 
   var DEST = {};
   Object.keys(T.places).forEach(function (k) { DEST[k] = T.places[k].dest || T.places[k].name; });
-  function depPhrase(ev) { return U("depPhrase", ev.kind, city(DEST[ev.to] || "")); }
+  function depPhrase(ev) { return U("depPhrase", ev.kind, city(ev.toCity || DEST[ev.to] || "")); }
 
   // Google Maps per Name suchen (öffnet die Ortsseite statt nur einer Koordinate);
   // Reihenfolge: eigener Suchbegriff (gmaps) > Name + Adresse > Name + Stadt. OSM bleibt koordinatengenau.

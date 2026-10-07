@@ -42,7 +42,7 @@ stock-correlation/   # Stock & ETF correlation checker (standalone HTML/CSS/JS)
 restaurant/          # Sura Korean restaurant site (standalone HTML/CSS/JS, own permalinks)
 ausflug-oberlausitz/ # Day-trip travel guide Dresden Mitte → Bautzen → Löbau → Zittau (standalone HTML/CSS/JS + Leaflet; EN/KO in js/i18n.js, check with node tools/check-i18n.js)
 ausflug-leipzig/     # Day-trip travel guide Dresden → Leipzig (same structure, no fixed date: plan applies to "today")
-ausflug-prag/        # Day-trip travel guide Dresden → Prague (same structure, no fixed date)
+ausflug-prag/        # Day-trip travel guide Dresden → Prague (same structure; currently planned for Fri 2026-10-09 via TRIP_DATE in data.js)
 talkmap/             # Leaflet.js map of talk locations
 talkmap.ipynb/.py    # Talk location scraping (Jupyter/Python)
 markdown_generator/  # Jupyter notebooks for TSV → markdown conversion (talks, publications)
@@ -132,5 +132,5 @@ Triggers on changes to `talks/**` or `talkmap.ipynb`:
 - **mathe-5 app**: Treat as a pre-built artifact, like learn-german. Never edit `mathe-5/` by hand — it is build output. The source is a separate private repository (`mathe-nachhilfe-app`) whose build writes directly into `mathe-5/`; only the result is committed here
 - **Git ignores**: `.claude/`, `node_modules/`, `_site/`, `Gemfile.lock`, `.sass-cache/` are all gitignored
 - **Auxiliary projects**: `restaurant/`, `stock-correlation/`, `ausflug-oberlausitz/`, `ausflug-leipzig/`, `ausflug-prag/`, and `talkmap/` are standalone sub-apps with their own HTML/CSS/JS — they are not processed by Jekyll's templating engine. `restaurant/` declares explicit permalinks (`/restaurant/`, `/restaurant/datenschutz/`, `/restaurant/impressum/`) in its `.md` front matter. All trip content of `ausflug-oberlausitz/` (times, opening hours, connections) lives in `ausflug-oberlausitz/js/data.js`; see its README
-- **Trip apps (`ausflug-leipzig/`, `ausflug-prag/`)**: share an identical, data-driven `js/app.js` (areas, map lines, connection order and meeting point come from `js/data.js`) — keep the two copies in sync when changing it. `date: null` means the example schedule applies to the current day; seasonal opening hours are computed from the current month inside `data.js`. Travel times are example times. After editing `data.js` or `i18n.js`, run `node tools/check-i18n.js` inside the app folder
+- **Trip apps (`ausflug-leipzig/`, `ausflug-prag/`)**: share an identical, data-driven `js/app.js` (areas, map lines, connection order and meeting point come from `js/data.js`) — keep the two copies in sync when changing it. `date: null` means the example schedule applies to the current day (Leipzig); a date string (Prag: `TRIP_DATE`) pins countdowns, travel mode and weather to that day; seasonal opening hours are computed from the current month inside `data.js`. Travel times are example times. After editing `data.js` or `i18n.js`, run `node tools/check-i18n.js` inside the app folder
 - **Ruby 3 compatibility**: `_plugins/ruby_3_compatibility.rb` provides shims for Jekyll on Ruby 3.x
