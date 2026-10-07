@@ -43,6 +43,5 @@ Recherche: **07.10.2026**, über Suchergebnisse (Direktabrufe waren gesperrt). K
 - Bezahlt wird in **Kronen (CZK)**; bei Kartenzahlung immer in CZK zahlen.
 - **Sonnenuntergang** am 9.10.2026 ca. 18:25 Uhr (noch Sommerzeit; Zeitumstellung am 25.10.).
 - **Laut Google Maps** (vom Nutzer übermittelt): Zubang 11:45–16 und 17–22, Malatang No.1 11–22, K-Remember (vietnamesisch) 11–21:30, U Houdků 11–24, The Kimchi freitags 11–15 und 16:30–21 Uhr; Adressen Budvarka (Wuchterlova 336/22), U Houdků (Bořivojova 693/110) und K-Food (Koněvova 1185/102, Kartenpunkt ungefähr).
-- **Nicht aufgenommen**, weil keine Adresse gefunden wurde: *Coffee Star Origins & Blends*.
 
 > Bitte am Reisetag aktuelle Abfahrtszeiten und Öffnungszeiten prüfen.
