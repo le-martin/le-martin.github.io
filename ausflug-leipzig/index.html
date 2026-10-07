@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Reisebegleiter für einen Tagesausflug mit der Bahn von Dresden nach Leipzig – Innenstadt, Völkerschlachtdenkmal und Plagwitz.">
+  <meta name="theme-color" content="#f6f1e9" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1b1916" media="(prefers-color-scheme: dark)">
+  <title>Tagesausflug Leipzig</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23b4532a'/%3E%3Cpath d='M32 12l5 13h13l-10.5 8 4 13L32 38l-11.5 8 4-13L14 25h13z' fill='%23fff'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip" href="#uebersicht" data-i18n="skip">Zum Inhalt springen</a>
+
+  <!-- ============================== Hero -->
+  <header class="hero" id="top">
+    <div class="lang lang--hero" role="group" data-i18n-aria="langAria">
+      <button type="button" data-lang="de" aria-pressed="true" lang="de">DE</button>
+      <button type="button" data-lang="en" aria-pressed="false" lang="en">EN</button>
+      <button type="button" data-lang="ko" aria-pressed="false" lang="ko">한</button>
+    </div>
+    <div class="hero__bg" role="img" data-i18n-aria="heroAria"></div>
+    <div class="hero__inner wrap">
+      <p class="eyebrow" data-i18n="heroEyebrow"></p>
+      <h1 data-i18n="heroTitle">Tagesausflug Leipzig</h1>
+      <p class="hero__route" data-i18n-html="heroRoute"></p>
+      <p class="hero__meta" data-i18n="heroMeta"></p>
+      <dl class="stats" id="stats"></dl>
+      <div class="hero__actions">
+        <button class="btn btn--primary" type="button" data-action="travel-open">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>
+          <span data-i18n="startTravel">Reisemodus starten</span>
+        </button>
+        <a class="btn btn--ghost" href="#timeline" data-i18n="seePlan">Tagesplan ansehen</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================== Navigation -->
+  <nav class="nav" data-i18n-aria="navAria">
+    <div class="nav__inner">
+      <a href="#uebersicht" data-i18n="navOverview">Übersicht</a>
+      <a href="#zentrum" data-i18n="nav_zentrum">zentrum</a>
+      <a href="#voelkerschlacht" data-i18n="nav_voelkerschlacht">voelkerschlacht</a>
+      <a href="#plagwitz" data-i18n="nav_plagwitz">plagwitz</a>
+      <a href="#essen" data-i18n="navFood">Essen</a>
+      <a href="#oepnv" data-i18n="navTransport">Anreise</a>
+      <div class="lang" role="group" data-i18n-aria="langAria">
+        <button type="button" data-lang="de" aria-pressed="true" lang="de">DE</button>
+        <button type="button" data-lang="en" aria-pressed="false" lang="en">EN</button>
+        <button type="button" data-lang="ko" aria-pressed="false" lang="ko">한</button>
+      </div>
+      <button class="nav__theme" type="button" data-action="theme" data-i18n-aria="themeAria">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ============================== Übersicht -->
+    <section class="section" id="uebersicht">
+      <div class="wrap">
+        <div class="notice" role="note">
+          <strong data-i18n="noticeTitle"></strong>
+          <span data-i18n="noticeText"></span>
+          <span class="notice__stamp" data-checked></span>
+        </div>
+
+        <div class="section__head">
+          <h2 data-i18n="overviewTitle"></h2>
+          <p data-i18n="overviewHint"></p>
+        </div>
+
+        <div class="overview-grid">
+          <ol class="timeline" id="timeline" data-i18n-aria="timelineAria"></ol>
+          <div class="overview-side">
+            <div class="card map-card">
+              <div class="map-card__head">
+                <h3 data-i18n="map"></h3>
+                <div class="legend" id="legend"></div>
+              </div>
+              <div class="map" id="map-overview" role="region" data-i18n-aria="mapOverviewAria"></div>
+              <div class="map-card__jump">
+                <button type="button" data-fly="all" data-i18n="mapAll">Gesamt</button>
+                <button type="button" data-fly="zentrum" data-i18n="area_zentrum">zentrum</button>
+                <button type="button" data-fly="voelkerschlacht" data-i18n="area_voelkerschlacht">voelkerschlacht</button>
+                <button type="button" data-fly="plagwitz" data-i18n="area_plagwitz">plagwitz</button>
+              </div>
+            </div>
+            <div class="card weather" id="weather" hidden>
+              <h3 data-i18n="weatherTitle"></h3>
+              <div class="weather__grid" id="weather-grid"></div>
+              <p class="fine" data-i18n-html="weatherNote"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section city" id="zentrum">
+      <div class="wrap">
+        <div class="city__head">
+          <p class="eyebrow" data-i18n="ar_zentrum_eyebrow"></p>
+          <h2 data-i18n-html="ar_zentrum_title"></h2>
+          <p class="lead" data-i18n="ar_zentrum_lead"></p>
+          <ol class="route-chips" aria-label="Rundgang" data-i18n-aria="routeAria">
+            <li>Hauptbahnhof</li><li>Augustusplatz</li><li>Nikolaikirche</li><li>Markt</li><li>Mädler-Passage</li><li>Thomaskirche</li>
+          </ol>
+        </div>
+        <div class="city-map card">
+          <div class="map map--city" id="map-zentrum" role="region" data-i18n-aria="mapCityAria|area_zentrum"></div>
+        </div>
+        <div class="cards" id="sights-zentrum"></div>
+
+        <h3 class="subhead" data-i18n="optionalHead">Optional – nicht im Hauptplan</h3>
+        <div class="cards" id="optional-zentrum"></div>
+      </div>
+    </section>
+
+    <section class="section city" id="voelkerschlacht">
+      <div class="wrap">
+        <div class="city__head">
+          <p class="eyebrow" data-i18n="ar_voelkerschlacht_eyebrow"></p>
+          <h2 data-i18n-html="ar_voelkerschlacht_title"></h2>
+          <p class="lead" data-i18n="ar_voelkerschlacht_lead"></p>
+          <ol class="route-chips" aria-label="Rundgang" data-i18n-aria="routeAria">
+            <li>Straßenbahn 15</li><li>Völkerschlachtdenkmal</li>
+          </ol>
+        </div>
+        <div class="city-map card">
+          <div class="map map--city" id="map-voelkerschlacht" role="region" data-i18n-aria="mapCityAria|area_voelkerschlacht"></div>
+        </div>
+        <div class="cards" id="sights-voelkerschlacht"></div>
+      </div>
+    </section>
+
+    <section class="section city" id="plagwitz">
+      <div class="wrap">
+        <div class="city__head">
+          <p class="eyebrow" data-i18n="ar_plagwitz_eyebrow"></p>
+          <h2 data-i18n-html="ar_plagwitz_title"></h2>
+          <p class="lead" data-i18n="ar_plagwitz_lead"></p>
+          <ol class="route-chips" aria-label="Rundgang" data-i18n-aria="routeAria">
+            <li>S-Bf. Plagwitz</li><li>Karl-Heine-Kanal</li><li>Stelzenhaus</li>
+          </ol>
+        </div>
+        <div class="city-map card">
+          <div class="map map--city" id="map-plagwitz" role="region" data-i18n-aria="mapCityAria|area_plagwitz"></div>
+        </div>
+        <div class="cards" id="sights-plagwitz"></div>
+
+        <h3 class="subhead" data-i18n="optionalHead">Optional – nicht im Hauptplan</h3>
+        <div class="cards" id="optional-plagwitz"></div>
+      </div>
+    </section>
+
+    <!-- ============================== Essen -->
+    <section class="section" id="essen">
+      <div class="wrap">
+        <div class="section__head">
+          <h2 data-i18n="foodTitle"></h2>
+          <p data-i18n="foodLead"></p>
+        </div>
+        <h3 class="subhead" data-i18n="lunchHead"></h3>
+        <div class="cards cards--food" id="food-lunch"></div>
+        <h3 class="subhead" data-i18n="dinnerHead"></h3>
+        <div class="cards cards--food" id="food-dinner"></div>
+
+        <h3 class="subhead" id="cafes" data-i18n="cafesHead"></h3>
+        <p class="fine" data-i18n="cafesNote"></p>
+        <div class="cafe-groups" id="cafe-groups"></div>
+      </div>
+    </section>
+
+    <!-- ============================== Anreise -->
+    <section class="section" id="oepnv">
+      <div class="wrap">
+        <div class="section__head">
+          <h2 data-i18n="connTitle"></h2>
+          <p data-i18n="connLead"></p>
+        </div>
+        <div class="notice" role="note">
+          <strong data-i18n="connNoticeTitle"></strong>
+          <span data-i18n="noticeText"></span>
+          <span class="notice__stamp" data-checked></span>
+          <span class="notice__links">
+            <a href="https://www.bahn.de/" target="_blank" rel="noopener">DB / bahn.de</a>
+            <a href="https://www.l.de/verkehrsbetriebe/" target="_blank" rel="noopener">LVB</a>
+          </span>
+        </div>
+        <div class="conns" id="connections"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <h2 data-i18n="footerTitle"></h2>
+      <p id="footer-text"></p>
+      <ul class="sources" id="sources"></ul>
+      <p class="fine" data-i18n-html="footerFine"></p>
+      <p class="fine"><button class="linkish" type="button" data-action="reset" data-i18n="reset"></button></p>
+    </div>
+  </footer>
+
+  <!-- ============================== Reisemodus -->
+  <button class="fab" type="button" data-action="travel-open" data-i18n-aria="startTravel">
+    <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>
+    <span data-i18n="fab">Reisemodus</span>
+  </button>
+
+  <div class="travel" id="travel" role="dialog" aria-modal="true" aria-labelledby="travel-title" hidden>
+    <div class="travel__bar">
+      <h2 id="travel-title" data-i18n="travelTitle">Jetzt unterwegs</h2>
+      <span class="travel__clock" id="travel-clock"></span>
+      <button class="travel__close" type="button" data-action="travel-close" data-i18n-aria="travelClose">×</button>
+    </div>
+    <div class="travel__body" id="travel-body"></div>
+    <details class="travel__sim">
+      <summary data-i18n="simSummary">Uhrzeit simulieren (zum Ausprobieren)</summary>
+      <label><span data-i18n="simLabel">Datum/Uhrzeit</span> <input type="datetime-local" id="sim-time" step="60"></label>
+      <div class="travel__sim-actions">
+        <button type="button" class="btn btn--ghost" data-action="sim-apply" data-i18n="simApply">Übernehmen</button>
+        <button type="button" class="btn btn--ghost" data-action="sim-clear" data-i18n="simClear">Echte Uhrzeit</button>
+      </div>
+    </details>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="js/walks.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
