@@ -57,7 +57,7 @@ Verkehrsdaten: **08.10.2026**, anhand offizieller ČD-, PID- und DPP-Quellen gep
 
 ## Unterwegs-Ansichten und Quellen
 
-- Die Karte **Als Nächstes** steht über dem Tagesplan und im Reisemodus. Sie folgt dem gewählten Plan und der Uhrzeit (auch bei Simulation), zeigt den nächsten Ort, die geplante Uhrzeit und vorhandene Gehhinweise. **Route öffnen** öffnet Google Maps zum Ziel; die Seite ortet den Nutzer nicht.
+- Die Karte **Als Nächstes** steht über dem Tagesplan und im Reisemodus. Sie folgt zunächst dem gewählten Plan und der Uhrzeit. Mit „Hier angekommen“ wechselt sie zum bestätigten Fortschritt, der bis „Weiter zum nächsten Ort“ erhalten bleibt. Sie zeigt den Ort, die ursprünglich geplante Uhrzeit und vorhandene Gehhinweise. **Route öffnen** öffnet Google Maps zum Ziel; die Seite ortet den Nutzer nicht.
 - Die **Rückfahrtleiste** bleibt auch im Reisemodus sichtbar: 20:00 Restaurant verlassen, RJ 170 ab 20:47, Dresden 23:19. Sie verlinkt die Bahnhofsroute und den datierten ČD-Fahrplan; am Reisetag erinnert sie ab 19:45 an den Aufbruch. Das ist eine Erinnerung nach Plan, kein Live-Zugstatus.
 - Jede Ortskarte nennt den Status der **Öffnungszeiten**, das Recherche-/Prüfdatum und einen Quellenlink. `hoursEvidence` in `js/data.js` kennzeichnet tatsächlich geprüfte Betreiberangaben als `official`; andere Zeiten bleiben `unconfirmed`. Freier öffentlicher Zugang wird getrennt angezeigt. Das Prüfzeichen bezieht sich auf Öffnungszeiten, nicht auf Bewertungen, Preise oder andere Kartentexte.
 
@@ -66,3 +66,11 @@ Verkehrsdaten: **08.10.2026**, anhand offizieller ČD-, PID- und DPP-Quellen gep
 Alle 15 Sehenswürdigkeiten haben lokale WebP-Fotos; das Burgpanorama dient auch als Titelbild. Bilder außerhalb des sichtbaren Bereichs werden verzögert geladen. Urheber und Lizenz sind direkt an jedem Foto verlinkt; vollständige Quellen stehen in `images/credits.json`. Die Fotos behalten ihre jeweilige Creative-Commons-Lizenz und wurden verkleinert bzw. für die Anzeige zugeschnitten.
 
 Das Antiquariat wird durch ein ausdrücklich als Umgebung gekennzeichnetes Foto der Straßenecke Hybernská/Dlážděná dargestellt. Beim Jüdischen Museum zeigt die Bildunterschrift die Spanische Synagoge als Teil des Museums. Diese Hinweise sind auf Deutsch, Englisch und Koreanisch vorhanden.
+
+## Fortschritt und Verspätung
+
+`js/journey.js` verwaltet den Fortschritt und die Kürzungsvorschläge. Jeder Tagesplan hat einen eigenen Zustand für das Reisedatum, lokal im Browser gespeichert. „Hier angekommen“ bestätigt die aktuelle Station und markiert Sehenswürdigkeiten als besucht. „Weiter zum nächsten Ort“ folgt den verbleibenden Stationen; „Einen Schritt zurück“ und „Wieder nach Uhrzeit anzeigen“ erlauben Korrekturen. Simulationen haben einen getrennten Zustand und überschreiben den gespeicherten Reiseverlauf nicht.
+
+Die Auswahl 15/30/60 Minuten macht Vorschläge anhand der noch offenen Stationen: kurzer Burgbesuch, Burg auslassen oder Strahov und Burg auslassen. Bereits bestätigte Stopps werden nicht gestrichen. Bei der Bibliothek wird der Kassenschluss berücksichtigt; später liegt der Fokus auf der Rückfahrt. Erst „Vorschläge übernehmen“ markiert die Anpassungen und entfernt beim Auslassen des westlichen Ausflugs auch seine Wege und Fahrten. „Anpassungen zurücknehmen“ stellt die Stationen wieder her. Essen, Sonnenuntergang und Zugfahrpläne werden nicht verschoben; die Hinweise sind Kürzungsvorschläge, keine neu berechneten Fahrpläne.
+
+Prüfen: `node tools/check-journey.js` und `node tools/check-i18n.js`.

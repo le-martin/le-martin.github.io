@@ -4,6 +4,8 @@
 
   var T = window.TRIP;
   var I = window.I18N;
+  var J = window.JOURNEY;
+  var journeys = {}, simulatedJourneys = {};
   var WALKS = window.WALKS || {};
   var NS = (T.storeKey || "trip") + ":";
   var AREAS = T.areas, AREA_KEYS = AREAS.map(function (a) { return a.key; });
@@ -105,8 +107,8 @@
       '<a class="chip-link" href="https://www.openstreetmap.org/?mlat=' + o.lat + "&mlon=" + o.lon + "#map=18/" + o.lat + "/" + o.lon + '" target="_blank" rel="noopener" aria-label="' + esc(U("osmAria", label)) + '">🗺 OSM</a>';
   }
 
-  function routeURL(o) {
-    return "https://www.google.com/maps/dir/?api=1&destination=" + encodeURIComponent(gQuery(o)) + "&travelmode=walking";
+  function routeURL(o, mode) {
+    return "https://www.google.com/maps/dir/?api=1&destination=" + encodeURIComponent(gQuery(o)) + "&travelmode=" + (mode || "walking");
   }
 
   function eventPlace(ev) {
@@ -115,42 +117,72 @@
     return T.sights.concat(T.optionalSights, T.restaurants, T.cafes).filter(function (o) { return o.id === id; })[0];
   }
 
-  // Time-based guidance follows the selected plan; it does not track location.
+  function journeyState() {
+    var cache = state.sim ? simulatedJourneys : journeys;
+    if (!cache[state.plan]) {
+      var saved = state.sim ? null : store.get("journey:" + state.plan, null);
+      cache[state.plan] = saved && saved.date === tripDate() && Array.isArray(saved.skipped) && saved.shortened &&
+        (saved.index === null || (Number.isInteger(saved.index) && saved.index >= 0 && saved.index <= T.plans[state.plan].length)) ? saved : J.fresh(tripDate());
+    }
+    return cache[state.plan];
+  }
+  function saveJourney() { if (!state.sim) store.set("journey:" + state.plan, journeyState()); }
+  function journeyIndex() {
+    var plan = T.plans[state.plan], p = journeyState(), d = now();
+    return p.index !== null ? p.index : J.automatic(plan, p, nowMin(d), d < tripStart(plan[0].s), d >= tripStart(plan[plan.length - 1].e));
+  }
+
+  // Manual confirmations take precedence over the clock until reset.
   function renderNextStop() {
     var plan = T.plans[state.plan], d = now(), m = nowMin(d);
+    var p = journeyState(), index = journeyIndex(), manual = p.index !== null;
     var before = d < tripStart(plan[0].s), after = d >= tripStart(plan[plan.length - 1].e);
-    var ev;
-    if (before) ev = plan[0];
-    else if (!after) {
-      ev = plan.filter(function (e) { return e.kind !== "walk" && e.kind !== "buffer" && toMin(e.s) > m && eventPlace(e); })[0];
-      // During the final train ride, show its destination instead of a past departure.
-      if (!ev) ev = plan[plan.length - 1];
-    }
+    var ev = plan[index];
     var box = $("#next-stop");
     if (!ev) {
-      box.innerHTML = '<p class="eyebrow">' + esc(U("doneLabel")) + '</p><h2 id="next-stop-title">' + esc(U("doneBig")) + '</h2>';
+      box.innerHTML = '<div><p class="eyebrow">' + esc(U("doneLabel")) + '</p><h2 id="next-stop-title">' + esc(U(manual ? "progressDone" : "doneBig")) +
+        '</h2><p class="fine">' + esc(U("progressReturnHint")) + '</p><button class="chip-link" data-action="progress-reset">' + esc(U("progressReset")) + '</button></div>';
       return;
     }
     var destination = eventPlace(ev);
-    var finalRide = !before && ev === plan[plan.length - 1] && m >= toMin(ev.s);
-    if (finalRide) destination = T.places[ev.to];
+    var ride = ev.kind === "train" || ev.kind === "metro" || ev.kind === "tram";
+    if (ride) destination = T.places[ev.to];
     var name = destination.id ? C(destination, "name") : destination.name;
-    var index = plan.indexOf(ev), walks = [];
+    var walks = [];
     for (var i = index - 1; i >= 0 && (plan[i].kind === "walk" || plan[i].kind === "buffer"); i--) {
       if (plan[i].kind === "walk") walks.unshift(P(plan[i].sub));
     }
-    var time = finalRide ? ev.e : ev.s;
-    var heading = before ? U("nextBefore") : finalRide ? U("onTheWay") : U("nextHeading");
+    if (ev.kind === "walk") walks = [P(ev.sub)];
+    if (p.skipped.some(function (i) { return plan[i].ref === "#pr-burg" || plan[i].ref === "#pr-veitsdom"; }) && ev.kind === "metro" && ev.to === "pr_mustek") walks = [U("delayStrahovRoute")];
+    if (p.skipped.some(function (i) { return plan[i].ref === "#pr-strahov"; }) && ev.ref === "#malatang") walks = [U("delayDirectSnack")];
+    var time = ride ? ev.e : ev.s;
+    var heading = manual && p.arrived ? U("progressHere") : before && !manual ? U("nextBefore") : U("nextHeading");
     box.innerHTML = '<div class="next-stop__main"><p class="eyebrow">' + esc(heading) +
       (state.sim ? ' <span class="sim-badge">' + esc(U("simBadge")) + '</span>' : "") + '</p>' +
       '<h2 id="next-stop-title">' + esc(name) + '</h2><p class="next-stop__time">' +
-      esc(finalRide ? U("arrivalAt", time) : U("nextTime") + " " + (ev.approximate ? U("approx", time) : U("clock", time))) +
+      esc(U("progressOriginal") + " " + (ev.approximate ? U("approx", time) : U("clock", time))) +
       ' · ' + esc(P(ev.title)) + '</p>' +
-      (walks.length ? '<p class="next-stop__way">🚶 ' + esc(U("nextWay")) + ': ' + esc(walks.join(" · ")) + '</p>' : "") +
-      '<p class="fine">' + esc(U("nextPlanned")) + '</p></div>' +
-      '<div class="next-stop__actions"><a class="btn btn--primary" href="' + esc(routeURL(destination)) +
-      '" target="_blank" rel="noopener">↗ ' + esc(U("routeOpen")) + '</a>' +
-      '<a class="chip-link" href="' + esc(ev.ref) + '">' + esc(U("nextDetails")) + '</a></div>';
+      (walks.length && !(manual && p.arrived) ? '<p class="next-stop__way">🚶 ' + esc(U("nextWay")) + ': ' + esc(walks.join(" · ")) + '</p>' : "") +
+      (p.shortened[index] ? '<p class="progress-note">' + esc(U("progressShort", p.shortened[index])) + '</p>' : "") +
+      '<p class="fine">' + esc(U(manual ? "progressManual" : "nextPlanned")) + '</p></div>' +
+      '<div class="next-stop__actions">' + (manual && p.arrived ? "" : '<a class="btn btn--primary" href="' + esc(routeURL(destination, ride ? "transit" : "walking")) +
+      '" target="_blank" rel="noopener">↗ ' + esc(U("routeOpen")) + '</a>') +
+      '<button class="btn btn--primary" data-action="' + (manual && p.arrived ? "progress-next" : "progress-arrive") + '">' +
+      esc(U(manual && p.arrived ? "progressNext" : "progressArrive")) + '</button>' +
+      '<a class="chip-link" href="' + esc(ev.ref) + '">' + esc(U("nextDetails")) + '</a>' +
+      (manual ? '<button class="chip-link" data-action="progress-back">' + esc(U("progressBack")) + '</button><button class="linkish" data-action="progress-reset">' + esc(U("progressReset")) + '</button>' : "") + '</div>';
+  }
+
+  function renderDelayPanel() {
+    var p = journeyState(), plan = T.plans[state.plan], d = now();
+    var proposals = J.advice(plan, p, journeyIndex(), isTripDay(d) ? nowMin(d) : undefined);
+    var clockPending = plan.some(function (e, i) { return e.ref === "#pr-orloj" && i >= journeyIndex() + (p.arrived ? 1 : 0); }) && (!isTripDay(d) || nowMin(d) < 18 * 60);
+    $("#delay-panel").innerHTML = '<h3>' + esc(U("delayHeading")) + '</h3><p class="fine">' + esc(U("delayIntro")) + '</p><div class="delay-options" role="group" aria-label="' + esc(U("delayHeading")) + '">' +
+      [0, 15, 30, 60].map(function (n) { return '<button class="chip-link" data-action="delay-select" data-minutes="' + n + '" aria-pressed="' + (p.delay === n) + '">' + esc(n ? U("min", n) : U("delayOnTime")) + '</button>'; }).join("") + '</div>' +
+      (p.delay ? '<ul class="delay-advice">' + proposals.map(function (a) { return '<li>' + esc(U(a.type === "skip" ? "delaySkip" : "delayShorten", P(plan[a.index].title), a.duration)) + '</li>'; }).join("") +
+        (clockPending ? '<li>' + esc(U("delayClock")) + '</li>' : "") + '<li>' + esc(U(isTripDay(d) && nowMin(d) >= 18 * 60 + 24 ? "delayEveningAnchors" : "delayAnchors")) + '</li></ul>' +
+        (proposals.length ? '<button class="chip-link" data-action="delay-apply">' + esc(U("delayApply")) + '</button>' : '<p class="fine">' + esc(U("delayNoCuts")) + '</p>') : "") +
+      (p.skipped.length || Object.keys(p.shortened).length ? '<p class="progress-note">' + esc(U("delayApplied")) + '</p><button class="linkish" data-action="delay-reset">' + esc(U("delayReset")) + '</button>' : "");
   }
 
   function renderReturnBar() {
@@ -297,11 +329,19 @@
 
   function renderTimeline() {
     var plan = T.plans[state.plan];
+    var progress = journeyState();
     var d = now(), trip = isTripDay(d), m = nowMin(d);
     $("#timeline").innerHTML = plan.map(function (ev) {
       var cls = ["tl", "tl--" + ev.kind, ev.major ? "tl--major" : "tl--minor"];
       if (trip && toMin(ev.e) <= m) cls.push("tl--past");
       if (trip && toMin(ev.s) <= m && m < toMin(ev.e)) cls.push("tl--now");
+      if (progress.index !== null) {
+        cls = cls.filter(function (c) { return c !== "tl--past" && c !== "tl--now"; });
+        if (plan.indexOf(ev) < progress.index) cls.push("tl--past");
+        if (plan.indexOf(ev) === progress.index) cls.push("tl--now");
+      }
+      var skipped = progress.skipped.indexOf(plan.indexOf(ev)) >= 0;
+      if (skipped) cls.push("tl--skipped");
       var count = "";
       if (ev.dep) count = '<span class="tl__count" data-cd="' + ev.s + '" data-cd-label="' + esc(depPhrase(ev)) + '"></span>';
       return '<li class="' + cls.join(" ") + '"><a href="' + ev.ref + '">' +
@@ -309,6 +349,7 @@
         '<span class="tl__icon" aria-hidden="true">' + ICON[ev.kind] + "</span>" +
         '<span class="tl__body">' + (ev.city ? '<span class="tl__city">' + esc(P(ev.city)) + "</span><br>" : "") +
         '<span class="tl__title">' + esc(P(ev.title)) + "</span>" +
+        (skipped ? '<br><span class="progress-note">' + esc(U("progressSkipped")) + '</span>' : progress.shortened[plan.indexOf(ev)] ? '<br><span class="progress-note">' + esc(U("progressShort", progress.shortened[plan.indexOf(ev)])) + '</span>' : "") +
         (ev.sub ? '<br><span class="tl__sub">' + esc(P(ev.sub)) + "</span>" : "") + (count ? "<br>" + count : "") +
         "</span></a></li>";
     }).join("");
@@ -617,7 +658,8 @@
     var plan = T.plans[state.plan];
     $("#travel-clock").innerHTML = (state.sim ? '<span class="sim-badge">' + esc(U("simBadge")) + "</span> " : "") + hhmm(d);
     var body = $("#travel-body");
-    var nextCard = '<div class="card next-stop">' + $("#next-stop").innerHTML.replace(' id="next-stop-title"', "") + '</div>';
+    var nextCard = '<div class="card next-stop">' + $("#next-stop").innerHTML.replace(' id="next-stop-title"', "") + '</div><div class="card delay-panel">' + $("#delay-panel").innerHTML + '</div>';
+    if (journeyState().index !== null) { body.innerHTML = nextCard; return; }
     var start = tripStart(plan[0].s), end = tripStart(plan[plan.length - 1].e);
     if (plan[plan.length - 1].e < plan[0].s) end = new Date(end.getTime() + 86400000);
 
@@ -750,6 +792,35 @@
         return;
       }
       switch (t.getAttribute("data-action")) {
+        case "progress-arrive":
+          var p = journeyState(), index = journeyIndex(), entry = T.plans[state.plan][index];
+          if (!entry) break;
+          p.index = index; p.arrived = true;
+          if (entry.sight) { state.visited[entry.sight] = true; if (!state.sim) store.set("visited", state.visited); }
+          saveJourney(); renderAll(); if (travelOpen()) renderTravel(); break;
+        case "progress-next":
+          var p = journeyState(); p.index = J.next(T.plans[state.plan], p, journeyIndex()); p.arrived = false;
+          saveJourney(); renderAll(); if (travelOpen()) renderTravel(); break;
+        case "progress-back":
+          var p = journeyState(), index = journeyIndex();
+          if (!p.arrived) {
+            do { index--; } while (index > 0 && (!J.step(T.plans[state.plan][index]) || p.skipped.indexOf(index) >= 0));
+            p.index = Math.max(0, index);
+          }
+          p.arrived = false; saveJourney(); renderAll(); if (travelOpen()) renderTravel(); break;
+        case "progress-reset":
+          var p = journeyState(); p.index = null; p.arrived = false;
+          saveJourney(); renderAll(); if (travelOpen()) renderTravel(); break;
+        case "delay-select":
+          journeyState().delay = +t.getAttribute("data-minutes"); saveJourney(); renderDelayPanel(); if (travelOpen()) renderTravel(); break;
+        case "delay-apply":
+          var p = journeyState(), plan = T.plans[state.plan], index = journeyIndex();
+          var d = now(), proposals = J.advice(plan, p, index, isTripDay(d) ? nowMin(d) : undefined); J.apply(plan, p, proposals, index);
+          if (p.index !== index) p.arrived = false;
+          saveJourney(); renderAll(); if (travelOpen()) renderTravel(); break;
+        case "delay-reset":
+          var p = journeyState(); p.delay = 0; p.appliedDelay = null; p.skipped = []; p.shortened = {};
+          saveJourney(); renderAll(); if (travelOpen()) renderTravel(); break;
         case "travel-open": openTravel(); break;
         case "travel-close": closeTravel(); break;
         case "travel-jump": closeTravel(); break; // Link-Navigation läuft normal weiter
@@ -759,9 +830,9 @@
           break;
         case "sim-apply":
           var v = $("#sim-time").value;
-          if (v) { state.sim = new Date(v); simTick(); }
+          if (v) { state.sim = new Date(v); simulatedJourneys = {}; simTick(); }
           break;
-        case "sim-clear": state.sim = null; simTick(); break;
+        case "sim-clear": state.sim = null; simulatedJourneys = {}; state.visited = store.get("visited", {}); renderAll(); simTick(); break;
       }
     });
 
@@ -787,7 +858,7 @@
   }
   function tick() {
     if (simOffset) state.sim = new Date(Date.now() + simOffset);
-    renderTimeline(); refreshStatuses(); renderNextStop(); renderReturnBar();
+    renderTimeline(); refreshStatuses(); renderNextStop(); renderDelayPanel(); renderReturnBar();
     if (travelOpen()) renderTravel();
   }
 
@@ -795,7 +866,7 @@
   function renderAll() {
     statusItems = {};
     applyStatic();
-    renderStats(); renderSources(); renderPlanSwitch(); renderTimeline(); renderNextStop(); renderReturnBar();
+    renderStats(); renderSources(); renderPlanSwitch(); renderTimeline(); renderNextStop(); renderDelayPanel(); renderReturnBar();
     renderSights(); renderFood(); renderConnections();
     renderWeather();
   }

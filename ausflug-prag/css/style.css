@@ -421,3 +421,19 @@ body { padding-bottom: var(--return-bar-h); }
   .return-bar__actions a { padding: 10px 16px; flex: none; }
   .return-bar li span { font-size: .78rem; }
 }
+
+/* Confirmed progress and optional delay adjustments. */
+.delay-panel { margin-top: 14px; padding: 18px 22px; }
+.delay-panel h3 { font-size: 1.1rem; }
+.delay-panel .fine { margin: 8px 0 12px; }
+.delay-options { display: flex; gap: 8px; flex-wrap: wrap; }
+.delay-options button { min-height: 44px; cursor: pointer; }
+.delay-options [aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); }
+.delay-advice { margin: 14px 0; padding-left: 1.2em; font-size: .88rem; }
+.delay-advice li + li { margin-top: 8px; }
+.progress-note { color: var(--accent); font-size: .8rem; font-weight: 600; }
+.next-stop__actions button { cursor: pointer; min-height: 44px; }
+.next-stop__actions .linkish { font-size: .8rem; }
+.tl--skipped .tl__title { text-decoration: line-through; opacity: .6; }
+.travel .delay-panel { margin-top: 0; }
+.travel .next-stop { grid-template-columns: 1fr; }
