@@ -54,3 +54,9 @@ Verkehrsdaten: **08.10.2026**, anhand offizieller ČD-, PID- und DPP-Quellen gep
 - **Laut Google Maps** (vom Nutzer übermittelt): Zubang 11:45–16 und 17–22, Malatang No.1 11–22, K-Remember (vietnamesisch) 11–21:30, U Houdků 11–24, The Kimchi freitags 11–15 und 16:30–21 Uhr; Adressen Budvarka (Wuchterlova 336/22), U Houdků (Bořivojova 693/110) und K-Food (Koněvova 1185/102, Kartenpunkt ungefähr).
 
 > Bitte am Reisetag aktuelle Abfahrtszeiten und Öffnungszeiten prüfen.
+
+## Unterwegs-Ansichten und Quellen
+
+- Die Karte **Als Nächstes** steht über dem Tagesplan und im Reisemodus. Sie folgt dem gewählten Plan und der Uhrzeit (auch bei Simulation), zeigt den nächsten Ort, die geplante Uhrzeit und vorhandene Gehhinweise. **Route öffnen** öffnet Google Maps zum Ziel; die Seite ortet den Nutzer nicht.
+- Die **Rückfahrtleiste** bleibt auch im Reisemodus sichtbar: 20:00 Restaurant verlassen, RJ 170 ab 20:47, Dresden 23:19. Sie verlinkt die Bahnhofsroute und den datierten ČD-Fahrplan; am Reisetag erinnert sie ab 19:45 an den Aufbruch. Das ist eine Erinnerung nach Plan, kein Live-Zugstatus.
+- Jede Ortskarte nennt den Status der **Öffnungszeiten**, das Recherche-/Prüfdatum und einen Quellenlink. `hoursEvidence` in `js/data.js` kennzeichnet tatsächlich geprüfte Betreiberangaben als `official`; andere Zeiten bleiben `unconfirmed`. Freier öffentlicher Zugang wird getrennt angezeigt. Das Prüfzeichen bezieht sich auf Öffnungszeiten, nicht auf Bewertungen, Preise oder andere Kartentexte.

@@ -517,7 +517,7 @@
         text: "A large antiquarian bookshop with over 24,000 books, old prints, maps and graphics – between Náměstí Republiky and Masaryk station.",
         why: "Open on weekdays only – Friday is the one chance. It lies right on the way from the main station to the Old Town.",
         duration: "30 min",
-        walkText: "approx. 900 m · 12 min from the main station",
+        walkText: "approx. 550 m · allow 15–20 min from the platform",
         hoursNote: "Mon–Fri 10 am–6 pm, closed Sat–Sun."
       },
       "pr-strahov": {
@@ -568,7 +568,7 @@
         cuisine: "Asian wok dishes",
         when: "Alternative to the malatang snack",
         text: "Quick wok bowls to take away or eat in, a few steps from Wenceslas Square.",
-        hoursNote: "Mon–Fri 10:30 am–8:30 pm (Jindřišská branch).",
+        hoursNote: "Mon–Fri 10:30–21:30, Sat–Sun 11:30–21:30 (official Jindřišská branch).",
         price: "Bowl approx. 139 CZK"
       },
       "budvarka": {
@@ -583,10 +583,10 @@
         cuisine: "Cheap Czech pub food",
         when: "Dinner, 19:00–20:00",
         text: "A rustic Žižkov pub with hearty Czech food at neighbourhood prices – only 10–15 min from Riegrovy sady.",
-        why: "Perfect after the sunset, and only about 20 min from the main station.",
-        hoursNote: "11 am–midnight (per Google Maps).",
+        why: "Perfect after the sunset, allow approx. 25 min to reach the train platform.",
+        hoursNote: "Mon–Sat 11:00–24:00, Sun 11:00–23:00 (official website).",
         price: "€ (estimate)",
-        note: "Reserve for Friday 7 pm. Cards accepted per its website (unconfirmed) – bring some cash. Leave for the station at 20:00."
+        note: "Reserve for Friday 7 pm. Cards accepted per the official website. Leave for the station at 20:00."
       },
       "k-remember": {
         cuisine: "Vietnamese, vegetarian options too",
@@ -661,7 +661,7 @@
         name: "Prague Castle (Pražský hrad)",
         text: "One of the largest castle complexes in the world and seat of the Czech president – with courtyards, palaces, churches and gardens.",
         why: "The castle grounds are free; the circuit ticket gets you into the main buildings.",
-        duration: "60–90 min", walkText: "approx. 800 m · 12 min via Hradčany Square",
+        duration: "60–90 min", walkText: "approx. 1.2 km to St. Vitus · allow 25 min via Hradčany Square",
         hoursNote: "Grounds daily 6:00–22:00, free. Buildings in summer (1 Apr–31 Oct) 9–17, in winter 9–16. “Main Circuit” ticket approx. 450 CZK according to research (check on hrad.cz).",
         extra: "Airport-style security checks at all entrances – leave large backpacks behind and expect queues in summer.",
         hoursLabel: "Castle grounds"
@@ -724,7 +724,7 @@
         text: "책 24,000권 이상과 옛 인쇄물, 지도, 판화를 갖춘 큰 고서점 – 공화국 광장과 마사리크역 사이에 있습니다.",
         why: "평일에만 문을 열어서 금요일이 유일한 기회입니다. 중앙역에서 구시가지로 가는 길에 바로 있습니다.",
         duration: "30분",
-        walkText: "중앙역에서 약 900 m · 12분",
+        walkText: "약 550 m · 승강장에서 15–20분 확보",
         hoursNote: "월–금 10–18시, 토–일 휴무."
       },
       "pr-strahov": {
@@ -775,7 +775,7 @@
         cuisine: "아시아 웍 요리",
         when: "마라탕 간식 대안",
         text: "바츨라프 광장에서 몇 걸음 거리의 빠른 웍 볼, 포장 또는 매장 식사.",
-        hoursNote: "월–금 10:30–20:30 (인드르지슈스카 지점).",
+        hoursNote: "월–금 10:30–21:30, 토–일 11:30–21:30 (인드르지슈스카 지점 공식 정보).",
         price: "볼 약 139 CZK"
       },
       "budvarka": {
@@ -790,10 +790,10 @@
         cuisine: "저렴한 체코 선술집 요리",
         when: "저녁, 19:00–20:00",
         text: "든든한 체코 요리를 동네 가격에 파는 지슈코프의 소박한 선술집 – 리에그로비 사디에서 10–15분.",
-        why: "일몰 뒤에 딱 좋고, 중앙역까지 약 20분입니다.",
-        hoursNote: "11–24시 (Google 지도 기준).",
+        why: "일몰 뒤에 딱 좋고, 중앙역 승강장까지 도보 약 25분을 잡으세요.",
+        hoursNote: "월–토 11–24시, 일 11–23시 (공식 웹사이트).",
         price: "€ (추정)",
-        note: "금요일 19시로 예약하세요. 웹사이트상 카드 결제 가능 (미확인) – 현금도 조금 챙기세요. 20:00에 역으로 출발하세요."
+        note: "금요일 19시로 예약하세요. 공식 웹사이트에 따르면 카드 결제가 가능합니다. 20:00에 역으로 출발하세요."
       },
       "k-remember": {
         cuisine: "베트남 요리, 채식 메뉴도 있음",
@@ -868,7 +868,7 @@
         name: "프라하 성",
         text: "세계에서 가장 큰 성 단지 중 하나이자 체코 대통령 관저로, 안뜰·궁전·성당·정원이 있습니다.",
         why: "성 구역은 무료이며, 순환 관람권으로 주요 건물에 들어갈 수 있습니다.",
-        duration: "60–90분", walkText: "흐라트차니 광장을 지나 약 800 m · 12분",
+        duration: "60–90분", walkText: "성 비투스까지 흐라트차니 광장을 지나 약 1.2 km · 25분",
         hoursNote: "성 구역 매일 6:00–22:00, 무료. 건물은 여름(4.1–10.31) 9–17, 겨울 9–16. ‘메인 서킷’ 관람권 조사 기준 약 450 CZK (hrad.cz에서 확인).",
         extra: "모든 입구에서 공항식 보안 검색 – 큰 배낭은 두고 오고, 여름에는 대기 시간을 예상하세요.",
         hoursLabel: "성 구역"
@@ -1349,15 +1349,93 @@
   // Bewusst unübersetzt
   var keep = { en: [], ko: [] };
 
-  trip.de.footerText = function () { return "Öffnungszeiten und Ortsangaben: Recherche vom 7.10.2026. Verkehrsdaten am 8.10.2026 anhand von ČD, PID und DPP geprüft. Metro-/Tramzeiten und Besuchszeiten sind Beispiele; aktuelle Verbindungen vor Abfahrt prüfen."; };
+  trip.de.footerText = function () { return "Öffnungszeiten: Quellen und Prüfdatum stehen direkt an den Orten. Weitere Ortsangaben: Recherche vom 7.10.2026. Verkehrsdaten am 8.10.2026 anhand von ČD, PID und DPP geprüft. Metro-/Tramzeiten und Besuchszeiten sind Beispiele; aktuelle Verbindungen vor Abfahrt prüfen."; };
   trip.de.connChecked = function () { return "Verkehrsdaten geprüft: 8.10.2026 · Zugfahrpläne für 9.10.2026; Metro-/Tramzeiten sind Beispiele"; };
   trip.de.travelFoot = function () { return "Zugfahrpläne für 9.10.2026 geprüft · Metro-/Tramzeiten sind Beispiele; aktuelle Verbindungen prüfen"; };
-  trip.en.footerText = function () { return "Opening hours and place details: research from 7 Oct 2026. Transport data checked on 8 Oct 2026 using ČD, PID and DPP. Metro/tram and visit times are examples; check current connections before departure."; };
+  trip.en.footerText = function () { return "Opening-hours sources and check dates are shown on each place card. Other place details: research from 7 Oct 2026. Transport data checked on 8 Oct 2026 using ČD, PID and DPP. Metro/tram and visit times are examples; check current connections before departure."; };
   trip.en.connChecked = function () { return "Transport checked: 8 Oct 2026 · train timetables for 9 Oct 2026; metro/tram times are examples"; };
   trip.en.travelFoot = function () { return "Train timetables checked for 9 Oct 2026 · metro/tram times are examples; check current connections"; };
-  trip.ko.footerText = function () { return "운영 시간과 장소 정보: 2026년 10월 7일 조사. 교통 정보는 2026년 10월 8일 ČD, PID, DPP로 확인했습니다. 지하철·트램 및 방문 시간은 예시이며 출발 전 현재 연결편을 확인하세요."; };
+  trip.ko.footerText = function () { return "운영 시간의 출처와 확인 날짜는 장소 카드에 표시됩니다. 기타 장소 정보는 2026년 10월 7일 조사 기준입니다. 교통 정보는 2026년 10월 8일 ČD, PID, DPP로 확인했습니다. 지하철·트램 및 방문 시간은 예시이며 출발 전 현재 연결편을 확인하세요."; };
   trip.ko.connChecked = function () { return "교통 정보 확인: 2026년 10월 8일 · 10월 9일 열차 시간표; 지하철·트램 시간은 예시"; };
   trip.ko.travelFoot = function () { return "2026년 10월 9일 열차 시간표 확인 · 지하철·트램 시간은 예시; 현재 연결편 확인"; };
+
+  // Labels for the next-stop card, return reminder and opening-hours evidence.
+  trip.de.nextHeading = "Als Nächstes";
+  trip.de.nextPlanned = "Nach deinem gewählten Tagesplan";
+  trip.de.nextBefore = "Start am Freitag, 9. Oktober";
+  trip.de.nextTime = "Geplant um";
+  trip.de.routeOpen = "Route öffnen";
+  trip.de.nextDetails = "Details ansehen";
+  trip.de.nextWay = "Weg zum nächsten Stopp";
+  trip.de.returnHeading = "Rückfahrt · Fr, 9.10.2026";
+  trip.de.returnLeave = "Restaurant verlassen";
+  trip.de.returnTrain = "Zug ab Prag";
+  trip.de.returnArrive = "Ankunft Dresden";
+  trip.de.returnRoute = "Zum Bahnhof";
+  trip.de.returnTimetable = "Aktueller Fahrplan";
+  trip.de.returnSoon = "Jetzt zum Bahnhof aufbrechen";
+  trip.de.returnBoard = "Am Bahnhof: Gleis und Abfahrt prüfen";
+  trip.de.returnPast = "Planmäßige Abfahrt vorbei · Zugstatus prüfen";
+  trip.de.evidenceHeading = "Öffnungszeiten";
+  trip.de.evidenceOfficial = "Offiziell geprüft";
+  trip.de.evidenceUnconfirmed = "Noch unbestätigt";
+  trip.de.evidenceAccess = "Zugang frei · Recherche";
+  trip.de.evidenceSource = "Quelle ansehen";
+  trip.de.evidenceCaution = "Angaben vor dem Besuch prüfen.";
+  trip.de.evidenceRegular = "Reguläre Zeiten; kurzfristige Änderungen möglich.";
+  trip.de.evidenceAccessNote = "Zugang laut Recherche frei; gastronomische Öffnungszeiten unbestätigt.";
+  trip.en.nextHeading = "Up next";
+  trip.en.nextPlanned = "Based on your selected schedule";
+  trip.en.nextBefore = "Start on Friday, 9 October";
+  trip.en.nextTime = "Planned at";
+  trip.en.routeOpen = "Open route";
+  trip.en.nextDetails = "View details";
+  trip.en.nextWay = "Getting to the next stop";
+  trip.en.returnHeading = "Return · Fri, 9 Oct 2026";
+  trip.en.returnLeave = "Leave restaurant";
+  trip.en.returnTrain = "Train from Prague";
+  trip.en.returnArrive = "Arrive in Dresden";
+  trip.en.returnRoute = "To the station";
+  trip.en.returnTimetable = "Current timetable";
+  trip.en.returnSoon = "Leave for the station now";
+  trip.en.returnBoard = "At the station: check platform and departure";
+  trip.en.returnPast = "Scheduled departure passed · check train status";
+  trip.en.evidenceHeading = "Opening hours";
+  trip.en.evidenceOfficial = "Officially checked";
+  trip.en.evidenceUnconfirmed = "Not yet confirmed";
+  trip.en.evidenceAccess = "Free access · researched";
+  trip.en.evidenceSource = "View source";
+  trip.en.evidenceCaution = "Check details before visiting.";
+  trip.en.evidenceRegular = "Regular hours; short-notice changes are possible.";
+  trip.en.evidenceAccessNote = "Access is free according to research; food and drink service hours are unconfirmed.";
+  trip.ko.nextHeading = "다음 일정";
+  trip.ko.nextPlanned = "선택한 일정 기준";
+  trip.ko.nextBefore = "10월 9일 금요일 출발";
+  trip.ko.nextTime = "예정 시간";
+  trip.ko.routeOpen = "경로 열기";
+  trip.ko.nextDetails = "상세 보기";
+  trip.ko.nextWay = "다음 장소로 이동";
+  trip.ko.returnHeading = "귀국 · 2026년 10월 9일(금)";
+  trip.ko.returnLeave = "식당 출발";
+  trip.ko.returnTrain = "프라하 열차 출발";
+  trip.ko.returnArrive = "드레스덴 도착";
+  trip.ko.returnRoute = "역으로 가기";
+  trip.ko.returnTimetable = "현재 시간표";
+  trip.ko.returnSoon = "지금 역으로 출발하세요";
+  trip.ko.returnBoard = "역에서 승강장과 출발 확인";
+  trip.ko.returnPast = "예정 출발 시간 지남 · 열차 상태 확인";
+  trip.ko.evidenceHeading = "운영 시간";
+  trip.ko.evidenceOfficial = "공식 정보 확인";
+  trip.ko.evidenceUnconfirmed = "미확인";
+  trip.ko.evidenceAccess = "무료 입장 · 조사";
+  trip.ko.evidenceSource = "출처 보기";
+  trip.ko.evidenceCaution = "방문 전 정보를 확인하세요.";
+  trip.ko.evidenceRegular = "정규 운영 시간이며 임시 변경될 수 있습니다.";
+  trip.ko.evidenceAccessNote = "조사에 따르면 무료 입장이며 식음료 운영 시간은 미확인입니다.";
+
+  trip.de.evidencePublicNote = "Öffentlicher Ort; Angaben zum Zugang aus Recherche.";
+  trip.en.evidencePublicNote = "Public place; access information is based on research.";
+  trip.ko.evidencePublicNote = "공공 장소이며 입장 정보는 조사 기준입니다.";
 
   var ui = {};
   ["de", "en", "ko"].forEach(function (l) {

@@ -73,7 +73,7 @@
       id: "pr-antik", city: "altstadt", gmaps: "Antikvariát Dlážděná Praha", name: "Antikvariát Dlážděná (ADPlus)", lat: 50.08730, lon: 14.43180, photo: null,
       text: "Großes Antiquariat mit über 24.000 Büchern, alten Drucken, Landkarten und Grafiken – zwischen Náměstí Republiky und Masaryk-Bahnhof.",
       why: "Nur werktags geöffnet – der Freitag ist die einzige Gelegenheit. Liegt direkt auf dem Weg vom Hauptbahnhof in die Altstadt.",
-      duration: "30 Min.", walkFrom: { label: "vom Hauptbahnhof", text: "ca. 900 m · 12 Min. vom Hauptbahnhof" },
+      duration: "30 Min.", walkFrom: { label: "vom Hauptbahnhof", text: "ca. 550 m · vom Gleis 15–20 Min. einplanen" },
       hours: hours({ "Mo-Fr": [["10:00", "18:00"]] }),
       hoursNote: "Mo–Fr 10–18 Uhr, Sa–So geschlossen.",
       verify: true, web: "https://www.adplus.cz/"
@@ -130,7 +130,7 @@
       id: "pr-burg", city: "burg", gmaps: "Pražský hrad", name: "Prager Burg (Pražský hrad)", lat: 50.09060, lon: 14.39850, photo: null,
       text: "Einer der größten geschlossenen Burgkomplexe der Welt und Sitz des tschechischen Präsidenten – mit Höfen, Palästen, Kirchen und Gärten.",
       why: "Das Burgareal ist kostenlos; mit dem Rundgang-Ticket kommt man in die wichtigsten Gebäude.",
-      duration: "60–90 Min.", walkFrom: { label: "vom Kloster Strahov", text: "ca. 800 m · 12 Min. über den Hradschiner Platz" },
+      duration: "60–90 Min.", walkFrom: { label: "vom Kloster Strahov", text: "bis zum Veitsdom ca. 1,2 km · 25 Min. über den Hradschiner Platz" },
       hours: hours({ "Mo-So": [["06:00", "22:00"]] }), hoursLabel: "Burgareal",
       hoursNote: "Areal täglich 6–22 Uhr, Eintritt frei. Gebäude im Sommer (1.4.–31.10.) 9–17 Uhr, im Winter 9–16 Uhr. Rundgang „Main Circuit“ laut Recherche ca. 450 CZK (auf hrad.cz prüfen).",
       extra: "Sicherheitskontrolle an allen Eingängen wie am Flughafen – keine großen Rucksäcke mitnehmen, im Sommer Wartezeiten einplanen.",
@@ -264,12 +264,12 @@
     {
       id: "wokin", role: "lunch", priority: "Alternative", city: "vinohrady",
       name: "Wokin", gmaps: "Wokin Jindřišská Praha", lat: 50.08460, lon: 14.42870,
-      address: "Jindřišská 832/3, 110 00 Praha 1 (vermutlich – Wokin hat mehrere Filialen)",
+      address: "Jindřišská 832/3, 110 00 Praha 1",
       cuisine: "Asiatische Wok-Gerichte",
       when: "Alternative zum Malatang-Snack",
       text: "Schnelle Wok-Bowls zum Mitnehmen oder vor Ort, ein paar Schritte vom Wenzelsplatz.",
-      hours: hours({ "Mo-Fr": [["10:30", "20:30"]] }),
-      hoursNote: "Mo–Fr 10:30–20:30 Uhr (Filiale Jindřišská).",
+      hours: hours({ "Mo-Fr": [["10:30", "21:30"]], "Sa-So": [["11:30", "21:30"]] }),
+      hoursNote: "Mo–Fr 10:30–21:30, Sa–So 11:30–21:30 Uhr (offizielle Filiale Jindřišská).",
       price: "Bowl ca. 139 CZK",
       rating: null,
       phone: "+420725523570", web: "https://www.wokin.cz/"
@@ -295,12 +295,12 @@
       cuisine: "Günstige tschechische Kneipenküche",
       when: "Abendessen, 19:00–20:00 Uhr",
       text: "Urige Žižkover Kneipe mit deftiger tschechischer Küche zu Nachbarschaftspreisen – nur 10–15 Min. vom Riegrovy sady.",
-      why: "Perfekt nach dem Sonnenuntergang, und vom Hauptbahnhof nur ca. 20 Min. entfernt.",
-      hours: hours({ "Mo-So": [["11:00", "23:59"]] }),
-      hoursNote: "11–24 Uhr (laut Google Maps).",
+      why: "Perfekt nach dem Sonnenuntergang, und bis zum Gleis ca. 25 Min. Fußweg einplanen.",
+      hours: hours({ "Mo-Sa": [["11:00", "23:59"]], "So": [["11:00", "23:00"]] }),
+      hoursNote: "Mo–Sa 11–24, So 11–23 Uhr (offizielle Website).",
       price: "€ (Einschätzung)",
       rating: null,
-      note: "Für Freitag 19 Uhr reservieren. Kartenzahlung laut Website möglich (unbestätigt) – etwas Bargeld mitnehmen. Um 20:00 Uhr zum Bahnhof aufbrechen."
+      note: "Für Freitag 19 Uhr reservieren. Kartenzahlung laut offizieller Website möglich. Um 20:00 Uhr zum Bahnhof aufbrechen."
     },
     {
       id: "k-remember", role: "dinner", priority: "Alternative", city: "altstadt",
@@ -520,7 +520,31 @@
     { label: "Wetter: Open-Meteo (kostenlos, ohne API-Schlüssel)", url: "https://open-meteo.com/" }
   ];
 
+  // Evidence refers to opening hours/access, not every claim on a card.
+  var hoursEvidence = {
+    "pr-antik": { status: "official", checkedAt: "08.10.2026", url: "https://www.adplus.cz/stranka/kontakt" },
+    "pr-strahov": { status: "official", checkedAt: "08.10.2026", url: "https://www.strahovskyklaster.cz/en/for-visitors" },
+    "pr-burg": { status: "official", checkedAt: "08.10.2026", url: "https://www.hrad.cz/en/prague-castle-for-visitors/opening-hours" },
+    "pr-veitsdom": { status: "official", checkedAt: "08.10.2026", url: "https://www.hrad.cz/en/prague-castle-for-visitors/opening-hours" },
+    "wokin": { status: "official", checkedAt: "08.10.2026", url: "https://www.wokin.cz/wokin-jindrisska" },
+    "houdku": { status: "official", checkedAt: "08.10.2026", url: "https://www.uhoudku.com/" }
+  };
+  sights.concat(optionalSights, restaurants, cafes).forEach(function (item) {
+    item.hoursEvidence = hoursEvidence[item.id] || {
+      status: item.alwaysOpen ? "access" : "unconfirmed",
+      checkedAt: "07.10.2026",
+      url: item.web || "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(item.gmaps || item.name + " Praha")
+    };
+  });
+
+  var returnJourney = {
+    leave: "20:00", stationBy: "20:25", departure: "20:47", arrival: "23:19",
+    station: "pr_hln", line: "RJ 170",
+    timetable: "https://www.cd.cz/en/vlak/170/09.10.2026/5457076/20.47/8010085/23.19/1/0/"
+  };
+
   window.TRIP = {
+    returnJourney: returnJourney,
     date: TRIP_DATE, checkedAt: CHECKED_AT, storeKey: "pr26", meet: "dd_hbf", simTime: "13:00", walkKm: 8,
     areas: areas, places: places, sights: sights, optionalSights: optionalSights,
     restaurants: restaurants, cafes: cafes, connections: connections, connOrder: connOrder,

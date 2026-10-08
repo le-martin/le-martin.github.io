@@ -105,6 +105,83 @@
       '<a class="chip-link" href="https://www.openstreetmap.org/?mlat=' + o.lat + "&mlon=" + o.lon + "#map=18/" + o.lat + "/" + o.lon + '" target="_blank" rel="noopener" aria-label="' + esc(U("osmAria", label)) + '">🗺 OSM</a>';
   }
 
+  function routeURL(o) {
+    return "https://www.google.com/maps/dir/?api=1&destination=" + encodeURIComponent(gQuery(o)) + "&travelmode=walking";
+  }
+
+  function eventPlace(ev) {
+    if (ev.place && T.places[ev.place]) return T.places[ev.place];
+    var id = ev.sight || (ev.ref || "").replace(/^#/, "");
+    return T.sights.concat(T.optionalSights, T.restaurants, T.cafes).filter(function (o) { return o.id === id; })[0];
+  }
+
+  // Time-based guidance follows the selected plan; it does not track location.
+  function renderNextStop() {
+    var plan = T.plans[state.plan], d = now(), m = nowMin(d);
+    var before = d < tripStart(plan[0].s), after = d >= tripStart(plan[plan.length - 1].e);
+    var ev;
+    if (before) ev = plan[0];
+    else if (!after) {
+      ev = plan.filter(function (e) { return e.kind !== "walk" && e.kind !== "buffer" && toMin(e.s) > m && eventPlace(e); })[0];
+      // During the final train ride, show its destination instead of a past departure.
+      if (!ev) ev = plan[plan.length - 1];
+    }
+    var box = $("#next-stop");
+    if (!ev) {
+      box.innerHTML = '<p class="eyebrow">' + esc(U("doneLabel")) + '</p><h2 id="next-stop-title">' + esc(U("doneBig")) + '</h2>';
+      return;
+    }
+    var destination = eventPlace(ev);
+    var finalRide = !before && ev === plan[plan.length - 1] && m >= toMin(ev.s);
+    if (finalRide) destination = T.places[ev.to];
+    var name = destination.id ? C(destination, "name") : destination.name;
+    var index = plan.indexOf(ev), walks = [];
+    for (var i = index - 1; i >= 0 && (plan[i].kind === "walk" || plan[i].kind === "buffer"); i--) {
+      if (plan[i].kind === "walk") walks.unshift(P(plan[i].sub));
+    }
+    var time = finalRide ? ev.e : ev.s;
+    var heading = before ? U("nextBefore") : finalRide ? U("onTheWay") : U("nextHeading");
+    box.innerHTML = '<div class="next-stop__main"><p class="eyebrow">' + esc(heading) +
+      (state.sim ? ' <span class="sim-badge">' + esc(U("simBadge")) + '</span>' : "") + '</p>' +
+      '<h2 id="next-stop-title">' + esc(name) + '</h2><p class="next-stop__time">' +
+      esc(finalRide ? U("arrivalAt", time) : U("nextTime") + " " + (ev.approximate ? U("approx", time) : U("clock", time))) +
+      ' · ' + esc(P(ev.title)) + '</p>' +
+      (walks.length ? '<p class="next-stop__way">🚶 ' + esc(U("nextWay")) + ': ' + esc(walks.join(" · ")) + '</p>' : "") +
+      '<p class="fine">' + esc(U("nextPlanned")) + '</p></div>' +
+      '<div class="next-stop__actions"><a class="btn btn--primary" href="' + esc(routeURL(destination)) +
+      '" target="_blank" rel="noopener">↗ ' + esc(U("routeOpen")) + '</a>' +
+      '<a class="chip-link" href="' + esc(ev.ref) + '">' + esc(U("nextDetails")) + '</a></div>';
+  }
+
+  function renderReturnBar() {
+    var r = T.returnJourney, d = now(), m = nowMin(d), message = "";
+    if (isTripDay(d)) {
+      if (m >= toMin(r.departure) && m < toMin(r.arrival)) message = U("returnPast");
+      else if (m >= toMin(r.stationBy) && m < toMin(r.departure)) message = U("returnBoard");
+      else if (m >= toMin(r.leave) - 15 && m < toMin(r.stationBy)) message = U("returnSoon");
+    }
+    $("#return-bar").innerHTML = '<div class="return-bar__inner"><div class="return-bar__schedule">' +
+      '<p class="return-bar__heading">' + esc(U("returnHeading")) + (state.sim ? ' · ' + esc(U("simBadge")) : "") + '</p><ol>' +
+      [[r.leave, U("returnLeave")], [r.departure, r.line + " · " + U("returnTrain")], [r.arrival, U("returnArrive")]].map(function (x) {
+        return '<li><strong>' + esc(x[0]) + '</strong><span>' + esc(x[1]) + '</span></li>';
+      }).join("") + '</ol>' + (message ? '<p class="return-bar__alert" role="status">' + esc(message) + '</p>' : "") + '</div>' +
+      '<div class="return-bar__actions"><a class="chip-link" href="' + esc(routeURL(T.places[r.station])) +
+      '" target="_blank" rel="noopener">📍 ' + esc(U("returnRoute")) + '</a><a class="chip-link" href="' +
+      esc(r.timetable) + '" target="_blank" rel="noopener">🚆 ' + esc(U("returnTimetable")) + '</a></div></div>';
+    document.documentElement.style.setProperty("--return-bar-h", $("#return-bar").offsetHeight + "px");
+  }
+
+  function evidenceHTML(item) {
+    var evidence = item.hoursEvidence;
+    if (!evidence) return "";
+    var official = evidence.status === "official", access = evidence.status === "access";
+    return '<div class="hours-evidence hours-evidence--' + evidence.status + '"><div><strong>' +
+      esc(U(access ? "evidenceAccess" : "evidenceHeading")) + '</strong><span>' +
+      (access ? "" : esc(U(official ? "evidenceOfficial" : "evidenceUnconfirmed")) + ' · ') + esc(evidence.checkedAt) +
+      '</span></div><a href="' + esc(evidence.url) + '" target="_blank" rel="noopener">' + esc(U("evidenceSource")) +
+      ' ↗</a><p>' + esc(U(access ? (item.id === "pr-riegrovy" ? "evidenceAccessNote" : "evidencePublicNote") : official ? "evidenceRegular" : "evidenceCaution")) + '</p></div>';
+  }
+
   // ------------------------------------------------------------ Öffnungszeiten-Ampel
   function status(item, d) {
     if (item.alwaysOpen) return { cls: "open", text: U("stFree") };
@@ -271,7 +348,7 @@
       '<div class="sight__body">' +
       (s.optional ? '<span class="optional-tag">' + esc(U("optional")) + "</span>" : "") +
       "<h3>" + esc(name) + "</h3>" +
-      '<div class="status-row">' + statusHTML(s) + (s.verify ? '<span class="status status--unknown">' + esc(U("verifyBadge")) + "</span>" : "") + "</div>" +
+      '<div class="status-row">' + statusHTML(s) + "</div>" + evidenceHTML(s) +
       "<p>" + esc(C(s, "text")) + "</p>" +
       '<p class="sight__why">' + esc(C(s, "why")) + "</p>" +
       '<dl class="facts">' +
@@ -306,7 +383,7 @@
     return '<article class="card sight food" id="' + esc(r.id) + '"><div class="sight__body">' +
       '<div class="sight__top"><div><span class="prio' + (r.priority === "Alternative" ? " prio--alt" : "") + '">' + esc(P(r.priority)) + "</span>" +
       "<h3 style=\"margin-top:8px\">" + esc(name) + "</h3></div>" + favBtn(r.id, name, true) + "</div>" +
-      '<div class="status-row">' + statusHTML(r) + "</div>" +
+      '<div class="status-row">' + statusHTML(r) + "</div>" + evidenceHTML(r) +
       "<p>" + esc(C(r, "text")) + "</p>" +
       (why ? '<p class="sight__why sight__why--food">' + esc(why) + "</p>" : "") +
       (pros ? '<ul class="pros">' + pros.map(function (p) { return "<li>" + esc(p) + "</li>"; }).join("") + "</ul>" : "") +
@@ -335,7 +412,7 @@
         statusItems[x.id] = x;
         var name = C(x, "name");
         return '<article class="card cafe" id="' + esc(x.id) + '"><div class="cafe__top"><h5>' + esc(name) + "</h5>" + favBtn(x.id, name, true) + "</div>" +
-          '<div class="status-row" style="margin-top:6px">' + statusHTML(x) + "</div>" +
+          '<div class="status-row" style="margin-top:6px">' + statusHTML(x) + "</div>" + evidenceHTML(x) +
           "<p>" + esc(C(x, "text")) + "</p>" +
           '<dl class="facts">' +
           '<div><dt>📫</dt><dd>' + esc(x.address) + "</dd></div>" +
@@ -529,12 +606,13 @@
     var plan = T.plans[state.plan];
     $("#travel-clock").innerHTML = (state.sim ? '<span class="sim-badge">' + esc(U("simBadge")) + "</span> " : "") + hhmm(d);
     var body = $("#travel-body");
+    var nextCard = '<div class="card next-stop">' + $("#next-stop").innerHTML.replace(' id="next-stop-title"', "") + '</div>';
     var start = tripStart(plan[0].s), end = tripStart(plan[plan.length - 1].e);
     if (plan[plan.length - 1].e < plan[0].s) end = new Date(end.getTime() + 86400000);
 
     if (d < start && !isTripDay(d)) {
       var firstDep = plan.filter(function (e) { return e.dep; })[0];
-      body.innerHTML =
+      body.innerHTML = nextCard +
         '<div class="card tv tv--hero"><p class="tv__label">' + esc(U("notYet")) + '</p><p class="tv__big">' + esc(U("tripDate")) + "</p>" +
         '<p class="tv__count">' + esc(durText(tripStart(firstDep.s) - d)) + '</p><p class="tv__sub">' + esc(U("untilFirst", P(firstDep.title), firstDep.s)) + "</p></div>" +
         '<div class="card tv"><p class="tv__label">' + esc(U("meetLabel")) + '</p><p class="tv__big">' + esc(U("meetVal", plan[0].s)) + '</p><p class="tv__sub">' + esc(U(planMeta().meetSub || "meetSub")) + "</p>" +
@@ -554,7 +632,7 @@
     var nextMajor = upcoming.filter(function (e) { return e.major; })[0];
     var nextSight = current && current.kind === "sight" ? current : upcoming.filter(function (e) { return e.kind === "sight"; })[0];
     var riding = current && (current.kind === "train" || current.kind === "bus");
-    var html = "";
+    var html = nextCard;
 
     if (riding) {
       html += '<div class="card tv tv--hero"><p class="tv__label">' + esc(U("onTheWay")) + '</p><p class="tv__big">' + esc(P(current.title)) + '</p><p class="tv__sub">' + esc(U("arrivalAt", current.e)) + " · " + esc(P(current.sub)) + "</p>" +
@@ -698,7 +776,7 @@
   }
   function tick() {
     if (simOffset) state.sim = new Date(Date.now() + simOffset);
-    renderTimeline(); refreshStatuses();
+    renderTimeline(); refreshStatuses(); renderNextStop(); renderReturnBar();
     if (travelOpen()) renderTravel();
   }
 
@@ -706,7 +784,7 @@
   function renderAll() {
     statusItems = {};
     applyStatic();
-    renderStats(); renderSources(); renderPlanSwitch(); renderTimeline();
+    renderStats(); renderSources(); renderPlanSwitch(); renderTimeline(); renderNextStop(); renderReturnBar();
     renderSights(); renderFood(); renderConnections();
     renderWeather();
   }
@@ -716,6 +794,11 @@
     $("#sim-time").value = tripDate() + "T" + (T.simTime || "12:00");
     renderAll();
     bind(); initNav(); initFab();
+    if (window.ResizeObserver) {
+      new ResizeObserver(function () {
+        document.documentElement.style.setProperty("--return-bar-h", $("#return-bar").offsetHeight + "px");
+      }).observe($("#return-bar"));
+    }
     try { initMaps(); } catch (e) { console.warn("Karte nicht verfügbar", e); }
     loadWeather();
     setInterval(tick, 30000);
