@@ -437,3 +437,18 @@ body { padding-bottom: var(--return-bar-h); }
 .tl--skipped .tl__title { text-decoration: line-through; opacity: .6; }
 .travel .delay-panel { margin-top: 0; }
 .travel .next-stop { grid-template-columns: 1fr; }
+
+/* Primary route stays visible; extra places and verbose facts expand on demand. */
+.more-options { margin-top: 24px; padding: 0 16px; border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--surface); }
+.more-options > summary { padding: 16px 0; font-weight: 700; cursor: pointer; min-height: 52px; }
+.more-options[open] { padding-bottom: 16px; }
+.more-options > .cards, .more-options > .cafe-groups { margin-top: 8px; }
+.option-count { display: inline-block; margin-left: 10px; border-radius: 999px; background: var(--surface-2); color: var(--ink-2); font-size: .75rem; padding: 1px 8px; }
+.card-route { display: flex; justify-content: center; width: 100%; min-height: 44px; margin: 14px 0 0; }
+.compact-facts { margin: 10px 0; }
+.card-details { border-top: 1px solid var(--line); margin-top: 14px; }
+.card-details > summary { padding: 12px 0; color: var(--ink-2); font-size: .88rem; font-weight: 600; cursor: pointer; min-height: 44px; }
+.card-details__content { padding: 0 0 6px; }
+.card-details__content > p:first-of-type { margin-top: 10px; }
+.status--evidence { color: var(--forest); background: var(--forest-soft); }
+.more-options > summary:focus-visible, .card-details > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }

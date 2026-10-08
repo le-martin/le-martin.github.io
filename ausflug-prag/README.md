@@ -74,3 +74,11 @@ Das Antiquariat wird durch ein ausdrücklich als Umgebung gekennzeichnetes Foto 
 Die Auswahl 15/30/60 Minuten macht Vorschläge anhand der noch offenen Stationen: kurzer Burgbesuch, Burg auslassen oder Strahov und Burg auslassen. Bereits bestätigte Stopps werden nicht gestrichen. Bei der Bibliothek wird der Kassenschluss berücksichtigt; später liegt der Fokus auf der Rückfahrt. Erst „Vorschläge übernehmen“ markiert die Anpassungen und entfernt beim Auslassen des westlichen Ausflugs auch seine Wege und Fahrten. „Anpassungen zurücknehmen“ stellt die Stationen wieder her. Essen, Sonnenuntergang und Zugfahrpläne werden nicht verschoben; die Hinweise sind Kürzungsvorschläge, keine neu berechneten Fahrpläne.
 
 Prüfen: `node tools/check-journey.js` und `node tools/check-i18n.js`.
+
+## Kompakte Ortskarten
+
+Die Hauptstrecke bleibt direkt sichtbar. Zusätzliche Sehenswürdigkeiten, alternative Restaurants sowie Cafés/Adressen liegen in zunächst geschlossenen „Weitere …“-Abschnitten. Hauptrestaurants sind Naše maso, Malatang und U Houdků.
+
+Ortskarten zeigen Foto (falls vorhanden), Status, reguläre Öffnungszeiten am Reisetag, vorhandene Gehhinweise und einen direkten Routenbutton. Kassenschluss, letzter Einlass und der Gottesdiensthinweis bleiben sichtbar. Beschreibungen, Preise, Bewertungen, Adressen und Quellen mit Prüfdatum liegen unter „Details“. Favoriten, Besucht-Häkchen und Foto-Lizenzangaben bleiben erreichbar.
+
+Native `details`-Elemente funktionieren mit Tastatur und Touch. Offene Bereiche bleiben bei Sprach-, Plan- und Fortschrittswechseln erhalten. Direktlinks zu eingeklappten Orten öffnen die umgebenden Alternativen automatisch.

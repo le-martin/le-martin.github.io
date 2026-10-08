@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
-  <link rel="stylesheet" href="css/style.css?v=journey-20261008">
+  <link rel="stylesheet" href="css/style.css?v=compact-20261008">
   <link rel="preload" as="image" href="images/pr-burg.webp">
 </head>
 <body>
@@ -124,8 +124,10 @@
         </div>
         <div class="cards" id="sights-altstadt"></div>
 
-        <h3 class="subhead" data-i18n="optionalHead">Optional – nicht im Hauptplan</h3>
-        <div class="cards" id="optional-altstadt"></div>
+        <details class="more-options" data-disclosure="optional-altstadt">
+          <summary><span data-i18n="moreSights">Weitere Sehenswürdigkeiten</span><span class="option-count">3</span></summary>
+          <div class="cards" id="optional-altstadt"></div>
+        </details>
       </div>
     </section>
 
@@ -144,8 +146,10 @@
         </div>
         <div class="cards" id="sights-burg"></div>
 
-        <h3 class="subhead" data-i18n="optionalHead">Optional – nicht im Hauptplan</h3>
-        <div class="cards" id="optional-burg"></div>
+        <details class="more-options" data-disclosure="optional-burg">
+          <summary><span data-i18n="moreSights">Weitere Sehenswürdigkeiten</span><span class="option-count">2</span></summary>
+          <div class="cards" id="optional-burg"></div>
+        </details>
       </div>
     </section>
 
@@ -175,12 +179,22 @@
         </div>
         <h3 class="subhead" data-i18n="lunchHead"></h3>
         <div class="cards cards--food" id="food-lunch"></div>
+        <details class="more-options" data-disclosure="food-lunch-alternatives">
+          <summary><span data-i18n="moreFood">Weitere Restaurants</span><span class="option-count">3</span></summary>
+          <div class="cards cards--food" id="food-lunch-alternatives"></div>
+        </details>
         <h3 class="subhead" data-i18n="dinnerHead"></h3>
         <div class="cards cards--food" id="food-dinner"></div>
+        <details class="more-options" data-disclosure="food-dinner-alternatives">
+          <summary><span data-i18n="moreFood">Weitere Restaurants</span><span class="option-count">1</span></summary>
+          <div class="cards cards--food" id="food-dinner-alternatives"></div>
+        </details>
 
-        <h3 class="subhead" id="cafes" data-i18n="cafesHead"></h3>
-        <p class="fine" data-i18n="cafesNote"></p>
-        <div class="cafe-groups" id="cafe-groups"></div>
+        <details class="more-options" data-disclosure="cafes">
+          <summary id="cafes"><span data-i18n="moreCafes">Weitere Cafés und Adressen</span><span class="option-count">4</span></summary>
+          <p class="fine" data-i18n="cafesNote"></p>
+          <div class="cafe-groups" id="cafe-groups"></div>
+        </details>
       </div>
     </section>
 
@@ -244,8 +258,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="js/walks.js"></script>
   <script src="js/data.js"></script>
-  <script src="js/i18n.js?v=journey-20261008"></script>
-  <script src="js/journey.js?v=journey-20261008"></script>
-  <script src="js/app.js?v=journey-20261008"></script>
+  <script src="js/i18n.js?v=compact-20261008"></script>
+  <script src="js/journey.js?v=compact-20261008"></script>
+  <script src="js/app.js?v=compact-20261008"></script>
 </body>
 </html>

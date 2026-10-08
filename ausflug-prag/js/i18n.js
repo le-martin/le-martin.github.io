@@ -1519,6 +1519,35 @@
   trip.en.delayEveningAnchors = "Sunset has passed. Protect the return journey now: leave U Houdků at 20:00, reach the station by 20:25, train at 20:47.";
   trip.ko.delayEveningAnchors = "일몰 시간이 지났습니다. 이제 귀국편을 우선하세요: 20:00 U Houdků 출발, 20:25까지 역 도착, 열차 20:47 출발.";
 
+  trip.de.moreSights = "Weitere Sehenswürdigkeiten";
+  trip.en.moreSights = "More sights";
+  trip.ko.moreSights = "다른 명소";
+  trip.de.moreFood = "Weitere Restaurants";
+  trip.en.moreFood = "More restaurants";
+  trip.ko.moreFood = "다른 식당";
+  trip.de.moreCafes = "Weitere Cafés und Adressen";
+  trip.en.moreCafes = "More cafés and addresses";
+  trip.ko.moreCafes = "다른 카페와 주소";
+  trip.de.tripHours = "Am 9.10.";
+  trip.en.tripHours = "On 9 Oct";
+  trip.ko.tripHours = "10월 9일";
+  trip.de.walkViaRoute = "Gehzeit über die Route prüfen";
+  trip.en.walkViaRoute = "Check walking time in the route";
+  trip.ko.walkViaRoute = "경로에서 도보 시간 확인";
+  trip.de.cardDetailsLabel = function (name) { return "Details zu " + name; };
+  trip.en.cardDetailsLabel = function (name) { return "Details for " + name; };
+  trip.ko.cardDetailsLabel = function (name) { return name + " 상세 정보"; };
+
+  trip.de.compactLibraryCutoff = "Kasse bis 16:15, Einlass bis 16:30";
+  trip.en.compactLibraryCutoff = "Tickets until 16:15, entry until 16:30";
+  trip.ko.compactLibraryCutoff = "매표 16:15까지, 입장 16:30까지";
+  trip.de.compactCathedralCutoff = "Letzter Einlass 16:40";
+  trip.en.compactCathedralCutoff = "Last entry 16:40";
+  trip.ko.compactCathedralCutoff = "마지막 입장 16:40";
+  trip.de.compactMass = "15:00 Messe; dabei keine Besichtigung";
+  trip.en.compactMass = "Mass at 15:00; no sightseeing during services";
+  trip.ko.compactMass = "15:00 미사 중 관람 불가";
+
   var ui = {};
   ["de", "en", "ko"].forEach(function (l) {
     ui[l] = {};
