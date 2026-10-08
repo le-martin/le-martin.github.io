@@ -520,6 +520,156 @@
     { label: "Wetter: Open-Meteo (kostenlos, ohne API-Schlüssel)", url: "https://open-meteo.com/" }
   ];
 
+  // Local, optimized photos with individual attribution and licence links.
+  var photos = {
+    "pr-antik": {
+      "src": "images/pr-antik.webp",
+      "credit": "https://commons.wikimedia.org/wiki/File:Praha,_Nov%C3%A9_M%C4%9Bsto,_Hybernsk%C3%A1_1003.jpg",
+      "author": "PatrikPaprika",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "width": 960,
+      "height": 1280,
+      "caption": {
+        "de": "Straßenecke Hybernská / Dlážděná · Umgebung des Antiquariats",
+        "en": "Hybernská / Dlážděná corner · near the bookshop",
+        "ko": "Hybernská / Dlážděná 거리 모퉁이 · 고서점 주변"
+      }
+    },
+    "pr-pulverturm": {
+      "src": "images/pr-pulverturm.webp",
+      "credit": "https://commons.wikimedia.org/wiki/File:2014-_The_Powder_Tower_or_Powder_Gate_(Pra%C5%A1n%C3%A1_br%C3%A1na)_Prague,_Czech_Republic_(_Ank_Kumar_)_02.jpg",
+      "author": "Ank Kumar",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "width": 960,
+      "height": 1440
+    },
+    "pr-ring": {
+      "src": "images/pr-ring.webp",
+      "credit": "https://commons.wikimedia.org/wiki/File:Prague_old_town_square_panorama.jpg",
+      "author": "Estec GmbH, Billig Hotel in Prag",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+      "width": 960,
+      "height": 713
+    },
+    "pr-teyn": {
+      "src": "images/pr-teyn.webp",
+      "credit": "https://commons.wikimedia.org/wiki/File:Iglesia_de_Nuestra_Se%C3%B1ora_ante_T%C3%BDn,_Praga,_Rep%C3%BAblica_Checa,_2022-07-02,_DD_259-261_HDR.jpg",
+      "author": "Diego Delso",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "width": 960,
+      "height": 806
+    },
+    "pr-orloj": {
+      "src": "images/pr-orloj.webp",
+      "credit": "https://commons.wikimedia.org/wiki/File:Astronomical_Clock_(8341899828).jpg",
+      "author": "Steve Collis from Melbourne, Australia",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "width": 960,
+      "height": 1438
+    },
+    "pr-strahov": {
+      "src": "images/pr-strahov.webp",
+      "credit": "https://commons.wikimedia.org/wiki/File:Biblioteca_di_Strahov.JPG",
+      "author": "K93",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "width": 960,
+      "height": 720
+    },
+    "pr-burg": {
+      "src": "images/pr-burg.webp",
+      "credit": "https://commons.wikimedia.org/wiki/File:Prague_Castle_@_night.jpg",
+      "author": "Michael Brezocnik",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "width": 1280,
+      "height": 736
+    },
+    "pr-veitsdom": {
+      "src": "images/pr-veitsdom.webp",
+      "credit": "https://commons.wikimedia.org/wiki/File:Catedral_de_San_Vito,_Praga,_Rep%C3%BAblica_Checa,_2022-07-02,_DD_203.jpg",
+      "author": "Diego Delso",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "width": 960,
+      "height": 640
+    },
+    "pr-wenzel": {
+      "src": "images/pr-wenzel.webp",
+      "credit": "https://commons.wikimedia.org/wiki/File:Wenceslas_Square,_Prague_7.jpg",
+      "author": "Slyronit",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "width": 960,
+      "height": 640
+    },
+    "pr-riegrovy": {
+      "src": "images/pr-riegrovy.webp",
+      "credit": "https://commons.wikimedia.org/wiki/File:View_of_Prague_from_the_Rieger_Gardens_-_Vue_de_Prague_depuis_les_Jardins_Rieger.jpg",
+      "author": "ESC0601",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "width": 960,
+      "height": 486
+    },
+    "pr-karlsbruecke": {
+      "src": "images/pr-karlsbruecke.webp",
+      "credit": "https://commons.wikimedia.org/wiki/File:Charles_Bridge,_Prague.jpg",
+      "author": "LibertinaGrim",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "width": 960,
+      "height": 540
+    },
+    "pr-juedisch": {
+      "src": "images/pr-juedisch.webp",
+      "credit": "https://commons.wikimedia.org/wiki/File:Spanish_Synagogue,_Prague.jpg",
+      "author": "Manuamador",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "width": 960,
+      "height": 705,
+      "caption": {
+        "de": "Spanische Synagoge · Teil des Jüdischen Museums",
+        "en": "Spanish Synagogue · part of the Jewish Museum",
+        "ko": "스페인 유대교 회당 · 유대인 박물관의 일부"
+      }
+    },
+    "pr-altneu": {
+      "src": "images/pr-altneu.webp",
+      "credit": "https://commons.wikimedia.org/wiki/File:Old_New_Synagogue_01(js).jpg",
+      "author": "Jerzy Strzelecki",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "width": 960,
+      "height": 687
+    },
+    "pr-gaesschen": {
+      "src": "images/pr-gaesschen.webp",
+      "credit": "https://commons.wikimedia.org/wiki/File:Callej%C3%B3n_del_oro,_Praga,_Rep%C3%BAblica_Checa,_2022-07-02,_DD_139.jpg",
+      "author": "Diego Delso",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "width": 960,
+      "height": 640
+    },
+    "pr-nikolaus": {
+      "src": "images/pr-nikolaus.webp",
+      "credit": "https://commons.wikimedia.org/wiki/File:Malostransk%C3%A9_n%C3%A1m%C4%9Bst%C3%AD_Mikul%C3%A1%C5%A1_3.jpg",
+      "author": "VitVit",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "width": 960,
+      "height": 588
+    }
+  };
+  sights.concat(optionalSights).forEach(function (item) { item.photo = photos[item.id]; });
+
   // Evidence refers to opening hours/access, not every claim on a card.
   var hoursEvidence = {
     "pr-antik": { status: "official", checkedAt: "08.10.2026", url: "https://www.adplus.cz/stranka/kontakt" },
@@ -544,6 +694,7 @@
   };
 
   window.TRIP = {
+    heroPhoto: photos["pr-burg"],
     returnJourney: returnJourney,
     date: TRIP_DATE, checkedAt: CHECKED_AT, storeKey: "pr26", meet: "dd_hbf", simTime: "13:00", walkKm: 8,
     areas: areas, places: places, sights: sights, optionalSights: optionalSights,

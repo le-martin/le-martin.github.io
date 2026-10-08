@@ -226,6 +226,9 @@
     $$("[data-lang]").forEach(function (b) { b.setAttribute("aria-pressed", String(b.getAttribute("data-lang") === state.lang)); });
     $$("[data-checked]").forEach(function (n) { n.textContent = U("checked", T.checkedAt); });
     $("#footer-text").textContent = U("footerText", T.checkedAt);
+    if (T.heroPhoto) {
+      $("#hero-credit").innerHTML = photoCredit(T.heroPhoto);
+    }
   }
 
   function setLang(l) {
@@ -331,21 +334,29 @@
     return '<button type="button" class="fav' + (inline ? " fav--inline" : "") + '" data-fav="' + esc(id) + '" aria-pressed="' + on + '" aria-label="' + esc(U("favAria", name)) + '">' + (on ? "♥" : "♡") + "</button>";
   }
 
+  function photoCredit(photo) {
+    return '<a href="' + esc(photo.credit) + '" target="_blank" rel="noopener">' +
+      esc(U("photo")) + ': ' + esc(photo.author) + '</a> · <a href="' + esc(photo.licenseUrl) +
+      '" target="_blank" rel="noopener">' + esc(photo.license) + '</a>';
+  }
+
   function sightCard(s, num) {
     statusItems[s.id] = s;
     var visited = !!state.visited[s.id];
     var name = C(s, "name");
     var media = s.photo
-      ? '<img src="' + s.photo.src + '" alt="' + esc(name) + '" loading="lazy" decoding="async" width="960" height="600">' +
-        '<a class="sight__credit" href="' + s.photo.credit + '" target="_blank" rel="noopener">' + esc(U("photo")) + ": Wikimedia Commons</a>"
+      ? '<img src="' + esc(s.photo.src) + '" alt="' + esc(s.photo.caption ? s.photo.caption[state.lang] : name) +
+        '" loading="lazy" decoding="async" width="' + s.photo.width + '" height="' + s.photo.height + '">'
       : "";
     var walk = "";
     if (s.walkFrom) walk = s.walkFrom.key ? U("walkWithLabel", walkText(s.walkFrom.key), C(s, "walkLabel") || s.walkFrom.label) : (C(s, "walkText") || s.walkFrom.text);
     var extra = C(s, "extra"), planB = C(s, "planB"), reason = C(s, "reason"), swap = C(s, "swapHint");
     return '<article class="card sight' + (visited ? " is-visited" : "") + '" id="' + esc(s.id) + '">' +
-      '<div class="sight__media' + (s.photo ? "" : " sight__media--empty") + '">' + (media || "🏛") +
+      '<div class="sight__media' + (s.photo ? (s.photo.height > s.photo.width ? " sight__media--portrait" : "") : " sight__media--empty") + '">' + (media || "🏛") +
       (num ? '<span class="sight__num">' + num + "</span>" : "") + favBtn(s.id, name) + "</div>" +
       '<div class="sight__body">' +
+      (s.photo ? '<div class="sight__credit">' + photoCredit(s.photo) + '</div>' +
+        (s.photo.caption ? '<p class="photo-caption">' + esc(s.photo.caption[state.lang]) + '</p>' : "") : "") +
       (s.optional ? '<span class="optional-tag">' + esc(U("optional")) + "</span>" : "") +
       "<h3>" + esc(name) + "</h3>" +
       '<div class="status-row">' + statusHTML(s) + "</div>" + evidenceHTML(s) +

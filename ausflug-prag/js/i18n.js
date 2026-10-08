@@ -1437,6 +1437,10 @@
   trip.en.evidencePublicNote = "Public place; access information is based on research.";
   trip.ko.evidencePublicNote = "공공 장소이며 입장 정보는 조사 기준입니다.";
 
+  trip.de.photoChanges = "Fotos wurden verkleinert und für die Darstellung zugeschnitten. Urheber, Originale und Lizenzen sind an den Bildern verlinkt.";
+  trip.en.photoChanges = "Photos were resized and cropped for display. Authors, originals and licences are linked on each image.";
+  trip.ko.photoChanges = "사진은 크기를 줄이고 화면에 맞게 잘랐습니다. 각 사진에 저작자, 원본 및 라이선스 링크가 있습니다.";
+
   var ui = {};
   ["de", "en", "ko"].forEach(function (l) {
     ui[l] = {};

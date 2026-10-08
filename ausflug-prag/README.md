@@ -24,7 +24,7 @@ Wie beim [Oberlausitz-Reisebegleiter](../ausflug-oberlausitz/): Tages-Timeline, 
 ```
 ausflug-prag/
 ├── index.html           # Seitengerüst (Bereiche: altstadt, burg, vinohrady)
-├── css/style.css        # Gestaltung (Hero mit Farbverlauf)
+├── css/style.css        # Gestaltung und responsive Fotodarstellung
 ├── js/data.js           # ALLE Inhalte (Deutsch), inkl. monatsabhängiger Öffnungszeiten
 ├── js/i18n.js           # Oberflächentexte (common + trip) und EN/KO-Übersetzungen
 ├── js/walks.js          # leer – Gehzeiten stehen als Text in data.js
@@ -38,7 +38,7 @@ Viele Prager Öffnungszeiten wechseln monatlich. `data.js` berechnet sie beim La
 
 ## Datenstand
 
-Verkehrsdaten: **08.10.2026**, anhand offizieller ČD-, PID- und DPP-Quellen geprüft. Öffnungszeiten und Ortsangaben: Recherche vom **07.10.2026**. Koordinaten sind auf ca. 50 m genau, Fotos fehlen bewusst. Wichtige Befunde:
+Verkehrsdaten: **08.10.2026**, anhand offizieller ČD-, PID- und DPP-Quellen geprüft. Öffnungszeiten und Ortsangaben: Recherche vom **07.10.2026**. Koordinaten sind auf ca. 50 m genau. Die Ortskarten und das Titelbild verwenden lokal gespeicherte, frei lizenzierte Fotos. Wichtige Befunde:
 
 - **Züge am 9.10.2026**: EC 459 07:08–09:25, RJ 171 09:10–11:25 (09:07 ist die Ankunft in Dresden), RJ 170 zurück 20:47–23:19. Reservierung möglich, nicht verpflichtend. DB Super Sparpreis Europa ab 14,99 € nach Verfügbarkeit, kein bestätigter Fahrtpreis.
 - **Bauarbeiten Roudnice nad Labem–Hrobce** bis 16.10.2026: bis zu 5 Minuten zusätzliche Verspätung. Keine bestätigte spätere Rückfallverbindung.
@@ -60,3 +60,9 @@ Verkehrsdaten: **08.10.2026**, anhand offizieller ČD-, PID- und DPP-Quellen gep
 - Die Karte **Als Nächstes** steht über dem Tagesplan und im Reisemodus. Sie folgt dem gewählten Plan und der Uhrzeit (auch bei Simulation), zeigt den nächsten Ort, die geplante Uhrzeit und vorhandene Gehhinweise. **Route öffnen** öffnet Google Maps zum Ziel; die Seite ortet den Nutzer nicht.
 - Die **Rückfahrtleiste** bleibt auch im Reisemodus sichtbar: 20:00 Restaurant verlassen, RJ 170 ab 20:47, Dresden 23:19. Sie verlinkt die Bahnhofsroute und den datierten ČD-Fahrplan; am Reisetag erinnert sie ab 19:45 an den Aufbruch. Das ist eine Erinnerung nach Plan, kein Live-Zugstatus.
 - Jede Ortskarte nennt den Status der **Öffnungszeiten**, das Recherche-/Prüfdatum und einen Quellenlink. `hoursEvidence` in `js/data.js` kennzeichnet tatsächlich geprüfte Betreiberangaben als `official`; andere Zeiten bleiben `unconfirmed`. Freier öffentlicher Zugang wird getrennt angezeigt. Das Prüfzeichen bezieht sich auf Öffnungszeiten, nicht auf Bewertungen, Preise oder andere Kartentexte.
+
+## Fotos
+
+Alle 15 Sehenswürdigkeiten haben lokale WebP-Fotos; das Burgpanorama dient auch als Titelbild. Bilder außerhalb des sichtbaren Bereichs werden verzögert geladen. Urheber und Lizenz sind direkt an jedem Foto verlinkt; vollständige Quellen stehen in `images/credits.json`. Die Fotos behalten ihre jeweilige Creative-Commons-Lizenz und wurden verkleinert bzw. für die Anzeige zugeschnitten.
+
+Das Antiquariat wird durch ein ausdrücklich als Umgebung gekennzeichnetes Foto der Straßenecke Hybernská/Dlážděná dargestellt. Beim Jüdischen Museum zeigt die Bildunterschrift die Spanische Synagoge als Teil des Museums. Diese Hinweise sind auf Deutsch, Englisch und Koreanisch vorhanden.

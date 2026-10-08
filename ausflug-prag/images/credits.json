@@ -1,0 +1,192 @@
+{
+  "pr-antik": {
+    "src": "images/pr-antik.webp",
+    "credit": "https://commons.wikimedia.org/wiki/File:Praha,_Nov%C3%A9_M%C4%9Bsto,_Hybernsk%C3%A1_1003.jpg",
+    "author": "PatrikPaprika",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "title": "File:Praha, Nové Město, Hybernská 1003.jpg",
+    "download": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Praha%2C_Nov%C3%A9_M%C4%9Bsto%2C_Hybernsk%C3%A1_1003.jpg/960px-Praha%2C_Nov%C3%A9_M%C4%9Bsto%2C_Hybernsk%C3%A1_1003.jpg",
+    "width": 960,
+    "height": 1280,
+    "changes": "Resized Wikimedia thumbnail, converted to WebP; cropped to fit in the website layout.",
+    "caption": {
+      "de": "Straßenecke Hybernská / Dlážděná · Umgebung des Antiquariats",
+      "en": "Hybernská / Dlážděná corner · near the bookshop",
+      "ko": "Hybernská / Dlážděná 거리 모퉁이 · 고서점 주변"
+    }
+  },
+  "pr-pulverturm": {
+    "src": "images/pr-pulverturm.webp",
+    "credit": "https://commons.wikimedia.org/wiki/File:2014-_The_Powder_Tower_or_Powder_Gate_(Pra%C5%A1n%C3%A1_br%C3%A1na)_Prague,_Czech_Republic_(_Ank_Kumar_)_02.jpg",
+    "author": "Ank Kumar",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "File:2014- The Powder Tower or Powder Gate (Prašná brána) Prague, Czech Republic ( Ank Kumar ) 02.jpg",
+    "download": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/2014-_The_Powder_Tower_or_Powder_Gate_%28Pra%C5%A1n%C3%A1_br%C3%A1na%29_Prague%2C_Czech_Republic_%28_Ank_Kumar_%29_02.jpg/960px-2014-_The_Powder_Tower_or_Powder_Gate_%28Pra%C5%A1n%C3%A1_br%C3%A1na%29_Prague%2C_Czech_Republic_%28_Ank_Kumar_%29_02.jpg",
+    "width": 960,
+    "height": 1440,
+    "changes": "Resized Wikimedia thumbnail, converted to WebP; cropped to fit in the website layout."
+  },
+  "pr-ring": {
+    "src": "images/pr-ring.webp",
+    "credit": "https://commons.wikimedia.org/wiki/File:Prague_old_town_square_panorama.jpg",
+    "author": "Estec GmbH, Billig Hotel in Prag",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "title": "File:Prague old town square panorama.jpg",
+    "download": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Prague_old_town_square_panorama.jpg/960px-Prague_old_town_square_panorama.jpg",
+    "width": 960,
+    "height": 713,
+    "changes": "Resized Wikimedia thumbnail, converted to WebP; cropped to fit in the website layout."
+  },
+  "pr-teyn": {
+    "src": "images/pr-teyn.webp",
+    "credit": "https://commons.wikimedia.org/wiki/File:Iglesia_de_Nuestra_Se%C3%B1ora_ante_T%C3%BDn,_Praga,_Rep%C3%BAblica_Checa,_2022-07-02,_DD_259-261_HDR.jpg",
+    "author": "Diego Delso",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "File:Iglesia de Nuestra Señora ante Týn, Praga, República Checa, 2022-07-02, DD 259-261 HDR.jpg",
+    "download": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Iglesia_de_Nuestra_Se%C3%B1ora_ante_T%C3%BDn%2C_Praga%2C_Rep%C3%BAblica_Checa%2C_2022-07-02%2C_DD_259-261_HDR.jpg/960px-Iglesia_de_Nuestra_Se%C3%B1ora_ante_T%C3%BDn%2C_Praga%2C_Rep%C3%BAblica_Checa%2C_2022-07-02%2C_DD_259-261_HDR.jpg",
+    "width": 960,
+    "height": 806,
+    "changes": "Resized Wikimedia thumbnail, converted to WebP; cropped to fit in the website layout."
+  },
+  "pr-orloj": {
+    "src": "images/pr-orloj.webp",
+    "credit": "https://commons.wikimedia.org/wiki/File:Astronomical_Clock_(8341899828).jpg",
+    "author": "Steve Collis from Melbourne, Australia",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "title": "File:Astronomical Clock (8341899828).jpg",
+    "download": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Astronomical_Clock_%288341899828%29.jpg/960px-Astronomical_Clock_%288341899828%29.jpg",
+    "width": 960,
+    "height": 1438,
+    "changes": "Resized Wikimedia thumbnail, converted to WebP; cropped to fit in the website layout."
+  },
+  "pr-strahov": {
+    "src": "images/pr-strahov.webp",
+    "credit": "https://commons.wikimedia.org/wiki/File:Biblioteca_di_Strahov.JPG",
+    "author": "K93",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "title": "File:Biblioteca di Strahov.JPG",
+    "download": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Biblioteca_di_Strahov.JPG/960px-Biblioteca_di_Strahov.JPG",
+    "width": 960,
+    "height": 720,
+    "changes": "Resized Wikimedia thumbnail, converted to WebP; cropped to fit in the website layout."
+  },
+  "pr-burg": {
+    "src": "images/pr-burg.webp",
+    "credit": "https://commons.wikimedia.org/wiki/File:Prague_Castle_@_night.jpg",
+    "author": "Michael Brezocnik",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "File:Prague Castle @ night.jpg",
+    "download": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Prague_Castle_%40_night.jpg/1280px-Prague_Castle_%40_night.jpg",
+    "width": 1280,
+    "height": 736,
+    "changes": "Resized Wikimedia thumbnail, converted to WebP; cropped to fit in the website layout."
+  },
+  "pr-veitsdom": {
+    "src": "images/pr-veitsdom.webp",
+    "credit": "https://commons.wikimedia.org/wiki/File:Catedral_de_San_Vito,_Praga,_Rep%C3%BAblica_Checa,_2022-07-02,_DD_203.jpg",
+    "author": "Diego Delso",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "File:Catedral de San Vito, Praga, República Checa, 2022-07-02, DD 203.jpg",
+    "download": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Catedral_de_San_Vito%2C_Praga%2C_Rep%C3%BAblica_Checa%2C_2022-07-02%2C_DD_203.jpg/960px-Catedral_de_San_Vito%2C_Praga%2C_Rep%C3%BAblica_Checa%2C_2022-07-02%2C_DD_203.jpg",
+    "width": 960,
+    "height": 640,
+    "changes": "Resized Wikimedia thumbnail, converted to WebP; cropped to fit in the website layout."
+  },
+  "pr-wenzel": {
+    "src": "images/pr-wenzel.webp",
+    "credit": "https://commons.wikimedia.org/wiki/File:Wenceslas_Square,_Prague_7.jpg",
+    "author": "Slyronit",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "File:Wenceslas Square, Prague 7.jpg",
+    "download": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Wenceslas_Square%2C_Prague_7.jpg/960px-Wenceslas_Square%2C_Prague_7.jpg",
+    "width": 960,
+    "height": 640,
+    "changes": "Resized Wikimedia thumbnail, converted to WebP; cropped to fit in the website layout."
+  },
+  "pr-riegrovy": {
+    "src": "images/pr-riegrovy.webp",
+    "credit": "https://commons.wikimedia.org/wiki/File:View_of_Prague_from_the_Rieger_Gardens_-_Vue_de_Prague_depuis_les_Jardins_Rieger.jpg",
+    "author": "ESC0601",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "title": "File:View of Prague from the Rieger Gardens - Vue de Prague depuis les Jardins Rieger.jpg",
+    "download": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/View_of_Prague_from_the_Rieger_Gardens_-_Vue_de_Prague_depuis_les_Jardins_Rieger.jpg/960px-View_of_Prague_from_the_Rieger_Gardens_-_Vue_de_Prague_depuis_les_Jardins_Rieger.jpg",
+    "width": 960,
+    "height": 486,
+    "changes": "Resized Wikimedia thumbnail, converted to WebP; cropped to fit in the website layout."
+  },
+  "pr-karlsbruecke": {
+    "src": "images/pr-karlsbruecke.webp",
+    "credit": "https://commons.wikimedia.org/wiki/File:Charles_Bridge,_Prague.jpg",
+    "author": "LibertinaGrim",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "title": "File:Charles Bridge, Prague.jpg",
+    "download": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Charles_Bridge%2C_Prague.jpg/960px-Charles_Bridge%2C_Prague.jpg",
+    "width": 960,
+    "height": 540,
+    "changes": "Resized Wikimedia thumbnail, converted to WebP; cropped to fit in the website layout."
+  },
+  "pr-juedisch": {
+    "src": "images/pr-juedisch.webp",
+    "credit": "https://commons.wikimedia.org/wiki/File:Spanish_Synagogue,_Prague.jpg",
+    "author": "Manuamador",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "title": "File:Spanish Synagogue, Prague.jpg",
+    "download": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Spanish_Synagogue%2C_Prague.jpg/960px-Spanish_Synagogue%2C_Prague.jpg",
+    "width": 960,
+    "height": 705,
+    "changes": "Resized Wikimedia thumbnail, converted to WebP; cropped to fit in the website layout.",
+    "caption": {
+      "de": "Spanische Synagoge · Teil des Jüdischen Museums",
+      "en": "Spanish Synagogue · part of the Jewish Museum",
+      "ko": "스페인 유대교 회당 · 유대인 박물관의 일부"
+    }
+  },
+  "pr-altneu": {
+    "src": "images/pr-altneu.webp",
+    "credit": "https://commons.wikimedia.org/wiki/File:Old_New_Synagogue_01(js).jpg",
+    "author": "Jerzy Strzelecki",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "title": "File:Old New Synagogue 01(js).jpg",
+    "download": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Old_New_Synagogue_01%28js%29.jpg/960px-Old_New_Synagogue_01%28js%29.jpg",
+    "width": 960,
+    "height": 687,
+    "changes": "Resized Wikimedia thumbnail, converted to WebP; cropped to fit in the website layout."
+  },
+  "pr-gaesschen": {
+    "src": "images/pr-gaesschen.webp",
+    "credit": "https://commons.wikimedia.org/wiki/File:Callej%C3%B3n_del_oro,_Praga,_Rep%C3%BAblica_Checa,_2022-07-02,_DD_139.jpg",
+    "author": "Diego Delso",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "File:Callejón del oro, Praga, República Checa, 2022-07-02, DD 139.jpg",
+    "download": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Callej%C3%B3n_del_oro%2C_Praga%2C_Rep%C3%BAblica_Checa%2C_2022-07-02%2C_DD_139.jpg/960px-Callej%C3%B3n_del_oro%2C_Praga%2C_Rep%C3%BAblica_Checa%2C_2022-07-02%2C_DD_139.jpg",
+    "width": 960,
+    "height": 640,
+    "changes": "Resized Wikimedia thumbnail, converted to WebP; cropped to fit in the website layout."
+  },
+  "pr-nikolaus": {
+    "src": "images/pr-nikolaus.webp",
+    "credit": "https://commons.wikimedia.org/wiki/File:Malostransk%C3%A9_n%C3%A1m%C4%9Bst%C3%AD_Mikul%C3%A1%C5%A1_3.jpg",
+    "author": "VitVit",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "File:Malostranské náměstí Mikuláš 3.jpg",
+    "download": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/Malostransk%C3%A9_n%C3%A1m%C4%9Bst%C3%AD_Mikul%C3%A1%C5%A1_3.jpg/960px-Malostransk%C3%A9_n%C3%A1m%C4%9Bst%C3%AD_Mikul%C3%A1%C5%A1_3.jpg",
+    "width": 960,
+    "height": 588,
+    "changes": "Resized Wikimedia thumbnail, converted to WebP; cropped to fit in the website layout."
+  }
+}
