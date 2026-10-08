@@ -391,16 +391,16 @@
       tripDate: "Freitag, 9. Oktober 2026",
       weatherTitle: "Wetter am Freitag, 9.10.",
       weatherNote: "Vorhersage: " + METEO + " für den Reisetag · wird beim Öffnen der Seite live geladen.",
-      overviewHint: "Tippe auf einen Punkt, um zur passenden Stelle zu springen. Hinfahrt laut Suchergebnis, die übrigen Zeiten sind geplant.",
-      noticeTitle: "Zugzeiten bitte bestätigen.",
-      noticeText: "Hinfahrt laut Fahrplanlisten: EC 459 ab 07:08 (Plan „Früh“) bzw. RJ 171 ab 09:10 (Plan „Später“); Rückfahrt RJ 170 ab 20:47, an 23:19. Alles im DB Navigator für Fr, 9.10. prüfen und zuggebunden buchen; das Deutschlandticket gilt nicht.",
-      connNoticeTitle: "Zugzeiten bitte bestätigen.",
+      overviewHint: "Tippe auf einen Punkt, um zur passenden Stelle zu springen. Zugzeiten sind bei ČD geprüft; Metro-/Tramzeiten und Besuche sind geplant.",
+      noticeTitle: "Zugfahrpläne für 9.10.2026 geprüft.",
+      noticeText: "ČD-Fahrpläne am 8.10. geprüft: EC 459 ab 07:08 oder RJ 171 ab 09:10; zurück RJ 170 20:47–23:19. Bauarbeiten können bis zu 5 Min. zusätzliche Verspätung verursachen. Metro-/Tramzeiten sind Beispiele, keine bestätigten Abfahrten. Aktuellen Betrieb vor Abfahrt prüfen; das Deutschlandticket gilt nicht.",
+      connNoticeTitle: "Zugfahrpläne für 9.10.2026 geprüft.",
       travelIntro: "Am Freitag, 9.10., zeigt dieser Modus automatisch die nächste Station, Abfahrt und Gehzeit; vorher zählt er bis zur Abfahrt herunter. Zum Ausprobieren unten „Uhrzeit simulieren“ nutzen.",
       connChecked: function (d) { return "Stand " + d + " · Zugzeiten laut Fahrplanlisten – im DB Navigator bestätigen"; },
       travelFoot: function (d) { return "Zugzeiten im DB Navigator bestätigen · Stand " + d; },
       meetSub: "Mit Yeji · EC 459 ab 07:08 Uhr – Ticket vorher kaufen",
       planMain: "Früh · ab 07:08", planLate: "Später · ab 09:10",
-      planMainNote: "EC 459 ab 07:08 (oft verspätet) – alle Wunschorte inkl. Veitsdom und Malatang.",
+      planMainNote: "EC 459 ab 07:08 – alle Wunschorte inkl. Veitsdom und Malatang; Verspätungspuffer einplanen.",
       planLateNote: "RJ 171 ab 09:10, an 11:25 – Teynkirche nur von außen, Burg kurz und kostenlos, Sonnenuntergang ab ca. 18:05.",
       meetSubLate: "Mit Yeji · RJ 171 ab 09:10 Uhr – Ticket vorher kaufen"
     },
@@ -439,16 +439,16 @@
       tripDate: "Friday, 9 October 2026",
       weatherTitle: "Weather on Friday, 9 Oct",
       weatherNote: "Forecast: " + METEO + " for the travel day · loaded live when the page opens.",
-      overviewHint: "Tap an entry to jump to the matching section. Outbound train per search results; the other times are planned.",
-      noticeTitle: "Please confirm the train times.",
-      noticeText: "Outbound per timetable listings: EC 459 at 07:08 (“Early” plan) or RJ 171 at 09:10 (“Later” plan); return RJ 170 at 20:47, arriving 23:19. Check everything in DB Navigator for Fri 9 Oct and book train-specific tickets; the Deutschlandticket is not valid.",
-      connNoticeTitle: "Please confirm the train times.",
+      overviewHint: "Tap an entry to jump to its section. Train times were checked with ČD; metro/tram times and visits are planned.",
+      noticeTitle: "Train timetables checked for 9 Oct 2026.",
+      noticeText: "ČD timetables checked on 8 Oct: EC 459 at 07:08 or RJ 171 at 09:10; return RJ 170 20:47–23:19. Works may add up to 5 min of delay. Metro/tram times are examples, not confirmed departures. Check current operations before departure; the Deutschlandticket is not valid.",
+      connNoticeTitle: "Train timetables checked for 9 Oct 2026.",
       travelIntro: "On Friday 9 Oct this mode automatically shows the next stop, departure and walking time; before that it counts down to departure. To try it out, use “Simulate time” below.",
       connChecked: function (d) { return "As of " + d + " · train times per timetable listings – confirm in DB Navigator"; },
       travelFoot: function (d) { return "Confirm train times in DB Navigator · as of " + d; },
       meetSub: "With Yeji · EC 459 at 07:08 – buy your ticket in advance",
       planMain: "Early · from 07:08", planLate: "Later · from 09:10",
-      planMainNote: "EC 459 at 07:08 (often late) – every wish-list stop incl. St. Vitus and malatang.",
+      planMainNote: "EC 459 at 07:08 – all wish-list stops incl. St. Vitus and malatang; allow for delays.",
       planLateNote: "RJ 171 at 09:10, arrives 11:25 – Týn Church from outside only, a short free castle walk, sunset from approx. 18:05.",
       meetSubLate: "With Yeji · RJ 171 at 09:10 – buy your ticket in advance"
     },
@@ -487,16 +487,16 @@
       tripDate: "2026년 10월 9일 (금)",
       weatherTitle: "10월 9일 (금) 날씨",
       weatherNote: "예보: " + METEO + " 여행 당일 기준 · 페이지를 열 때 실시간으로 불러옵니다.",
-      overviewHint: "항목을 누르면 해당 섹션으로 이동합니다. 가는 열차는 검색 결과 기준이며 나머지 시간은 계획입니다.",
-      noticeTitle: "열차 시간을 꼭 확인하세요.",
-      noticeText: "가는 열차 (시간표 기준): EC 459 07:08 (‘이른 출발’) 또는 RJ 171 09:10 (‘늦은 출발’), 돌아오는 열차 RJ 170 20:47 → 23:19. 모두 DB Navigator에서 10월 9일(금)로 확인하고 해당 열차 전용 승차권을 예매하세요. 도이칠란트티켓은 사용할 수 없습니다.",
-      connNoticeTitle: "열차 시간을 꼭 확인하세요.",
+      overviewHint: "항목을 누르면 해당 구역으로 이동합니다. 열차 시간은 ČD에서 확인했으며 지하철·트램 시간과 방문 일정은 계획입니다.",
+      noticeTitle: "2026년 10월 9일 열차 시간표 확인.",
+      noticeText: "10월 8일 ČD 시간표 확인: EC 459 07:08 또는 RJ 171 09:10 출발, 귀국 RJ 170 20:47–23:19. 공사로 최대 5분 추가 지연될 수 있습니다. 지하철·트램 시간은 확정 출발 시간이 아닌 예시입니다. 출발 전 운행 상황을 확인하세요. 도이칠란트티켓은 사용할 수 없습니다.",
+      connNoticeTitle: "2026년 10월 9일 열차 시간표 확인.",
       travelIntro: "10월 9일(금)에는 다음 장소, 출발 시간, 도보 시간을 자동으로 보여 주고, 그 전에는 출발까지 남은 시간을 셉니다. 미리 체험하려면 아래 ‘시간 시뮬레이션’을 사용하세요.",
       connChecked: function (d) { return d + " 기준 · 열차 시간은 시간표 목록 기준 – DB Navigator에서 확인"; },
       travelFoot: function (d) { return "열차 시간은 DB Navigator에서 확인하세요 · " + d + " 기준"; },
       meetSub: "예지와 함께 · EC 459 07:08 출발 – 승차권은 미리 구입",
       planMain: "이른 출발 · 07:08", planLate: "늦은 출발 · 09:10",
-      planMainNote: "EC 459 07:08 출발 (자주 지연) – 성 비투스 대성당과 마라탕까지 모든 희망 장소.",
+      planMainNote: "EC 459 07:08 출발 – 성 비투스와 마라탕 등 모든 희망 장소 방문; 지연에 대비한 여유 시간 확보.",
       planLateNote: "RJ 171 09:10 출발, 11:25 도착 – 틴 성당은 밖에서만, 무료 구역만 짧게 보는 프라하 성, 일몰은 약 18:05부터.",
       meetSubLate: "예지와 함께 · RJ 171 09:10 출발 – 승차권은 미리 구입"
     }
@@ -586,7 +586,7 @@
         why: "Perfect after the sunset, and only about 20 min from the main station.",
         hoursNote: "11 am–midnight (per Google Maps).",
         price: "€ (estimate)",
-        note: "Reserve for Friday 7 pm. Cards accepted per its website (unconfirmed) – bring some cash. Leave for the station by 8:10 pm at the latest."
+        note: "Reserve for Friday 7 pm. Cards accepted per its website (unconfirmed) – bring some cash. Leave for the station at 20:00."
       },
       "k-remember": {
         cuisine: "Vietnamese, vegetarian options too",
@@ -793,7 +793,7 @@
         why: "일몰 뒤에 딱 좋고, 중앙역까지 약 20분입니다.",
         hoursNote: "11–24시 (Google 지도 기준).",
         price: "€ (추정)",
-        note: "금요일 19시로 예약하세요. 웹사이트상 카드 결제 가능 (미확인) – 현금도 조금 챙기세요. 늦어도 20:10에는 역으로 출발하세요."
+        note: "금요일 19시로 예약하세요. 웹사이트상 카드 결제 가능 (미확인) – 현금도 조금 챙기세요. 20:00에 역으로 출발하세요."
       },
       "k-remember": {
         cuisine: "베트남 요리, 채식 메뉴도 있음",
@@ -926,7 +926,7 @@
   var phrases = {
     en: {
       "EC 459 Dresden Hbf → Praha hl. n.": "EC 459 Dresden Hbf → Praha hl. n.",
-      "oft verspätet · im DB Navigator bestätigen": "often late · confirm in DB Navigator",
+      "Fahrplan für 9.10. bei ČD geprüft · Betrieb vor Abfahrt prüfen": "9 Oct timetable checked with ČD · check operations before departure",
       "ca. 550 m · mit Bahnhofsausgang 15–20 Min., Rest Puffer": "approx. 550 m · 15–20 min including leaving the station, the rest is buffer",
       "von außen": "from outside",
       "vor dem Mittagsandrang": "before the lunch rush",
@@ -940,7 +940,7 @@
       "Sonnenuntergang 18:24 Uhr, hinter dem Burghügel etwas früher": "sunset 6:24 pm, a little earlier behind the castle hill",
       "ca. 1 km · 12–20 Min.": "approx. 1 km · 12–20 min",
       "reservieren · Rechnung bis 19:50 Uhr": "reserve · ask for the bill by 7:50 pm",
-      "bis zum Gleis ca. 25 Min. einplanen · spätestens 20:10 los": "allow approx. 25 min to the platform · leave by 8:10 pm at the latest",
+      "bis zum Gleis ca. 25 Min. einplanen · um 20:00 los": "allow approx. 25 min to the platform · leave at 20:00",
       "Gleis suchen, Proviant kaufen": "find the platform, buy snacks",
       "RJ 170 Praha hl. n. → Dresden Hbf": "RJ 170 Praha hl. n. → Dresden Hbf",
       "letzter sinnvoller Direktzug · im DB Navigator prüfen": "last practical direct train · check in DB Navigator",
@@ -957,20 +957,20 @@
       "Burghöfe & Veitsdom von außen": "Castle courtyards & St. Vitus from outside",
       "nur das kostenlose Areal": "free grounds only",
       "ca. 700 m · 8 Min. bis zur Wiese": "approx. 700 m · 8 min to the lawn",
-      "Laut Fahrplanlisten fährt der EC 459 (Nachtzug „Canopus“ aus Zürich, auch als EN 40459 geführt) ab Dresden Hbf 07:08, an Praha hl. n. 09:25. ⚠ Er ist oft verspätet (laut Zugfinder im Schnitt ca. 24 Min.) – der Plan fängt bis ca. 45 Min. auf, weil das Antiquariat bis 18 Uhr offen hat. Bitte im DB Navigator für Fr, 9.10. bestätigen. Das Deutschlandticket gilt NICHT; Sparpreis Europa ab ca. 15 € pro Person und Richtung, Sitzplatz mitbuchen.": "Per timetable listings, EC 459 (the “Canopus” night train from Zürich, also listed as EN 40459) leaves Dresden Hbf at 07:08 and reaches Praha hl. n. at 09:25. ⚠ It is often late (approx. 24 min on average per Zugfinder) – the plan absorbs up to approx. 45 min because the bookshop is open until 6 pm. Please confirm in DB Navigator for Fri 9 Oct. The Deutschlandticket is NOT valid; Sparpreis Europa from approx. €15 per person and direction, book a seat too.",
+      "Für Fr, 9.10.2026 bei ČD geprüft: EC 459 Canopus ab Dresden Hbf 07:08, an Praha hl. n. 09:25. Bauarbeiten Roudnice nad Labem–Hrobce können bis zu 5 Min. zusätzliche Verspätung verursachen. Das Deutschlandticket gilt nicht. DB Super Sparpreis Europa ab 14,99 € pro Person und Richtung, je nach Verfügbarkeit; kein bestätigter Preis für diese Fahrt. Sitzplatzreservierung möglich, nicht verpflichtend. Aktuellen Betrieb vor Abfahrt prüfen.": "Checked with ČD for Fri 9 Oct 2026: EC 459 Canopus leaves Dresden Hbf at 07:08 and reaches Praha hl. n. at 09:25. Works between Roudnice nad Labem and Hrobce may add up to 5 min of delay. The Deutschlandticket is not valid. DB Super Sparpreis Europa starts at €14.99 per person each way, subject to availability; this is not a confirmed fare for this journey. Seat reservations are available, not compulsory. Check current operations before departure.",
       "RJ 251 ab 08:09 → Praha-Holešovice 10:22 (nicht Hauptbahnhof!) – von dort mit Metro C in die Stadt.": "RJ 251 at 08:09 → Praha-Holešovice 10:22 (not the main station!) – from there take metro C into town.",
       "RJ 171 ab 09:10 → Praha hl. n. 11:25 – siehe Plan „Später“.": "RJ 171 at 09:10 → Praha hl. n. 11:25 – see the “Later” plan.",
-      "Beispielzeiten – Metro A fährt alle paar Minuten, Tram 22 etwa alle 5–10 Min.; mit Rolltreppen, Umstieg und Warten 40–45 Min. einplanen. Fahrschein (PID): 30-Minuten-Ticket 36 CZK in der App „PID Lítačka“ bzw. 39 CZK am Automaten – reicht für Metro + Tram; Papiertickets entwerten.": "Example times – metro A runs every few minutes, tram 22 about every 5–10 min; with escalators, the change and waiting allow 40–45 min. Ticket (PID): 30-minute ticket 36 CZK in the “PID Lítačka” app or 39 CZK from the machine – covers metro + tram; validate paper tickets.",
+      "Metro- und Tramzeiten sind ungeprüfte Beispielzeiten. Mit Wegen, Rolltreppen, Umstieg und Warten 40–45 Min. einplanen. PID: 30 Min. 36 CZK (App) / 39 CZK (Papier); mit Wartezeit kann das zu knapp sein. Mehr Spielraum: 90 Min. 46 / 50 CZK. App-Ticket aktivieren und 1 Min. warten, bevor ihr einsteigt oder den kostenpflichtigen Metrobereich betretet. Papierfahrschein einmal vor der ersten Fahrt entwerten.": "Metro and tram times are unverified examples. Allow 40–45 min including walking, escalators, transfers and waiting. PID: 30 min costs 36 CZK (app) / 39 CZK (paper); waiting may make this too short. More flexibility: 90 min for 46 / 50 CZK. Activate the app ticket and wait 1 min before boarding or entering the metro paid area. Validate a paper ticket once before the first journey.",
       "Burg → Malatang → Riegrovy sady": "Castle → Malatang → Riegrovy sady",
-      "Beispielzeit – Metro A fährt alle paar Minuten. Einzelne 30-Minuten-Tickets sind günstiger als das 24-Stunden-Ticket (140 CZK in der App, 150 CZK am Automaten).": "Example time – metro A runs every few minutes. Single 30-minute tickets are cheaper than the 24-hour ticket (140 CZK in the app, 150 CZK from the machine).",
+      "Metrozeiten sind ungeprüfte Beispielzeiten. PID: 30 Min. 36 CZK (App) / 39 CZK (Papier), 90 Min. 46 / 50 CZK, 24 Std. 140 / 150 CZK. Bei zwei oder drei getrennten kurzen Fahrten sind Einzeltickets günstiger. App-Ticket aktivieren und 1 Min. vor Einstieg bzw. Metrozugang warten; Papierfahrschein einmal vor der ersten Fahrt entwerten.": "Metro times are unverified examples. PID: 30 min 36 CZK (app) / 39 CZK (paper), 90 min 46 / 50 CZK, 24 hours 140 / 150 CZK. Single tickets cost less for two or three separate short journeys. Activate the app ticket and wait 1 min before boarding or entering the metro paid area; validate a paper ticket once before the first journey.",
       "Statt zu laufen: Metro A ab Muzeum bis Jiřího z Poděbrad (2 Stationen), dann ca. 8 Min. zu Fuß.": "Instead of walking: metro A from Muzeum to Jiřího z Poděbrad (2 stops), then approx. 8 min on foot.",
       "Malatang No.1, danach zu Fuß zum Riegrovy sady (ca. 1,5 km · 30–35 Min. bis zur Wiese)": "Malatang No.1, then on foot to Riegrovy sady (approx. 1.5 km · 30–35 min to the lawn)",
-      "⚠ Spätestens 20:10 Uhr bei U Houdků aufbrechen. Danach gibt es laut Recherche nur eine unsichere Verbindung um 22:32 (an ca. 01:36, evtl. mit Umstiegen) oder den Nachtzug um 03:14. Zeiten im DB Navigator für Fr, 9.10. prüfen; Ticket zuggebunden buchen.": "⚠ Leave U Houdků by 8:10 pm at the latest. After this train, research found only an uncertain connection at 22:32 (arriving approx. 01:36, possibly with changes) or the night train at 03:14. Check times in DB Navigator for Fri 9 Oct; book train-specific tickets.",
-      "Laut Fahrplanlisten · letzter sinnvoller Direktzug am selben Abend": "Per timetable listings · last practical direct train the same evening",
-      "Laut Fahrplanlisten · dann ohne Sonnenuntergang und Abendessen": "Per timetable listings · then without sunset and dinner",
+      "RJ 170 am Fr, 9.10.2026 bei ČD geprüft: Praha hl. n. 20:47 → Dresden Hbf 23:19. Um 20:00 bei U Houdků aufbrechen und bis 20:25 am Bahnhof sein. Eine spätere Rückfallverbindung ist nicht bestätigt. Bauarbeiten Roudnice nad Labem–Hrobce können bis zu 5 Min. zusätzliche Verspätung verursachen. Aktuellen Betrieb vor Abfahrt prüfen.": "RJ 170 checked with ČD for Fri 9 Oct 2026: Praha hl. n. 20:47 → Dresden Hbf 23:19. Leave U Houdků at 20:00 and reach the station by 20:25. A later fallback connection has not been confirmed. Works between Roudnice nad Labem and Hrobce may add up to 5 min of delay. Check current operations before departure.",
+      "ČD-Fahrplan für 9.10.2026 geprüft · Rückfahrt am selben Abend": "ČD timetable checked for 9 Oct 2026 · return the same evening",
+      "ČD-Fahrplan für 9.10.2026 geprüft · dann ohne Sonnenuntergang und Abendessen": "ČD timetable checked for 9 Oct 2026 · then without sunset and dinner",
       "Von U Houdků zum Hauptbahnhof – bis zum Gleis ca. 25 Min. einplanen": "From U Houdků to the main station – allow approx. 25 min to the platform",
       "ca. 20 Min. Puffer": "approx. 20 min buffer",
-      "Laut Fahrplanlisten fährt der RJ 171 ab Dresden Hbf 09:10 (DB-Aushang: 09:07), an Praha hl. n. 11:25. Eine Direktverbindung um 10:10 gibt es nicht. Bitte im DB Navigator für Fr, 9.10. bestätigen; Deutschlandticket gilt nicht.": "Per timetable listings, RJ 171 leaves Dresden Hbf at 09:10 (DB poster: 09:07) and reaches Praha hl. n. at 11:25. There is no direct train at 10:10. Please confirm in DB Navigator for Fri 9 Oct; the Deutschlandticket is not valid.",
+      "Für Fr, 9.10.2026 bei ČD geprüft: RJ 171 Berliner kommt um 09:07 in Dresden Hbf an und fährt um 09:10 ab; Ankunft Praha hl. n. 11:25. Eine Direktverbindung um 10:10 gibt es nicht. Bauarbeiten Roudnice nad Labem–Hrobce können bis zu 5 Min. zusätzliche Verspätung verursachen. Das Deutschlandticket gilt nicht; Sitzplatzreservierung möglich, nicht verpflichtend. Aktuellen Betrieb vor Abfahrt prüfen.": "Checked with ČD for Fri 9 Oct 2026: RJ 171 Berliner arrives at Dresden Hbf at 09:07 and departs at 09:10; arrival at Praha hl. n. is 11:25. There is no direct 10:10 service. Works between Roudnice nad Labem and Hrobce may add up to 5 min of delay. The Deutschlandticket is not valid; seat reservations are available, not compulsory. Check current operations before departure.",
       "Notlösung RJ 173 ab 11:10 → 13:25: Antiquariat, Naše maso, Orloj um 16 Uhr, Malatang, Sonnenuntergang – ohne Strahov und Burg.": "Fallback RJ 173 at 11:10 → 13:25: bookshop, Naše maso, Astronomical Clock at 4 pm, malatang, sunset – without Strahov and the castle.",
       "Beispielzeiten – Metro A fährt alle paar Minuten. Wer Strahov nach 15:40 Uhr verlässt, lässt die Burg aus und fährt mit Tram 22 zurück nach Malostranská.": "Example times – metro A runs every few minutes. If you leave Strahov after 3:40 pm, skip the castle and take tram 22 back to Malostranská.",
       "Zug Richtung Praha – Ticket vorher kaufen (Deutschlandticket gilt nicht)": "Train towards Praha – buy your ticket in advance (Deutschlandticket not valid)",
@@ -1007,7 +1007,7 @@
       "Apostelumgang um 13:00 Uhr": "procession of the apostles at 1 pm",
       "Fußweg zur Metro Staroměstská": "Walk to Staroměstská metro",
       "Metro A → Malostranská": "Metro A → Malostranská",
-      "1 Station · 30-Min.-Ticket reicht bis Strahov": "1 stop · a 30-min ticket covers the ride to Strahov",
+      "1 Station · Beispielzeit · 90-Min.-Ticket mit Puffer": "1 stop · example time · 90-minute ticket allows a buffer",
       "Tram 22 → Pohořelec": "Tram 22 → Pohořelec",
       "ca. 10 Min. bergauf, vorbei an der Burg": "approx. 10 min uphill, past the castle",
       "Fußweg zum Kloster Strahov": "Walk to Strahov Monastery",
@@ -1019,7 +1019,7 @@
       "Areal kostenlos · Dom bis 17 Uhr": "grounds free · cathedral until 5 pm",
       "ca. 600 m · 15 Min. zur Metro Malostranská": "approx. 600 m · 15 min to Malostranská metro",
       "Metro A → Můstek": "Metro A → Můstek",
-      "3 Stationen": "3 stops",
+      "2 Stationen · über Staroměstská · Beispielzeit": "2 stops · via Staroměstská · example time",
       "Fußweg zu Malatang No.1": "Walk to Malatang No.1",
       "Snack bei Malatang No.1": "Snack at Malatang No.1",
       "kleine Schüssel teilen": "share a small bowl",
@@ -1121,7 +1121,7 @@
       "Erste Empfehlung": "Top pick",
       "Alternative": "Alternative",
       "DB Navigator / bahn.de (Fahrplan bitte am Reisetag prüfen)": "DB Navigator / bahn.de (please check the timetable on the day of travel)",
-      "DB Sparpreis Europa Tschechien": "DB Sparpreis Europa Czech Republic",
+      "DB Super Sparpreis Europa Tschechien (ab 14,99 €, nach Verfügbarkeit)": "DB Super Sparpreis Europa Czechia (from €14.99, subject to availability)",
       "České dráhy (ČD)": "České dráhy (Czech Railways)",
       "PID – Prager Nahverkehr (Tickets, Fahrplan)": "PID – Prague public transport (tickets, timetable)",
       "Prager Burg – Öffnungszeiten & Tickets (hrad.cz)": "Prague Castle – opening hours & tickets (hrad.cz)",
@@ -1132,7 +1132,7 @@
     },
     ko: {
       "EC 459 Dresden Hbf → Praha hl. n.": "EC 459 드레스덴 중앙역 → 프라하 중앙역",
-      "oft verspätet · im DB Navigator bestätigen": "자주 지연 · DB Navigator에서 확인",
+      "Fahrplan für 9.10. bei ČD geprüft · Betrieb vor Abfahrt prüfen": "10월 9일 ČD 시간표 확인 · 출발 전 운행 확인",
       "ca. 550 m · mit Bahnhofsausgang 15–20 Min., Rest Puffer": "약 550 m · 역을 나가는 시간 포함 15–20분, 나머지는 여유 시간",
       "von außen": "밖에서 보기",
       "vor dem Mittagsandrang": "점심 붐비기 전",
@@ -1146,7 +1146,7 @@
       "Sonnenuntergang 18:24 Uhr, hinter dem Burghügel etwas früher": "일몰 18:24, 프라하 성 언덕 뒤로는 조금 더 일찍",
       "ca. 1 km · 12–20 Min.": "약 1 km · 12–20분",
       "reservieren · Rechnung bis 19:50 Uhr": "예약 · 19:50까지 계산 요청",
-      "bis zum Gleis ca. 25 Min. einplanen · spätestens 20:10 los": "승강장까지 약 25분 · 늦어도 20:10 출발",
+      "bis zum Gleis ca. 25 Min. einplanen · um 20:00 los": "승강장까지 약 25분 · 20:00 출발",
       "Gleis suchen, Proviant kaufen": "승강장 찾기, 간식 사기",
       "RJ 170 Praha hl. n. → Dresden Hbf": "RJ 170 프라하 중앙역 → 드레스덴 중앙역",
       "letzter sinnvoller Direktzug · im DB Navigator prüfen": "현실적인 마지막 직행 열차 · DB Navigator에서 확인",
@@ -1163,20 +1163,20 @@
       "Burghöfe & Veitsdom von außen": "성 안뜰 & 성 비투스 대성당 외관",
       "nur das kostenlose Areal": "무료 구역만",
       "ca. 700 m · 8 Min. bis zur Wiese": "약 700 m · 잔디밭까지 8분",
-      "Laut Fahrplanlisten fährt der EC 459 (Nachtzug „Canopus“ aus Zürich, auch als EN 40459 geführt) ab Dresden Hbf 07:08, an Praha hl. n. 09:25. ⚠ Er ist oft verspätet (laut Zugfinder im Schnitt ca. 24 Min.) – der Plan fängt bis ca. 45 Min. auf, weil das Antiquariat bis 18 Uhr offen hat. Bitte im DB Navigator für Fr, 9.10. bestätigen. Das Deutschlandticket gilt NICHT; Sparpreis Europa ab ca. 15 € pro Person und Richtung, Sitzplatz mitbuchen.": "시간표 목록에 따르면 EC 459 (취리히발 야간열차 ‘Canopus’, EN 40459로도 표기)는 드레스덴 중앙역 07:08 출발, 프라하 중앙역 09:25 도착입니다. ⚠ 자주 지연됩니다 (Zugfinder 기준 평균 약 24분) – 고서점이 18시까지 열어서 약 45분 지연까지는 일정에 문제없습니다. DB Navigator에서 10월 9일(금)로 확인하세요. 도이칠란트티켓은 사용할 수 없고, Sparpreis Europa는 1인 편도 약 15유로부터이며 좌석도 함께 예약하세요.",
+      "Für Fr, 9.10.2026 bei ČD geprüft: EC 459 Canopus ab Dresden Hbf 07:08, an Praha hl. n. 09:25. Bauarbeiten Roudnice nad Labem–Hrobce können bis zu 5 Min. zusätzliche Verspätung verursachen. Das Deutschlandticket gilt nicht. DB Super Sparpreis Europa ab 14,99 € pro Person und Richtung, je nach Verfügbarkeit; kein bestätigter Preis für diese Fahrt. Sitzplatzreservierung möglich, nicht verpflichtend. Aktuellen Betrieb vor Abfahrt prüfen.": "2026년 10월 9일(금) ČD 시간표 확인: EC 459 Canopus는 드레스덴 중앙역 07:08 출발, 프라하 중앙역 09:25 도착입니다. Roudnice nad Labem–Hrobce 구간 공사로 최대 5분 추가 지연될 수 있습니다. 도이칠란트티켓은 사용할 수 없습니다. DB Super Sparpreis Europa는 1인 편도 14.99유로부터이며 잔여 할인석에 따라 달라집니다. 이번 여정의 확정 가격은 아닙니다. 좌석 예약은 가능하지만 필수는 아닙니다. 출발 전 운행 상황을 확인하세요.",
       "RJ 251 ab 08:09 → Praha-Holešovice 10:22 (nicht Hauptbahnhof!) – von dort mit Metro C in die Stadt.": "RJ 251 08:09 → 프라하-홀레쇼비체 10:22 (중앙역 아님!) – 거기서 지하철 C로 시내로.",
       "RJ 171 ab 09:10 → Praha hl. n. 11:25 – siehe Plan „Später“.": "RJ 171 09:10 → 프라하 중앙역 11:25 – ‘늦은 출발’ 일정 참고.",
-      "Beispielzeiten – Metro A fährt alle paar Minuten, Tram 22 etwa alle 5–10 Min.; mit Rolltreppen, Umstieg und Warten 40–45 Min. einplanen. Fahrschein (PID): 30-Minuten-Ticket 36 CZK in der App „PID Lítačka“ bzw. 39 CZK am Automaten – reicht für Metro + Tram; Papiertickets entwerten.": "예시 시간 – 지하철 A는 몇 분 간격, 트램 22는 약 5–10분 간격. 에스컬레이터, 환승, 대기 시간을 포함해 40–45분을 잡으세요. 승차권(PID): 30분권 ‘PID Lítačka’ 앱 36 CZK, 자판기 39 CZK – 지하철 + 트램 모두 이용 가능. 종이 승차권은 개찰하세요.",
+      "Metro- und Tramzeiten sind ungeprüfte Beispielzeiten. Mit Wegen, Rolltreppen, Umstieg und Warten 40–45 Min. einplanen. PID: 30 Min. 36 CZK (App) / 39 CZK (Papier); mit Wartezeit kann das zu knapp sein. Mehr Spielraum: 90 Min. 46 / 50 CZK. App-Ticket aktivieren und 1 Min. warten, bevor ihr einsteigt oder den kostenpflichtigen Metrobereich betretet. Papierfahrschein einmal vor der ersten Fahrt entwerten.": "지하철과 트램 시간은 확인되지 않은 예시입니다. 도보, 에스컬레이터, 환승, 대기까지 40–45분을 잡으세요. PID 30분권은 앱 36 CZK / 종이 39 CZK이며 대기 시간이 길면 부족할 수 있습니다. 여유 있는 90분권은 46 / 50 CZK입니다. 앱 승차권을 활성화하고 1분을 기다린 뒤 탑승하거나 지하철 유료 구역에 들어가세요. 종이 승차권은 첫 이용 전에 한 번 개표하세요.",
       "Burg → Malatang → Riegrovy sady": "프라하 성 → 마라탕 → 리에그로비 사디",
-      "Beispielzeit – Metro A fährt alle paar Minuten. Einzelne 30-Minuten-Tickets sind günstiger als das 24-Stunden-Ticket (140 CZK in der App, 150 CZK am Automaten).": "예시 시간 – 지하철 A는 몇 분 간격으로 다닙니다. 30분권을 따로 사는 것이 24시간권(앱 140 CZK, 자판기 150 CZK)보다 저렴합니다.",
+      "Metrozeiten sind ungeprüfte Beispielzeiten. PID: 30 Min. 36 CZK (App) / 39 CZK (Papier), 90 Min. 46 / 50 CZK, 24 Std. 140 / 150 CZK. Bei zwei oder drei getrennten kurzen Fahrten sind Einzeltickets günstiger. App-Ticket aktivieren und 1 Min. vor Einstieg bzw. Metrozugang warten; Papierfahrschein einmal vor der ersten Fahrt entwerten.": "지하철 시간은 확인되지 않은 예시입니다. PID 30분권은 앱 36 CZK / 종이 39 CZK, 90분권 46 / 50 CZK, 24시간권 140 / 150 CZK입니다. 짧은 이동을 두세 번 따로 할 경우 단일 승차권이 더 저렴합니다. 앱 승차권 활성화 후 탑승 또는 지하철 유료 구역 진입 전에 1분을 기다리고, 종이 승차권은 첫 이용 전에 한 번 개표하세요.",
       "Statt zu laufen: Metro A ab Muzeum bis Jiřího z Poděbrad (2 Stationen), dann ca. 8 Min. zu Fuß.": "걷는 대신: 무제움역에서 지하철 A로 이르지호 즈 포데브라트까지 (2정거장), 그다음 걸어서 약 8분.",
       "Malatang No.1, danach zu Fuß zum Riegrovy sady (ca. 1,5 km · 30–35 Min. bis zur Wiese)": "마라탕 No.1, 그다음 걸어서 리에그로비 사디로 (약 1.5 km · 잔디밭까지 30–35분)",
-      "⚠ Spätestens 20:10 Uhr bei U Houdků aufbrechen. Danach gibt es laut Recherche nur eine unsichere Verbindung um 22:32 (an ca. 01:36, evtl. mit Umstiegen) oder den Nachtzug um 03:14. Zeiten im DB Navigator für Fr, 9.10. prüfen; Ticket zuggebunden buchen.": "⚠ 늦어도 20:10에는 우 호우드쿠에서 출발하세요. 이 열차 다음에는 불확실한 22:32 연결편 (약 01:36 도착, 환승 가능성) 또는 03:14 야간열차뿐입니다. DB Navigator에서 10월 9일(금) 시간을 확인하고 해당 열차 전용 승차권을 예매하세요.",
-      "Laut Fahrplanlisten · letzter sinnvoller Direktzug am selben Abend": "시간표 목록 기준 · 당일 저녁 현실적인 마지막 직행 열차",
-      "Laut Fahrplanlisten · dann ohne Sonnenuntergang und Abendessen": "시간표 목록 기준 · 이 경우 일몰과 저녁은 생략",
+      "RJ 170 am Fr, 9.10.2026 bei ČD geprüft: Praha hl. n. 20:47 → Dresden Hbf 23:19. Um 20:00 bei U Houdků aufbrechen und bis 20:25 am Bahnhof sein. Eine spätere Rückfallverbindung ist nicht bestätigt. Bauarbeiten Roudnice nad Labem–Hrobce können bis zu 5 Min. zusätzliche Verspätung verursachen. Aktuellen Betrieb vor Abfahrt prüfen.": "2026년 10월 9일(금) ČD에서 RJ 170 확인: 프라하 중앙역 20:47 → 드레스덴 중앙역 23:19. 우 호우드쿠에서 20:00에 출발해 20:25까지 역에 도착하세요. 더 늦은 대체 귀국편은 확인되지 않았습니다. Roudnice nad Labem–Hrobce 구간 공사로 최대 5분 추가 지연될 수 있습니다. 출발 전 운행 상황을 확인하세요.",
+      "ČD-Fahrplan für 9.10.2026 geprüft · Rückfahrt am selben Abend": "2026년 10월 9일 ČD 시간표 확인 · 당일 저녁 귀국",
+      "ČD-Fahrplan für 9.10.2026 geprüft · dann ohne Sonnenuntergang und Abendessen": "2026년 10월 9일 ČD 시간표 확인 · 일몰과 저녁 식사 생략",
       "Von U Houdků zum Hauptbahnhof – bis zum Gleis ca. 25 Min. einplanen": "우 호우드쿠에서 중앙역까지 – 승강장까지 약 25분",
       "ca. 20 Min. Puffer": "약 20분 여유",
-      "Laut Fahrplanlisten fährt der RJ 171 ab Dresden Hbf 09:10 (DB-Aushang: 09:07), an Praha hl. n. 11:25. Eine Direktverbindung um 10:10 gibt es nicht. Bitte im DB Navigator für Fr, 9.10. bestätigen; Deutschlandticket gilt nicht.": "시간표 목록에 따르면 RJ 171은 드레스덴 중앙역 09:10 출발 (DB 게시 시간표: 09:07), 프라하 중앙역 11:25 도착입니다. 10:10 직행 열차는 없습니다. DB Navigator에서 10월 9일(금)로 확인하세요. 도이칠란트티켓은 사용할 수 없습니다.",
+      "Für Fr, 9.10.2026 bei ČD geprüft: RJ 171 Berliner kommt um 09:07 in Dresden Hbf an und fährt um 09:10 ab; Ankunft Praha hl. n. 11:25. Eine Direktverbindung um 10:10 gibt es nicht. Bauarbeiten Roudnice nad Labem–Hrobce können bis zu 5 Min. zusätzliche Verspätung verursachen. Das Deutschlandticket gilt nicht; Sitzplatzreservierung möglich, nicht verpflichtend. Aktuellen Betrieb vor Abfahrt prüfen.": "2026년 10월 9일(금) ČD 시간표 확인: RJ 171 Berliner는 드레스덴 중앙역 09:07 도착, 09:10 출발이며 프라하 중앙역에 11:25 도착합니다. 10:10 직행편은 없습니다. Roudnice nad Labem–Hrobce 구간 공사로 최대 5분 추가 지연될 수 있습니다. 도이칠란트티켓은 사용할 수 없으며 좌석 예약은 가능하지만 필수는 아닙니다. 출발 전 운행 상황을 확인하세요.",
       "Notlösung RJ 173 ab 11:10 → 13:25: Antiquariat, Naše maso, Orloj um 16 Uhr, Malatang, Sonnenuntergang – ohne Strahov und Burg.": "비상 대안 RJ 173 11:10 → 13:25: 고서점, 나셰 마소, 16시 천문시계, 마라탕, 일몰 – 스트라호프와 프라하 성은 생략.",
       "Beispielzeiten – Metro A fährt alle paar Minuten. Wer Strahov nach 15:40 Uhr verlässt, lässt die Burg aus und fährt mit Tram 22 zurück nach Malostranská.": "예시 시간 – 지하철 A는 몇 분 간격으로 다닙니다. 15:40 이후에 스트라호프를 나서면 프라하 성은 빼고 트램 22로 말로스트란스카까지 돌아가세요.",
       "Zug Richtung Praha – Ticket vorher kaufen (Deutschlandticket gilt nicht)": "프라하행 열차 – 승차권은 미리 구입 (도이칠란트티켓 불가)",
@@ -1213,7 +1213,7 @@
       "Apostelumgang um 13:00 Uhr": "13시 사도 행렬",
       "Fußweg zur Metro Staroměstská": "스타로메스츠카역까지 도보",
       "Metro A → Malostranská": "지하철 A → 말로스트란스카",
-      "1 Station · 30-Min.-Ticket reicht bis Strahov": "1정거장 · 30분권으로 스트라호프까지",
+      "1 Station · Beispielzeit · 90-Min.-Ticket mit Puffer": "1정거장 · 예시 시간 · 여유 있는 90분권",
       "Tram 22 → Pohořelec": "트램 22 → 포호르젤레츠",
       "ca. 10 Min. bergauf, vorbei an der Burg": "약 10분 오르막, 프라하 성을 지나서",
       "Fußweg zum Kloster Strahov": "스트라호프 수도원까지 도보",
@@ -1225,7 +1225,7 @@
       "Areal kostenlos · Dom bis 17 Uhr": "성 구역 무료 · 대성당 17시까지",
       "ca. 600 m · 15 Min. zur Metro Malostranská": "약 600 m · 말로스트란스카역까지 15분",
       "Metro A → Můstek": "지하철 A → 무스테크",
-      "3 Stationen": "3정거장",
+      "2 Stationen · über Staroměstská · Beispielzeit": "2정거장 · Staroměstská 경유 · 예시 시간",
       "Fußweg zu Malatang No.1": "마라탕 No.1까지 도보",
       "Snack bei Malatang No.1": "마라탕 No.1에서 간식",
       "kleine Schüssel teilen": "작은 그릇 하나 나눠 먹기",
@@ -1327,7 +1327,7 @@
       "Erste Empfehlung": "1순위 추천",
       "Alternative": "대안",
       "DB Navigator / bahn.de (Fahrplan bitte am Reisetag prüfen)": "DB Navigator / bahn.de (여행 당일 시간표 확인)",
-      "DB Sparpreis Europa Tschechien": "DB 슈파어프라이스 오이로파 체코",
+      "DB Super Sparpreis Europa Tschechien (ab 14,99 €, nach Verfügbarkeit)": "DB Super Sparpreis Europa 체코 (14.99유로부터, 잔여 할인석에 따라)",
       "České dráhy (ČD)": "체코 철도 (ČD)",
       "PID – Prager Nahverkehr (Tickets, Fahrplan)": "PID – 프라하 대중교통 (승차권, 시간표)",
       "Prager Burg – Öffnungszeiten & Tickets (hrad.cz)": "프라하 성 – 운영 시간 & 관람권 (hrad.cz)",
@@ -1338,8 +1338,26 @@
     }
   };
 
+  phrases.en["ČD – EC 459, Fahrplan 9.10.2026"] = "ČD – EC 459, timetable for 9 Oct 2026"; phrases.ko["ČD – EC 459, Fahrplan 9.10.2026"] = "ČD – EC 459, 2026년 10월 9일 시간표";
+  phrases.en["ČD – RJ 171, Fahrplan 9.10.2026"] = "ČD – RJ 171, timetable for 9 Oct 2026"; phrases.ko["ČD – RJ 171, Fahrplan 9.10.2026"] = "ČD – RJ 171, 2026년 10월 9일 시간표";
+  phrases.en["ČD – RJ 170, Fahrplan 9.10.2026"] = "ČD – RJ 170, timetable for 9 Oct 2026"; phrases.ko["ČD – RJ 170, Fahrplan 9.10.2026"] = "ČD – RJ 170, 2026년 10월 9일 시간표";
+  phrases.en["ČD – Bauarbeiten Roudnice nad Labem–Hrobce"] = "ČD – works between Roudnice nad Labem and Hrobce"; phrases.ko["ČD – Bauarbeiten Roudnice nad Labem–Hrobce"] = "ČD – Roudnice nad Labem–Hrobce 구간 공사";
+  phrases.en["PID – aktuelle Ticketpreise"] = "PID – current ticket prices"; phrases.ko["PID – aktuelle Ticketpreise"] = "PID – 현재 승차권 요금";
+  phrases.en["PID – Ticketkauf und Aktivierung"] = "PID – ticket purchase and activation"; phrases.ko["PID – Ticketkauf und Aktivierung"] = "PID – 승차권 구매 및 활성화";
+  phrases.en["DPP – Metroplan und Verkehrsmeldungen"] = "DPP – metro map and service changes"; phrases.ko["DPP – Metroplan und Verkehrsmeldungen"] = "DPP – 지하철 노선도 및 운행 변경";
+
   // Bewusst unübersetzt
   var keep = { en: [], ko: [] };
+
+  trip.de.footerText = function () { return "Öffnungszeiten und Ortsangaben: Recherche vom 7.10.2026. Verkehrsdaten am 8.10.2026 anhand von ČD, PID und DPP geprüft. Metro-/Tramzeiten und Besuchszeiten sind Beispiele; aktuelle Verbindungen vor Abfahrt prüfen."; };
+  trip.de.connChecked = function () { return "Verkehrsdaten geprüft: 8.10.2026 · Zugfahrpläne für 9.10.2026; Metro-/Tramzeiten sind Beispiele"; };
+  trip.de.travelFoot = function () { return "Zugfahrpläne für 9.10.2026 geprüft · Metro-/Tramzeiten sind Beispiele; aktuelle Verbindungen prüfen"; };
+  trip.en.footerText = function () { return "Opening hours and place details: research from 7 Oct 2026. Transport data checked on 8 Oct 2026 using ČD, PID and DPP. Metro/tram and visit times are examples; check current connections before departure."; };
+  trip.en.connChecked = function () { return "Transport checked: 8 Oct 2026 · train timetables for 9 Oct 2026; metro/tram times are examples"; };
+  trip.en.travelFoot = function () { return "Train timetables checked for 9 Oct 2026 · metro/tram times are examples; check current connections"; };
+  trip.ko.footerText = function () { return "운영 시간과 장소 정보: 2026년 10월 7일 조사. 교통 정보는 2026년 10월 8일 ČD, PID, DPP로 확인했습니다. 지하철·트램 및 방문 시간은 예시이며 출발 전 현재 연결편을 확인하세요."; };
+  trip.ko.connChecked = function () { return "교통 정보 확인: 2026년 10월 8일 · 10월 9일 열차 시간표; 지하철·트램 시간은 예시"; };
+  trip.ko.travelFoot = function () { return "2026년 10월 9일 열차 시간표 확인 · 지하철·트램 시간은 예시; 현재 연결편 확인"; };
 
   var ui = {};
   ["de", "en", "ko"].forEach(function (l) {

@@ -225,7 +225,7 @@
       var count = "";
       if (ev.dep) count = '<span class="tl__count" data-cd="' + ev.s + '" data-cd-label="' + esc(depPhrase(ev)) + '"></span>';
       return '<li class="' + cls.join(" ") + '"><a href="' + ev.ref + '">' +
-        '<span class="tl__time">' + ev.s + "</span>" +
+        '<span class="tl__time">' + esc(ev.approximate ? U("approx", ev.s) : ev.s) + "</span>" +
         '<span class="tl__icon" aria-hidden="true">' + ICON[ev.kind] + "</span>" +
         '<span class="tl__body">' + (ev.city ? '<span class="tl__city">' + esc(P(ev.city)) + "</span><br>" : "") +
         '<span class="tl__title">' + esc(P(ev.title)) + "</span>" +
@@ -356,14 +356,14 @@
     }
     var phrase = U("depPhrase", l.mode, city(l.toCity || l.to));
     var mins = toMin(l.arr) - toMin(l.dep) + (toMin(l.arr) < toMin(l.dep) ? 1440 : 0);
-    return '<div class="leg"><div class="leg__times"><span>' + l.dep + "</span><span>" + l.arr + "</span></div>" +
+    return '<div class="leg"><div class="leg__times"><span>' + esc(l.approximate ? U("approx", l.dep) : l.dep) + "</span><span>" + esc(l.approximate ? U("approx", l.arr) : l.arr) + "</span></div>" +
       "<div>" +
       '<span class="leg__line' + (l.mode !== "train" ? " leg__line--bus" : "") + '">' + ({ train: "🚆", tram: "🚋", metro: "🚇" }[l.mode] || "🚌") + " " + esc(l.line) + '</span> <span class="fine">' + esc(U("dirShort", l.dir)) + " · " + esc(U("min", mins)) + "</span>" +
       '<div class="leg__stops" style="margin-top:6px">' +
       "<div><span>" + esc(l.from) + '</span><span class="leg__pl">' + esc(P(l.fromPl)) + "</span></div>" +
       "<div><span>" + esc(l.to) + '</span><span class="leg__pl">' + esc(P(l.toPl)) + "</span></div>" +
       "</div>" +
-      '<span class="countdown" data-cd="' + l.dep + '" data-cd-label="' + esc(phrase) + '"></span>' +
+      (l.approximate ? "" : '<span class="countdown" data-cd="' + l.dep + '" data-cd-label="' + esc(phrase) + '"></span>') +
       "</div></div>";
   }
 
@@ -571,8 +571,8 @@
     }
 
     html += '<div class="tv__row">';
-    html += '<div class="card tv"><p class="tv__label">' + esc(U("nowLabel")) + '</p><p class="tv__big" style="font-size:1.2rem">' + (current ? ICON[current.kind] + " " + esc(P(current.title)) : esc(U("freeTime"))) + '</p><p class="tv__sub">' + (current ? esc(U("until", current.e)) : "") + "</p></div>";
-    html += '<div class="card tv"><p class="tv__label">' + esc(U("nextImportant")) + '</p><p class="tv__big" style="font-size:1.2rem">' + (nextMajor ? esc(U("clock", nextMajor.s)) : "–") + '</p><p class="tv__sub">' + (nextMajor ? esc(P(nextMajor.title)) : "") + "</p></div>";
+    html += '<div class="card tv"><p class="tv__label">' + esc(U("nowLabel")) + '</p><p class="tv__big" style="font-size:1.2rem">' + (current ? ICON[current.kind] + " " + esc(P(current.title)) : esc(U("freeTime"))) + '</p><p class="tv__sub">' + (current ? esc(U("until", current.approximate ? U("approx", current.e) : current.e)) : "") + "</p></div>";
+    html += '<div class="card tv"><p class="tv__label">' + esc(U("nextImportant")) + '</p><p class="tv__big" style="font-size:1.2rem">' + (nextMajor ? esc(nextMajor.approximate ? U("approx", U("clock", nextMajor.s)) : U("clock", nextMajor.s)) : "–") + '</p><p class="tv__sub">' + (nextMajor ? esc(P(nextMajor.title)) : "") + "</p></div>";
     html += "</div>";
 
     if (nextSight) {
@@ -587,7 +587,7 @@
     }
 
     html += '<div class="card tv"><p class="tv__label">' + esc(U("after")) + '</p><ul class="tv-list">' + upcoming.slice(0, 5).map(function (e) {
-      return "<li><b>" + e.s + "</b><span>" + ICON[e.kind] + " " + esc(P(e.title)) + "</span></li>";
+      return "<li><b>" + esc(e.approximate ? U("approx", e.s) : e.s) + "</b><span>" + ICON[e.kind] + " " + esc(P(e.title)) + "</span></li>";
     }).join("") + "</ul></div>";
     html += '<p class="fine">' + esc(U("travelFoot", T.checkedAt)) + "</p>";
     body.innerHTML = html;
