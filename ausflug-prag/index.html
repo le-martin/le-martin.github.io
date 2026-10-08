@@ -14,6 +14,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="preload" as="image" href="images/pr-burg.webp">
 </head>
 <body>
   <a class="skip" href="#uebersicht" data-i18n="skip">Zum Inhalt springen</a>
@@ -39,6 +40,7 @@
         </button>
         <a class="btn btn--ghost" href="#timeline" data-i18n="seePlan">Tagesplan ansehen</a>
       </div>
+      <p class="hero__credit" id="hero-credit"></p>
     </div>
   </header>
 
@@ -208,6 +210,7 @@
       <h2 data-i18n="footerTitle"></h2>
       <p id="footer-text"></p>
       <ul class="sources" id="sources"></ul>
+      <p class="fine" data-i18n="photoChanges"></p>
       <p class="fine" data-i18n-html="footerFine"></p>
       <p class="fine"><button class="linkish" type="button" data-action="reset" data-i18n="reset"></button></p>
     </div>
