@@ -29,6 +29,7 @@
     favs: store.get("favs", {}),
     sim: null, // Date für simulierte Uhrzeit
     lang: pickLang(),
+    disclosures: {},
     weather: null
   };
 
@@ -381,6 +382,40 @@
       '" target="_blank" rel="noopener">' + esc(photo.license) + '</a>';
   }
 
+  function compactHours(item) {
+    if (item.alwaysOpen) return U("stFree");
+    var intervals = item.hours && item.hours[tripStart("12:00").getDay()];
+    if (!intervals) return U("stCheck");
+    if (!intervals.length) return U("stClosedToday");
+    var text = U("tripHours") + ": " + intervals.map(function (x) { return x[0] + "–" + (x[1] === "23:59" ? "24:00" : x[1]); }).join(" / ");
+    if (item.id === "pr-strahov") text += " · " + U("compactLibraryCutoff");
+    if (item.id === "pr-veitsdom") text += " · " + U("compactCathedralCutoff");
+    if (item.id === "pr-teyn") text += " · " + U("compactMass");
+    return text;
+  }
+  function evidenceBadge(item) {
+    var e = item.hoursEvidence;
+    if (!e || e.status === "access") return "";
+    return '<span class="status status--' + (e.status === "official" ? "evidence" : "unknown") + '">' + esc(U(e.status === "official" ? "evidenceOfficial" : "evidenceUnconfirmed")) + '</span>';
+  }
+  function compactFacts(item, walk) {
+    return '<dl class="facts compact-facts">' + (item.alwaysOpen ? "" : '<div><dt aria-label="' + esc(U("aHours")) + '">🕘</dt><dd>' + esc(compactHours(item)) + '</dd></div>') +
+      (walk ? '<div><dt aria-label="' + esc(U("aWalk")) + '">🚶</dt><dd>' + esc(walk) + '</dd></div>' : "") + '</dl>';
+  }
+  function primaryRoute(item) {
+    return '<a class="btn btn--primary card-route" href="' + esc(routeURL(item)) + '" target="_blank" rel="noopener">↗ ' + esc(U("routeOpen")) + '</a>';
+  }
+  function plannedWalk(item) {
+    var plan = T.plans[state.plan];
+    if (item.id === "malatang" && journeyState().skipped.some(function (i) { return plan[i].ref === "#pr-strahov"; })) return U("walkViaRoute");
+    var index = plan.findIndex(function (e) { return e.kind === "food" && e.ref === "#" + item.id; });
+    return index > 0 && plan[index - 1].kind === "walk" ? P(plan[index - 1].sub) : U("walkViaRoute");
+  }
+  function cardDetails(item, content) {
+    return '<details class="card-details" data-disclosure="card:' + esc(item.id) + '"><summary aria-label="' + esc(U("cardDetailsLabel", C(item, "name"))) + '">' + esc(U("details")) +
+      '</summary><div class="card-details__content">' + evidenceHTML(item) + content + '</div></details>';
+  }
+
   function sightCard(s, num) {
     statusItems[s.id] = s;
     var visited = !!state.visited[s.id];
@@ -400,21 +435,19 @@
         (s.photo.caption ? '<p class="photo-caption">' + esc(s.photo.caption[state.lang]) + '</p>' : "") : "") +
       (s.optional ? '<span class="optional-tag">' + esc(U("optional")) + "</span>" : "") +
       "<h3>" + esc(name) + "</h3>" +
-      '<div class="status-row">' + statusHTML(s) + "</div>" + evidenceHTML(s) +
-      "<p>" + esc(C(s, "text")) + "</p>" +
-      '<p class="sight__why">' + esc(C(s, "why")) + "</p>" +
-      '<dl class="facts">' +
-      '<div><dt aria-label="' + esc(U("aDuration")) + '">⏱</dt><dd>' + U("recommended", esc(C(s, "duration"))) + "</dd></div>" +
-      (walk ? '<div><dt aria-label="' + esc(U("aWalk")) + '">🚶</dt><dd>' + esc(walk) + "</dd></div>" : "") +
-      '<div><dt aria-label="' + esc(U("aHours")) + '">🕘</dt><dd>' + esc(C(s, "hoursNote")) + "</dd></div>" +
-      (extra ? '<div><dt aria-label="' + esc(U("aTip")) + '">💡</dt><dd>' + esc(extra) + "</dd></div>" : "") +
-      "</dl>" +
-      (planB ? '<p class="alert alert--info">' + esc(planB) + "</p>" : "") +
-      (reason ? '<p class="alert">' + esc(reason) + "</p>" : "") +
-      (swap ? '<p class="alert alert--info">' + esc(swap) + "</p>" : "") +
-      '<div class="sight__links">' + mapsLinks(s, name) +
-      (s.web ? '<a class="chip-link" href="' + s.web + '" target="_blank" rel="noopener">↗ ' + esc(U("website")) + "</a>" : "") + "</div>" +
-      "</div>" +
+      '<div class="status-row">' + statusHTML(s) + evidenceBadge(s) + '</div>' +
+      compactFacts(s, walk) + primaryRoute(s) +
+      cardDetails(s,
+        '<p>' + esc(C(s, "text")) + '</p><p class="sight__why">' + esc(C(s, "why")) + '</p>' +
+        '<dl class="facts"><div><dt aria-label="' + esc(U("aDuration")) + '">⏱</dt><dd>' + U("recommended", esc(C(s, "duration"))) + '</dd></div>' +
+        '<div><dt aria-label="' + esc(U("aHours")) + '">🕘</dt><dd>' + esc(C(s, "hoursNote")) + '</dd></div>' +
+        (extra ? '<div><dt aria-label="' + esc(U("aTip")) + '">💡</dt><dd>' + esc(extra) + '</dd></div>' : "") + '</dl>' +
+        (planB ? '<p class="alert alert--info">' + esc(planB) + '</p>' : "") +
+        (reason ? '<p class="alert">' + esc(reason) + '</p>' : "") +
+        (swap ? '<p class="alert alert--info">' + esc(swap) + '</p>' : "") +
+        '<div class="sight__links">' + mapsLinks(s, name) +
+        (s.web ? '<a class="chip-link" href="' + esc(s.web) + '" target="_blank" rel="noopener">↗ ' + esc(U("website")) + '</a>' : "") + '</div>') +
+      '</div>' +
       '<label class="visited"><input type="checkbox" data-visit="' + esc(s.id) + '"' + (visited ? " checked" : "") + "> " + esc(U("visited")) + "</label>" +
       "</article>";
   }
@@ -435,7 +468,8 @@
     return '<article class="card sight food" id="' + esc(r.id) + '"><div class="sight__body">' +
       '<div class="sight__top"><div><span class="prio' + (r.priority === "Alternative" ? " prio--alt" : "") + '">' + esc(P(r.priority)) + "</span>" +
       "<h3 style=\"margin-top:8px\">" + esc(name) + "</h3></div>" + favBtn(r.id, name, true) + "</div>" +
-      '<div class="status-row">' + statusHTML(r) + "</div>" + evidenceHTML(r) +
+      '<div class="status-row">' + statusHTML(r) + evidenceBadge(r) + '</div>' +
+      compactFacts(r, plannedWalk(r)) + primaryRoute(r) + cardDetails(r,
       "<p>" + esc(C(r, "text")) + "</p>" +
       (why ? '<p class="sight__why sight__why--food">' + esc(why) + "</p>" : "") +
       (pros ? '<ul class="pros">' + pros.map(function (p) { return "<li>" + esc(p) + "</li>"; }).join("") + "</ul>" : "") +
@@ -452,19 +486,22 @@
       (r.reserve ? '<a class="chip-link" href="' + r.reserve + '" target="_blank" rel="noopener">📅 ' + esc(U("reserve")) + "</a>" : "") +
       (r.phone ? '<a class="chip-link" href="tel:' + r.phone + '">📞 ' + esc(U("call")) + "</a>" : "") +
       (r.web ? '<a class="chip-link" href="' + r.web + '" target="_blank" rel="noopener">↗ ' + esc(U("website")) + "</a>" : "") +
-      mapsLinks(r, name) + "</div>" +
+      mapsLinks(r, name) + "</div>") +
       "</div></article>";
   }
 
   function renderFood() {
-    $("#food-lunch").innerHTML = T.restaurants.filter(function (r) { return r.role === "lunch"; }).map(foodCard).join("");
-    $("#food-dinner").innerHTML = T.restaurants.filter(function (r) { return r.role === "dinner"; }).map(foodCard).join("");
+    ["lunch", "dinner"].forEach(function (role) {
+      $("#food-" + role).innerHTML = T.restaurants.filter(function (r) { return r.role === role && r.priority !== "Alternative"; }).map(foodCard).join("");
+      $("#food-" + role + "-alternatives").innerHTML = T.restaurants.filter(function (r) { return r.role === role && r.priority === "Alternative"; }).map(foodCard).join("");
+    });
     $("#cafe-groups").innerHTML = AREA_KEYS.filter(function (c) { return T.cafes.some(function (x) { return x.city === c; }); }).map(function (c) {
       return '<div class="cafe-group"><h4>' + esc(U("area_" + c)) + "</h4>" + T.cafes.filter(function (x) { return x.city === c; }).map(function (x) {
         statusItems[x.id] = x;
         var name = C(x, "name");
         return '<article class="card cafe" id="' + esc(x.id) + '"><div class="cafe__top"><h5>' + esc(name) + "</h5>" + favBtn(x.id, name, true) + "</div>" +
-          '<div class="status-row" style="margin-top:6px">' + statusHTML(x) + "</div>" + evidenceHTML(x) +
+          '<div class="status-row">' + statusHTML(x) + evidenceBadge(x) + '</div>' +
+          compactFacts(x, C(x, "distance")) + primaryRoute(x) + cardDetails(x,
           "<p>" + esc(C(x, "text")) + "</p>" +
           '<dl class="facts">' +
           '<div><dt>📫</dt><dd>' + esc(x.address) + "</dd></div>" +
@@ -472,7 +509,7 @@
           '<div><dt>🍰</dt><dd>' + esc(C(x, "special")) + " · " + esc(C(x, "price")) + "</dd></div>" +
           '<div><dt>🚶</dt><dd>' + esc(C(x, "distance")) + "</dd></div>" +
           "</dl>" +
-          '<div class="sight__links">' + mapsLinks(x, name) + (x.web ? '<a class="chip-link" href="' + x.web + '" target="_blank" rel="noopener">↗ ' + esc(U("website")) + "</a>" : "") + "</div>" +
+          '<div class="sight__links">' + mapsLinks(x, name) + (x.web ? '<a class="chip-link" href="' + x.web + '" target="_blank" rel="noopener">↗ ' + esc(U("website")) + "</a>" : "") + "</div>") +
           "</article>";
       }).join("") + "</div>";
     }).join("");
@@ -773,8 +810,20 @@
   }
 
   // ------------------------------------------------------------ Events
+  function revealFragment(hash, scroll) {
+    if (!hash || hash.charAt(0) !== "#") return;
+    var target = document.getElementById(hash.slice(1));
+    if (!target) return;
+    for (var parent = target.parentElement; parent; parent = parent.parentElement) {
+      if (parent.tagName === "DETAILS") parent.open = true;
+    }
+    if (scroll) target.scrollIntoView({ block: "start" });
+  }
+
   function bind() {
     document.addEventListener("click", function (ev) {
+      var fragmentLink = ev.target.closest('a[href^="#"]');
+      if (fragmentLink) revealFragment(fragmentLink.getAttribute("href"), false);
       var t = ev.target.closest("[data-action],[data-fav],[data-lang],[data-fly]");
       if (!t) return;
       if (t.hasAttribute("data-lang")) return setLang(t.getAttribute("data-lang"));
@@ -847,6 +896,7 @@
     });
 
     document.addEventListener("keydown", function (ev) { if (ev.key === "Escape" && travelOpen()) closeTravel(); });
+    window.addEventListener("hashchange", function () { revealFragment(location.hash, true); });
     window.addEventListener("resize", function () { ["overview"].concat(AREA_KEYS).forEach(function (k) { if (maps[k]) maps[k].invalidateSize(); }); });
   }
 
@@ -864,18 +914,20 @@
 
   // ------------------------------------------------------------ Start
   function renderAll() {
+    $$("details[data-disclosure]").forEach(function (node) { state.disclosures[node.getAttribute("data-disclosure")] = node.open; });
     statusItems = {};
     applyStatic();
     renderStats(); renderSources(); renderPlanSwitch(); renderTimeline(); renderNextStop(); renderDelayPanel(); renderReturnBar();
     renderSights(); renderFood(); renderConnections();
     renderWeather();
+    $$("details[data-disclosure]").forEach(function (node) { node.open = !!state.disclosures[node.getAttribute("data-disclosure")]; });
   }
 
   function init() {
     applyTheme(store.get("theme", null));
     $("#sim-time").value = tripDate() + "T" + (T.simTime || "12:00");
     renderAll();
-    bind(); initNav(); initFab();
+    bind(); initNav(); initFab(); revealFragment(location.hash, true);
     if (window.ResizeObserver) {
       new ResizeObserver(function () {
         document.documentElement.style.setProperty("--return-bar-h", $("#return-bar").offsetHeight + "px");
