@@ -29,7 +29,10 @@ concurrency:
 jobs:
   # Build job
   build:
-    runs-on: ubuntu-latest
+    # Fest auf 24.04: ubuntu-latest zeigt inzwischen auf 26.04, das die
+    # gepinnte setup-ruby-Version (v1.207.0) nicht kennt — sie hält den Runner
+    # dann für selbst gehostet und findet kein vorgebautes Ruby 3.1.
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
