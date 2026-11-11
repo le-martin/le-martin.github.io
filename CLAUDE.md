@@ -84,7 +84,7 @@ npm run build:js   # Minifies JS into assets/js/main.min.js
 
 - Changes to `_config.yml` require restarting the Jekyll server
 - The `learn-german/` app is a pre-built Expo SPA — its source is maintained separately. The `_expo/` directory is copied into `_site/` during CI build
-- The `404.md` at root serves as the SPA routing fallback for GitHub Pages
+- The `404.html` at root serves as the SPA routing fallback for GitHub Pages
 
 ## Content Conventions
 
@@ -128,9 +128,9 @@ Triggers on changes to `talks/**` or `talkmap.ipynb`:
 - **No tests**: There is no test suite for the Jekyll site
 - **No linter/formatter**: No configured linting or formatting tools
 - **Sensitive data**: Do not commit personal email, API keys, or tracking IDs. These fields are intentionally left blank in `_config.yml`
-- **learn-german app**: Treat as a pre-built artifact. Do not modify generated files in `learn-german/_expo/`; source changes are made externally. To disable it, rename to `learn-german.disabled/` and remove its build wiring (the `_expo` copy step in `jekyll.yml`, the `_config.yml` include, and the `/learn-german` SPA redirect in `404.md`)
+- **learn-german app**: Treat as a pre-built artifact. Do not modify generated files in `learn-german/_expo/`; source changes are made externally. To disable it, rename to `learn-german.disabled/` and remove its build wiring (the `_expo` copy step in `jekyll.yml`, the `_config.yml` include, and the `/learn-german` SPA redirect in `404.html`)
 - **mathe-5 app**: Treat as a pre-built artifact, like learn-german. Never edit `mathe-5/` by hand — it is build output. The source is a separate private repository (`mathe-nachhilfe-app`) whose build writes directly into `mathe-5/`; only the result is committed here
 - **Git ignores**: `.claude/`, `node_modules/`, `_site/`, `Gemfile.lock`, `.sass-cache/` are all gitignored
-- **Auxiliary projects**: `restaurant/`, `stock-correlation/`, `ausflug-oberlausitz/`, `ausflug-leipzig/`, `ausflug-prag/`, and `talkmap/` are standalone sub-apps with their own HTML/CSS/JS — they are not processed by Jekyll's templating engine. `restaurant/` declares explicit permalinks (`/restaurant/`, `/restaurant/datenschutz/`, `/restaurant/impressum/`) in its `.md` front matter. All trip content of `ausflug-oberlausitz/` (times, opening hours, connections) lives in `ausflug-oberlausitz/js/data.js`; see its README
+- **Auxiliary projects**: `restaurant/`, `stock-correlation/`, `ausflug-oberlausitz/`, `ausflug-leipzig/`, `ausflug-prag/`, and `talkmap/` are standalone sub-apps with their own HTML/CSS/JS — they are not processed by Jekyll's templating engine. `restaurant/` declares explicit permalinks (`/restaurant/`, `/restaurant/datenschutz/`, `/restaurant/impressum/`) in the front matter of its `.html` pages (they must stay `.html`: in a `.md` file Kramdown escapes the `<!DOCTYPE>` into visible text). All trip content of `ausflug-oberlausitz/` (times, opening hours, connections) lives in `ausflug-oberlausitz/js/data.js`; see its README
 - **Trip apps (`ausflug-leipzig/`, `ausflug-prag/`)**: share an identical, data-driven `js/app.js` (areas, map lines, connection order and meeting point come from `js/data.js`) — keep the two copies in sync when changing it. `date: null` means the example schedule applies to the current day (Leipzig); a date string (Prag: `TRIP_DATE`) pins countdowns, travel mode and weather to that day; seasonal opening hours are computed from the current month inside `data.js`. Travel times are example times. Optional `planList` in `data.js` (`[{key, label, note?, conn?, meetSub?}]`, labels are UI keys) shows a plan switcher above the timeline; `conn` overrides `connOrder` for that plan (Prag has `main` and `spaet`). After editing `data.js` or `i18n.js`, run `node tools/check-i18n.js` inside the app folder
 - **Ruby 3 compatibility**: `_plugins/ruby_3_compatibility.rb` provides shims for Jekyll on Ruby 3.x
