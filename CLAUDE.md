@@ -42,7 +42,7 @@ stock-correlation/   # Stock & ETF correlation checker (standalone HTML/CSS/JS)
 restaurant/          # Sura Korean restaurant site (standalone HTML/CSS/JS, own permalinks)
 ausflug-oberlausitz/ # Day-trip travel guide Dresden Mitte → Bautzen → Löbau → Zittau (standalone HTML/CSS/JS + Leaflet; EN/KO in js/i18n.js, check with node tools/check-i18n.js)
 ausflug-leipzig/     # Day-trip travel guide Dresden → Leipzig (same structure, no fixed date: plan applies to "today")
-ausflug-prag/        # Day-trip travel guide Dresden → Prague (same structure; currently planned for Fri 2026-10-09 via TRIP_DATE in data.js)
+ausflug-prag/        # Day-trip travel guide Dresden → Prague (same structure; past trip on Fri 2026-10-09, archived: `body.is-archived` hides live travel features, `archive` texts in i18n.js)
 talkmap/             # Leaflet.js map of talk locations
 talkmap.ipynb/.py    # Talk location scraping (Jupyter/Python)
 markdown_generator/  # Jupyter notebooks for TSV → markdown conversion (talks, publications)
