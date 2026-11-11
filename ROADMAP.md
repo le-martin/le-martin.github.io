@@ -8,7 +8,7 @@ grouped by priority. (GitHub Issues are disabled on this repo, so this file is t
 - [ ] **Build a real landing page / hub at `/`.** `index.html` is a bare page
   that only says "Martin Le"; nothing links to the sub-apps. Turn `/` into a hub
   with a short intro and a card grid linking to `/phd/`, `/restaurant/`,
-  `/learn-german/`, `/stock-correlation/`, `/dresden/`, and `/talkmap/map.html`.
+  `/learn-german/`, `/stock-correlation/`, and `/dresden/`.
 - [ ] **Restore header navigation.** Every link in `_data/navigation.yml` is commented
   out, so the `/phd/…` academic pages (About, CV, Publications, Talks) are reachable
   only by direct URL. Uncomment the ones worth keeping and delete the rest.

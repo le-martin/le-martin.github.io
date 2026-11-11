@@ -13,7 +13,6 @@ Personal academic website for **Martin Le** (Ph.D. Candidate @ TU Braunschweig),
 | `/mathe-5/` | Mathe-Übungs-App Klasse 5 (vorgebaute Vite/React SPA, Quelle in einem privaten Repo) |
 | `/restaurant/` | Sura Korean restaurant site (standalone HTML/CSS/JS) |
 | `/stock-correlation/` | Stock & ETF correlation checker (standalone HTML/CSS/JS) |
-| `/talkmap/map.html` | Leaflet.js map of talk locations |
 | `/dresden/` | Dresden travel guide (standalone HTML/CSS/JS, Leaflet map) |
 | `/ausflug-oberlausitz/` | Reisebegleiter Tagesausflug Oberlausitz (Bautzen, Löbau, Zittau; DE/EN/KO) |
 | `/ausflug-leipzig/` | Reisebegleiter Tagesausflug Leipzig (Innenstadt, Völkerschlachtdenkmal, Plagwitz; DE/EN/KO) |
