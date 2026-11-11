@@ -20,15 +20,6 @@ Research profile: <https://le-martin.github.io/phd/>
 Google Scholar: <https://scholar.google.com/citations?user=p_1MxKUAAAAJ>  
 ORCID: <https://orcid.org/0000-0001-7911-7786>
 
-<script>
-document.querySelectorAll('.cv-email').forEach(function (a) {
-  var r = function (t) { return t.split('').reverse().join(''); };
-  var addr = r(a.dataset.u) + '@' + r(a.dataset.d);
-  a.href = 'mailto:' + addr;
-  a.textContent = addr;
-});
-</script>
-
 Relocation: Open to relocation to San Diego, California.  
 U.S. work authorization: Requires employer-sponsored work authorization.
 
