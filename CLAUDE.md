@@ -43,8 +43,6 @@ restaurant/          # Sura Korean restaurant site (standalone HTML/CSS/JS, own 
 ausflug-oberlausitz/ # Day-trip travel guide Dresden Mitte → Bautzen → Löbau → Zittau (standalone HTML/CSS/JS + Leaflet; EN/KO in js/i18n.js, check with node tools/check-i18n.js)
 ausflug-leipzig/     # Day-trip travel guide Dresden → Leipzig (same structure, no fixed date: plan applies to "today")
 ausflug-prag/        # Day-trip travel guide Dresden → Prague (same structure; past trip on Fri 2026-10-09, archived: `body.is-archived` hides live travel features, `archive` texts in i18n.js)
-talkmap/             # Leaflet.js map of talk locations
-talkmap.ipynb/.py    # Talk location scraping (Jupyter/Python)
 markdown_generator/  # Jupyter notebooks for TSV → markdown conversion (talks, publications)
 bin/                 # Bundler binstubs
 ```
@@ -114,12 +112,6 @@ Triggers on push to `master`:
 3. Copies `learn-german/_expo/` into the build output
 4. Deploys to GitHub Pages
 
-### Scrape Talks (`scrape_talks.yml`)
-Triggers on changes to `talks/**` or `talkmap.ipynb`:
-1. Runs Python 3.9 with geopy, getorg, beautifulsoup4
-2. Executes `talkmap.ipynb` to geocode talk locations
-3. Auto-commits updated location data
-
 ## Conventions for AI Assistants
 
 - **Default branch**: `master` (not `main`)
@@ -131,6 +123,6 @@ Triggers on changes to `talks/**` or `talkmap.ipynb`:
 - **learn-german app**: Treat as a pre-built artifact. Do not modify generated files in `learn-german/_expo/`; source changes are made externally. To disable it, rename to `learn-german.disabled/` and remove its build wiring (the `_expo` copy step in `jekyll.yml`, the `_config.yml` include, and the `/learn-german` SPA redirect in `404.html`)
 - **mathe-5 app**: Treat as a pre-built artifact, like learn-german. Never edit `mathe-5/` by hand — it is build output. The source is a separate private repository (`mathe-nachhilfe-app`) whose build writes directly into `mathe-5/`; only the result is committed here
 - **Git ignores**: `.claude/`, `node_modules/`, `_site/`, `Gemfile.lock`, `.sass-cache/` are all gitignored
-- **Auxiliary projects**: `restaurant/`, `stock-correlation/`, `ausflug-oberlausitz/`, `ausflug-leipzig/`, `ausflug-prag/`, and `talkmap/` are standalone sub-apps with their own HTML/CSS/JS — they are not processed by Jekyll's templating engine. `restaurant/` declares explicit permalinks (`/restaurant/`, `/restaurant/datenschutz/`, `/restaurant/impressum/`) in the front matter of its `.html` pages (they must stay `.html`: in a `.md` file Kramdown escapes the `<!DOCTYPE>` into visible text). All trip content of `ausflug-oberlausitz/` (times, opening hours, connections) lives in `ausflug-oberlausitz/js/data.js`; see its README
+- **Auxiliary projects**: `restaurant/`, `stock-correlation/`, `ausflug-oberlausitz/`, `ausflug-leipzig/`, and `ausflug-prag/` are standalone sub-apps with their own HTML/CSS/JS — they are not processed by Jekyll's templating engine. `restaurant/` declares explicit permalinks (`/restaurant/`, `/restaurant/datenschutz/`, `/restaurant/impressum/`) in the front matter of its `.html` pages (they must stay `.html`: in a `.md` file Kramdown escapes the `<!DOCTYPE>` into visible text). All trip content of `ausflug-oberlausitz/` (times, opening hours, connections) lives in `ausflug-oberlausitz/js/data.js`; see its README
 - **Trip apps (`ausflug-leipzig/`, `ausflug-prag/`)**: share an identical, data-driven `js/app.js` (areas, map lines, connection order and meeting point come from `js/data.js`) — keep the two copies in sync when changing it. `date: null` means the example schedule applies to the current day (Leipzig); a date string (Prag: `TRIP_DATE`) pins countdowns, travel mode and weather to that day; seasonal opening hours are computed from the current month inside `data.js`. Travel times are example times. Optional `planList` in `data.js` (`[{key, label, note?, conn?, meetSub?}]`, labels are UI keys) shows a plan switcher above the timeline; `conn` overrides `connOrder` for that plan (Prag has `main` and `spaet`). After editing `data.js` or `i18n.js`, run `node tools/check-i18n.js` inside the app folder
 - **Ruby 3 compatibility**: `_plugins/ruby_3_compatibility.rb` provides shims for Jekyll on Ruby 3.x
