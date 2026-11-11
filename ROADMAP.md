@@ -5,8 +5,8 @@ grouped by priority. (GitHub Issues are disabled on this repo, so this file is t
 
 ## 🔴 High impact — the site has no front door
 
-- [ ] **Build a real landing page / hub at `/`.** `index.md` is just three lines
-  (`layout: none` + "Martin Le"); nothing links to the sub-apps. Turn `/` into a hub
+- [ ] **Build a real landing page / hub at `/`.** `index.html` is a bare page
+  that only says "Martin Le"; nothing links to the sub-apps. Turn `/` into a hub
   with a short intro and a card grid linking to `/phd/`, `/restaurant/`,
   `/learn-german/`, `/stock-correlation/`, `/dresden/`, and `/talkmap/map.html`.
 - [ ] **Restore header navigation.** Every link in `_data/navigation.yml` is commented
