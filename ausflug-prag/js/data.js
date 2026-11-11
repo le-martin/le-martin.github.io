@@ -300,7 +300,7 @@
       hoursNote: "Mo–Sa 11–24, So 11–23 Uhr (offizielle Website).",
       price: "€ (Einschätzung)",
       rating: null,
-      note: "Für Freitag 19 Uhr reservieren. Kartenzahlung laut offizieller Website möglich. Um 20:00 Uhr zum Bahnhof aufbrechen."
+      note: "Kartenzahlung laut offizieller Website möglich. Um 20:00 Uhr zum Bahnhof aufbrechen."
     },
     {
       id: "k-remember", role: "dinner", priority: "Alternative", city: "altstadt",
@@ -416,7 +416,7 @@
 
   // ---------------------------------------------------------------- Plan „Früh“: EC 459 ab 07:08, alle Wunschorte
   var main = [
-    { s: "06:45", e: "07:08", kind: "meet", title: "Treffen mit Yeji am Dresden Hauptbahnhof", sub: "EuroCity Richtung Praha – Ticket vorher kaufen (Deutschlandticket gilt nicht)", ref: "#oepnv", place: "dd_hbf" },
+    { s: "06:45", e: "07:08", kind: "meet", title: "Treffen mit Yeji am Dresden Hauptbahnhof", sub: "EuroCity Richtung Praha (Deutschlandticket gilt nicht)", ref: "#oepnv", place: "dd_hbf" },
     { s: "07:08", e: "09:25", kind: "train", dep: true, title: "EC 459 Dresden Hbf → Praha hl. n.", sub: "Fahrplan für 9.10. bei ČD geprüft · Betrieb vor Abfahrt prüfen", ref: "#c-hin", place: "dd_hbf", to: "pr_hln", major: true },
     { s: "09:25", e: "10:00", kind: "walk", title: "Fußweg zum Antikvariát Dlážděná", sub: "ca. 550 m · mit Bahnhofsausgang 15–20 Min., Rest Puffer", ref: "#pr-antik", place: "pr_hln", city: "Praha" },
     { s: "10:00", e: "10:40", kind: "sight", title: "Antikvariát Dlážděná", sub: "nur werktags – heute die Chance", ref: "#pr-antik", sight: "pr-antik", major: true },
@@ -440,7 +440,7 @@
     { s: "17:25", e: "18:00", kind: "walk", title: "Fußweg zum Riegrovy sady", sub: "ca. 1,5 km · 30–35 Min. bis zur Wiese (oder Metro A ab Muzeum)", ref: "#pr-riegrovy", city: "Vinohrady" },
     { s: "18:00", e: "18:40", kind: "sight", title: "Sonnenuntergang im Riegrovy sady", sub: "Sonnenuntergang 18:24 Uhr, hinter dem Burghügel etwas früher", ref: "#pr-riegrovy", sight: "pr-riegrovy", major: true },
     { s: "18:40", e: "19:00", kind: "walk", title: "Fußweg nach Žižkov zu U Houdků", sub: "ca. 1 km · 12–20 Min.", ref: "#houdku" },
-    { s: "19:00", e: "20:00", kind: "food", title: "Abendessen bei U Houdků", sub: "reservieren · Rechnung bis 19:50 Uhr", ref: "#houdku", major: true },
+    { s: "19:00", e: "20:00", kind: "food", title: "Abendessen bei U Houdků", sub: "Rechnung bis 19:50 Uhr", ref: "#houdku", major: true },
     { s: "20:00", e: "20:25", kind: "walk", title: "Zum Hauptbahnhof", sub: "bis zum Gleis ca. 25 Min. einplanen · um 20:00 los", ref: "#c-rueck", place: "pr_hln" },
     { s: "20:25", e: "20:45", kind: "buffer", title: "Puffer am Bahnhof", sub: "Gleis suchen, Proviant kaufen", ref: "#c-rueck" },
     { s: "20:47", e: "23:19", kind: "train", dep: true, title: "RJ 170 Praha hl. n. → Dresden Hbf", sub: "letzter sinnvoller Direktzug · im DB Navigator prüfen", ref: "#c-rueck", place: "pr_hln", to: "dd_hbf", major: true }
@@ -448,7 +448,7 @@
 
   // ---------------------------------------------------------------- Plan „Später“: RJ 171 ab 09:10, kurzer Burgrundgang
   var spaet = [
-    { s: "08:45", e: "09:10", kind: "meet", title: "Treffen mit Yeji am Dresden Hauptbahnhof", sub: "Railjet Richtung Praha – Ticket vorher kaufen (Deutschlandticket gilt nicht)", ref: "#oepnv", place: "dd_hbf" },
+    { s: "08:45", e: "09:10", kind: "meet", title: "Treffen mit Yeji am Dresden Hauptbahnhof", sub: "Railjet Richtung Praha (Deutschlandticket gilt nicht)", ref: "#oepnv", place: "dd_hbf" },
     { s: "09:10", e: "11:25", kind: "train", dep: true, title: "RJ 171 Dresden Hbf → Praha hl. n.", sub: "im DB Navigator bestätigen", ref: "#c-hin2", place: "dd_hbf", to: "pr_hln", major: true },
     { s: "11:25", e: "11:45", kind: "walk", title: "Fußweg zum Antikvariát Dlážděná", sub: "ca. 550 m · mit Bahnhofsausgang 15–20 Min.", ref: "#pr-antik", place: "pr_hln", city: "Praha" },
     { s: "11:45", e: "12:20", kind: "sight", title: "Antikvariát Dlážděná", sub: "nur werktags – heute die Chance", ref: "#pr-antik", sight: "pr-antik", major: true },
@@ -472,7 +472,7 @@
     { s: "17:51", e: "18:05", kind: "walk", title: "Fußweg zum Riegrovy sady", sub: "ca. 700 m · 8 Min. bis zur Wiese", ref: "#pr-riegrovy", place: "pr_jzp", city: "Vinohrady" },
     { s: "18:05", e: "18:40", kind: "sight", title: "Sonnenuntergang im Riegrovy sady", sub: "Sonnenuntergang 18:24 Uhr, hinter dem Burghügel etwas früher", ref: "#pr-riegrovy", sight: "pr-riegrovy", major: true },
     { s: "18:40", e: "19:00", kind: "walk", title: "Fußweg nach Žižkov zu U Houdků", sub: "ca. 1 km · 12–20 Min.", ref: "#houdku" },
-    { s: "19:00", e: "20:00", kind: "food", title: "Abendessen bei U Houdků", sub: "reservieren · Rechnung bis 19:50 Uhr", ref: "#houdku", major: true },
+    { s: "19:00", e: "20:00", kind: "food", title: "Abendessen bei U Houdků", sub: "Rechnung bis 19:50 Uhr", ref: "#houdku", major: true },
     { s: "20:00", e: "20:25", kind: "walk", title: "Zum Hauptbahnhof", sub: "bis zum Gleis ca. 25 Min. einplanen · um 20:00 los", ref: "#c-rueck", place: "pr_hln" },
     { s: "20:25", e: "20:45", kind: "buffer", title: "Puffer am Bahnhof", sub: "Gleis suchen, Proviant kaufen", ref: "#c-rueck" },
     { s: "20:47", e: "23:19", kind: "train", dep: true, title: "RJ 170 Praha hl. n. → Dresden Hbf", sub: "letzter sinnvoller Direktzug · im DB Navigator prüfen", ref: "#c-rueck", place: "pr_hln", to: "dd_hbf", major: true }
