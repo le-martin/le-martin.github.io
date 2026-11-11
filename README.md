@@ -17,7 +17,7 @@ Personal academic website for **Martin Le** (Ph.D. Candidate @ TU Braunschweig),
 | `/dresden/` | Dresden travel guide (standalone HTML/CSS/JS, Leaflet map) |
 | `/ausflug-oberlausitz/` | Reisebegleiter Tagesausflug Oberlausitz (Bautzen, Löbau, Zittau; DE/EN/KO) |
 | `/ausflug-leipzig/` | Reisebegleiter Tagesausflug Leipzig (Innenstadt, Völkerschlachtdenkmal, Plagwitz; DE/EN/KO) |
-| `/ausflug-prag/` | Reisebegleiter Tagesausflug Prag (Altstadt, Kleinseite, Prager Burg; DE/EN/KO) |
+| `/ausflug-prag/` | Vergangener Ausflug (9.10.2026, archiviert): Reisebegleiter Tagesausflug Prag (Altstadt, Kleinseite, Prager Burg; DE/EN/KO) |
 
 The academic pages (`about`, `cv`, `publications`, `talks`, etc.) under `_pages/` also build, though their header nav links are currently commented out in `_data/navigation.yml`.
 

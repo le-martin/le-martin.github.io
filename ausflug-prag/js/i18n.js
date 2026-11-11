@@ -398,11 +398,11 @@
       travelIntro: "Am Freitag, 9.10., zeigt dieser Modus automatisch die nächste Station, Abfahrt und Gehzeit; vorher zählt er bis zur Abfahrt herunter. Zum Ausprobieren unten „Uhrzeit simulieren“ nutzen.",
       connChecked: function (d) { return "Stand " + d + " · Zugzeiten laut Fahrplanlisten – im DB Navigator bestätigen"; },
       travelFoot: function (d) { return "Zugzeiten im DB Navigator bestätigen · Stand " + d; },
-      meetSub: "Mit Yeji · EC 459 ab 07:08 Uhr – Ticket vorher kaufen",
+      meetSub: "Mit Yeji · EC 459 ab 07:08 Uhr",
       planMain: "Früh · ab 07:08", planLate: "Später · ab 09:10",
       planMainNote: "EC 459 ab 07:08 – alle Wunschorte inkl. Veitsdom und Malatang; Verspätungspuffer einplanen.",
       planLateNote: "RJ 171 ab 09:10, an 11:25 – Teynkirche nur von außen, Burg kurz und kostenlos, Sonnenuntergang ab ca. 18:05.",
-      meetSubLate: "Mit Yeji · RJ 171 ab 09:10 Uhr – Ticket vorher kaufen"
+      meetSubLate: "Mit Yeji · RJ 171 ab 09:10 Uhr"
     },
     en: {
       docTitle: "Day Trip to Prague",
@@ -446,11 +446,11 @@
       travelIntro: "On Friday 9 Oct this mode automatically shows the next stop, departure and walking time; before that it counts down to departure. To try it out, use “Simulate time” below.",
       connChecked: function (d) { return "As of " + d + " · train times per timetable listings – confirm in DB Navigator"; },
       travelFoot: function (d) { return "Confirm train times in DB Navigator · as of " + d; },
-      meetSub: "With Yeji · EC 459 at 07:08 – buy your ticket in advance",
+      meetSub: "With Yeji · EC 459 at 07:08",
       planMain: "Early · from 07:08", planLate: "Later · from 09:10",
       planMainNote: "EC 459 at 07:08 – all wish-list stops incl. St. Vitus and malatang; allow for delays.",
       planLateNote: "RJ 171 at 09:10, arrives 11:25 – Týn Church from outside only, a short free castle walk, sunset from approx. 18:05.",
-      meetSubLate: "With Yeji · RJ 171 at 09:10 – buy your ticket in advance"
+      meetSubLate: "With Yeji · RJ 171 at 09:10"
     },
     ko: {
       docTitle: "프라하 당일 여행",
@@ -494,11 +494,11 @@
       travelIntro: "10월 9일(금)에는 다음 장소, 출발 시간, 도보 시간을 자동으로 보여 주고, 그 전에는 출발까지 남은 시간을 셉니다. 미리 체험하려면 아래 ‘시간 시뮬레이션’을 사용하세요.",
       connChecked: function (d) { return d + " 기준 · 열차 시간은 시간표 목록 기준 – DB Navigator에서 확인"; },
       travelFoot: function (d) { return "열차 시간은 DB Navigator에서 확인하세요 · " + d + " 기준"; },
-      meetSub: "예지와 함께 · EC 459 07:08 출발 – 승차권은 미리 구입",
+      meetSub: "예지와 함께 · EC 459 07:08 출발",
       planMain: "이른 출발 · 07:08", planLate: "늦은 출발 · 09:10",
       planMainNote: "EC 459 07:08 출발 – 성 비투스와 마라탕 등 모든 희망 장소 방문; 지연에 대비한 여유 시간 확보.",
       planLateNote: "RJ 171 09:10 출발, 11:25 도착 – 틴 성당은 밖에서만, 무료 구역만 짧게 보는 프라하 성, 일몰은 약 18:05부터.",
-      meetSubLate: "예지와 함께 · RJ 171 09:10 출발 – 승차권은 미리 구입"
+      meetSubLate: "예지와 함께 · RJ 171 09:10 출발"
     }
   };
 
@@ -586,7 +586,7 @@
         why: "Perfect after the sunset, allow approx. 25 min to reach the train platform.",
         hoursNote: "Mon–Sat 11:00–24:00, Sun 11:00–23:00 (official website).",
         price: "€ (estimate)",
-        note: "Reserve for Friday 7 pm. Cards accepted per the official website. Leave for the station at 20:00."
+        note: "Cards accepted per the official website. Leave for the station at 20:00."
       },
       "k-remember": {
         cuisine: "Vietnamese, vegetarian options too",
@@ -793,7 +793,7 @@
         why: "일몰 뒤에 딱 좋고, 중앙역 승강장까지 도보 약 25분을 잡으세요.",
         hoursNote: "월–토 11–24시, 일 11–23시 (공식 웹사이트).",
         price: "€ (추정)",
-        note: "금요일 19시로 예약하세요. 공식 웹사이트에 따르면 카드 결제가 가능합니다. 20:00에 역으로 출발하세요."
+        note: "공식 웹사이트에 따르면 카드 결제가 가능합니다. 20:00에 역으로 출발하세요."
       },
       "k-remember": {
         cuisine: "베트남 요리, 채식 메뉴도 있음",
@@ -939,7 +939,7 @@
       "ca. 1,5 km · 30–35 Min. bis zur Wiese (oder Metro A ab Muzeum)": "approx. 1.5 km · 30–35 min to the lawn (or metro A from Muzeum)",
       "Sonnenuntergang 18:24 Uhr, hinter dem Burghügel etwas früher": "sunset 6:24 pm, a little earlier behind the castle hill",
       "ca. 1 km · 12–20 Min.": "approx. 1 km · 12–20 min",
-      "reservieren · Rechnung bis 19:50 Uhr": "reserve · ask for the bill by 7:50 pm",
+      "Rechnung bis 19:50 Uhr": "ask for the bill by 7:50 pm",
       "bis zum Gleis ca. 25 Min. einplanen · um 20:00 los": "allow approx. 25 min to the platform · leave at 20:00",
       "Gleis suchen, Proviant kaufen": "find the platform, buy snacks",
       "RJ 170 Praha hl. n. → Dresden Hbf": "RJ 170 Praha hl. n. → Dresden Hbf",
@@ -992,7 +992,7 @@
       "Beispielzeit – Metro A fährt alle paar Minuten und ohne Umstieg (5 Stationen). 30-Minuten-Ticket reicht.": "Example time – metro A runs every few minutes, no change needed (5 stops). A 30-minute ticket is enough.",
       "Entspanntere Variante: Strahov und Burg auslassen, nach dem Orloj Malatang No.1 (ca. 15:30–16:15) und über den Wenzelsplatz mit Metro A ab Muzeum zum Riegrovy sady (ca. 17:00 da).": "More relaxed option: skip Strahov and the castle; after the Astronomical Clock have Malatang No.1 (approx. 15:30–16:15), then walk across Wenceslas Square and take metro A from Muzeum to Riegrovy sady (there by approx. 17:00).",
       "Treffen mit Yeji am Dresden Hauptbahnhof": "Meet Yeji at Dresden Hauptbahnhof",
-      "Railjet Richtung Praha – Ticket vorher kaufen (Deutschlandticket gilt nicht)": "Railjet towards Praha – buy your ticket in advance (Deutschlandticket not valid)",
+      "Railjet Richtung Praha (Deutschlandticket gilt nicht)": "Railjet towards Praha (Deutschlandticket not valid)",
       "Fußweg zum Antikvariát Dlážděná": "Walk to Antikvariát Dlážděná",
       "Antikvariát Dlážděná": "Antikvariát Dlážděná",
       "nur werktags – heute die Chance": "weekdays only – today's the chance",
@@ -1051,7 +1051,7 @@
       "Antikvariát Dlážděná (adplus.cz)": "Antikvariát Dlážděná (adplus.cz)",
       "Nachmittags-Snack": "Afternoon snack",
       "Treffen am Dresden Hauptbahnhof": "Meet at Dresden Hauptbahnhof",
-      "EuroCity Richtung Praha – Ticket vorher kaufen (Deutschlandticket gilt nicht)": "EuroCity towards Praha – buy your ticket in advance (Deutschlandticket not valid)",
+      "EuroCity Richtung Praha (Deutschlandticket gilt nicht)": "EuroCity towards Praha (Deutschlandticket not valid)",
       "EC Dresden Hbf → Praha hl. n.": "EC Dresden Hbf → Praha hl. n.",
       "Beispielzeit · ca. alle 2 Std. · durchs Elbtal": "example time · approx. every 2 h · through the Elbe valley",
       "Praha": "Prague",
@@ -1145,7 +1145,7 @@
       "ca. 1,5 km · 30–35 Min. bis zur Wiese (oder Metro A ab Muzeum)": "약 1.5 km · 잔디밭까지 30–35분 (또는 무제움역에서 지하철 A)",
       "Sonnenuntergang 18:24 Uhr, hinter dem Burghügel etwas früher": "일몰 18:24, 프라하 성 언덕 뒤로는 조금 더 일찍",
       "ca. 1 km · 12–20 Min.": "약 1 km · 12–20분",
-      "reservieren · Rechnung bis 19:50 Uhr": "예약 · 19:50까지 계산 요청",
+      "Rechnung bis 19:50 Uhr": "19:50까지 계산 요청",
       "bis zum Gleis ca. 25 Min. einplanen · um 20:00 los": "승강장까지 약 25분 · 20:00 출발",
       "Gleis suchen, Proviant kaufen": "승강장 찾기, 간식 사기",
       "RJ 170 Praha hl. n. → Dresden Hbf": "RJ 170 프라하 중앙역 → 드레스덴 중앙역",
@@ -1198,7 +1198,7 @@
       "Beispielzeit – Metro A fährt alle paar Minuten und ohne Umstieg (5 Stationen). 30-Minuten-Ticket reicht.": "예시 시간 – 지하철 A는 몇 분 간격으로 다니고 환승이 없습니다 (5정거장). 30분권이면 충분합니다.",
       "Entspanntere Variante: Strahov und Burg auslassen, nach dem Orloj Malatang No.1 (ca. 15:30–16:15) und über den Wenzelsplatz mit Metro A ab Muzeum zum Riegrovy sady (ca. 17:00 da).": "여유로운 버전: 스트라호프와 프라하 성은 빼고, 천문시계 다음에 마라탕 No.1 (약 15:30–16:15), 그다음 바츨라프 광장을 지나 무제움역에서 지하철 A로 리에그로비 사디까지 (약 17:00 도착).",
       "Treffen mit Yeji am Dresden Hauptbahnhof": "드레스덴 중앙역에서 예지와 만나기",
-      "Railjet Richtung Praha – Ticket vorher kaufen (Deutschlandticket gilt nicht)": "프라하행 레일젯 – 승차권은 미리 구입 (도이칠란트티켓 불가)",
+      "Railjet Richtung Praha (Deutschlandticket gilt nicht)": "프라하행 레일젯 (도이칠란트티켓 불가)",
       "Fußweg zum Antikvariát Dlážděná": "들라주데나 고서점까지 도보",
       "Antikvariát Dlážděná": "들라주데나 고서점",
       "nur werktags – heute die Chance": "평일에만 영업 – 오늘이 기회",
@@ -1257,7 +1257,7 @@
       "Antikvariát Dlážděná (adplus.cz)": "들라주데나 고서점 (adplus.cz)",
       "Nachmittags-Snack": "오후 간식",
       "Treffen am Dresden Hauptbahnhof": "드레스덴 중앙역(Dresden Hbf)에서 만나기",
-      "EuroCity Richtung Praha – Ticket vorher kaufen (Deutschlandticket gilt nicht)": "프라하행 유로시티 – 승차권 미리 구입 (도이칠란트티켓 불가)",
+      "EuroCity Richtung Praha (Deutschlandticket gilt nicht)": "프라하행 유로시티 (도이칠란트티켓 불가)",
       "EC Dresden Hbf → Praha hl. n.": "EC 드레스덴 중앙역 → 프라하 중앙역",
       "Beispielzeit · ca. alle 2 Std. · durchs Elbtal": "예시 시간 · 약 2시간 간격 · 엘베 강 계곡 경유",
       "Praha": "프라하",
@@ -1548,10 +1548,45 @@
   trip.en.compactMass = "Mass at 15:00; no sightseeing during services";
   trip.ko.compactMass = "15:00 미사 중 관람 불가";
 
+  // ------------------------------------------------------------------ Archiv: Der Ausflug fand am 9.10.2026 statt
+  // Überschreibt die Texte für die Reiseplanung; Inhalte bleiben als Rückblick lesbar.
+  var archive = {
+    de: {
+      docTitle: "Tagesausflug Prag · 9.10.2026 (Archiv)",
+      heroEyebrow: "Rückblick · Prag",
+      heroMeta: "Freitag, 9. Oktober 2026 · Railjet/EuroCity",
+      archiveTitle: "Vergangener Ausflug: fand am 9. Oktober 2026 statt.",
+      archiveText: "Diese Seite bleibt als Rückblick online. Fahrpläne, Öffnungszeiten und Preise entsprechen dem Stand von Oktober 2026 und werden nicht mehr aktualisiert.",
+      noticeTitle: "Archiv – Stand 8.10.2026.",
+      noticeText: "Geplant waren EC 459 ab 07:08 oder RJ 171 ab 09:10; zurück RJ 170 20:47–23:19 (ČD-Fahrpläne, geprüft am 8.10.2026). Metro-/Tramzeiten waren Beispiele.",
+      connNoticeTitle: "Archiv – Zugfahrpläne für 9.10.2026."
+    },
+    en: {
+      docTitle: "Day Trip to Prague · 9 Oct 2026 (archive)",
+      heroEyebrow: "Looking back · Prague",
+      heroMeta: "Friday, 9 October 2026 · Railjet/EuroCity",
+      archiveTitle: "Past trip: took place on 9 October 2026.",
+      archiveText: "This page stays online as a keepsake. Timetables, opening hours and prices reflect October 2026 and are no longer updated.",
+      noticeTitle: "Archive – as of 8 Oct 2026.",
+      noticeText: "The plan was EC 459 at 07:08 or RJ 171 at 09:10; return RJ 170 20:47–23:19 (ČD timetables checked on 8 Oct 2026). Metro/tram times were examples.",
+      connNoticeTitle: "Archive – train timetables for 9 Oct 2026."
+    },
+    ko: {
+      docTitle: "프라하 당일 여행 · 2026년 10월 9일 (지난 여행)",
+      heroEyebrow: "지난 여행 · 프라하",
+      heroMeta: "2026년 10월 9일 (금) · 레일젯/유로시티",
+      archiveTitle: "지난 여행: 2026년 10월 9일에 다녀왔습니다.",
+      archiveText: "이 페이지는 기록으로 남겨 둡니다. 시간표, 운영 시간, 가격은 2026년 10월 기준이며 더 이상 업데이트되지 않습니다.",
+      noticeTitle: "보관 자료 – 2026년 10월 8일 기준.",
+      noticeText: "EC 459 07:08 또는 RJ 171 09:10 출발, 귀국 RJ 170 20:47–23:19로 계획했습니다 (2026년 10월 8일 ČD 시간표 확인). 지하철·트램 시간은 예시였습니다.",
+      connNoticeTitle: "보관 자료 – 2026년 10월 9일 열차 시간표."
+    }
+  };
+
   var ui = {};
   ["de", "en", "ko"].forEach(function (l) {
     ui[l] = {};
-    [common[l], trip[l]].forEach(function (src) { Object.keys(src).forEach(function (k) { ui[l][k] = src[k]; }); });
+    [common[l], trip[l], archive[l]].forEach(function (src) { Object.keys(src).forEach(function (k) { ui[l][k] = src[k]; }); });
   });
 
   // ------------------------------------------------------------------ Muster
