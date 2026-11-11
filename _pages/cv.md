@@ -14,21 +14,11 @@ redirect_from:
 **Wireless Systems Researcher | Research Software Engineer | Doctoral Candidate**
 
 Dresden, Germany  
-Email: <a href="#" class="cv-email" data-u="el.nitram" data-d="ten.xmg">(shown with JavaScript enabled)</a>  
 LinkedIn: <https://linkedin.com/in/martinle92>  
 GitHub: <https://github.com/le-martin>  
 Research profile: <https://le-martin.github.io/phd/>  
 Google Scholar: <https://scholar.google.com/citations?user=p_1MxKUAAAAJ>  
 ORCID: <https://orcid.org/0000-0001-7911-7786>
-
-<script>
-document.querySelectorAll('.cv-email').forEach(function (a) {
-  var r = function (t) { return t.split('').reverse().join(''); };
-  var addr = r(a.dataset.u) + '@' + r(a.dataset.d);
-  a.href = 'mailto:' + addr;
-  a.textContent = addr;
-});
-</script>
 
 Relocation: Open to relocation to San Diego, California.  
 U.S. work authorization: Requires employer-sponsored work authorization.
