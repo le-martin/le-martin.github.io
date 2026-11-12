@@ -58,7 +58,7 @@ redirect_from:
 <a id="section_projects-and-competitions"></a>
 ## Projects and Competitions (2)
 - [Wireless Wanderlust Competition hosted by IEEE ISIT 2025](https://2025.ieee-isit.org/wireless-wanderlust-competition) (2025, won Junior prize)
-- [BMBF SupraCoNeX](https://www.forschung-it-sicherheit-kommunikationssysteme.de/projekte/supraconex) (2020-2024)
+- [BMFTR SupraCoNeX](https://www.forschung-it-sicherheit-kommunikationssysteme.de/projekte/supraconex) (2020-2024)
 
 <a id="section_courses"></a>
 ## Courses (6)
