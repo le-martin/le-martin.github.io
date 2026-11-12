@@ -26,7 +26,7 @@ author:
   name             : "Martin Le"
   pronouns         : # example: "she/her"  
   bio              : "Ph.D. Candidate @ TU Braunschweig"
-  location         : "Braunschweig (Germany)"
+  location         : "Dresden (Germany)"
   employer         : "TU Braunschweig"
   uri              : #"https://www.tu-braunschweig.de/en/ifn/institute/team/iuk/le"# URL
   email            : # E-Mail
@@ -159,6 +159,7 @@ include:
   - files
   - learn-german/_expo
 exclude:
+  - stock-correlation.disabled
   - "*.sublime-project"
   - "*.sublime-workspace"
   - .asset-cache
