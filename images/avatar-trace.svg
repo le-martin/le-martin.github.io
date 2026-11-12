@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Martin Le">
+  <rect width="400" height="400" fill="#E1DCCC"/>
+  <line x1="40" y1="170" x2="360" y2="170" stroke="#B4AC92" stroke-width="3" stroke-dasharray="4 10"/>
+  <path d="M40 250 H70 V110 H100 V290 H130 V90 H160 V215 H190 V140 H220 V195 H250 V170 H360" fill="none" stroke="#1F6F63" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>

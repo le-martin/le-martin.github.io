@@ -26,22 +26,25 @@ $navicon-height             : 4px;
 $sidebar-link-max-width     : 250px;
 $sidebar-screen-min-width   : 1024px;
 
-/* Default light theme for the site */
+/* Default light theme for the site: field-notebook paper, ink, and a signal-teal accent
+   shared with the start page and /portfolio/ */
 :root {
-    --global-base-color                 : #{$gray};
-    --global-bg-color                   : #fff;
-    --global-footer-bg-color            : #f2f3f3;
-    --global-border-color               : #{$lighter-gray};
-    --global-dark-border-color          : #bdc1c4;
-    --global-code-background-color      : #fafafa;
-    --global-code-text-color            : #{$darker-gray};
-    --global-fig-caption-color          : mix(#fff,  #{$dark-gray}, 25%);
-    --global-link-color                 : #52adc8;
-    --global-link-color-hover           : mix(#000, #2f7f93, 25%);
-    --global-link-color-visited         : mix(#fff, #2f7f93, 25%);  
-    --global-masthead-link-color        : #{$dark-gray};
-    --global-masthead-link-color-hover  : mix(#000, #{$gray}, 25%);    
-    --global-text-color                 : #{$dark-gray};
-    --global-text-color-light           : #{$light-gray};
-    --global-thead-color                : #{$lighter-gray};
+    --global-base-color                 : #5B5F52;
+    --global-bg-color                   : #EAE6DC;
+    --global-surface-color              : #E1DCCC;
+    --global-footer-bg-color            : #E1DCCC;
+    --global-border-color               : #C7C0AC;
+    --global-dark-border-color          : #B4AC92;
+    --global-code-background-color      : #E1DCCC;
+    --global-code-text-color            : #21241F;
+    --global-fig-caption-color          : #5B5F52;
+    --global-link-color                 : #1F6F63;
+    --global-link-color-hover           : #154C43;
+    --global-link-color-visited         : #3E6A60;
+    --global-masthead-link-color        : #21241F;
+    --global-masthead-link-color-hover  : #1F6F63;
+    --global-text-color                 : #21241F;
+    --global-text-color-light           : #5B5F52;
+    --global-thead-color                : #E1DCCC;
+    --global-accent-color               : #1F6F63;
 }
