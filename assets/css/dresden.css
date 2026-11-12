@@ -92,57 +92,6 @@ body {
     border-color: white;
 }
 
-/* Link back to the main site */
-.home-link {
-    position: absolute;
-    top: 1rem;
-    left: 1.5rem;
-    z-index: 100;
-    display: inline-flex;
-    align-items: center;
-    min-height: 44px;
-    padding: 8px 12px;
-    border-radius: 4px;
-    background: rgba(255, 255, 255, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    color: white;
-    font-size: 0.85rem;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.2s;
-}
-
-.home-link__short {
-    display: none;
-}
-
-.home-link:hover {
-    background: rgba(255, 255, 255, 0.3);
-}
-
-.home-link:focus-visible {
-    outline: 3px solid var(--accent-color);
-    outline-offset: 2px;
-}
-
-@media (max-width: 600px) {
-    .home-link {
-        top: 0.5rem;
-        left: 0.5rem;
-        min-height: 40px;
-        padding: 6px 10px;
-        font-size: 0.8rem;
-    }
-
-    .home-link__long {
-        display: none;
-    }
-
-    .home-link__short {
-        display: inline;
-    }
-}
-
 /* Header Styles */
 header {
     background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
