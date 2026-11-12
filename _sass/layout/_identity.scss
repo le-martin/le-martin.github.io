@@ -1,0 +1,301 @@
+/* ==========================================================================
+   SITE IDENTITY
+   Brings the Jekyll pages (/phd/, /phd/cv/, ...) in line with the start page
+   and /portfolio/: notebook paper, Newsreader headings, Work Sans text and a
+   signal-teal accent. Colours come from the CSS variables in theme/_default
+   and theme/_dark, so the light/dark toggle keeps working.
+   ========================================================================== */
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  line-height: 1.6;
+  font-feature-settings: "kern", "liga";
+}
+
+::selection {
+  background: rgba(31, 111, 99, 0.22);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--global-accent-color);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Headings
+   ========================================================================== */
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  color: var(--global-text-color);
+}
+
+/* Masthead
+   ========================================================================== */
+
+.masthead {
+  background: var(--global-bg-color);
+
+  &::after {
+    background: var(--global-border-color);
+  }
+
+  &__inner-wrap {
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+  }
+}
+
+.masthead__menu-item {
+  background-color: var(--global-bg-color);
+}
+
+.greedy-nav {
+  background: var(--global-bg-color);
+
+  a {
+    font-size: 0.9rem;
+    color: var(--global-text-color-light);
+
+    &:hover {
+      color: var(--global-masthead-link-color-hover);
+    }
+  }
+
+  .visible-links a::before {
+    background: var(--global-accent-color);
+    height: 2px;
+  }
+
+  .masthead__menu-item--lg a {
+    font-family: $serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: var(--global-masthead-link-color);
+  }
+
+  button {
+    background-color: transparent;
+    border-radius: 2px;
+  }
+
+  .navicon,
+  .navicon::before,
+  .navicon::after {
+    background: var(--global-text-color);
+  }
+
+  .hidden-links {
+    background: var(--global-bg-color);
+    border-color: var(--global-border-color);
+  }
+}
+
+/* Page title and body copy
+   ========================================================================== */
+
+.page__title {
+  font-size: clamp(2.2rem, 5vw, 3.1rem);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  margin-bottom: 0.6em;
+}
+
+.page__content,
+.archive > * {
+  max-width: 44rem;
+}
+
+/* The anchor paragraphs in front of each heading on /phd/ carry no text */
+.page__content > p:has(> a[id]:only-child:empty) {
+  margin: 0;
+}
+
+.page__content,
+.archive {
+
+  p, li {
+    font-size: 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin: 0.2em 0 0.3em;
+  }
+
+  h2 {
+    font-size: 1.65rem;
+    margin: 2.4em 0 0.7em;
+    padding-top: 0.9em;
+    padding-bottom: 0;
+    border-bottom: 0;
+    border-top: 1px solid var(--global-border-color);
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    line-height: 1.3;
+    margin: 1.8em 0 0.4em;
+  }
+
+  /* Run-in subheads such as "Reviewer for the following Journals" */
+  h3 + ul,
+  h3 + ol {
+    margin-top: 0.4em;
+  }
+
+  a {
+    color: var(--global-link-color);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+    text-decoration-color: var(--global-dark-border-color);
+    transition: color 0.15s, text-decoration-color 0.15s;
+
+    &:hover {
+      color: var(--global-link-color-hover);
+      text-decoration-color: currentColor;
+    }
+  }
+
+  ul, ol {
+    padding-left: 1.2em;
+  }
+
+  li {
+    margin-bottom: 0.4em;
+
+    &::marker {
+      color: var(--global-text-color-light);
+    }
+  }
+
+  strong {
+    font-weight: 600;
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px solid var(--global-border-color);
+  }
+
+  /* Grey-on-white charts sit on the paper instead of in a white box */
+  img {
+    border-radius: 2px;
+  }
+}
+
+html:not([data-theme="dark"]) .page__content img {
+  mix-blend-mode: multiply;
+}
+
+html[data-theme="dark"] .page__content img {
+  background: #fff;
+  padding: 0.5em;
+}
+
+/* The jump list at the top of /phd/ is a set of shortcuts, not a sequence:
+   show it as one wrapped line of links instead of a numbered list. */
+.page__content > ol:first-child {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35em 1.4em;
+  padding: 0;
+  margin: 0;
+
+  li {
+    margin: 0;
+    font-size: 0.95rem;
+  }
+}
+
+/* Sidebar / author profile
+   ========================================================================== */
+
+.author__avatar img {
+  border-radius: 50%;
+
+  @include breakpoint($large) {
+    padding: 0;
+    border: 0;
+    max-width: 150px;
+  }
+}
+
+.sidebar .author__name {
+  font-family: $serif;
+  font-size: 1.45rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+
+.sidebar .author__bio {
+  color: var(--global-text-color-light);
+  font-size: 0.85rem;
+}
+
+.author__urls {
+  li {
+    font-size: 0.85rem;
+    white-space: normal;
+    color: var(--global-text-color-light);
+  }
+
+  a {
+    color: var(--global-text-color);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--global-link-color);
+      text-decoration: underline;
+      text-underline-offset: 0.2em;
+    }
+  }
+
+  .fa, .fas, .fa-solid, .fab, .ai {
+    color: var(--global-accent-color);
+  }
+}
+
+.author__urls-wrapper .btn--inverse {
+  color: var(--global-text-color);
+  background: transparent;
+  border: 1px solid var(--global-dark-border-color);
+  border-radius: 2px;
+}
+
+/* Footer
+   ========================================================================== */
+
+.page__footer {
+  background: var(--global-footer-bg-color);
+  border-top: 1px solid var(--global-border-color);
+  color: var(--global-text-color-light);
+
+  a {
+    color: var(--global-text-color);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .masthead,
+  #main,
+  .page__hero {
+    animation: none;
+  }
+
+  .page__content a {
+    transition: none;
+  }
+}

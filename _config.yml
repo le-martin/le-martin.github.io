@@ -22,7 +22,7 @@ repository               : "le-martin/le-martin.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "avatar-trace.svg"
   name             : "Martin Le"
   pronouns         : # example: "she/her"  
   bio              : "Ph.D. Candidate @ TU Braunschweig"

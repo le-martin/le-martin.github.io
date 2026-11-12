@@ -8,73 +8,116 @@ layout: none
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Martin Le</title>
 <meta name="description" content="Martin Le, Ph.D. candidate at TU Braunschweig working on machine-learning-driven rate adaptation for Wi-Fi, plus a few side projects.">
+<meta name="theme-color" content="#EAE6DC">
 <link rel="canonical" href="https://le-martin.github.io/">
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Work+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
     --paper:#EAE6DC; --paper-deep:#E1DCCC;
-    --ink:#21241F; --ink-soft:#5B5F52; --ink-faint:#8B8C7C;
+    --ink:#21241F; --ink-soft:#5B5F52;
     --signal:#1F6F63; --signal-deep:#154C43;
     --rule:#C7C0AC; --rule-strong:#B4AC92;
-    --display:"Newsreader",serif; --body:"Work Sans",sans-serif; --mono:"IBM Plex Mono",monospace;
+    --display:"Newsreader",Georgia,serif; --body:"Work Sans",-apple-system,"Segoe UI",sans-serif;
   }
   *{box-sizing:border-box;}
-  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.5;-webkit-font-smoothing:antialiased;}
+  html{-webkit-text-size-adjust:100%;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:1rem;line-height:1.55;-webkit-font-smoothing:antialiased;}
   a{color:inherit;}
-  .wrap{max-width:980px;margin:0 auto;padding:0 clamp(20px,5vw,56px);}
+  a:focus-visible{outline:2px solid var(--signal);outline-offset:4px;border-radius:2px;}
+  ::selection{background:rgba(31,111,99,.22);}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 clamp(20px,5vw,56px);}
 
-  header{padding:72px 0 48px;}
-  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--signal-deep);margin:0 0 20px;}
-  h1{font-family:var(--display);font-weight:500;font-size:clamp(2.6rem,7vw,4.4rem);line-height:1.05;letter-spacing:-.01em;margin:0 0 22px;}
-  .lede{max-width:56ch;font-size:1.1rem;color:var(--ink-soft);margin:0;}
-  .lede em{font-family:var(--display);font-size:1.15em;color:var(--signal-deep);}
-  .social{display:flex;flex-wrap:wrap;gap:8px 26px;margin-top:30px;font-family:var(--mono);font-size:12.5px;color:var(--ink-soft);}
-  .social a{text-decoration:none;border-bottom:1px solid var(--rule-strong);}
-  .social a:hover{color:var(--signal-deep);border-color:var(--signal-deep);}
+  /* Hero: the name, one sentence, and the trace a rate-adaptation bandit draws */
+  header{padding:clamp(56px,10vh,104px) 0 0;}
+  h1{font-family:var(--display);font-weight:400;font-size:clamp(3.4rem,11vw,7.5rem);line-height:.92;letter-spacing:-.035em;margin:0 0 .32em;}
+  .lede{max-width:34em;font-size:clamp(1.05rem,1.6vw,1.2rem);line-height:1.6;color:var(--ink-soft);margin:0;}
+  .lede strong{font-weight:500;color:var(--ink);}
 
-  section{padding:44px 0;border-top:1px solid var(--rule);}
-  h2{font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 22px;}
+  .trace{margin:clamp(40px,7vh,64px) 0 0;}
+  .trace svg{display:block;width:100%;height:clamp(84px,12vw,132px);overflow:visible;}
+  .trace .best{stroke:var(--rule-strong);stroke-width:1;stroke-dasharray:2 5;}
+  .trace .line{fill:none;stroke:var(--signal);stroke-width:2;stroke-linejoin:round;vector-effect:non-scaling-stroke;}
+  .trace figcaption{max-width:40em;margin-top:14px;font-size:.85rem;color:var(--ink-soft);}
+  @media (prefers-reduced-motion:no-preference){
+    .trace .line{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 2.6s cubic-bezier(.45,.05,.2,1) .2s forwards;}
+    @keyframes draw{to{stroke-dashoffset:0;}}
+  }
 
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;list-style:none;margin:0;padding:0;}
-  .card{display:block;height:100%;padding:22px 22px 20px;background:var(--paper-deep);border:1px solid var(--rule);border-radius:4px;text-decoration:none;transition:border-color .15s,transform .15s;}
-  .card:hover,.card:focus-visible{border-color:var(--signal);transform:translateY(-2px);outline:none;}
-  .card h3{font-family:var(--display);font-weight:500;font-size:1.35rem;margin:0 0 6px;}
-  .card h3::after{content:" →";color:var(--signal);}
-  .card p{margin:0;font-size:.95rem;color:var(--ink-soft);}
-  .card .tag{display:block;margin-top:12px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--ink-faint);}
+  .social{display:flex;flex-wrap:wrap;gap:6px 28px;margin:clamp(36px,6vh,52px) 0 0;padding:0;list-style:none;font-size:.95rem;}
+  .social a{text-decoration:underline;text-decoration-color:var(--rule-strong);text-underline-offset:.25em;text-decoration-thickness:1px;}
+  .social a:hover{color:var(--signal-deep);text-decoration-color:currentColor;}
 
-  footer{padding:36px 0 56px;border-top:1px solid var(--rule);font-family:var(--mono);font-size:11.5px;color:var(--ink-faint);}
-  @media (prefers-reduced-motion:reduce){.card{transition:none;}.card:hover{transform:none;}}
+  section{padding:clamp(56px,9vh,88px) 0 0;}
+  h2{font-family:var(--display);font-weight:400;font-style:italic;font-size:1.5rem;letter-spacing:-.01em;color:var(--ink-soft);margin:0 0 24px;}
+
+  /* Research: three primary destinations, set large */
+  .primary{display:grid;grid-template-columns:repeat(3,1fr);gap:0 clamp(20px,3vw,40px);list-style:none;margin:0;padding:0;}
+  .primary a{display:block;height:100%;padding:20px 0 8px;border-top:2px solid var(--ink);text-decoration:none;}
+  .primary h3{font-family:var(--display);font-weight:500;font-size:clamp(1.7rem,3vw,2.3rem);line-height:1.05;letter-spacing:-.02em;margin:0 0 12px;}
+  .primary p{margin:0;color:var(--ink-soft);max-width:22em;}
+  .primary a:hover,.primary a:focus-visible{border-color:var(--signal);}
+  .primary a:hover h3,.primary a:focus-visible h3{color:var(--signal-deep);}
+
+  /* Side projects: an index of smaller things */
+  .index{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule);}
+  .index a{display:grid;grid-template-columns:minmax(10em,1.1fr) 2fr minmax(7em,.7fr);gap:6px 32px;align-items:baseline;padding:18px 0;border-bottom:1px solid var(--rule);text-decoration:none;}
+  .index h3{font-family:var(--display);font-weight:500;font-size:1.35rem;line-height:1.2;margin:0;}
+  .index p{margin:0;color:var(--ink-soft);}
+  .index .kind{font-size:.85rem;color:var(--ink-soft);text-align:right;}
+  .index a:hover h3,.index a:focus-visible h3{color:var(--signal-deep);}
+
+  footer{margin-top:clamp(56px,8vh,88px);padding:24px 0 48px;border-top:1px solid var(--rule);font-size:.85rem;color:var(--ink-soft);}
+
+  @media (max-width:760px){
+    .primary{grid-template-columns:1fr;gap:28px;}
+    .index a{grid-template-columns:1fr;gap:4px;}
+    .index .kind{text-align:left;}
+  }
+  @media (prefers-color-scheme:dark){
+    :root{--paper:#1A201E;--paper-deep:#232B28;--ink:#E4E1D6;--ink-soft:#A9AC9E;--signal:#6FC2B2;--signal-deep:#9FD9CC;--rule:#36403C;--rule-strong:#4A5550;}
+    ::selection{background:rgba(111,194,178,.3);}
+  }
 </style>
 </head>
 <body>
 <main class="wrap">
   <header>
-    <p class="eyebrow">Ph.D. candidate · TU Braunschweig</p>
     <h1>Martin Le</h1>
-    <p class="lede">I teach Wi-Fi networks to pick <em>the right speed</em>: machine-learning rate adaptation for real 802.11 hardware, and the testbeds that prove it works. On the side I build small tools and learning apps.</p>
-    <nav class="social" aria-label="Profiles">
-      <a href="https://linkedin.com/in/martinle92" rel="noopener">LinkedIn</a>
-      <a href="https://github.com/le-martin" rel="noopener">GitHub</a>
-      <a href="https://scholar.google.com/citations?user=p_1MxKUAAAAJ" rel="noopener">Google Scholar</a>
-      <a href="https://orcid.org/0000-0001-7911-7786" rel="noopener">ORCID</a>
-    </nav>
+    <p class="lede"><strong>Ph.D. candidate at TU Braunschweig.</strong> I teach Wi-Fi networks to pick the right speed: machine-learning rate adaptation for real 802.11 hardware, and the testbeds that prove it works. On the side I build small tools and learning apps.</p>
+
+    <figure class="trace" aria-labelledby="trace-caption">
+      <svg viewBox="0 0 960 120" preserveAspectRatio="none" role="img" aria-label="A step line that jumps between transmission rates at first, then settles on the best one.">
+        <line class="best" x1="0" y1="39.4" x2="960" y2="39.4"/>
+        <path class="line" pathLength="1" d="M0 80.6 H14.3 V25.7 H28.7 V94.3 H43.0 V12.0 H57.3 V66.9 H71.6 V39.4 H86.0 V108.0 H100.3 V25.7 H114.6 V53.1 H129.0 V12.0 H143.3 V80.6 H157.6 V39.4 H171.9 V25.7 H186.3 V66.9 H200.6 V39.4 H214.9 V53.1 H229.3 V25.7 H243.6 V39.4 H272.2 V53.1 H286.6 V39.4 H401.2 V25.7 H415.5 V39.4 H587.5 V53.1 H601.8 V39.4 H745.1 V25.7 H759.4 V39.4 H960"/>
+      </svg>
+      <figcaption id="trace-caption">
+        The rate a bandit picks for each packet: first it tries them all, then it settles on the fastest one that gets through.
+      </figcaption>
+    </figure>
+
+    <ul class="social" aria-label="Profiles">
+      <li><a href="https://linkedin.com/in/martinle92" rel="noopener">LinkedIn</a></li>
+      <li><a href="https://github.com/le-martin" rel="noopener">GitHub</a></li>
+      <li><a href="https://scholar.google.com/citations?user=p_1MxKUAAAAJ" rel="noopener">Google Scholar</a></li>
+      <li><a href="https://orcid.org/0000-0001-7911-7786" rel="noopener">ORCID</a></li>
+    </ul>
   </header>
 
   <section aria-labelledby="research">
     <h2 id="research">Research</h2>
-    <ul class="grid">
-      <li><a class="card" href="/portfolio/">
+    <ul class="primary">
+      <li><a href="/portfolio/">
         <h3>Portfolio</h3>
         <p>What I work on, selected projects and skills, in one page.</p>
       </a></li>
-      <li><a class="card" href="/phd/">
+      <li><a href="/phd/">
         <h3>PhD activities</h3>
         <p>Publications, talks, reviews, teaching and supervised students.</p>
       </a></li>
-      <li><a class="card" href="/phd/cv/">
+      <li><a href="/phd/cv/">
         <h3>CV</h3>
         <p>Education, positions and experience.</p>
       </a></li>
@@ -82,32 +125,32 @@ layout: none
   </section>
 
   <section aria-labelledby="projects">
-    <h2 id="projects">Projects</h2>
-    <ul class="grid">
-      <li><a class="card" href="/stock-correlation/">
+    <h2 id="projects">Side projects</h2>
+    <ul class="index">
+      <li><a href="/stock-correlation/">
         <h3>Stock &amp; ETF Correlation</h3>
         <p>Check how closely stocks and ETFs move together before adding them to a portfolio.</p>
-        <span class="tag">Web tool</span>
+        <span class="kind">Web tool</span>
       </a></li>
-      <li><a class="card" href="/learn-german/">
+      <li><a href="/learn-german/">
         <h3 lang="ko">독일어 공부</h3>
         <p>A German learning app for Korean speakers.</p>
-        <span class="tag">App · Korean</span>
+        <span class="kind">App in Korean</span>
       </a></li>
-      <li><a class="card" href="/mathe-5/">
+      <li><a href="/mathe-5/">
         <h3>Mathe 5</h3>
         <p>Maths practice for 5th grade (Klasse 5).</p>
-        <span class="tag">App · German</span>
+        <span class="kind">App in German</span>
       </a></li>
-      <li><a class="card" href="/dresden/">
+      <li><a href="/dresden/">
         <h3>Dresden Travel Guide</h3>
-        <p>Sights, food and cafés in Dresden on a map, in six languages.</p>
-        <span class="tag">Guide · 6 languages</span>
+        <p>Sights, food and cafés in Dresden on a map.</p>
+        <span class="kind">Guide in 6 languages</span>
       </a></li>
     </ul>
   </section>
 
-  <footer>© Martin Le</footer>
+  <footer>© {{ site.time | date: '%Y' }} Martin Le</footer>
 </main>
 </body>
 </html>

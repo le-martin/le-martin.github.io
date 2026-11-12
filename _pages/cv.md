@@ -11,7 +11,7 @@ redirect_from:
 
 # Martin Le
 
-**Wireless Systems Researcher | Research Software Engineer | Doctoral Candidate**
+**Wireless Systems Researcher \| Research Software Engineer \| Doctoral Candidate**
 
 Dresden, Germany  
 LinkedIn: <https://linkedin.com/in/martinle92>  
