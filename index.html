@@ -90,9 +90,13 @@ layout: none
     :root:not([data-theme="light"]) ::selection{background:rgba(111,194,178,.3);}
   }
 
-  .theme-switch{position:absolute;top:20px;right:clamp(20px,5vw,56px);padding:4px 0;border:0;background:none;font:inherit;font-size:.85rem;color:var(--ink-soft);cursor:pointer;text-decoration:underline;text-decoration-color:var(--rule-strong);text-underline-offset:.25em;text-decoration-thickness:1px;}
-  .theme-switch:hover{color:var(--signal-deep);text-decoration-color:currentColor;}
-  .theme-switch:focus-visible{outline:2px solid var(--signal);outline-offset:4px;border-radius:2px;}
+  .theme-switch{position:absolute;top:16px;right:clamp(12px,5vw,48px);display:grid;place-items:center;width:40px;height:40px;padding:0;border:0;border-radius:50%;background:none;color:var(--ink-soft);cursor:pointer;}
+  .theme-switch[hidden]{display:none;}
+  .theme-switch svg{width:20px;height:20px;}
+  .theme-switch:hover{color:var(--signal-deep);}
+  .theme-switch:focus-visible{outline:2px solid var(--signal);outline-offset:2px;}
+  .theme-switch .moon,.theme-switch.is-dark .sun{display:none;}
+  .theme-switch.is-dark .moon{display:block;}
 </style>
 <script>
   try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t);}catch(e){}
@@ -100,7 +104,10 @@ layout: none
 </head>
 <body>
 <main class="wrap">
-  <button type="button" class="theme-switch" id="theme-switch" hidden>Dark mode</button>
+  <button type="button" class="theme-switch" id="theme-switch" aria-label="Switch to dark mode" hidden>
+    <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
+    <svg class="moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.2 14.6A8.5 8.5 0 0 1 9.4 3.8a8.5 8.5 0 1 0 10.8 10.8z"/></svg>
+  </button>
   <header>
     <h1>Martin Le</h1>
     <p class="lede"><strong>PhD candidate at TU Braunschweig.</strong> I teach Wi-Fi networks to pick the right speed: machine-learning rate adaptation for real 802.11 hardware, and the testbeds that prove it works. On the side I build small tools and learning apps.</p>
@@ -172,7 +179,9 @@ layout: none
     function current(){return root.getAttribute("data-theme")||(sys.matches?"dark":"light");}
     function sync(){
       var dark=current()==="dark";
-      btn.textContent=dark?"Light mode":"Dark mode";
+      btn.classList.toggle("is-dark",dark);
+      btn.setAttribute("aria-label",dark?"Switch to light mode":"Switch to dark mode");
+      btn.title=btn.getAttribute("aria-label");
       meta.setAttribute("content",dark?"#1A201E":"#EAE6DC");
     }
     btn.addEventListener("click",function(){
