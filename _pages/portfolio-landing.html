@@ -8,153 +8,361 @@ author_profile: false
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Martin Le: Portfolio</title>
-<meta name="description" content="Martin Le works on Wi-Fi rate adaptation with multi-armed bandits, Wi-Fi testbeds and the Python tooling around them.">
+<title>Martin Le — Research Software Engineer</title>
+<meta name="description" content="Martin Le — Research Software Engineer working on machine-learning-driven rate adaptation for Wi-Fi networks.">
 <meta name="theme-color" content="#EAE6DC">
 <link rel="canonical" href="https://le-martin.github.io/portfolio/">
 <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Work+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --paper:#EAE6DC; --ink:#21241F; --ink-soft:#5B5F52;
-    --signal:#1F6F63; --signal-deep:#154C43;
-    --rule:#C7C0AC; --rule-strong:#B4AC92;
-    --display:"Newsreader",Georgia,serif; --body:"Work Sans",-apple-system,"Segoe UI",sans-serif;
-  }
-  @media (prefers-color-scheme:dark){
-    :root{--paper:#1A201E;--ink:#E4E1D6;--ink-soft:#A9AC9E;--signal:#6FC2B2;--signal-deep:#9FD9CC;--rule:#36403C;--rule-strong:#4A5550;}
-  }
-  *{box-sizing:border-box;}
-  html{-webkit-text-size-adjust:100%;}
-  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased;}
-  a{color:var(--signal-deep);text-decoration:underline;text-decoration-color:var(--rule-strong);text-underline-offset:.2em;text-decoration-thickness:1px;}
-  a:hover{text-decoration-color:currentColor;}
-  a:focus-visible{outline:2px solid var(--signal);outline-offset:3px;border-radius:2px;}
+:root{--paper:#EAE6DC;--ink:#21241F;--ink-soft:#5B5F52;--ink-faint:#5B5F52;--signal:#1F6F63;--signal-deep:#154C43;--rule:#C7C0AC;--body:"Work Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;--display:"Newsreader",Georgia,"Times New Roman",serif;--mono:var(--body)}
+@media(prefers-color-scheme:dark){:root{--paper:#1A201E;--ink:#E4E1D6;--ink-soft:#A9ACA0;--ink-faint:#A9ACA0;--signal:#6FC2B2;--signal-deep:#9FD9CC;--rule:#36403C}}
 
-  .page{max-width:42rem;margin:0 auto;padding:48px 22px 64px;}
-  .back{font-size:.9rem;color:var(--ink-soft);}
-  .back a{color:inherit;}
-
-  h1{font-family:var(--display);font-weight:500;font-size:2.6rem;line-height:1.1;letter-spacing:-.02em;margin:28px 0 6px;}
-  .sub{margin:0 0 28px;color:var(--ink-soft);}
-  h2{font-family:var(--display);font-weight:500;font-size:1.5rem;line-height:1.2;margin:52px 0 14px;padding-top:20px;border-top:1px solid var(--rule);}
-  h3{font-size:1rem;font-weight:500;margin:26px 0 2px;}
-  p{margin:0 0 1em;}
-  ul{margin:.4em 0 1em;padding-left:1.2em;}
-  li+li{margin-top:.35em;}
-  .meta{display:block;font-size:.92rem;color:var(--ink-soft);margin-bottom:6px;}
-  .links{display:flex;flex-wrap:wrap;gap:4px 22px;margin:0;padding:0;list-style:none;}
-  .links li+li{margin-top:0;}
-
-  .pubs{padding-left:0;list-style:none;}
-  .pubs li{margin-top:0;padding:12px 0;border-bottom:1px solid var(--rule);}
-  .pubs li:first-child{padding-top:0;}
-  .pubs .venue{color:var(--ink-soft);font-size:.95rem;}
-
-  dl.skills{display:grid;grid-template-columns:9.5rem 1fr;gap:8px 18px;margin:0;}
-  dl.skills dt{color:var(--ink-soft);}
-  dl.skills dd{margin:0;}
-  @media (max-width:520px){
-    h1{font-size:2.1rem;}
-    dl.skills{grid-template-columns:1fr;gap:0;}
-    dl.skills dd{margin-bottom:10px;}
-  }
-
-  footer{margin-top:56px;padding-top:18px;border-top:1px solid var(--rule);font-size:.9rem;color:var(--ink-soft);}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:24px}body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.65 var(--body);-webkit-font-smoothing:antialiased}a{color:var(--signal-deep);text-decoration-color:var(--rule);text-decoration-thickness:1px;text-underline-offset:4px}a:hover{text-decoration-color:currentColor}a:focus-visible{outline:2px solid var(--signal);outline-offset:5px}::selection{background:rgba(31,111,99,.22)}p{margin:0 0 1em}h1,h2,h3{line-height:1.2}h2{font:400 clamp(1.7rem,3vw,2rem)/1.25 var(--display);margin:0}h3{font-size:1.06rem;font-weight:600;margin:0 0 8px}.wrap,header.top{width:min(100% - 64px,1040px);margin-inline:auto}header.top{padding:28px 0 22px;display:flex;align-items:baseline;justify-content:space-between;gap:20px;border-bottom:1px solid var(--rule)}.mark{font:500 1.15rem/1 var(--display)}.mark a{color:var(--ink);text-decoration:none}header.top nav{display:flex;flex-wrap:wrap;gap:8px 24px;font-size:.9rem}header.top nav a{color:var(--ink-soft);text-decoration:none;padding:6px 0}header.top nav a:hover{text-decoration:underline}.hero{padding:76px 0 60px}.eyebrow{font-size:.88rem;color:var(--signal);margin:0 0 22px}.hero h1{font:400 clamp(2.4rem,5.8vw,4rem)/1.08 var(--display);letter-spacing:-.025em;max-width:18ch;margin:0 0 26px}.lede{max-width:62ch;font-size:1.12rem;color:var(--ink-soft);line-height:1.7}.hero-meta{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:28px;font-size:.9rem;color:var(--ink-soft)}section:not(.hero){padding:48px 0;border-top:1px solid var(--rule)}.section-head{margin-bottom:26px}.about-grid{display:grid;grid-template-columns:1.65fr 1fr;gap:60px}.about-grid p{max-width:65ch}.about-side{margin:0;padding-left:24px;border-left:1px solid var(--rule);font-size:.9rem}.about-side dt{color:var(--ink-soft);margin-top:18px;font-size:.8rem}.about-side dt:first-child{margin-top:0}.about-side dd{margin:2px 0 0}.focus-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}.tag{display:block;color:var(--ink-soft);font-size:.8rem;margin-bottom:10px}.focus-card p,.work-item p,.tl-body ul{color:var(--ink-soft);font-size:.95rem}.timeline{display:grid;gap:32px}.tl-row{display:grid;grid-template-columns:150px 1fr;gap:28px}.tl-date,.yr{font-size:.84rem;color:var(--ink-soft)}.org{display:block;margin-bottom:10px;font-size:.92rem}.tl-body ul{padding-left:18px;margin:0}.tl-body li+li{margin-top:6px}.tl-callout{display:block;margin-top:12px;font-size:.86rem;color:var(--signal)}.education{margin-top:32px;padding-top:24px;border-top:1px solid var(--rule);font-size:.9rem;color:var(--ink-soft)}.work-list{display:grid;grid-template-columns:1fr 1fr;gap:0 40px}.work-item{padding:24px 0;border-top:1px solid var(--rule)}.work-item h3{margin-top:6px}.work-item p{max-width:65ch;margin-bottom:8px}.work-item.flagship{padding-top:0;border-top:0}.work-item.flagship h3{font-size:1.3rem}.badge{font-size:.8rem;color:var(--ink-soft)}.project-link{display:inline-block;font-size:.88rem;margin-top:6px}.pubs{list-style:none;margin:0;padding:0}.pubs li{display:grid;grid-template-columns:24px 1fr;gap:18px;padding:20px 0;border-top:1px solid var(--rule)}.idx{font-size:.8rem;color:var(--ink-soft);padding-top:3px}.cite-title{margin:0 0 6px}.cite-title em{font-style:normal}.cite-meta{font-size:.84rem;color:var(--ink-soft);margin:0;overflow-wrap:anywhere}.skills-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}.label{display:block;font-weight:600;font-size:.88rem;margin-bottom:10px}.skill-group ul{list-style:none;padding:0;margin:0;color:var(--ink-soft);font-size:.92rem}.skill-group li{padding:3px 0}.lang-row{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:28px;font-size:.85rem;color:var(--ink-soft)}.lang-row b{font-weight:500;color:var(--ink)}footer{padding:48px 0 28px;border-top:1px solid var(--rule)}footer h2{margin-bottom:18px}.cta-line{max-width:60ch;color:var(--ink-soft)}.contact-links{display:flex;flex-wrap:wrap;gap:24px;margin:22px 0 40px}.foot-bottom{padding-top:20px;border-top:1px solid var(--rule);font-size:.8rem;color:var(--ink-soft)}.skip-link{position:absolute;left:16px;top:-100px;background:var(--paper);padding:10px;z-index:10}.skip-link:focus{top:10px}
+@media(max-width:760px){.wrap,header.top{width:calc(100% - 40px)}header.top{flex-direction:column;gap:8px;padding-top:20px}header.top nav{gap:4px 22px}.hero{padding:44px 0}.hero h1{max-width:18ch}.about-grid{grid-template-columns:1fr;gap:24px}.about-side{padding-left:0;border-left:0;display:grid;grid-template-columns:110px 1fr;gap:10px 16px}.about-side dt,.about-side dd{margin:0}.focus-grid{grid-template-columns:1fr;gap:24px}.focus-card p{margin-bottom:0}.tl-row{grid-template-columns:1fr;gap:6px}.work-list{grid-template-columns:1fr}.skills-grid{grid-template-columns:1fr 1fr;gap:24px}section:not(.hero),footer{padding-block:36px}.pubs li{gap:10px}.lede{font-size:1.03rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
-<div class="page">
+<a class="skip-link" href="#main">Skip to content</a>
 
-  <p class="back"><a href="/">le-martin.github.io</a></p>
 
-  <h1>Martin Le</h1>
-  <p class="sub">Wireless systems researcher and research software engineer, based in Dresden</p>
 
-  <p>I spent the last six years at the Institute for Communications Technology at TU Braunschweig, working on rate adaptation for Wi-Fi. A Wi-Fi device has to choose a data rate (modulation, coding, number of streams) for every transmission, and the right choice depends on a channel that keeps changing. I treat this as a multi-armed bandit problem and test the algorithms on real routers, not only in simulation.</p>
-  <p>I submitted my dissertation in August 2026; the defense date isn't set yet. Before the PhD I studied Information Systems Engineering at TU Dresden.</p>
+<header class="top">
+  <span class="mark"><a href="/">Martin Le</a></span>
+  <nav aria-label="Main navigation">
+    <a href="#work">Work</a>
+    <a href="#experience">Experience</a>
+    <a href="#publications">Publications</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-  <ul class="links">
-    <li><a href="https://linkedin.com/in/martinle92">LinkedIn</a></li>
-    <li><a href="https://github.com/le-martin">GitHub</a></li>
-    <li><a href="https://scholar.google.com/citations?user=p_1MxKUAAAAJ">Google Scholar</a></li>
-    <li><a href="https://orcid.org/0000-0001-7911-7786">ORCID</a></li>
-    <li><a href="/phd/cv/">Full CV</a></li>
-  </ul>
+<main id="main" tabindex="-1">
 
-  <h2>What I've worked on</h2>
+  <div class="wrap">
+    <section class="hero" aria-labelledby="intro">
+      <p class="eyebrow">Research software engineer — wireless systems</p>
+      <h1 id="intro">I build software for Wi-Fi experiments.</h1>
+      <p class="lede">My research uses multi-armed bandits to choose transmission rates in Wi-Fi networks. I write the Python software and build the testbeds to evaluate these algorithms on real IEEE 802.11 hardware.</p>
 
-  <h3>WiFi-CUTS: rate adaptation with bandits</h3>
-  <span class="meta">PhD work, 2019 to 2025</span>
-  <p>The main result of my PhD is WiFi-CUTS, a rate adaptation algorithm built on cascaded unimodal Thompson sampling. I compared it with Minstrel-HT, the default rate control in Linux, on IEEE 802.11ac hardware. Over the air it reached about 15% more throughput on average and at least 56% more in the first 0.7 seconds, when the algorithm is still learning. In simulations its average regret was at least 86% lower. It's published in IEEE Transactions on Communications.</p>
+      <div class="hero-meta">
+        <a href="https://le-martin.github.io/phd" target="_blank" rel="noopener">le-martin.github.io/phd</a>
+        <span>Braunschweig, Germany</span>
+      </div>
+    </section>
+  </div>
 
-  <h3>The Wi-Fi testbed</h3>
-  <span class="meta">TU Braunschweig</span>
-  <p>To run those experiments I set up and ran a testbed with commercial routers on OpenWrt, used both in shielding boxes and over the air. Most of the work was in the tooling: Python packages and APIs to set and read Wi-Fi parameters on Linux, checks on the data coming from the kernel to user space, and scripts that configure, run and evaluate an experiment without someone watching it. Part of this became the open-source resource control API we presented at ACM MobiCom 2024.</p>
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>About me</h2>
+      </div>
+      <div class="about-grid">
+        <div>
+          
+          <p>I'm an Information Systems Engineering graduate and PhD candidate working on wireless systems and machine learning. From 2019 to 2025, I worked as a research associate at Technische Universität Braunschweig.</p>
+          <p>Much of my work involves experiment automation: configuring routers, monitoring measurements, and building reproducible data pipelines. I evaluate algorithms in shielded RF chambers and over the air.</p>
+        </div>
+        <dl class="about-side">
+          <dt>Role</dt>
+          <dd>Research Software Engineer</dd>
+          <dt>Institution</dt>
+          <dd>Technische Universität Braunschweig</dd>
+          <dt>Focus</dt>
+          <dd>Multi-armed bandits, Wi-Fi rate adaptation, testbed automation</dd>
+          <dt>Languages spoken</dt>
+          <dd>German, English, Korean, Vietnamese</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
 
-  <h3>SupraCoNeX</h3>
-  <span class="meta">BMBF-funded research project, 2020 to 2024</span>
-  <p>A joint project on using machine learning and bandit methods to improve Wi-Fi throughput, latency and robustness. I led Work Package 2, which meant coordinating the technical work, meetings, experiments and deliverables with the partners.</p>
+  <!-- FOCUS -->
+  <section id="focus">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Research &amp; engineering</h2>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="focus-grid">
+        <div class="focus-card">
+          <span class="tag">Algorithms</span>
+          <h3>Wi-Fi rate adaptation</h3>
+          <p>Thompson Sampling and its variants — RAGTS, CTS, UTS, and CUTS — for IEEE 802.11ac rate adaptation, benchmarked against Minstrel-HT.</p>
+        </div>
+        <div class="focus-card">
+          <span class="tag">Infrastructure</span>
+          <h3>Experimental testbeds</h3>
+          <p>Automation and monitoring for experiments in shielded RF chambers and over-the-air deployments.</p>
+        </div>
+        <div class="focus-card">
+          <span class="tag">Delivery</span>
+          <h3>Research software</h3>
+          <p>Python tools to configure and monitor Wi-Fi systems, run experiments unattended, and deploy research algorithms on commercial routers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <h3>Indoor positioning from Wi-Fi CSI</h3>
-  <span class="meta">Wireless Wanderlust competition, IEEE ISIT 2025</span>
-  <p>With two other doctoral researchers I built a semi-supervised positioning method from Wi-Fi channel state information: an autoencoder followed by a fully connected network that predicts the position, using several antenna arrays and frequency bands. We won the Junior Prize.</p>
+  <!-- SELECTED WORK -->
+  <section id="work">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Selected work</h2>
+      </div>
 
-  <h3>Teaching</h3>
-  <p>I created and ran Introduction to Programming for Non-Computer Scientists (2022 to 2025) and moved its exercises to Jupyter notebooks with automated grading. I also organized Technology and Innovation Management, gave a lecture on multi-armed bandits, and was a teaching assistant for Signals and Systems, Information Theory, and Optimization and Game Theory. I supervised more than ten student theses, projects and seminars, plus a Google Summer of Code 2025 project.</p>
+      <div class="work-item flagship">
+        <span class="yr">2025 · IEEE Transactions on Communications</span>
+        <h3>WiFi-CUTS</h3>
+        <p>Rate adaptation with cascaded unimodal multi-armed bandits, evaluated in an IEEE 802.11ac testbed. This is the core algorithmic contribution of my PhD.</p>
+        <span class="badge">Journal paper · early access</span><br>
+        <a class="project-link" href="https://doi.org/10.1109/TCOMM.2025.3628731">Read the paper</a>
+      </div>
 
-  <h2>Experience</h2>
+      <div class="work-list">
+        <div class="work-item">
+          <span class="yr">2025 · ISIT</span>
+          <h3>Wireless Wanderlust</h3>
+          <p>Semi-supervised indoor positioning from Channel State Information, using an autoencoder paired with a fully connected position predictor.</p>
+          <span class="badge">Junior prize · team of three</span>
+        </div>
+        <div class="work-item">
+          <span class="yr">2012 · TU Dresden</span>
+          <h3>Event Management System</h3>
+          <p>A web application for managing party events, with user accounts, a database, and calendar integration. The project covered design, implementation, testing, and client acceptance.</p>
+          <span class="badge">Full-lifecycle software project</span>
+        </div>
+        <div class="work-item">
+          <span class="yr">2010 · RoboLab</span>
+          <h3>Line-Following Robot</h3>
+          <p>A Lego Mindstorms robot that follows solid, dashed, curved, and zigzag lines while avoiding obstacles.</p>
+          <span class="badge">1st place · team of four</span>
+        </div>
+        <div class="work-item">
+          <span class="yr">2024 · MobiCom</span>
+          <h3>Open Resource Control API</h3>
+          <p>Contributed to an open-source resource control API for real IEEE 802.11 networks, presented at ACM MobiCom with Sankalp P. Pawar and collaborators.</p>
+          <span class="badge">Conference paper · co-author</span><br>
+          <a class="project-link" href="https://doi.org/10.1145/3636534.3697314">Read the paper</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <h3>Research Associate, TU Braunschweig</h3>
-  <span class="meta">Institute for Communications Technology, Dec 2019 to Dec 2025</span>
-  <p>Research on Wi-Fi rate adaptation and online learning, the testbed above, SupraCoNeX, teaching and supervision. I also helped write research proposals and looked after the institute website in TYPO3.</p>
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Experience &amp; education</h2>
+      </div>
 
-  <h3>Student Assistant, TU Braunschweig</h3>
-  <span class="meta">Aug to Oct 2019</span>
-  <p>Configured Wi-Fi networks on routers from several manufacturers and benchmarked their throughput.</p>
+      <div class="timeline">
 
-  <h3>Student Assistant, TU Dresden</h3>
-  <span class="meta">Jun 2018 to Jul 2019</span>
-  <p>Worked out how to control Wi-Fi routers through their TR-064 and JavaScript interfaces, and wrote Python and Bash scripts to configure them and run measurements automatically.</p>
+        <div class="tl-item is-major">
+          <div class="tl-row">
+            <div class="tl-date">2019 — 2025</div>
+            <div class="tl-body">
+              <h3>PhD Student / Research Associate</h3>
+              <span class="org">Technische Universität Braunschweig</span>
+              <ul>
+                <li>Designed and built Python software for configuration, monitoring, and automation of Wi-Fi communication systems</li>
+                <li>Took machine-learning algorithms from research prototype to deployment on experimental hardware</li>
+                <li>Built reproducible software pipelines for large-scale experimentation and data analysis</li>
+                <li>Established and maintained the group's experimental testbed for performance evaluation</li>
+                <li>Supervised software engineering projects and mentored Master's students</li>
+              </ul>
+              <span class="tl-callout">SupraCoNeX (BMFTR) · +18% throughput</span>
+            </div>
+          </div>
+        </div>
 
-  <h3>Student Assistant and Intern, Fraunhofer IWU</h3>
-  <span class="meta">Dresden, Sep 2015 to Dec 2018</span>
-  <p>MATLAB and Python GUIs for monitoring and controlling simulations, scripts to evaluate and plot the results, and VBA to generate Word and Excel documents.</p>
+        <div class="tl-item">
+          <div class="tl-row">
+            <div class="tl-date">2019</div>
+            <div class="tl-body">
+              <h3>Student Assistant</h3>
+              <span class="org">Technische Universität Braunschweig</span>
+              <ul>
+                <li>Set up and optimized throughput for Wi-Fi networks using commercial off-the-shelf routers from various manufacturers</li>
+              </ul>
+            </div>
+          </div>
+        </div>
 
-  <h2>Education</h2>
+        <div class="tl-item">
+          <div class="tl-row">
+            <div class="tl-date">2018 — 2019</div>
+            <div class="tl-body">
+              <h3>Student Assistant</h3>
+              <span class="org">Technische Universität Dresden</span>
+              <ul>
+                <li>Wrote Python and Bash scripts to control and monitor Wi-Fi router parameters</li>
+                <li>Ran automated experiments and measurements on live Wi-Fi networks</li>
+              </ul>
+            </div>
+          </div>
+        </div>
 
-  <h3>Dr.-Ing. candidate in Electrical Engineering, TU Braunschweig</h3>
-  <span class="meta">Since Dec 2019, dissertation submitted Aug 2026</span>
-  <p><em>Rate Adaptation in IEEE 802.11 Networks Using Multi-Armed Bandits: Design, Implementation, and Experiments</em></p>
+        <div class="tl-item">
+          <div class="tl-row">
+            <div class="tl-date">2016 — 2018</div>
+            <div class="tl-body">
+              <h3>Student Assistant</h3>
+              <span class="org">Fraunhofer Institute for Machine Tools and Forming Technology</span>
+              <ul>
+                <li>Designed and built a MATLAB-based GUI for monitoring and controlling simulations</li>
+              </ul>
+            </div>
+          </div>
+        </div>
 
-  <h3>Dipl.-Ing. in Information Systems Engineering, TU Dresden</h3>
-  <span class="meta">2010 to 2019</span>
-  <p>Diploma thesis on channel selection in Wi-Fi networks with interference from neighbouring networks, solved with linear programming and graph theory and run on real routers (grade 1.3).</p>
+        <div class="tl-item">
+          <div class="tl-row">
+            <div class="tl-date">2015 — 2016</div>
+            <div class="tl-body">
+              <h3>Internship</h3>
+              <span class="org">Fraunhofer Institute for Machine Tools and Forming Technology</span>
+              <ul>
+                <li>Automated document generation in Word and Excel using VBA</li>
+                <li>Built a Python GUI for monitoring and controlling simulations</li>
+                <li>Wrote scripts for experimental data evaluation and visualization in Python and MATLAB</li>
+              </ul>
+            </div>
+          </div>
+        </div>
 
-  <h2>Publications</h2>
-  <ul class="pubs">
-    <li>M. Le, B. Peng, and E. A. Jorswieck, “WiFi-CUTS: Rate Adaptation With Cascaded Unimodal Multi-Armed Bandits in IEEE 802.11ac Testbed Experiments.” <span class="venue">IEEE Transactions on Communications, vol. 74, pp. 2176–2189, 2026. <a href="https://doi.org/10.1109/TCOMM.2025.3628731">doi</a></span></li>
-    <li>S. Rezvani, P.-H. Lin, M. Le, G. C. Alexandropoulos, S. Stanczak, and E. A. Jorswieck, “Physical-Layer Security with Benign and Malicious RISs.” <span class="venue">In <em>Reconfigurable Intelligent Surfaces for Wireless Communications</em>, Springer, 2026, pp. 493–530. <a href="https://doi.org/10.1007/978-981-95-1814-2_17">doi</a></span></li>
-    <li>M. Le et al., “Multi-Armed Bandits in IEEE 802.11ac: Efficient Algorithms and Testbed Experiments.” <span class="venue">IEEE CQR 2024, pp. 7–12. <a href="https://doi.org/10.1109/CQR62340.2024.10705888">doi</a></span></li>
-    <li>S. P. Pawar et al., “Open-source Resource Control API for real IEEE 802.11 Networks.” <span class="venue">ACM MobiCom 2024, pp. 1866–1873. <a href="https://doi.org/10.1145/3636534.3697314">doi</a></span></li>
-    <li>S. Rezvani, P.-H. Lin, M. Le, and E. A. Jorswieck, “Legitimate against Illegitimate IRSs on MISO Wiretap Channels.” <span class="venue">IEEE SAM 2022, pp. 445–449. <a href="https://doi.org/10.1109/SAM53842.2022.9827890">doi</a></span></li>
-  </ul>
+      </div>
 
-  <h2>Tools and languages</h2>
-  <dl class="skills">
-    <dt>Programming</dt><dd>Python (most of my work), MATLAB, Bash, Java, LaTeX</dd>
-    <dt>Data and ML</dt><dd>NumPy, Pandas, Polars, PyTorch, scikit-learn, Matplotlib, Seaborn, Jupyter, Marimo</dd>
-    <dt>Networking</dt><dd>Linux wireless, OpenWrt (UCI, LuCI), iperf3, Wireshark, tcpdump</dd>
-    <dt>Other</dt><dd>Git, SQL, Selenium</dd>
-    <dt>Spoken</dt><dd>German (native), English (fluent), some Korean, basic Vietnamese</dd>
-  </dl>
+      <div class="education">
+        Education — Diploma, Information Systems Engineering, Technische Universität Dresden (2010–2019). Thesis: <em style="color:var(--signal-deep); font-style:italic;">"Wi-Fi Interference Management: Periodic Remote Selection of Least Interfered Bands,"</em> a channel-selection algorithm built with linear programming and graph theory.
+      </div>
+    </div>
+  </section>
 
-  <footer>
-    The easiest way to reach me is <a href="https://linkedin.com/in/martinle92">LinkedIn</a>. More about my research is on my <a href="/phd/">PhD page</a>.
+  <!-- PUBLICATIONS -->
+  <section id="publications">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Publications</h2>
+      </div>
+
+      <ul class="pubs">
+        <li>
+          <span class="idx">01</span>
+          <div>
+            <p class="cite-title">M. Le, B. Peng, and E. A. Jorswieck, <em>"WiFi-CUTS: Rate Adaptation with Cascaded Unimodal Multi-Armed Bandits in IEEE 802.11ac Testbed Experiments,"</em></p>
+            <p class="cite-meta">IEEE Transactions on Communications (Early Access), 2025 · doi: <a class="doi" href="https://doi.org/10.1109/TCOMM.2025.3628731">10.1109/TCOMM.2025.3628731</a></p>
+          </div>
+        </li>
+        <li>
+          <span class="idx">02</span>
+          <div>
+            <p class="cite-title">S. Rezvani, P.-H. Lin, M. Le, G. C. Alexandropoulos, S. Stanczak, and E. A. Jorswieck, <em>"Physical-Layer Security with Benign and Malicious RISs,"</em></p>
+            <p class="cite-meta">in <em>Reconfigurable Intelligent Surfaces for Wireless Communications</em>, Springer, 2026, pp. 493–530 · doi: <a class="doi" href="https://doi.org/10.1007/978-981-95-1814-2_17">10.1007/978-981-95-1814-2_17</a></p>
+          </div>
+        </li>
+        <li>
+          <span class="idx">03</span>
+          <div>
+            <p class="cite-title">M. Le et al., <em>"Multi-Armed Bandits in IEEE 802.11ac: Efficient Algorithms and Testbed Experiments,"</em></p>
+            <p class="cite-meta">IEEE Intl. Workshop Technical Committee on Communications Quality &amp; Reliability (CQR), Seattle, WA, 2024, pp. 7–12 · doi: <a class="doi" href="https://doi.org/10.1109/CQR62340.2024.10705888">10.1109/CQR62340.2024.10705888</a></p>
+          </div>
+        </li>
+        <li>
+          <span class="idx">04</span>
+          <div>
+            <p class="cite-title">S. P. Pawar et al., <em>"Open-source Resource Control API for real IEEE 802.11 Networks,"</em></p>
+            <p class="cite-meta">Proc. 30th Annual Intl. Conf. on Mobile Computing and Networking (ACM MobiCom), New York, 2024, pp. 1866–1873 · doi: <a class="doi" href="https://doi.org/10.1145/3636534.3697314">10.1145/3636534.3697314</a></p>
+          </div>
+        </li>
+        <li>
+          <span class="idx">05</span>
+          <div>
+            <p class="cite-title">S. Rezvani, P.-H. Lin, M. Le, and E. A. Jorswieck, <em>"Legitimate against Illegitimate IRSs on MISO Wiretap Channels,"</em></p>
+            <p class="cite-meta">IEEE Sensor Array and Multichannel Signal Processing Workshop (SAM), 2022, pp. 445–449 · doi: <a class="doi" href="https://doi.org/10.1109/SAM53842.2022.9827890">10.1109/SAM53842.2022.9827890</a></p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Tools &amp; languages</h2>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-group">
+          <span class="label">Languages</span>
+          <ul>
+            <li>Python</li>
+            <li>Bash</li>
+            <li>Java</li>
+            <li>MATLAB</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <span class="label">Data &amp; ML</span>
+          <ul>
+            <li>PyTorch</li>
+            <li>scikit-learn</li>
+            <li>Polars / Pandas</li>
+            <li>NumPy</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <span class="label">Tooling</span>
+          <ul>
+            <li>Git</li>
+            <li>Jupyter / Marimo</li>
+            <li>Matplotlib / Seaborn</li>
+            <li>REST APIs</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <span class="label">Systems</span>
+          <ul>
+            <li>Linux</li>
+            <li>OpenWrt</li>
+            <li>macOS</li>
+            <li>Windows</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="lang-row">
+        <span><b>German</b> — native</span>
+        <span><b>English</b> — fluent</span>
+        <span><b>Korean</b> — upper intermediate</span>
+        <span><b>Vietnamese</b> — upper intermediate</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <footer id="contact">
+    <div class="wrap">
+      <h2>Contact</h2>
+      <p class="cta-line">You can reach me on LinkedIn. My PhD site has more detail about the research.</p>
+      <div class="contact-links">
+        <a href="https://linkedin.com/in/martinle92" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="https://le-martin.github.io/phd" target="_blank" rel="noopener">PhD site ↗</a>
+      </div>
+      <div class="foot-bottom">
+        <span>Martin Le — Research Software Engineer, Braunschweig, Germany</span>
+        
+      </div>
+    </div>
   </footer>
 
-</div>
+</main>
+
 </body>
 </html>

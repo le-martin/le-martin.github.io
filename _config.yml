@@ -159,6 +159,7 @@ include:
   - files
   - learn-german/_expo
 exclude:
+  - stock-correlation.disabled
   - "*.sublime-project"
   - "*.sublime-workspace"
   - .asset-cache

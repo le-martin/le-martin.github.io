@@ -12,7 +12,6 @@ Personal academic website for **Martin Le** (Ph.D. Candidate @ TU Braunschweig),
 | `/learn-german/` | Expo / React Native web app (pre-built SPA) |
 | `/mathe-5/` | Mathe-Übungs-App Klasse 5 (vorgebaute Vite/React SPA, Quelle in einem privaten Repo) |
 | `/restaurant/` | Sura Korean restaurant site (standalone HTML/CSS/JS) |
-| `/stock-correlation/` | Stock & ETF correlation checker (standalone HTML/CSS/JS) |
 | `/dresden/` | Dresden travel guide (standalone HTML/CSS/JS, Leaflet map) |
 | `/ausflug-oberlausitz/` | Reisebegleiter Tagesausflug Oberlausitz (Bautzen, Löbau, Zittau; DE/EN/KO) |
 | `/ausflug-leipzig/` | Reisebegleiter Tagesausflug Leipzig (Innenstadt, Völkerschlachtdenkmal, Plagwitz; DE/EN/KO) |
@@ -22,7 +21,7 @@ The academic pages (`about`, `cv`, `publications`, `talks`, etc.) under `_pages/
 
 **Disabled**
 
-Nothing is currently disabled. Pages or sub-apps can be turned off by appending a `.disabled` suffix (e.g. `some-page.md.disabled`).
+The stock correlation checker is disabled (`stock-correlation.disabled/`, excluded in `_config.yml`). Pages or sub-apps can be turned off by appending a `.disabled` suffix (e.g. `some-page.md.disabled`).
 
 See [`CLAUDE.md`](CLAUDE.md) for fuller codebase documentation and conventions.
 
