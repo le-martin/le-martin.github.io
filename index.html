@@ -28,7 +28,7 @@ layout: none
   a{color:inherit;}
   a:focus-visible{outline:2px solid var(--signal);outline-offset:4px;border-radius:2px;}
   ::selection{background:rgba(31,111,99,.22);}
-  .wrap{max-width:1040px;margin:0 auto;padding:0 clamp(20px,5vw,56px);}
+  .wrap{position:relative;max-width:1040px;margin:0 auto;padding:0 clamp(20px,5vw,56px);}
 
   /* Hero: the name, one sentence, and the trace a rate-adaptation bandit draws */
   header{padding:clamp(56px,10vh,104px) 0 0;}
@@ -76,14 +76,25 @@ layout: none
     .index a{grid-template-columns:1fr;gap:4px;}
     .index .kind{text-align:left;}
   }
+  /* Dark palette: follows the system unless a choice was saved (shared with the theme toggle on the other pages) */
+  :root[data-theme="dark"]{--paper:#1A201E;--paper-deep:#232B28;--ink:#E4E1D6;--ink-soft:#A9AC9E;--signal:#6FC2B2;--signal-deep:#9FD9CC;--rule:#36403C;--rule-strong:#4A5550;}
+  :root[data-theme="dark"] ::selection{background:rgba(111,194,178,.3);}
   @media (prefers-color-scheme:dark){
-    :root{--paper:#1A201E;--paper-deep:#232B28;--ink:#E4E1D6;--ink-soft:#A9AC9E;--signal:#6FC2B2;--signal-deep:#9FD9CC;--rule:#36403C;--rule-strong:#4A5550;}
-    ::selection{background:rgba(111,194,178,.3);}
+    :root:not([data-theme="light"]){--paper:#1A201E;--paper-deep:#232B28;--ink:#E4E1D6;--ink-soft:#A9AC9E;--signal:#6FC2B2;--signal-deep:#9FD9CC;--rule:#36403C;--rule-strong:#4A5550;}
+    :root:not([data-theme="light"]) ::selection{background:rgba(111,194,178,.3);}
   }
+
+  .theme-switch{position:absolute;top:20px;right:clamp(20px,5vw,56px);padding:4px 0;border:0;background:none;font:inherit;font-size:.85rem;color:var(--ink-soft);cursor:pointer;text-decoration:underline;text-decoration-color:var(--rule-strong);text-underline-offset:.25em;text-decoration-thickness:1px;}
+  .theme-switch:hover{color:var(--signal-deep);text-decoration-color:currentColor;}
+  .theme-switch:focus-visible{outline:2px solid var(--signal);outline-offset:4px;border-radius:2px;}
 </style>
+<script>
+  try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t);}catch(e){}
+</script>
 </head>
 <body>
 <main class="wrap">
+  <button type="button" class="theme-switch" id="theme-switch" hidden>Dark mode</button>
   <header>
     <h1>Martin Le</h1>
     <p class="lede"><strong>Ph.D. candidate at TU Braunschweig.</strong> I teach Wi-Fi networks to pick the right speed: machine-learning rate adaptation for real 802.11 hardware, and the testbeds that prove it works. On the side I build small tools and learning apps.</p>
@@ -147,5 +158,27 @@ layout: none
 
   <footer>© {{ site.time | date: '%Y' }} Martin Le</footer>
 </main>
+<script>
+  (function(){
+    var root=document.documentElement, btn=document.getElementById("theme-switch"),
+        meta=document.querySelector('meta[name="theme-color"]'),
+        sys=window.matchMedia("(prefers-color-scheme: dark)");
+    function current(){return root.getAttribute("data-theme")||(sys.matches?"dark":"light");}
+    function sync(){
+      var dark=current()==="dark";
+      btn.textContent=dark?"Light mode":"Dark mode";
+      meta.setAttribute("content",dark?"#1A201E":"#EAE6DC");
+    }
+    btn.addEventListener("click",function(){
+      var next=current()==="dark"?"light":"dark";
+      root.setAttribute("data-theme",next);
+      try{localStorage.setItem("theme",next);}catch(e){}
+      sync();
+    });
+    sys.addEventListener("change",sync);
+    btn.hidden=false;
+    sync();
+  })();
+</script>
 </body>
 </html>
