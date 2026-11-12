@@ -1,6 +1,7 @@
 ---
 permalink: /phd/
-title: "Ph.D. Student Activities"
+title: "PhD activities"
+description: "Publications, talks, reviews, teaching and supervised students from Martin Le's PhD at TU Braunschweig."
 author_profile: true
 redirect_from: 
   - /phd/about/
@@ -126,7 +127,7 @@ redirect_from:
 ### Graduate Academy ([GradTUBS](https://www.tu-braunschweig.de/en/gradtubs)) Courses (4 attended)
 - Persuasive arguing for scientists (Summer term 2021)
 - Scientific Integrity (Summer term 2020)
-- Planning and Structuring of my Ph.D. time (Winter term 2020)
+- Planning and Structuring of my PhD time (Winter term 2020)
 - Time Management (Winter term 2020)
 
 ### [Career Service](https://www.tu-braunschweig.de/en/career) Workshops (2 attended)

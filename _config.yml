@@ -12,7 +12,7 @@ site_theme               : "default"
 title                    : "Martin Le"
 title_separator          : "-"
 name                     : &name "Martin Le"
-description              : &description "personal description"
+description              : &description "Martin Le, PhD candidate at TU Braunschweig, working on machine-learning rate adaptation for Wi-Fi."
 url                      : https://le-martin.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io" or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "le-martin/le-martin.github.io"
@@ -25,7 +25,7 @@ author:
   avatar           : "avatar-trace.svg"
   name             : "Martin Le"
   pronouns         : # example: "she/her"  
-  bio              : "Ph.D. Candidate @ TU Braunschweig"
+  bio              : "PhD candidate at TU Braunschweig"
   location         : "Dresden (Germany)"
   employer         : "TU Braunschweig"
   uri              : #"https://www.tu-braunschweig.de/en/ifn/institute/team/iuk/le"# URL
@@ -36,7 +36,7 @@ author:
   arxiv            : # URL - Update with the correct link to your profile
   googlescholar    : "https://scholar.google.com/citations?user=p_1MxKUAAAAJ"
   impactstory      : # URL
-  orcid            : "http://orcid.org/0000-0001-7911-7786"
+  orcid            : "https://orcid.org/0000-0001-7911-7786"
   semantic         : # URL
   pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   researchgate     : # URL
@@ -60,7 +60,7 @@ author:
   keybase          : # Username
   instagram        : # Username
   lastfm           : # Username
-  linkedin         : # Username
+  linkedin         : "martinle92"
   mastodon         : # URL
   medium           : # URL
   pinterest        : # Username
@@ -118,7 +118,7 @@ staticman:
       options:
         format           : "iso8601" # "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
 atom_feed:
-  hide                   : false     # change to true to hide the RSS feed in the footer
+  hide                   : true      # no blog posts, so no feed
   path                   : # blank (default) uses feed.xml
 
 
@@ -136,13 +136,17 @@ facebook:
   username               :
   app_id                 :
   publisher              :
-og_image                 :  # Open Graph/Twitter default site image
+og_image                 : "og-card.png" # Open Graph/Twitter default site image, in /images/
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
   type                   : # Person or Organization (defaults to Person)
   name                   : # If the user or organization name differs from the site's name
   links: # An array of links to social media profiles
+    - "https://www.linkedin.com/in/martinle92"
+    - "https://github.com/le-martin"
+    - "https://scholar.google.com/citations?user=p_1MxKUAAAAJ"
+    - "https://orcid.org/0000-0001-7911-7786"
 
 
 # Analytics
@@ -156,7 +160,6 @@ analytics:
 include:
   - .htaccess
   - _pages
-  - files
   - learn-german/_expo
 exclude:
   - stock-correlation.disabled
@@ -186,6 +189,22 @@ exclude:
   - README
   - tmp
   - vendor
+  # repo-only files and tooling, not part of the site
+  - CLAUDE.md
+  - CONTRIBUTING.md
+  - README.md
+  - ROADMAP.md
+  - docker-compose.yaml
+  - _config_docker.yml
+  - bin
+  - scripts
+  - markdown_generator
+  - ausflug-leipzig/README.md
+  - ausflug-leipzig/tools
+  - ausflug-oberlausitz/README.md
+  - ausflug-oberlausitz/tools
+  - ausflug-prag/README.md
+  - ausflug-prag/tools
 keep_files:
   - .git
   - .svn
@@ -301,7 +320,6 @@ timezone: Etc/UTC # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 # Plugins
 plugins:
-  - jekyll-feed
   - jekyll-gist
   - jekyll-paginate
   - jekyll-sitemap
@@ -310,7 +328,6 @@ plugins:
 
 # Mimic GitHub Pages with --safe
 whitelist:
-  - jekyll-feed
   - jekyll-gist
   - jekyll-paginate
   - jekyll-sitemap

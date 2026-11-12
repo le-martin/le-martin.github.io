@@ -1,6 +1,7 @@
 ---
 layout: archive
 title: "CV"
+description: "CV of Martin Le: education, research positions and experience in Wi-Fi rate adaptation and testbeds."
 permalink: /phd/cv/
 author_profile: true
 redirect_from:
