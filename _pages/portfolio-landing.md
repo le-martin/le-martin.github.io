@@ -1,6 +1,8 @@
 ---
 permalink: /portfolio/
 title: "I build software for Wi-Fi experiments."
+seo_title: "Portfolio"
+description: "Martin Le builds software and testbeds for Wi-Fi experiments: multi-armed-bandit rate adaptation tested on real IEEE 802.11 hardware."
 author_profile: true
 ---
 

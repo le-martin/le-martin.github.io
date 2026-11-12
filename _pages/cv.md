@@ -1,6 +1,7 @@
 ---
 layout: archive
 title: "CV"
+description: "CV of Martin Le: education, research positions and experience in Wi-Fi rate adaptation and testbeds."
 permalink: /phd/cv/
 author_profile: true
 redirect_from:
@@ -48,12 +49,12 @@ Braunschweig, Germany | December 2019 – December 2025
 - Developed multi-armed-bandit rate-adaptation algorithms for IEEE 802.11 Wi-Fi systems, including WiFi-CUTS based on cascaded unimodal Thompson sampling.
 - Advanced algorithms from theoretical modeling and numerical simulation to implementation and experimental validation on commercial hardware.
 - Established and operated a Wi-Fi testbed for shielding-box and over-the-air experiments and built reproducible workflows for configuration, execution, monitoring, data collection, and evaluation.
-- Demonstrated approximately 15% average throughput improvement over Linux Minstrel-HT, at least 56% higher throughput during the initial 0.7 seconds of over-the-air experiments, and at least 86% lower average regret in numerical simulations.
+- Demonstrated about 18% higher average throughput than Linux Minstrel-HT, at least 56% higher throughput during the initial 0.7 seconds of over-the-air experiments, and at least 86% lower average regret in numerical simulations.
 - Developed Python packages and APIs for monitoring and controlling Wi-Fi parameters on Linux and OpenWrt and verified data transmitted through kernel-to-user-space interfaces.
 - Configured state-of-the-art Wi-Fi routers running OpenWrt via UCI and LuCI.
 - Addressed practical constraints of commercial Wi-Fi chipsets, drivers, and Linux rate-control behavior.
 - Researched online learning, optimization, wireless networking, and resource allocation; collaborated with researchers and engineers across multiple institutions on wireless networking and open-source research projects.
-- Led Work Package 2 in the BMBF-funded SupraCoNeX project, coordinating technical work, meetings, experiments, and deliverables.
+- Led Work Package 2 in the BMFTR-funded SupraCoNeX project, coordinating technical work, meetings, experiments, and deliverables.
 - Contributed to research proposals and funding applications; supervised more than 10 student research, thesis, seminar, and assistant activities.
 - Created and delivered university course content and introduced Jupyter notebooks and automated grading.
 - Administered the institute website in TYPO3, including content editing and publishing and user and role management, and supported WSA-SCC Conference 2023.
@@ -107,7 +108,7 @@ October 2010 – November 2019
 
 ## Research and Project Leadership
 
-### SupraCoNeX — BMBF-funded research project
+### SupraCoNeX — BMFTR-funded research project
 
 2020 – 2024
 

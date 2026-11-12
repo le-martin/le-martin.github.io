@@ -1,6 +1,7 @@
 ---
 permalink: /phd/
-title: "Ph.D. Student Activities"
+title: "PhD activities"
+description: "Publications, talks, reviews, teaching and supervised students from Martin Le's PhD at TU Braunschweig."
 author_profile: true
 redirect_from: 
   - /phd/about/
@@ -58,7 +59,7 @@ redirect_from:
 <a id="section_projects-and-competitions"></a>
 ## Projects and Competitions (2)
 - [Wireless Wanderlust Competition hosted by IEEE ISIT 2025](https://2025.ieee-isit.org/wireless-wanderlust-competition) (2025, won Junior prize)
-- [BMBF SupraCoNeX](https://www.forschung-it-sicherheit-kommunikationssysteme.de/projekte/supraconex) (2020-2024)
+- [BMFTR SupraCoNeX](https://www.forschung-it-sicherheit-kommunikationssysteme.de/projekte/supraconex) (2020-2024)
 
 <a id="section_courses"></a>
 ## Courses (6)
@@ -126,7 +127,7 @@ redirect_from:
 ### Graduate Academy ([GradTUBS](https://www.tu-braunschweig.de/en/gradtubs)) Courses (4 attended)
 - Persuasive arguing for scientists (Summer term 2021)
 - Scientific Integrity (Summer term 2020)
-- Planning and Structuring of my Ph.D. time (Winter term 2020)
+- Planning and Structuring of my PhD time (Winter term 2020)
 - Time Management (Winter term 2020)
 
 ### [Career Service](https://www.tu-braunschweig.de/en/career) Workshops (2 attended)
