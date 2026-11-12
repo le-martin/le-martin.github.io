@@ -22,14 +22,10 @@ _config_docker.yml   # Docker override (port binding)
 _data/               # YAML/JSON data files (navigation, authors, CV)
 _includes/           # Reusable HTML partials (header, footer, sidebar, etc.)
 _layouts/            # Page layout templates (default, single, archive, talk, cv)
-_pages/              # Static pages (about, cv, publications, talks, etc.)
+_pages/              # Theme pages: about.md (/phd/), cv.md (/phd/cv/), portfolio-landing.md (/portfolio/), dresden.html, 404.md
 _plugins/            # Custom Jekyll plugins (Ruby 3 compatibility)
-_posts/              # Blog posts (date-prefixed markdown)
-_publications/       # Publication entries (markdown with YAML front matter)
 _sass/               # Sass stylesheets
-_talks/              # Talk/presentation entries
 assets/              # Static assets (JS, CSS, images, fonts)
-files/               # Downloadable files (PDFs, etc.)
 images/              # Site images (profile photo, etc.)
 learn-german/        # Expo React Native web app (pre-built SPA)
   _expo/static/      # Expo static assets (JS bundles, etc.)
@@ -86,18 +82,15 @@ npm run build:js   # Minifies JS into assets/js/main.min.js
 
 ## Content Conventions
 
-### Adding Blog Posts
+The theme's sample posts, publications, talks, teaching pages and demo pages were removed (2026-11). Publications and talks are listed by hand in `_pages/about.md`. There is no blog and no RSS feed (`jekyll-feed` is off, `atom_feed.hide: true`).
 
-Create files in `_posts/` with format: `YYYY-MM-DD-title.md`  
-Required front matter: `layout`, `title`, `date`, `permalink`, `tags`
+### SEO and sharing
 
-### Adding Publications
-
-Create files in `_publications/` with YAML front matter including: `title`, `collection`, `category` (books/manuscripts/conferences), `permalink`, `date`, `venue`, `citation`
-
-### Adding Talks
-
-Create files in `_talks/` with front matter: `title`, `type`, `permalink`, `venue`, `date`, `location`
+- Every theme page should set `description` in its front matter (used for the meta description and link previews); `site.description` is the fallback.
+- `seo_title` overrides the browser-tab/search title when the visible heading (`title`) is a sentence, e.g. the portfolio.
+- `images/og-card.png` (1200×630, `og_image` in `_config.yml`) is the link-preview image; the start page `index.html` sets its own Open Graph tags.
+- MathJax is only loaded on pages with `math: true`.
+- Repo-only files (CLAUDE.md, README.md, scripts, bin, the trip apps' `tools/`) are listed in `exclude` so they are not published; add new tooling there too.
 
 ### Pages
 
