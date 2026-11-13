@@ -21,9 +21,6 @@ Research profile: <https://le-martin.github.io/phd/>
 Google Scholar: <https://scholar.google.com/citations?user=p_1MxKUAAAAJ>  
 ORCID: <https://orcid.org/0000-0001-7911-7786>
 
-Relocation: Open to relocation to San Diego, California.  
-U.S. work authorization: Requires employer-sponsored work authorization.
-
 ## Professional Profile
 
 Doctoral candidate and wireless-systems researcher specializing in Wi-Fi rate adaptation, machine learning, multi-armed bandits, and experimental communications research. Experienced in advancing wireless algorithms from theoretical analysis and numerical simulation through implementation and validation on commercial IEEE 802.11 hardware.
